@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img">
+  <title>리그오브레전드 26.12 패치노트 핵심 정리</title>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#07111F"/>
+      <stop offset="0.52" stop-color="#102A43"/>
+      <stop offset="1" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="42" y="42" width="1116" height="546" rx="18" fill="none" stroke="#2F80ED" stroke-width="2"/>
+  <text x="78" y="102" font-size="28" font-weight="900" fill="#7DD3FC">Seiga Blog · LoL Patch 26.12</text>
+  <text x="78" y="172" font-size="48" font-weight="900" fill="#FFFFFF">리그오브레전드26.12패치노트</text>
+<text x="78" y="241" font-size="48" font-weight="900" fill="#FFFFFF">핵심정리</text>
+  <text x="78" y="254" font-size="26" font-weight="800" fill="#BFDBFE">リーグ・オブ・レジェンド 26.12 パッチノート要点まとめ</text>
+
+            <g>
+              <rect x="78" y="304" width="304" height="76" rx="8" fill="#111827" stroke="#334155"/>
+              <text x="98" y="336" font-size="24" font-weight="900" fill="#F8FAFC">아트록스</text>
+              <text x="98" y="362" font-size="18" font-weight="700" fill="#93C5FD">エイトロックス</text>
+            </g>
+            <g>
+              <rect x="420" y="304" width="304" height="76" rx="8" fill="#111827" stroke="#334155"/>
+              <text x="440" y="336" font-size="24" font-weight="900" fill="#F8FAFC">그웬</text>
+              <text x="440" y="362" font-size="18" font-weight="700" fill="#93C5FD">グウェン</text>
+            </g>
+            <g>
+              <rect x="762" y="304" width="304" height="76" rx="8" fill="#111827" stroke="#334155"/>
+              <text x="782" y="336" font-size="24" font-weight="900" fill="#F8FAFC">흐웨이</text>
+              <text x="782" y="362" font-size="18" font-weight="700" fill="#93C5FD">フェイ</text>
+            </g>
+            <g>
+              <rect x="78" y="412" width="304" height="76" rx="8" fill="#111827" stroke="#334155"/>
+              <text x="98" y="444" font-size="24" font-weight="900" fill="#F8FAFC">잭스</text>
+              <text x="98" y="470" font-size="18" font-weight="700" fill="#93C5FD">ジャックス</text>
+            </g>
+            <g>
+              <rect x="420" y="412" width="304" height="76" rx="8" fill="#111827" stroke="#334155"/>
+              <text x="440" y="444" font-size="24" font-weight="900" fill="#F8FAFC">사일러스</text>
+              <text x="440" y="470" font-size="18" font-weight="700" fill="#93C5FD">サイラス</text>
+            </g>
+            <g>
+              <rect x="762" y="412" width="304" height="76" rx="8" fill="#111827" stroke="#334155"/>
+              <text x="782" y="444" font-size="24" font-weight="900" fill="#F8FAFC">신드라</text>
+              <text x="782" y="470" font-size="18" font-weight="700" fill="#93C5FD">シンドラ</text>
+            </g>
+  <text x="78" y="494" font-size="22" font-weight="700" fill="#DDE7F3">• 최근 시즌 2와 서포터 메타에 대한 후속 변경 사항을 준비했습니다. 주문력 기반 신 짜오를 하향하고 유미</text><text x="78" y="526" font-size="22" font-weight="700" fill="#DDE7F3">• 챔피언 변경은 버프 8명, 너프 6명, 기타 조정 0명입니다. 비챔피언 변경은 체계, 무작위 총력전: 아</text><text x="78" y="558" font-size="22" font-weight="700" fill="#DDE7F3">• 아트록스, 그웬, 흐웨이, 잭스, 사일러스, 신드라, 트리스타나, 유미가 상향 대상입니다. 특히 초반 라</text><text x="78" y="590" font-size="22" font-weight="700" fill="#DDE7F3">• 리 신(공격력 증가량: 3.7 ⇒ 3.4), 녹턴(피해량: 65/110/155/200/245 ⇒ 65/1</text>
+</svg>

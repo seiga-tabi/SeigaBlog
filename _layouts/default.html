@@ -3,7 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="{{ site.description }}" />
+    {% assign meta_description = page.description | default: page.excerpt.ko | default: site.description %}
+    {% assign meta_image = page.og_image | default: page.image %}
+    <meta name="description" content="{{ meta_description | escape }}" />
+    {% if meta_image %}
+      <meta property="og:image" content="{{ meta_image | absolute_url }}" />
+      <meta name="twitter:image" content="{{ meta_image | absolute_url }}" />
+    {% endif %}
+    <meta property="og:title" content="{% if page.title.ko %}{{ page.title.ko | escape }}{% else %}{{ site.title }}{% endif %}" />
+    <meta property="og:description" content="{{ meta_description | escape }}" />
     <title>{% if page.title_text %}{{ page.title_text }} | {{ site.title }}{% elsif page.title.ko %}{{ page.title.ko }} | {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
     <link rel="preconnect" href="https://images.unsplash.com" />
     <link rel="preconnect" href="https://unpkg.com" />
@@ -15,7 +23,9 @@
     <div class="page-shell">
       <header class="site-header">
         <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }}">
-          <span class="brand-mark">S</span>
+          <span class="brand-mark">
+            <img src="{{ site.profile_image | relative_url }}" alt="{{ site.title }} 프로필" />
+          </span>
           <span>{{ site.title }}</span>
         </a>
         <nav

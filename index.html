@@ -8,7 +8,7 @@ title_text: Blog
 {% assign categories = site.data.ui.category_order %}
 
 <main
-  class="workspace"
+  class="workspace{% if site.posts == empty %} workspace-empty{% endif %}"
   id="app"
   data-page="home"
   data-saved-ko="{{ ui_ko.saved }}"
@@ -98,7 +98,24 @@ title_text: Blog
       {% endfor %}
     </section>
 
-    <p class="empty-state" id="emptyState" hidden>{{ ui_ko.empty }}</p>
+    <section class="empty-state profile-empty" id="emptyState" hidden>
+      <img
+        class="profile-empty-image"
+        src="{{ site.profile_image | relative_url }}"
+        alt="{{ site.title }} 프로필"
+        loading="eager"
+      />
+      <h2
+        data-empty-message
+        data-ko="{{ ui_ko.empty }}"
+        data-ja="{{ ui_ja.empty }}"
+      >
+        {{ ui_ko.empty }}
+      </h2>
+      <p data-ko="{{ ui_ko.empty_description }}" data-ja="{{ ui_ja.empty_description }}">
+        {{ ui_ko.empty_description }}
+      </p>
+    </section>
 
     <nav class="bottom-nav" aria-label="{{ ui_ko.list_label }}">
       <button class="nav-button is-active" type="button" data-action="home">
