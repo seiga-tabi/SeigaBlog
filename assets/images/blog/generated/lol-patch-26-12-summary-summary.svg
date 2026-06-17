@@ -18,31 +18,37 @@
               <rect x="78" y="304" width="304" height="76" rx="8" fill="#111827" stroke="#334155"/>
               <text x="98" y="336" font-size="24" font-weight="900" fill="#F8FAFC">아트록스</text>
               <text x="98" y="362" font-size="18" font-weight="700" fill="#93C5FD">エイトロックス</text>
+              <text x="318" y="337" font-size="17" font-weight="900" fill="#16A34A">버프</text>
             </g>
             <g>
               <rect x="420" y="304" width="304" height="76" rx="8" fill="#111827" stroke="#334155"/>
               <text x="440" y="336" font-size="24" font-weight="900" fill="#F8FAFC">그웬</text>
               <text x="440" y="362" font-size="18" font-weight="700" fill="#93C5FD">グウェン</text>
+              <text x="660" y="337" font-size="17" font-weight="900" fill="#16A34A">버프</text>
             </g>
             <g>
               <rect x="762" y="304" width="304" height="76" rx="8" fill="#111827" stroke="#334155"/>
               <text x="782" y="336" font-size="24" font-weight="900" fill="#F8FAFC">흐웨이</text>
               <text x="782" y="362" font-size="18" font-weight="700" fill="#93C5FD">フェイ</text>
+              <text x="1002" y="337" font-size="17" font-weight="900" fill="#16A34A">버프</text>
             </g>
             <g>
               <rect x="78" y="412" width="304" height="76" rx="8" fill="#111827" stroke="#334155"/>
               <text x="98" y="444" font-size="24" font-weight="900" fill="#F8FAFC">잭스</text>
               <text x="98" y="470" font-size="18" font-weight="700" fill="#93C5FD">ジャックス</text>
+              <text x="318" y="445" font-size="17" font-weight="900" fill="#16A34A">버프</text>
             </g>
             <g>
               <rect x="420" y="412" width="304" height="76" rx="8" fill="#111827" stroke="#334155"/>
               <text x="440" y="444" font-size="24" font-weight="900" fill="#F8FAFC">사일러스</text>
               <text x="440" y="470" font-size="18" font-weight="700" fill="#93C5FD">サイラス</text>
+              <text x="660" y="445" font-size="17" font-weight="900" fill="#16A34A">버프</text>
             </g>
             <g>
               <rect x="762" y="412" width="304" height="76" rx="8" fill="#111827" stroke="#334155"/>
               <text x="782" y="444" font-size="24" font-weight="900" fill="#F8FAFC">신드라</text>
               <text x="782" y="470" font-size="18" font-weight="700" fill="#93C5FD">シンドラ</text>
+              <text x="1002" y="445" font-size="17" font-weight="900" fill="#16A34A">버프</text>
             </g>
-  <text x="78" y="494" font-size="22" font-weight="700" fill="#DDE7F3">• 최근 시즌 2와 서포터 메타에 대한 후속 변경 사항을 준비했습니다. 주문력 기반 신 짜오를 하향하고 유미</text><text x="78" y="526" font-size="22" font-weight="700" fill="#DDE7F3">• 챔피언 변경은 버프 8명, 너프 6명, 기타 조정 0명입니다. 비챔피언 변경은 체계, 무작위 총력전: 아</text><text x="78" y="558" font-size="22" font-weight="700" fill="#DDE7F3">• 아트록스, 그웬, 흐웨이, 잭스, 사일러스, 신드라, 트리스타나, 유미가 상향 대상입니다. 특히 초반 라</text><text x="78" y="590" font-size="22" font-weight="700" fill="#DDE7F3">• 리 신(공격력 증가량: 3.7 ⇒ 3.4), 녹턴(피해량: 65/110/155/200/245 ⇒ 65/1</text>
+  <text x="78" y="494" font-size="22" font-weight="700" fill="#DDE7F3">• 공식 패치노트를 기준으로 핵심 변경 방향, 솔랭 영향, 추천 픽을 카드와 표 중심으로 정리했습니다.</text><text x="78" y="526" font-size="22" font-weight="700" fill="#DDE7F3">• 챔피언명과 이미지는 Riot Data Dragon 공식 한국어/일본어 데이터를 기준으로 맞췄습니다.</text><text x="78" y="558" font-size="22" font-weight="700" fill="#DDE7F3">• 상세 수치와 원문 맥락은 글 하단 공식 출처 링크에서 다시 확인할 수 있습니다.</text>
 </svg>

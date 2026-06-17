@@ -309,7 +309,7 @@ def local_asset_exists(src: str) -> bool:
 
 def image_srcs_from_frontmatter(frontmatter: str) -> list[str]:
     srcs = []
-    for pattern in [r"^image:\s*(.+)$", r"^og_image:\s*(.+)$", r"^\s*src:\s*(.+)$"]:
+    for pattern in [r"^\s*image:\s*(.+)$", r"^og_image:\s*(.+)$", r"^\s*src:\s*(.+)$"]:
         for match in re.finditer(pattern, frontmatter, flags=re.MULTILINE):
             srcs.append(unquote(match.group(1).strip()))
     return srcs

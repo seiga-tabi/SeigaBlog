@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img">
+  <title>LoL 26.12 솔랭 티어 영향</title>
+  <rect width="1200" height="720" fill="#E0F2FE"/>
+  <rect x="40" y="40" width="1120" height="640" rx="18" fill="#F8FAFC" stroke="#CBD5E1"/>
+  <text x="74" y="104" font-size="42" font-weight="900" fill="#0F172A">LoL 26.12 솔랭 티어 영향</text>
+  <text x="74" y="138" font-size="23" font-weight="800" fill="#0369A1">LoL 26.12 ソロランクティア影響</text>
+
+            <g>
+              <rect x="74" y="180" width="1052" height="58" rx="10" fill="#FFFFFF" stroke="#D7E0EA"/>
+              <circle cx="112" cy="209" r="16" fill="#0369A1"/>
+              <text x="112" y="216" text-anchor="middle" font-size="18" font-weight="900" fill="#FFFFFF">1</text>
+              <text x="148" y="215" font-size="22" font-weight="800" fill="#1F2937">솔랭에서는상향카드가곧바로고정추천으로이어지기보다,라인상성과</text>
+<text x="148" y="246" font-size="22" font-weight="800" fill="#1F2937">숙련도에따라티어상승폭이갈릴가능성이큽니다.</text>
+            </g>
+            <g>
+              <rect x="74" y="268" width="1052" height="58" rx="10" fill="#FFFFFF" stroke="#D7E0EA"/>
+              <circle cx="112" cy="297" r="16" fill="#0369A1"/>
+              <text x="112" y="304" text-anchor="middle" font-size="18" font-weight="900" fill="#FFFFFF">2</text>
+              <text x="148" y="303" font-size="22" font-weight="800" fill="#1F2937">하향카드는밴가치가낮아질수있지만,숙련도가높은유저에게는여전히</text>
+<text x="148" y="334" font-size="22" font-weight="800" fill="#1F2937">충분한선택지가될수있습니다.</text>
+            </g>
+            <g>
+              <rect x="74" y="356" width="1052" height="58" rx="10" fill="#FFFFFF" stroke="#D7E0EA"/>
+              <circle cx="112" cy="385" r="16" fill="#0369A1"/>
+              <text x="112" y="392" text-anchor="middle" font-size="18" font-weight="900" fill="#FFFFFF">3</text>
+              <text x="148" y="391" font-size="22" font-weight="800" fill="#1F2937">패치직후에는10판내외의표본보다직접라인전체감과교전타이밍을</text>
+<text x="148" y="422" font-size="22" font-weight="800" fill="#1F2937">확인하는편이좋습니다.</text>
+            </g>
+</svg>
