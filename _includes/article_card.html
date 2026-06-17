@@ -1,0 +1,42 @@
+{% assign post = include.post %}
+{% assign ui_ko = site.data.ui.ko %}
+{% assign ui_ja = site.data.ui.ja %}
+{% assign tags_ko_text = post.post_tags.ko | join: " " %}
+{% assign tags_ja_text = post.post_tags.ja | join: " " %}
+
+<button
+  class="article-card post-card"
+  type="button"
+  data-post-card
+  data-open-post="{{ post.slug }}"
+  data-post-id="{{ post.slug }}"
+  data-category="{{ post.category }}"
+  data-search-ko="{{ post.title.ko | append: ' ' | append: post.excerpt.ko | append: ' ' | append: post.lead.ko | append: ' ' | append: post.badge.ko | append: ' ' | append: ui_ko.categories[post.category] | append: ' ' | append: tags_ko_text | escape }}"
+  data-search-ja="{{ post.title.ja | append: ' ' | append: post.excerpt.ja | append: ' ' | append: post.lead.ja | append: ' ' | append: post.badge.ja | append: ' ' | append: ui_ja.categories[post.category] | append: ' ' | append: tags_ja_text | escape }}"
+>
+  <span class="article-thumb-wrap">
+    <img
+      class="article-thumb"
+      src="{{ post.image }}"
+      alt="{{ post.title.ko | escape }}"
+      data-alt-ko="{{ post.title.ko | escape }}"
+      data-alt-ja="{{ post.title.ja | escape }}"
+      loading="lazy"
+    />
+  </span>
+  <span class="article-content">
+    <span class="meta-row article-meta">
+      <span data-ko="{{ ui_ko.categories[post.category] }}" data-ja="{{ ui_ja.categories[post.category] }}">
+        {{ ui_ko.categories[post.category] }}
+      </span>
+      <span class="dot" aria-hidden="true"></span>
+      <span>{{ post.date | date: "%Y.%m.%d" }}</span>
+    </span>
+    <span class="article-title" data-ko="{{ post.title.ko | escape }}" data-ja="{{ post.title.ja | escape }}">
+      {{ post.title.ko }}
+    </span>
+    <span class="article-excerpt" data-ko="{{ post.excerpt.ko | escape }}" data-ja="{{ post.excerpt.ja | escape }}">
+      {{ post.excerpt.ko }}
+    </span>
+  </span>
+</button>

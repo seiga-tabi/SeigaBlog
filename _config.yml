@@ -1,0 +1,18 @@
+title: Seiga Blog
+description: 기술과 크리에이티브 트렌드를 기록하는 정적 GitHub Pages 블로그
+url: ""
+baseurl: ""
+lang: ko
+timezone: Asia/Tokyo
+
+permalink: /posts/:slug/
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - README.md

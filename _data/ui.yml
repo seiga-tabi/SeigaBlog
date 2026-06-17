@@ -1,0 +1,64 @@
+category_order:
+  - all
+  - metaverse
+  - design
+  - business
+  - culture
+
+ko:
+  language_label: 언어 선택
+  list_label: 블로그 목록
+  search_placeholder: 검색어를 입력하세요
+  no_notification: 새 알림은 없습니다.
+  recommended: 추천 글
+  posts_count_suffix: 개 글
+  read: 읽기
+  nav_home: 홈
+  nav_search: 검색
+  nav_saved: 저장
+  nav_language: 언어
+  back: 목록
+  related: 이어 읽기
+  empty: 조건에 맞는 글이 없습니다.
+  saved_empty: 저장한 글이 아직 없습니다.
+  saved: 글을 저장했습니다.
+  removed: 저장을 해제했습니다.
+  bookmark: 글 저장
+  remove_bookmark: 저장 해제
+  select_category: 카테고리 선택
+  author_prefix: 글쓴이
+  categories:
+    all: 전체
+    metaverse: 메타버스
+    design: 디자인
+    business: 비즈니스
+    culture: 문화
+
+ja:
+  language_label: 言語選択
+  list_label: ブログ一覧
+  search_placeholder: キーワードを入力
+  no_notification: 新しい通知はありません。
+  recommended: おすすめ記事
+  posts_count_suffix: 件の記事
+  read: 読む
+  nav_home: ホーム
+  nav_search: 検索
+  nav_saved: 保存
+  nav_language: 言語
+  back: 一覧
+  related: 続けて読む
+  empty: 条件に合う記事がありません。
+  saved_empty: 保存した記事はまだありません。
+  saved: 記事を保存しました。
+  removed: 保存を解除しました。
+  bookmark: 記事を保存
+  remove_bookmark: 保存を解除
+  select_category: カテゴリーを選択
+  author_prefix: 著者
+  categories:
+    all: すべて
+    metaverse: メタバース
+    design: デザイン
+    business: ビジネス
+    culture: カルチャー

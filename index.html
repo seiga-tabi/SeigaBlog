@@ -1,0 +1,128 @@
+---
+layout: default
+title_text: Blog
+---
+
+{% assign ui_ko = site.data.ui.ko %}
+{% assign ui_ja = site.data.ui.ja %}
+{% assign categories = site.data.ui.category_order %}
+
+<main
+  class="workspace"
+  id="app"
+  data-page="home"
+  data-saved-ko="{{ ui_ko.saved }}"
+  data-saved-ja="{{ ui_ja.saved }}"
+  data-removed-ko="{{ ui_ko.removed }}"
+  data-removed-ja="{{ ui_ja.removed }}"
+  data-empty-ko="{{ ui_ko.empty }}"
+  data-empty-ja="{{ ui_ja.empty }}"
+  data-saved-empty-ko="{{ ui_ko.saved_empty }}"
+  data-saved-empty-ja="{{ ui_ja.saved_empty }}"
+>
+  <section
+    class="blog-app"
+    aria-label="{{ ui_ko.list_label }}"
+    data-ko="{{ ui_ko.list_label }}"
+    data-ja="{{ ui_ja.list_label }}"
+  >
+    <div class="mobile-status" aria-hidden="true">
+      <span>9:41</span>
+      <span class="status-icons">● ● ●</span>
+    </div>
+
+    <div class="top-controls">
+      <label class="search-box" for="searchInput">
+        <i data-lucide="search" aria-hidden="true"></i>
+        <input
+          id="searchInput"
+          type="search"
+          autocomplete="off"
+          placeholder="{{ ui_ko.search_placeholder }}"
+          data-placeholder-ko="{{ ui_ko.search_placeholder }}"
+          data-placeholder-ja="{{ ui_ja.search_placeholder }}"
+        />
+      </label>
+      <button
+        class="icon-button"
+        type="button"
+        id="notifyButton"
+        aria-label="{{ ui_ko.no_notification }}"
+        data-label-ko="{{ ui_ko.no_notification }}"
+        data-label-ja="{{ ui_ja.no_notification }}"
+      >
+        <i data-lucide="bell" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div class="section-heading">
+      <h1 data-ko="{{ ui_ko.recommended }}" data-ja="{{ ui_ja.recommended }}">
+        {{ ui_ko.recommended }}
+      </h1>
+      <span
+        class="result-count"
+        id="resultCount"
+        data-suffix-ko="{{ ui_ko.posts_count_suffix }}"
+        data-suffix-ja="{{ ui_ja.posts_count_suffix }}"
+      >
+        {{ site.posts | size }}{{ ui_ko.posts_count_suffix }}
+      </span>
+    </div>
+
+    {% for post in site.posts %}
+      {% if forloop.first %}
+        {% include featured_card.html post=post %}
+      {% endif %}
+    {% endfor %}
+
+    <div class="category-row" id="categoryRow" aria-label="{{ ui_ko.select_category }}">
+      {% for category in categories %}
+        <button
+          class="chip{% if forloop.first %} is-active{% endif %}"
+          type="button"
+          data-category="{{ category }}"
+          aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}"
+          data-ko="{{ ui_ko.categories[category] }}"
+          data-ja="{{ ui_ja.categories[category] }}"
+        >
+          {{ ui_ko.categories[category] }}
+        </button>
+      {% endfor %}
+    </div>
+
+    <section class="article-list" id="articleList" aria-label="{{ ui_ko.list_label }}">
+      {% for post in site.posts %}
+        {% unless forloop.first %}
+          {% include article_card.html post=post %}
+        {% endunless %}
+      {% endfor %}
+    </section>
+
+    <p class="empty-state" id="emptyState" hidden>{{ ui_ko.empty }}</p>
+
+    <nav class="bottom-nav" aria-label="{{ ui_ko.list_label }}">
+      <button class="nav-button is-active" type="button" data-action="home">
+        <i data-lucide="home" aria-hidden="true"></i>
+        <span data-ko="{{ ui_ko.nav_home }}" data-ja="{{ ui_ja.nav_home }}">{{ ui_ko.nav_home }}</span>
+      </button>
+      <button class="nav-button" type="button" data-action="search">
+        <i data-lucide="search" aria-hidden="true"></i>
+        <span data-ko="{{ ui_ko.nav_search }}" data-ja="{{ ui_ja.nav_search }}">{{ ui_ko.nav_search }}</span>
+      </button>
+      <button class="nav-button" type="button" data-action="bookmarks">
+        <i data-lucide="bookmark" aria-hidden="true"></i>
+        <span data-ko="{{ ui_ko.nav_saved }}" data-ja="{{ ui_ja.nav_saved }}">{{ ui_ko.nav_saved }}</span>
+      </button>
+      <button class="nav-button" type="button" data-action="language">
+        <i data-lucide="languages" aria-hidden="true"></i>
+        <span data-ko="{{ ui_ko.nav_language }}" data-ja="{{ ui_ja.nav_language }}">{{ ui_ko.nav_language }}</span>
+      </button>
+    </nav>
+  </section>
+
+  <section class="detail-stack" aria-live="polite">
+    {% for post in site.posts %}
+      {% include detail_panel.html post=post active=forloop.first %}
+    {% endfor %}
+  </section>
+</main>

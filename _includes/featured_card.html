@@ -1,0 +1,73 @@
+{% assign post = include.post %}
+{% assign ui_ko = site.data.ui.ko %}
+{% assign ui_ja = site.data.ui.ja %}
+{% assign tags_ko_text = post.post_tags.ko | join: " " %}
+{% assign tags_ja_text = post.post_tags.ja | join: " " %}
+
+<article
+  class="featured-card post-card"
+  data-post-card
+  data-post-id="{{ post.slug }}"
+  data-category="{{ post.category }}"
+  data-search-ko="{{ post.title.ko | append: ' ' | append: post.excerpt.ko | append: ' ' | append: post.lead.ko | append: ' ' | append: post.badge.ko | append: ' ' | append: ui_ko.categories[post.category] | append: ' ' | append: tags_ko_text | escape }}"
+  data-search-ja="{{ post.title.ja | append: ' ' | append: post.excerpt.ja | append: ' ' | append: post.lead.ja | append: ' ' | append: post.badge.ja | append: ' ' | append: ui_ja.categories[post.category] | append: ' ' | append: tags_ja_text | escape }}"
+>
+  <div class="featured-image-wrap">
+    <img
+      class="featured-image"
+      src="{{ post.image }}"
+      alt="{{ post.title.ko | escape }}"
+      data-alt-ko="{{ post.title.ko | escape }}"
+      data-alt-ja="{{ post.title.ja | escape }}"
+      loading="eager"
+    />
+    <span class="badge featured-badge" data-ko="{{ post.badge.ko }}" data-ja="{{ post.badge.ja }}">
+      {{ post.badge.ko }}
+    </span>
+    <button
+      class="bookmark-button"
+      type="button"
+      data-bookmark="{{ post.slug }}"
+      data-label-ko="{{ ui_ko.bookmark }}"
+      data-label-ja="{{ ui_ja.bookmark }}"
+      data-remove-label-ko="{{ ui_ko.remove_bookmark }}"
+      data-remove-label-ja="{{ ui_ja.remove_bookmark }}"
+      aria-label="{{ ui_ko.bookmark }}"
+    >
+      <i data-lucide="bookmark" aria-hidden="true"></i>
+    </button>
+  </div>
+
+  <div class="featured-body">
+    <div class="meta-row">
+      <span data-ko="{{ ui_ko.categories[post.category] }}" data-ja="{{ ui_ja.categories[post.category] }}">
+        {{ ui_ko.categories[post.category] }}
+      </span>
+      <span class="dot" aria-hidden="true"></span>
+      <span>{{ post.date | date: "%Y.%m.%d" }}</span>
+      <span class="dot" aria-hidden="true"></span>
+      <span>{{ post.read_time }}</span>
+    </div>
+    <h2 class="featured-title" data-ko="{{ post.title.ko | escape }}" data-ja="{{ post.title.ja | escape }}">
+      {{ post.title.ko }}
+    </h2>
+    <p class="featured-excerpt" data-ko="{{ post.excerpt.ko | escape }}" data-ja="{{ post.excerpt.ja | escape }}">
+      {{ post.excerpt.ko }}
+    </p>
+    <div class="featured-footer">
+      <div class="author">
+        <span class="avatar">{{ post.badge.ko | slice: 0 }}</span>
+        <span
+          data-ko="{{ ui_ko.author_prefix }} {{ post.author.ko }}"
+          data-ja="{{ ui_ja.author_prefix }} {{ post.author.ja }}"
+        >
+          {{ ui_ko.author_prefix }} {{ post.author.ko }}
+        </span>
+      </div>
+      <a class="read-button" href="{{ post.url | relative_url }}" data-open-post="{{ post.slug }}">
+        <span data-ko="{{ ui_ko.read }}" data-ja="{{ ui_ja.read }}">{{ ui_ko.read }}</span>
+        <i data-lucide="arrow-right" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+</article>
