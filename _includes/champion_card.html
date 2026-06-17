@@ -1,0 +1,43 @@
+{% assign card = include.card %}
+
+<article class="champion-card">
+  <img
+    class="champion-card-image"
+    src="{{ card.image | relative_url }}"
+    width="308"
+    height="172"
+    alt="{{ card.alt.ko | default: card.ko | escape }}"
+    data-alt-ko="{{ card.alt.ko | default: card.ko | escape }}"
+    data-alt-ja="{{ card.alt.ja | default: card.ja | escape }}"
+    loading="lazy"
+  />
+  <div class="champion-card-body">
+    <span
+      class="champion-card-status champion-card-status-{{ include.status }}"
+      data-ko="{{ card.status_label.ko }}"
+      data-ja="{{ card.status_label.ja }}"
+    >
+      {{ card.status_label.ko }}
+    </span>
+    <h4
+      class="champion-card-title"
+      data-ko="{{ card.ko | escape }}"
+      data-ja="{{ card.ja | escape }}"
+    >
+      {{ card.ko }}
+    </h4>
+    <p
+      data-ko="{{ card.summary.ko | escape }}"
+      data-ja="{{ card.summary.ja | escape }}"
+    >
+      {{ card.summary.ko }}
+    </p>
+    <p
+      class="champion-card-impact"
+      data-ko="{{ card.impact.ko | escape }}"
+      data-ja="{{ card.impact.ja | escape }}"
+    >
+      {{ card.impact.ko }}
+    </p>
+  </div>
+</article>

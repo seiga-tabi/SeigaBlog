@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img">
+  <title>LoL 26.12 너프 챔피언 카드</title>
+  <rect width="1200" height="720" fill="#F6F8FB"/>
+  <rect x="40" y="40" width="1120" height="640" rx="18" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="64" y="104" font-size="42" font-weight="900" fill="#111827">LoL 26.12 너프 챔피언 카드</text>
+  <text x="64" y="138" font-size="23" font-weight="800" fill="#64748B">LoL 26.12 弱体化チャンピオンカード</text>
+
+            <g>
+              <rect x="64" y="176" width="326" height="210" rx="12" fill="#FFFFFF" stroke="#D7E0EA"/>
+              <image href="../../lol/champions/LeeSin/splash.jpg" x="78" y="190" width="298" height="118" preserveAspectRatio="xMidYMid slice"/>
+              <rect x="78" y="322" width="70" height="26" rx="13" fill="#EA580C"/>
+              <text x="113" y="341" text-anchor="middle" font-size="15" font-weight="900" fill="#FFFFFF">너프</text>
+              <text x="160" y="341" font-size="22" font-weight="900" fill="#0F172A">리 신</text>
+              <text x="160" y="366" font-size="16" font-weight="800" fill="#64748B">リー・シン</text>
+            </g>
+            <g>
+              <rect x="414" y="176" width="326" height="210" rx="12" fill="#FFFFFF" stroke="#D7E0EA"/>
+              <image href="../../lol/champions/Nocturne/splash.jpg" x="428" y="190" width="298" height="118" preserveAspectRatio="xMidYMid slice"/>
+              <rect x="428" y="322" width="70" height="26" rx="13" fill="#EA580C"/>
+              <text x="463" y="341" text-anchor="middle" font-size="15" font-weight="900" fill="#FFFFFF">너프</text>
+              <text x="510" y="341" font-size="22" font-weight="900" fill="#0F172A">녹턴</text>
+              <text x="510" y="366" font-size="16" font-weight="800" fill="#64748B">ノクターン</text>
+            </g>
+            <g>
+              <rect x="764" y="176" width="326" height="210" rx="12" fill="#FFFFFF" stroke="#D7E0EA"/>
+              <image href="../../lol/champions/Orianna/splash.jpg" x="778" y="190" width="298" height="118" preserveAspectRatio="xMidYMid slice"/>
+              <rect x="778" y="322" width="70" height="26" rx="13" fill="#EA580C"/>
+              <text x="813" y="341" text-anchor="middle" font-size="15" font-weight="900" fill="#FFFFFF">너프</text>
+              <text x="860" y="341" font-size="22" font-weight="900" fill="#0F172A">오리아나</text>
+              <text x="860" y="366" font-size="16" font-weight="800" fill="#64748B">オリアナ</text>
+            </g>
+            <g>
+              <rect x="64" y="412" width="326" height="210" rx="12" fill="#FFFFFF" stroke="#D7E0EA"/>
+              <image href="../../lol/champions/Ryze/splash.jpg" x="78" y="426" width="298" height="118" preserveAspectRatio="xMidYMid slice"/>
+              <rect x="78" y="558" width="70" height="26" rx="13" fill="#EA580C"/>
+              <text x="113" y="577" text-anchor="middle" font-size="15" font-weight="900" fill="#FFFFFF">너프</text>
+              <text x="160" y="577" font-size="22" font-weight="900" fill="#0F172A">라이즈</text>
+              <text x="160" y="602" font-size="16" font-weight="800" fill="#64748B">ライズ</text>
+            </g>
+            <g>
+              <rect x="414" y="412" width="326" height="210" rx="12" fill="#FFFFFF" stroke="#D7E0EA"/>
+              <image href="../../lol/champions/Varus/splash.jpg" x="428" y="426" width="298" height="118" preserveAspectRatio="xMidYMid slice"/>
+              <rect x="428" y="558" width="70" height="26" rx="13" fill="#EA580C"/>
+              <text x="463" y="577" text-anchor="middle" font-size="15" font-weight="900" fill="#FFFFFF">너프</text>
+              <text x="510" y="577" font-size="22" font-weight="900" fill="#0F172A">바루스</text>
+              <text x="510" y="602" font-size="16" font-weight="800" fill="#64748B">ヴァルス</text>
+            </g>
+            <g>
+              <rect x="764" y="412" width="326" height="210" rx="12" fill="#FFFFFF" stroke="#D7E0EA"/>
+              <image href="../../lol/champions/XinZhao/splash.jpg" x="778" y="426" width="298" height="118" preserveAspectRatio="xMidYMid slice"/>
+              <rect x="778" y="558" width="70" height="26" rx="13" fill="#EA580C"/>
+              <text x="813" y="577" text-anchor="middle" font-size="15" font-weight="900" fill="#FFFFFF">너프</text>
+              <text x="860" y="577" font-size="22" font-weight="900" fill="#0F172A">신 짜오</text>
+              <text x="860" y="602" font-size="16" font-weight="800" fill="#64748B">シン・ジャオ</text>
+            </g>
+</svg>

@@ -3,6 +3,11 @@
     "file": "_posts/2026-06-17-lol-patch-26-12-summary.md",
     "summary_image": "assets/images/blog/generated/lol-patch-26-12-summary-summary.svg",
     "champions_image": "assets/images/blog/generated/lol-patch-26-12-summary-champions.svg",
+    "buff_group_image": "assets/images/blog/generated/lol-patch-26-12-summary-buff-group.svg",
+    "nerf_group_image": "assets/images/blog/generated/lol-patch-26-12-summary-nerf-group.svg",
+    "tier_impact_image": "assets/images/blog/generated/lol-patch-26-12-summary-tier-impact.svg",
+    "recommended_picks_image": "assets/images/blog/generated/lol-patch-26-12-summary-recommended-picks.svg",
+    "source_note_image": "assets/images/blog/generated/lol-patch-26-12-summary-source-note.svg",
     "champion_count": 14
   }
 ]

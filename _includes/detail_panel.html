@@ -78,17 +78,109 @@
     {% endif %}
 
     <div class="article-body">
-      {% for paragraph in post.body.ko %}
-        <p data-ko="{{ paragraph | escape }}" data-ja="{{ body_ja[forloop.index0] | escape }}">
-          {{ paragraph }}
-        </p>
-        {% assign paragraph_index = forloop.index %}
-        {% for content_image in post.content_images %}
-          {% if content_image.after == paragraph_index %}
-            {% include content_image.html image=content_image post=post %}
-          {% endif %}
+      {% if post.sections %}
+        {% if post.toc %}
+          <nav class="article-toc" aria-label="{{ post.toc.title.ko }}">
+            <h3 data-ko="{{ post.toc.title.ko }}" data-ja="{{ post.toc.title.ja }}">
+              {{ post.toc.title.ko }}
+            </h3>
+            <div class="toc-grid">
+              {% for item in post.toc.items %}
+                <a href="#{{ item.id }}" data-ko="{{ item.title.ko }}" data-ja="{{ item.title.ja }}">
+                  {{ item.title.ko }}
+                </a>
+              {% endfor %}
+            </div>
+          </nav>
+        {% endif %}
+
+        {% if post.overview_table %}
+          <section class="patch-overview-table" id="patch-overview">
+            <h3 data-ko="{{ post.overview_table.title.ko }}" data-ja="{{ post.overview_table.title.ja }}">
+              {{ post.overview_table.title.ko }}
+            </h3>
+            <div class="overview-grid">
+              {% for row in post.overview_table.rows %}
+                <article class="overview-cell">
+                  <span data-ko="{{ row.label.ko }}" data-ja="{{ row.label.ja }}">{{ row.label.ko }}</span>
+                  <strong data-ko="{{ row.value.ko }}" data-ja="{{ row.value.ja }}">{{ row.value.ko }}</strong>
+                </article>
+              {% endfor %}
+            </div>
+          </section>
+        {% endif %}
+
+        {% for section in post.sections %}
+          {% assign section_body_ja = section.body.ja %}
+          <section class="content-section" id="{{ section.id }}">
+            <h3 data-ko="{{ section.title.ko | escape }}" data-ja="{{ section.title.ja | escape }}">
+              {{ section.title.ko }}
+            </h3>
+            {% for paragraph in section.body.ko %}
+              <p data-ko="{{ paragraph | escape }}" data-ja="{{ section_body_ja[forloop.index0] | escape }}">
+                {{ paragraph }}
+              </p>
+            {% endfor %}
+
+            {% if section.kind == "buff_cards" %}
+              <div class="champion-card-grid">
+                {% for card in post.buff_champion_cards %}
+                  {% include champion_card.html card=card status="buff" %}
+                {% endfor %}
+              </div>
+            {% endif %}
+
+            {% if section.kind == "nerf_cards" %}
+              <div class="champion-card-grid">
+                {% for card in post.nerf_champion_cards %}
+                  {% include champion_card.html card=card status="nerf" %}
+                {% endfor %}
+              </div>
+            {% endif %}
+
+            {% if section.kind == "recommended_cards" %}
+              <div class="champion-card-grid champion-card-grid-compact">
+                {% for card in post.recommended_pick_cards %}
+                  {% include champion_card.html card=card status="pick" %}
+                {% endfor %}
+              </div>
+            {% endif %}
+
+            {% if section.kind == "faq" %}
+              <div class="faq-list">
+                {% for item in post.faq %}
+                  <details class="faq-item">
+                    <summary data-ko="{{ item.question.ko | escape }}" data-ja="{{ item.question.ja | escape }}">
+                      {{ item.question.ko }}
+                    </summary>
+                    <p data-ko="{{ item.answer.ko | escape }}" data-ja="{{ item.answer.ja | escape }}">
+                      {{ item.answer.ko }}
+                    </p>
+                  </details>
+                {% endfor %}
+              </div>
+            {% endif %}
+
+            {% for content_image in post.content_images %}
+              {% if content_image.after_section == section.id %}
+                {% include content_image.html image=content_image post=post %}
+              {% endif %}
+            {% endfor %}
+          </section>
         {% endfor %}
-      {% endfor %}
+      {% else %}
+        {% for paragraph in post.body.ko %}
+          <p data-ko="{{ paragraph | escape }}" data-ja="{{ body_ja[forloop.index0] | escape }}">
+            {{ paragraph }}
+          </p>
+          {% assign paragraph_index = forloop.index %}
+          {% for content_image in post.content_images %}
+            {% if content_image.after == paragraph_index %}
+              {% include content_image.html image=content_image post=post %}
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+      {% endif %}
     </div>
 
     <div class="quote-box" data-ko="{{ post.quote.ko | escape }}" data-ja="{{ post.quote.ja | escape }}">

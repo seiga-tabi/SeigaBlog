@@ -33,6 +33,53 @@ def line_has_pattern(text: str, patterns: list[str]) -> list[str]:
     return [pattern for pattern in patterns if pattern.lower() in lowered]
 
 
+def top_section(frontmatter: str, key: str) -> str:
+    lines = frontmatter.splitlines()
+    selected: list[str] = []
+    in_section = False
+    for line in lines:
+        stripped = line.strip()
+        indent = len(line) - len(line.lstrip(" "))
+        if indent == 0 and stripped == f"{key}:":
+            in_section = True
+            selected.append(line)
+            continue
+        if in_section and indent == 0 and stripped:
+            break
+        if in_section:
+            selected.append(line)
+    return "\n".join(selected)
+
+
+def top_list_count(frontmatter: str, key: str) -> int:
+    section = top_section(frontmatter, key)
+    return len(re.findall(r"^\s{2}-", section, flags=re.MULTILINE))
+
+
+def section_ids(frontmatter: str) -> set[str]:
+    section = top_section(frontmatter, "sections")
+    return set(re.findall(r"^\s*(?:-\s*)?id:\s*['\"]?([^'\"\n]+)['\"]?", section, flags=re.MULTILINE))
+
+
+def status_count(frontmatter: str, status: str) -> int:
+    section = top_section(frontmatter, "lol_champions")
+    return len(re.findall(rf"^\s*status:\s*['\"]?{re.escape(status)}['\"]?\s*$", section, flags=re.MULTILINE))
+
+
+def has_body_name_list(frontmatter: str) -> bool:
+    body = "\n".join(
+        extract_localized_list(frontmatter, "body", "ko")
+        + extract_localized_list(frontmatter, "body", "ja")
+    )
+    patterns = [
+        r"챔피언\s*(버프|너프)\s*[:：][^\n]*[,、，]",
+        r"추천/주의할\s*챔피언\s*[:：][^\n]*[,、，]",
+        r"チャンピオン(強化|弱体化)\s*[:：][^\n]*[、,，]",
+        r"おすすめ/注意チャンピオン\s*[:：][^\n]*[、,，]",
+    ]
+    return any(re.search(pattern, body) for pattern in patterns)
+
+
 def validate_post(path, name_map: dict) -> list[dict]:
     issues: list[dict] = []
     text = path.read_text(encoding="utf-8")
@@ -75,8 +122,74 @@ def validate_post(path, name_map: dict) -> list[dict]:
         if not local_asset_exists(src):
             issues.append({"file": file_label, "type": "image", "message": f"이미지 경로가 없습니다: {src}"})
 
+    if "summary_image:" not in frontmatter:
+        issues.append({"file": file_label, "type": "image", "message": "대표 패치 인포그래픽 summary_image가 없습니다."})
+
+    content_image_count = top_list_count(frontmatter, "content_images")
+    if content_image_count < 5:
+        issues.append(
+            {
+                "file": file_label,
+                "type": "image",
+                "message": f"중간 이미지가 5개 미만입니다: {content_image_count}개",
+            }
+        )
+
     if "summary_image:" in frontmatter and not re.search(r"summary_image:[\s\S]*?alt:[\s\S]*?ko:[\s\S]*?ja:", frontmatter):
         issues.append({"file": file_label, "type": "alt", "message": "summary_image alt.ko/alt.ja가 없습니다."})
+
+    for key in ["toc", "overview_table", "sections", "buff_champion_cards", "nerf_champion_cards", "recommended_pick_cards", "faq"]:
+        if not top_section(frontmatter, key):
+            issues.append({"file": file_label, "type": "structure", "message": f"{key} 섹션이 없습니다."})
+
+    required_section_ids = {
+        "patch-summary",
+        "key-changes",
+        "buff-champions",
+        "nerf-champions",
+        "item-rune-system",
+        "solo-queue-tier-impact",
+        "recommended-picks",
+        "closing-summary",
+        "faq",
+    }
+    missing_section_ids = sorted(required_section_ids - section_ids(frontmatter))
+    if missing_section_ids:
+        issues.append(
+            {
+                "file": file_label,
+                "type": "structure",
+                "message": f"필수 섹션 id가 없습니다: {missing_section_ids}",
+            }
+        )
+
+    buff_count = status_count(frontmatter, "버프")
+    nerf_count = status_count(frontmatter, "너프")
+    buff_card_count = top_list_count(frontmatter, "buff_champion_cards")
+    nerf_card_count = top_list_count(frontmatter, "nerf_champion_cards")
+    if buff_count and buff_card_count < buff_count:
+        issues.append(
+            {
+                "file": file_label,
+                "type": "champion_card",
+                "message": f"버프 챔피언 카드가 부족합니다: {buff_card_count}/{buff_count}",
+            }
+        )
+    if nerf_count and nerf_card_count < nerf_count:
+        issues.append(
+            {
+                "file": file_label,
+                "type": "champion_card",
+                "message": f"너프 챔피언 카드가 부족합니다: {nerf_card_count}/{nerf_count}",
+            }
+        )
+    if top_list_count(frontmatter, "recommended_pick_cards") < 1:
+        issues.append({"file": file_label, "type": "champion_card", "message": "추천 픽 카드가 없습니다."})
+    faq_count = top_list_count(frontmatter, "faq")
+    if faq_count < 3 or faq_count > 5:
+        issues.append({"file": file_label, "type": "faq", "message": f"FAQ는 3~5개여야 합니다: {faq_count}개"})
+    if has_body_name_list(frontmatter):
+        issues.append({"file": file_label, "type": "champion_list", "message": "본문에 챔피언 이름 나열형 문장이 있습니다."})
 
     ko_text = "\n".join(
         [

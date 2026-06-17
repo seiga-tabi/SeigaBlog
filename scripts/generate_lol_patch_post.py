@@ -536,24 +536,311 @@ def official_names_for_class(
     return pick_items_ja(names, limit) if lang == "ja" else pick_items(names, limit)
 
 
+def official_champion_entry(name: str, name_map: dict | None) -> dict:
+    fallback = {"key": normalize_name(name), "ko": name, "ja": name}
+    if not name_map:
+        return fallback
+
+    normalized = normalize_name(name)
+    for entry in name_map.get("champions", {}).values():
+        aliases = [entry.get("key", ""), entry.get("en", ""), entry.get("ko", ""), entry.get("ja", "")]
+        aliases.extend(entry.get("aliases", []))
+        if normalized in {normalize_name(alias) for alias in aliases if alias}:
+            return {"key": entry["key"], "ko": entry["ko"], "ja": entry["ja"]}
+    return fallback
+
+
 def champion_metadata(champions: list[ChampionChange], name_map: dict | None) -> list[dict]:
     result = []
     for champion in champions:
-        key = normalize_name(champion.name)
-        ko = champion.name
-        ja = champion.name
-        if name_map:
-            normalized = normalize_name(champion.name)
-            for entry in name_map.get("champions", {}).values():
-                aliases = [entry.get("key", ""), entry.get("en", ""), entry.get("ko", ""), entry.get("ja", "")]
-                aliases.extend(entry.get("aliases", []))
-                if normalized in {normalize_name(alias) for alias in aliases if alias}:
-                    key = entry["key"]
-                    ko = entry["ko"]
-                    ja = entry["ja"]
-                    break
-        result.append({"key": key, "ko": ko, "ja": ja, "status": champion.classification})
+        entry = official_champion_entry(champion.name, name_map)
+        result.append({**entry, "status": champion.classification})
     return result
+
+
+def status_label(status: str) -> dict:
+    if status == "버프":
+        return {"ko": "버프", "ja": "強化"}
+    if status == "너프":
+        return {"ko": "너프", "ja": "弱体化"}
+    if status == "추천":
+        return {"ko": "추천", "ja": "おすすめ"}
+    return {"ko": "조정", "ja": "調整"}
+
+
+def champion_card_data(champion: ChampionChange, status: str, name_map: dict | None) -> dict:
+    entry = official_champion_entry(champion.name, name_map)
+    detail = champion_detail(champion, status)
+    detail_text = f"공식 변경 포인트: {truncate(detail, 86)}" if detail else "공식 변경 방향을 기준으로 솔랭 체감을 점검해야 합니다."
+
+    if status == "버프":
+        summary_ko = detail_text
+        summary_ja = "強化により、レーン戦や集団戦での価値を確認したいカードです。"
+        impact_ko = "패치 초반에는 주 포지션과 조합 적합도를 먼저 확인하세요."
+        impact_ja = "パッチ序盤はメインポジションと構成適性を先に確認しましょう。"
+    elif status == "너프":
+        summary_ko = detail_text
+        summary_ja = "弱体化により、序盤性能や交戦タイミングの再確認が必要です。"
+        impact_ko = "익숙한 픽이라도 교전 기준을 한 단계 보수적으로 잡으세요."
+        impact_ja = "慣れたピックでも交戦基準を一段階慎重に見ましょう。"
+    else:
+        summary_ko = detail_text
+        summary_ja = "調整内容を確認し、役割とビルドの変化を見直しましょう。"
+        impact_ko = "빌드와 역할 변화가 실제 체감으로 이어지는지 확인하세요."
+        impact_ja = "ビルドと役割の変化が体感につながるか確認しましょう。"
+
+    return {
+        "key": entry["key"],
+        "ko": entry["ko"],
+        "ja": entry["ja"],
+        "image": f"/assets/images/lol/champions/{entry['key']}/splash.jpg",
+        "alt": {
+            "ko": f"{entry['ko']} 스플래시 아트",
+            "ja": f"{entry['ja']}のスプラッシュアート",
+        },
+        "status_label": status_label(status),
+        "summary": {"ko": summary_ko, "ja": summary_ja},
+        "impact": {"ko": impact_ko, "ja": impact_ja},
+    }
+
+
+def recommended_card_data(champion: ChampionChange, name_map: dict | None) -> dict:
+    card = champion_card_data(champion, "버프", name_map)
+    card["status_label"] = status_label("추천")
+    card["summary"] = {
+        "ko": "상향 폭, 솔랭 적응 난이도, 조합 유연성을 함께 볼 때 먼저 연습할 만합니다.",
+        "ja": "強化幅、ソロランクでの適応難度、構成への柔軟性を考えると先に練習する価値があります。",
+    }
+    card["impact"] = {
+        "ko": "주 포지션과 맞는다면 패치 초반 우선 실험하세요.",
+        "ja": "メインポジションに合うならパッチ序盤に優先して試しましょう。",
+    }
+    card["alt"] = {
+        "ko": f"{card['ko']} 추천 픽 스플래시 아트",
+        "ja": f"{card['ja']}おすすめピックのスプラッシュアート",
+    }
+    return card
+
+
+def build_toc() -> dict:
+    return {
+        "title": {"ko": "목차", "ja": "目次"},
+        "items": [
+            {"id": "patch-overview", "title": {"ko": "한눈에 보는 패치", "ja": "パッチ早見表"}},
+            {"id": "patch-summary", "title": {"ko": "패치 요약", "ja": "パッチ概要"}},
+            {"id": "key-changes", "title": {"ko": "핵심 변경점", "ja": "主な変更点"}},
+            {"id": "buff-champions", "title": {"ko": "챔피언 버프 카드", "ja": "チャンピオン強化カード"}},
+            {"id": "nerf-champions", "title": {"ko": "챔피언 너프 카드", "ja": "チャンピオン弱体化カード"}},
+            {"id": "item-rune-system", "title": {"ko": "아이템/룬/시스템 변경", "ja": "アイテム/ルーン/システム変更"}},
+            {"id": "solo-queue-tier-impact", "title": {"ko": "솔랭 티어 영향", "ja": "ソロランクティア影響"}},
+            {"id": "recommended-picks", "title": {"ko": "추천 픽", "ja": "おすすめピック"}},
+            {"id": "closing-summary", "title": {"ko": "마무리 요약", "ja": "まとめ"}},
+            {"id": "faq", "title": {"ko": "FAQ", "ja": "FAQ"}},
+        ],
+    }
+
+
+def build_overview_table(version: str, buff_count: int, nerf_count: int, adjusted_count: int, changed_area_summary: str) -> dict:
+    return {
+        "title": {"ko": "한눈에 보는 패치", "ja": "パッチ早見表"},
+        "rows": [
+            {"label": {"ko": "패치 버전", "ja": "パッチバージョン"}, "value": {"ko": version, "ja": version}},
+            {
+                "label": {"ko": "챔피언 조정", "ja": "チャンピオン調整"},
+                "value": {
+                    "ko": f"버프 카드 {buff_count}장 / 너프 카드 {nerf_count}장 / 조정 카드 {adjusted_count}장",
+                    "ja": f"強化カード{buff_count}枚 / 弱体化カード{nerf_count}枚 / 調整カード{adjusted_count}枚",
+                },
+            },
+            {
+                "label": {"ko": "핵심 방향", "ja": "主な方針"},
+                "value": {
+                    "ko": "대회 전 선택지 다양성과 솔랭 체감 조정",
+                    "ja": "大会前の選択肢多様性とソロランク体感の調整",
+                },
+            },
+            {
+                "label": {"ko": "비챔피언 변경", "ja": "非チャンピオン変更"},
+                "value": {
+                    "ko": changed_area_summary,
+                    "ja": "システム、ルーン、モード変更を確認",
+                },
+            },
+        ],
+    }
+
+
+def build_sections(version: str, intro: str) -> list[dict]:
+    return [
+        {
+            "id": "patch-summary",
+            "kind": "text",
+            "title": {"ko": "패치 요약", "ja": "パッチ概要"},
+            "body": {
+                "ko": [
+                    f"{version} 패치는 공식 패치노트 기준으로 챔피언 체급과 시스템 경험을 함께 다듬는 업데이트입니다.",
+                    sentence_summary(intro, max_sentences=1, limit=180),
+                ],
+                "ja": [
+                    f"{version}パッチは公式パッチノートを基準に、チャンピオン性能とシステム体験を整えるアップデートです。",
+                    "大きな構造変更よりも、ソロランクでの体感ラインを見直す内容として読むと分かりやすいです。",
+                ],
+            },
+        },
+        {
+            "id": "key-changes",
+            "kind": "text",
+            "title": {"ko": "핵심 변경점", "ja": "主な変更点"},
+            "body": {
+                "ko": [
+                    "첫째, 상향 카드는 라인전 안정성과 교전 복귀력을 살리는 쪽에 초점이 있습니다.",
+                    "둘째, 하향 카드는 초반 체급이나 반복 교전에서 누적되는 이점을 줄이는 방향입니다.",
+                    "셋째, 시스템과 모드 변경은 협곡 외 플레이 경험에도 영향을 줄 수 있습니다.",
+                    "넷째, 패치 초반에는 티어표보다 숙련도와 포지션 적합도를 먼저 보는 편이 안전합니다.",
+                ],
+                "ja": [
+                    "第一に、強化カードはレーン安定性と戦闘復帰力を伸ばす方向が中心です。",
+                    "第二に、弱体化カードは序盤性能や反復戦闘で積み上がる利点を抑える方向です。",
+                    "第三に、システムとモード変更はサモナーズリフト以外の体感にも関わります。",
+                    "第四に、パッチ序盤はティア表より熟練度とポジション適性を先に見るのが安全です。",
+                ],
+            },
+        },
+        {
+            "id": "buff-champions",
+            "kind": "buff_cards",
+            "title": {"ko": "챔피언 버프 카드", "ja": "チャンピオン強化カード"},
+            "body": {
+                "ko": [
+                    "상향 대상은 아래 카드에서 역할과 솔랭 영향을 나눠 확인할 수 있습니다.",
+                    "각 카드는 Riot Data Dragon 공식 명칭과 스플래시 아트를 기준으로 구성했습니다.",
+                ],
+                "ja": [
+                    "強化対象は下のカードで役割とソロランクへの影響を分けて確認できます。",
+                    "各カードはRiot Data Dragon公式名称とスプラッシュアートを基準にしています。",
+                ],
+            },
+        },
+        {
+            "id": "nerf-champions",
+            "kind": "nerf_cards",
+            "title": {"ko": "챔피언 너프 카드", "ja": "チャンピオン弱体化カード"},
+            "body": {
+                "ko": [
+                    "하향 대상은 플레이 난이도보다 성능 기대값이 먼저 바뀌는지 확인하는 것이 중요합니다.",
+                    "초반 체급, 성장값, 반복 피해량 변화는 솔랭 승률에 빠르게 반영될 수 있습니다.",
+                ],
+                "ja": [
+                    "弱体化対象は操作難度よりも性能期待値がどう変わるかを見ることが重要です。",
+                    "序盤性能、成長値、反復ダメージの変化はソロランク勝率に早く反映される可能性があります。",
+                ],
+            },
+        },
+        {
+            "id": "item-rune-system",
+            "kind": "text",
+            "title": {"ko": "아이템/룬/시스템 변경", "ja": "アイテム/ルーン/システム変更"},
+            "body": {
+                "ko": [
+                    "아이템, 룬, 소환사 주문, 모드 변경은 챔피언 카드와 별도로 확인해야 합니다.",
+                    "협곡 외 모드를 자주 플레이한다면 무작위 총력전과 아레나 변경도 함께 체크하세요.",
+                ],
+                "ja": [
+                    "アイテム、ルーン、サモナースペル、モード変更はチャンピオンカードとは別に確認しましょう。",
+                    "サモナーズリフト以外のモードをよく遊ぶならARAMとアリーナの変更も合わせて確認してください。",
+                ],
+            },
+        },
+        {
+            "id": "solo-queue-tier-impact",
+            "kind": "text",
+            "title": {"ko": "솔랭 티어 영향", "ja": "ソロランクティア影響"},
+            "body": {
+                "ko": [
+                    "솔랭에서는 상향 카드가 곧바로 고정 추천으로 이어지기보다, 라인 상성과 숙련도에 따라 티어 상승 폭이 갈릴 가능성이 큽니다.",
+                    "하향 카드는 밴 가치가 낮아질 수 있지만, 숙련도가 높은 유저에게는 여전히 충분한 선택지가 될 수 있습니다.",
+                    "패치 직후에는 10판 내외의 표본보다 직접 라인전 체감과 교전 타이밍을 확인하는 편이 좋습니다.",
+                ],
+                "ja": [
+                    "ソロランクでは強化カードがすぐ固定おすすめになるというより、レーン相性と熟練度でティア上昇幅が分かれやすいです。",
+                    "弱体化カードはバン価値が下がる可能性がありますが、熟練度の高いプレイヤーにはまだ十分な選択肢です。",
+                    "パッチ直後は少数の試合データより、自分のレーン体感と戦闘タイミングを確認するのがおすすめです。",
+                ],
+            },
+        },
+        {
+            "id": "recommended-picks",
+            "kind": "recommended_cards",
+            "title": {"ko": "추천 픽", "ja": "おすすめピック"},
+            "body": {
+                "ko": [
+                    "추천 픽은 상향 폭, 솔랭 적응 난이도, 팀 조합 유연성을 함께 보고 골랐습니다.",
+                    "카드에 적힌 포인트가 본인의 주 포지션과 맞을 때 먼저 연습해보면 효율적입니다.",
+                ],
+                "ja": [
+                    "おすすめピックは強化幅、ソロランクでの適応難度、チーム構成への柔軟性を合わせて選びました。",
+                    "カードのポイントが自分のメインポジションと合う場合に先に練習すると効率的です。",
+                ],
+            },
+        },
+        {
+            "id": "closing-summary",
+            "kind": "text",
+            "title": {"ko": "마무리 요약", "ja": "まとめ"},
+            "body": {
+                "ko": [
+                    f"{version} 패치는 특정 조합 하나로 메타를 고정하기보다, 여러 선택지의 체감선을 다시 맞추는 업데이트입니다.",
+                    "상향 카드는 실험 가치가 있고, 하향 카드는 익숙한 플레이 패턴을 그대로 가져가도 되는지 점검해야 합니다.",
+                ],
+                "ja": [
+                    f"{version}パッチは特定の構成でメタを固定するより、複数の選択肢の体感ラインを整えるアップデートです。",
+                    "強化カードは試す価値があり、弱体化カードは慣れたプレイパターンをそのまま使えるか再確認が必要です。",
+                ],
+            },
+        },
+        {
+            "id": "faq",
+            "kind": "faq",
+            "title": {"ko": "FAQ", "ja": "FAQ"},
+            "body": {
+                "ko": ["자주 묻는 질문은 패치 초반 판단에 필요한 내용만 짧게 정리했습니다."],
+                "ja": ["よくある質問はパッチ序盤の判断に必要な内容だけを短く整理しました。"],
+            },
+        },
+    ]
+
+
+def build_faq() -> list[dict]:
+    return [
+        {
+            "question": {"ko": "패치 직후 바로 랭크를 돌려도 괜찮나요?", "ja": "パッチ直後にすぐランクを回しても大丈夫ですか？"},
+            "answer": {
+                "ko": "가능하지만 체감과 실제 승률이 다르게 움직일 수 있어, 주 포지션 카드부터 2~3판씩 점검하는 편이 안전합니다.",
+                "ja": "可能ですが、体感と実際の勝率がずれることがあるため、メインポジションのカードから数試合ずつ確認するのが安全です。",
+            },
+        },
+        {
+            "question": {"ko": "버프 카드는 모두 추천 픽인가요?", "ja": "強化カードはすべておすすめピックですか？"},
+            "answer": {
+                "ko": "아닙니다. 상향을 받았더라도 조합, 라인 상성, 숙련도에 따라 효율이 크게 갈리므로 추천 픽 카드를 따로 분리했습니다.",
+                "ja": "いいえ。強化されても構成、レーン相性、熟練度で効率が大きく変わるため、おすすめピックカードを別に分けています。",
+            },
+        },
+        {
+            "question": {"ko": "너프 카드는 바로 피해야 하나요?", "ja": "弱体化カードはすぐ避けるべきですか？"},
+            "answer": {
+                "ko": "숙련도가 높은 픽은 여전히 쓸 수 있습니다. 다만 초반 체급이나 핵심 피해량이 낮아진 경우에는 교전 타이밍을 더 보수적으로 잡아야 합니다.",
+                "ja": "熟練度が高いピックはまだ使えます。ただし序盤性能や主要ダメージが下がった場合は、交戦タイミングをより慎重に取る必要があります。",
+            },
+        },
+        {
+            "question": {"ko": "챔피언 이름은 어떤 기준으로 표기했나요?", "ja": "チャンピオン名はどの基準で表記していますか？"},
+            "answer": {
+                "ko": "한국어와 일본어 모두 Riot Data Dragon의 공식 champion.json 데이터를 기준으로 표기했습니다.",
+                "ja": "韓国語と日本語の両方をRiot Data Dragon公式のchampion.jsonデータに基づいて表記しています。",
+            },
+        },
+    ]
 
 
 def build_post_data(
@@ -569,25 +856,9 @@ def build_post_data(
     sections = extract_sections(events)
     intro = extract_intro(events, listing.description)
 
-    buff_champions = [
-        official_champion_name(champion.name, "ko", name_map)
-        for champion in champions
-        if champion.classification == "버프"
-    ]
-    nerf_champions = [
-        official_champion_name(champion.name, "ko", name_map)
-        for champion in champions
-        if champion.classification == "너프"
-    ]
-    adjusted_champions = [
-        official_champion_name(champion.name, "ko", name_map)
-        for champion in champions
-        if champion.classification == "조정"
-    ]
-
-    buff_summary = summarize_champions(champions, "버프")
-    nerf_summary = summarize_champions(champions, "너프")
-    system_summary = summarize_system_sections(sections)
+    buff_changes = [champion for champion in champions if champion.classification == "버프"]
+    nerf_changes = [champion for champion in champions if champion.classification == "너프"]
+    adjusted_changes = [champion for champion in champions if champion.classification == "조정"]
     changed_area_summary = section_title_summary(sections)
     publish_date = parse_iso_date(listing.published_at)
     today = checked_at.date().isoformat()
@@ -595,73 +866,56 @@ def build_post_data(
     slug = f"lol-patch-{version_slug(version)}-summary"
     summary_src = f"/assets/images/blog/generated/{slug}-summary.svg"
     champions_src = f"/assets/images/blog/generated/{slug}-champions.svg"
+    buff_group_src = f"/assets/images/blog/generated/{slug}-buff-group.svg"
+    nerf_group_src = f"/assets/images/blog/generated/{slug}-nerf-group.svg"
+    tier_impact_src = f"/assets/images/blog/generated/{slug}-tier-impact.svg"
+    recommended_src = f"/assets/images/blog/generated/{slug}-recommended-picks.svg"
+    source_note_src = f"/assets/images/blog/generated/{slug}-source-note.svg"
     ko_title = f"리그오브레전드 {version} 패치노트 핵심 정리"
     ja_title = f"リーグ・オブ・レジェンド {version} パッチノート要点まとめ"
     ko_description = (
         f"LoL {version} 패치의 챔피언 변경, 아이템/시스템 조정, "
-        "솔랭 메타 영향을 쉽게 정리했습니다."
+        "솔랭 메타 영향을 카드와 표로 쉽게 정리했습니다."
     )
     ja_description = (
         f"LoL {version} パッチのチャンピオン変更、アイテムやシステム調整、"
-        "ソロランクへの影響を整理しました。"
+        "ソロランクへの影響をカードと表で整理しました。"
     )
 
     ko_body = [
-        f"패치 요약: {sentence_summary(intro, max_sentences=2, limit=210)}",
-        (
-            f"핵심 변경점: 챔피언 변경은 버프 {len(buff_champions)}명, "
-            f"너프 {len(nerf_champions)}명, 기타 조정 {len(adjusted_champions)}명입니다. "
-            f"비챔피언 변경은 {changed_area_summary} 중심입니다."
-        ),
-        f"챔피언 버프: {buff_summary}",
-        f"챔피언 너프: {nerf_summary}",
-        f"아이템/룬/시스템 변경: {system_summary}",
-        (
-            "솔랭 메타 영향: 상향 챔피언은 패치 초반 픽률이 빠르게 오를 수 있고, "
-            f"{pick_items(nerf_champions, 4)} 같은 하향 챔피언은 초반 교전력이나 주도권을 다시 점검해야 합니다."
-        ),
-        (
-            f"추천/주의할 챔피언: 추천 후보는 {pick_items(buff_champions, 4)}이며, "
-            f"주의해서 다룰 챔피언은 {pick_items(nerf_champions, 4)}입니다."
-        ),
-        (
-            f"마무리 요약: {version} 패치는 특정 챔피언 하나를 크게 뒤집기보다 "
-            "상위권과 솔랭에서 눈에 띈 선택지를 다듬는 성격이 강합니다."
-        ),
-        f"공식 출처: {listing.url}",
-        "이미지 출처: Riot Games 공식 리그 오브 레전드 패치노트 이미지입니다.",
+        "공식 패치노트를 기준으로 핵심 변경 방향, 솔랭 영향, 추천 픽을 카드와 표 중심으로 정리했습니다.",
+        "챔피언명과 이미지는 Riot Data Dragon 공식 한국어/일본어 데이터를 기준으로 맞췄습니다.",
+        "상세 수치와 원문 맥락은 글 하단 공식 출처 링크에서 다시 확인할 수 있습니다.",
     ]
 
     ja_body = [
-        f"パッチ概要: {version} はチャンピオン調整とモード/システム更新が中心です。",
-        (
-            f"主な変更点: 強化 {len(buff_champions)}名、弱体化 {len(nerf_champions)}名、"
-            f"その他調整 {len(adjusted_champions)}名です。"
-        ),
-        f"チャンピオン強化: {official_names_for_class(champions, '버프', 'ja', name_map, 6)}",
-        f"チャンピオン弱体化: {official_names_for_class(champions, '너프', 'ja', name_map, 6)}",
-        f"アイテム/ルーン/システム変更: {pick_items_ja([section.title for section in relevant_sections(sections)], 3)}",
-        (
-            "ソロランクへの影響: 強化されたチャンピオンは序盤に使用率が上がりやすく、"
-            f"{official_names_for_class(champions, '너프', 'ja', name_map, 4)} はレーン戦や集団戦の基準を見直す必要があります。"
-        ),
-        (
-            f"おすすめ/注意チャンピオン: おすすめ候補は {official_names_for_class(champions, '버프', 'ja', name_map, 4)}、"
-            f"注意したい候補は {official_names_for_class(champions, '너프', 'ja', name_map, 4)} です。"
-        ),
-        (
-            f"まとめ: {version} パッチはメタ全体を大きく壊すより、"
-            "目立っていた選択肢を整える調整が中心です。"
-        ),
-        f"公式ソース: {listing.url}",
-        "画像出典: Riot Games公式リーグ・オブ・レジェンドパッチノート画像です。",
+        "公式パッチノートを基準に、主な変更方針、ソロランクへの影響、おすすめピックをカードと表で整理しました。",
+        "チャンピオン名と画像はRiot Data Dragon公式の韓国語/日本語データに合わせています。",
+        "詳細な数値と原文の文脈は、記事末尾の公式ソースから確認できます。",
     ]
+    structured_sections = build_sections(version, intro)
+    for section in structured_sections:
+        if section["id"] == "closing-summary":
+            section["body"]["ko"].extend(
+                [
+                    f"공식 출처: {listing.url}",
+                    "이미지 출처: Riot Games 공식 패치노트 및 Riot Data Dragon 챔피언 이미지입니다.",
+                ]
+            )
+            section["body"]["ja"].extend(
+                [
+                    f"公式ソース: {listing.url}",
+                    "画像出典: Riot Games公式パッチノートおよびRiot Data Dragonチャンピオン画像です。",
+                ]
+            )
+
+    recommended_changes = buff_changes[:4] or champions[:4]
 
     return {
         "slug": slug,
         "category": "lol",
         "accent": "blue",
-        "read_time": "5 min",
+        "read_time": "7 min",
         "image": image_path,
         "og_image": summary_src,
         "date": today,
@@ -683,13 +937,13 @@ def build_post_data(
                 "ja": f"リーグ・オブ・レジェンド {version} パッチ要点インフォグラフィック",
             },
             "caption": {
-                "ko": "챔피언 변경과 솔랭 메타 영향을 한 장으로 정리했습니다.",
+                "ko": "패치 방향, 챔피언 조정 수, 솔랭 영향을 한 장으로 정리했습니다.",
                 "ja": "チャンピオン変更とソロランクへの影響を一枚に整理しました。",
             },
         },
         "content_images": [
             {
-                "after": 4,
+                "after_section": "key-changes",
                 "src": champions_src,
                 "width": 1200,
                 "height": 800,
@@ -701,7 +955,77 @@ def build_post_data(
                     "ko": "Data Dragon 공식 한국어/일본어 챔피언명 기준으로 정리한 변경 카드입니다.",
                     "ja": "Data Dragon公式の韓国語/日本語チャンピオン名に基づく変更カードです。",
                 },
-            }
+            },
+            {
+                "after_section": "buff-champions",
+                "src": buff_group_src,
+                "width": 1200,
+                "height": 720,
+                "alt": {
+                    "ko": f"리그오브레전드 {version} 패치 버프 챔피언 그룹 이미지",
+                    "ja": f"リーグ・オブ・レジェンド {version} パッチ強化チャンピオングループ画像",
+                },
+                "caption": {
+                    "ko": "상향 카드는 라인전 보강, 교전 가치, 픽률 변화를 중심으로 읽으면 좋습니다.",
+                    "ja": "強化カードはレーン戦補強、戦闘価値、ピック率変化を中心に確認すると分かりやすいです。",
+                },
+            },
+            {
+                "after_section": "nerf-champions",
+                "src": nerf_group_src,
+                "width": 1200,
+                "height": 720,
+                "alt": {
+                    "ko": f"리그오브레전드 {version} 패치 너프 챔피언 그룹 이미지",
+                    "ja": f"リーグ・オブ・レジェンド {version} パッチ弱体化チャンピオングループ画像",
+                },
+                "caption": {
+                    "ko": "하향 카드는 초반 체급, 스킬 피해량, 성장 기대값을 다시 보는 용도로 정리했습니다.",
+                    "ja": "弱体化カードは序盤の耐久、スキルダメージ、成長期待値の見直しに使えます。",
+                },
+            },
+            {
+                "after_section": "solo-queue-tier-impact",
+                "src": tier_impact_src,
+                "width": 1200,
+                "height": 720,
+                "alt": {
+                    "ko": f"리그오브레전드 {version} 패치 솔랭 티어 영향 이미지",
+                    "ja": f"リーグ・オブ・レジェンド {version} パッチソロランクティア影響画像",
+                },
+                "caption": {
+                    "ko": "솔랭에서는 초반 체급 변화와 숙련도 요구치가 티어 변동의 핵심입니다.",
+                    "ja": "ソロランクでは序盤性能と熟練度要求の変化がティア変動の中心です。",
+                },
+            },
+            {
+                "after_section": "recommended-picks",
+                "src": recommended_src,
+                "width": 1200,
+                "height": 720,
+                "alt": {
+                    "ko": f"리그오브레전드 {version} 패치 추천 픽 이미지",
+                    "ja": f"リーグ・オブ・レジェンド {version} パッチおすすめピック画像",
+                },
+                "caption": {
+                    "ko": "추천 픽은 패치 초반 실험 가치와 조작 난이도를 함께 고려했습니다.",
+                    "ja": "おすすめピックはパッチ序盤の試用価値と操作難度を合わせて整理しました。",
+                },
+            },
+            {
+                "after_section": "faq",
+                "src": source_note_src,
+                "width": 1200,
+                "height": 720,
+                "alt": {
+                    "ko": f"리그오브레전드 {version} 패치 공식 출처 및 이미지 출처 안내",
+                    "ja": f"リーグ・オブ・レジェンド {version} パッチ公式ソースと画像出典案内",
+                },
+                "caption": {
+                    "ko": "공식 패치노트와 Riot Data Dragon 기준으로 명칭과 이미지를 맞췄습니다.",
+                    "ja": "公式パッチノートとRiot Data Dragon基準で名称と画像をそろえました。",
+                },
+            },
         ],
         "author": {"ko": "세이가", "ja": "セイガ"},
         "badge": {"ko": "LOL 패치", "ja": "LoLパッチ"},
@@ -712,17 +1036,30 @@ def build_post_data(
             "ja": ["LoL", "パッチノート", "ソロランク", "メタ"],
         },
         "lead": {
-            "ko": f"{listing.title}를 공식 패치노트 기준으로 읽기 쉽게 요약했습니다.",
-            "ja": f"リーグ・オブ・レジェンド {version} パッチノートを公式情報に基づいて整理しました。",
+            "ko": f"{listing.title}를 공식 패치노트와 Riot Data Dragon 기준으로 읽기 쉽게 요약했습니다.",
+            "ja": f"リーグ・オブ・レジェンド {version} パッチノートを公式情報とRiot Data Dragon基準で読みやすく整理しました。",
         },
         "body": {"ko": ko_body, "ja": ja_body},
+        "toc": build_toc(),
+        "overview_table": build_overview_table(
+            version,
+            len(buff_changes),
+            len(nerf_changes),
+            len(adjusted_changes),
+            changed_area_summary,
+        ),
+        "sections": structured_sections,
+        "buff_champion_cards": [champion_card_data(champion, "버프", name_map) for champion in buff_changes],
+        "nerf_champion_cards": [champion_card_data(champion, "너프", name_map) for champion in nerf_changes],
+        "recommended_pick_cards": [recommended_card_data(champion, name_map) for champion in recommended_changes],
+        "faq": build_faq(),
         "quote": {
-            "ko": "이번 패치는 상향 챔피언의 실험 가치와 하향 챔피언의 숙련도 점검이 함께 필요한 업데이트입니다.",
-            "ja": "今回のパッチは、強化チャンピオンの試用価値と弱体化チャンピオンの熟練度確認が同時に求められる更新です。",
+            "ko": "이번 패치는 카드별 체감 차이를 빠르게 읽고, 내 포지션에 맞는 실험 픽을 고르는 것이 핵심입니다.",
+            "ja": "今回のパッチはカードごとの体感差を早く読み、自分のポジションに合う試用ピックを選ぶことが重要です。",
         },
         "image_credit": {
-            "ko": "Riot Games 공식 패치노트 이미지",
-            "ja": "Riot Games公式パッチノート画像",
+            "ko": "Riot Games 공식 패치노트 및 Riot Data Dragon 챔피언 이미지",
+            "ja": "Riot Games公式パッチノートおよびRiot Data Dragonチャンピオン画像",
         },
     }
 
@@ -854,6 +1191,36 @@ def write_post(post_data: dict, checked_at: dt.datetime, dry_run: bool) -> Path:
     return post_path
 
 
+def generated_blog_image_paths(slug: str) -> list[Path]:
+    image_dir = Path("assets/images/blog/generated")
+    suffixes = [
+        "summary",
+        "champions",
+        "buff-group",
+        "nerf-group",
+        "tier-impact",
+        "recommended-picks",
+        "source-note",
+    ]
+    return [image_dir / f"{slug}-{suffix}.svg" for suffix in suffixes]
+
+
+def generate_blog_images(slug: str) -> list[Path]:
+    log("패치 인포그래픽과 중간 이미지를 생성합니다.")
+    result = subprocess.run(
+        [sys.executable, "scripts/generate_blog_images.py"],
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    if result.stdout.strip():
+        log(result.stdout.strip())
+    if result.returncode != 0:
+        message = result.stderr.strip() or result.stdout.strip()
+        raise LolPatchError(f"블로그 이미지 생성 실패: {message}")
+    return [path for path in generated_blog_image_paths(slug) if path.exists()]
+
+
 def run_git(args: list[str], check: bool = True) -> subprocess.CompletedProcess[str]:
     result = subprocess.run(
         ["git", *args],
@@ -940,7 +1307,8 @@ def main() -> int:
             log("dry-run 완료: 파일, commit, push 모두 수행하지 않았습니다.")
             return 0
 
-        generated_paths = [post_path, *image_files]
+        blog_image_files = generate_blog_images(post_data["slug"])
+        generated_paths = [post_path, *image_files, *blog_image_files]
         if skip_git:
             log("git 자동화는 건너뛰었습니다.")
             return 0
