@@ -146,6 +146,113 @@
               </div>
             {% endif %}
 
+            {% if section.kind == "quick_summary" %}
+              <div class="quick-summary-grid">
+                {% for item in post.quick_summary_items %}
+                  <article class="quick-summary-card">
+                    <strong data-ko="{{ item.label.ko | escape }}" data-ja="{{ item.label.ja | escape }}">
+                      {{ item.label.ko }}
+                    </strong>
+                    <p data-ko="{{ item.body.ko | escape }}" data-ja="{{ item.body.ja | escape }}">
+                      {{ item.body.ko }}
+                    </p>
+                  </article>
+                {% endfor %}
+              </div>
+            {% endif %}
+
+            {% if section.kind == "lane_impact" %}
+              <div class="detail-card-grid lane-impact-grid">
+                {% for item in post.lane_impact_cards %}
+                  {% assign points_ja = item.points.ja %}
+                  <article class="detail-info-card lane-impact-card">
+                    <div class="detail-info-card-head">
+                      <h4 data-ko="{{ item.lane.ko | escape }}" data-ja="{{ item.lane.ja | escape }}">
+                        {{ item.lane.ko }}
+                      </h4>
+                      <span data-ko="{{ item.priority.ko | escape }}" data-ja="{{ item.priority.ja | escape }}">
+                        {{ item.priority.ko }}
+                      </span>
+                    </div>
+                    <p data-ko="{{ item.summary.ko | escape }}" data-ja="{{ item.summary.ja | escape }}">
+                      {{ item.summary.ko }}
+                    </p>
+                    <ul class="detail-point-list">
+                      {% for point in item.points.ko %}
+                        <li data-ko="{{ point | escape }}" data-ja="{{ points_ja[forloop.index0] | escape }}">
+                          {{ point }}
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </article>
+                {% endfor %}
+              </div>
+            {% endif %}
+
+            {% if section.kind == "watch_cards" %}
+              <div class="champion-card-grid champion-card-grid-compact">
+                {% for card in post.watch_pick_cards %}
+                  {% include champion_card.html card=card status="caution" %}
+                {% endfor %}
+              </div>
+            {% endif %}
+
+            {% if section.kind == "system_cards" %}
+              <div class="detail-card-grid system-card-grid">
+                {% for item in post.system_change_cards %}
+                  {% assign changes_ja = item.change_summary.ja %}
+                  <article class="detail-info-card system-card">
+                    <div class="detail-info-card-head">
+                      <h4 data-ko="{{ item.title.ko | escape }}" data-ja="{{ item.title.ja | escape }}">
+                        {{ item.title.ko }}
+                      </h4>
+                      <span data-ko="{{ item.badge.ko | escape }}" data-ja="{{ item.badge.ja | escape }}">
+                        {{ item.badge.ko }}
+                      </span>
+                    </div>
+                    <div class="champion-card-change">
+                      <span data-ko="공식 변경 수치" data-ja="公式変更数値">공식 변경 수치</span>
+                      <ul>
+                        {% for change in item.change_summary.ko %}
+                          <li data-ko="{{ change | escape }}" data-ja="{{ changes_ja[forloop.index0] | escape }}">
+                            {{ change }}
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    </div>
+                    <p data-ko="{{ item.interpretation.ko | escape }}" data-ja="{{ item.interpretation.ja | escape }}">
+                      {{ item.interpretation.ko }}
+                    </p>
+                    <p
+                      class="detail-info-impact"
+                      data-ko="{{ item.solo_queue_impact.ko | escape }}"
+                      data-ja="{{ item.solo_queue_impact.ja | escape }}"
+                    >
+                      {{ item.solo_queue_impact.ko }}
+                    </p>
+                  </article>
+                {% endfor %}
+              </div>
+            {% endif %}
+
+            {% if section.kind == "checklist" %}
+              <div class="checklist-grid">
+                {% for item in post.checklist_items %}
+                  <article class="checklist-card">
+                    <i data-lucide="check-circle-2" aria-hidden="true"></i>
+                    <div>
+                      <strong data-ko="{{ item.label.ko | escape }}" data-ja="{{ item.label.ja | escape }}">
+                        {{ item.label.ko }}
+                      </strong>
+                      <p data-ko="{{ item.body.ko | escape }}" data-ja="{{ item.body.ja | escape }}">
+                        {{ item.body.ko }}
+                      </p>
+                    </div>
+                  </article>
+                {% endfor %}
+              </div>
+            {% endif %}
+
             {% if section.kind == "faq" %}
               <div class="faq-list">
                 {% for item in post.faq %}
@@ -157,6 +264,26 @@
                       {{ item.answer.ko }}
                     </p>
                   </details>
+                {% endfor %}
+              </div>
+            {% endif %}
+
+            {% if section.kind == "source_note" %}
+              <div class="source-note-grid">
+                {% for item in post.source_notes %}
+                  <article class="detail-info-card source-note-card">
+                    <h4 data-ko="{{ item.label.ko | escape }}" data-ja="{{ item.label.ja | escape }}">
+                      {{ item.label.ko }}
+                    </h4>
+                    <p data-ko="{{ item.body.ko | escape }}" data-ja="{{ item.body.ja | escape }}">
+                      {{ item.body.ko }}
+                    </p>
+                    {% if item.url %}
+                      <a href="{{ item.url }}" rel="noopener noreferrer" target="_blank">
+                        {{ item.url }}
+                      </a>
+                    {% endif %}
+                  </article>
                 {% endfor %}
               </div>
             {% endif %}

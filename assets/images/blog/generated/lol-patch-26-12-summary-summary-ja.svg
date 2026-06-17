@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img">
-  <title>リーグ・オブ・レジェンド 26.12 パッチノート要点まとめ</title>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="630" viewBox="0 0 1200 630" role="img">
+  <title>LoL 26.12パッチノート要約｜強化・弱体化チャンピオン、ソロランクおすすめ、MSIメタ影響</title>
   <defs>
     <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
       <stop offset="0" stop-color="#07111F"/>
@@ -10,8 +10,11 @@
   <rect width="1200" height="630" fill="url(#bg)"/>
   <rect x="42" y="42" width="1116" height="546" rx="18" fill="none" stroke="#2F80ED" stroke-width="2"/>
   <text x="78" y="102" font-size="28" font-weight="900" fill="#7DD3FC">Seiga Blog · LoL Patch 26.12</text>
-  <text x="78" y="172" font-size="48" font-weight="900" fill="#FFFFFF">リーグ・オブ・レジェンド 26.12</text>
-<text x="78" y="241" font-size="48" font-weight="900" fill="#FFFFFF">パッチノート要点まとめ</text>
+  <text x="900" y="102" font-size="28" font-weight="900" fill="#FDE68A">強化 8 / 弱体化 6</text>
+  <text x="78" y="172" font-size="48" font-weight="900" fill="#FFFFFF">LoL</text>
+<text x="78" y="241" font-size="48" font-weight="900" fill="#FFFFFF">26.12パッチノート要約｜強化・弱</text>
+<text x="78" y="310" font-size="48" font-weight="900" fill="#FFFFFF">体化チャンピオン、ソロランクお</text>
+<text x="78" y="379" font-size="48" font-weight="900" fill="#FFFFFF">すすめ、MSIメタ影響</text>
 
             <g>
               <rect x="78" y="292" width="304" height="76" rx="8" fill="#111827" stroke="#334155"/>
@@ -43,5 +46,5 @@
               <text x="782" y="433" font-size="25" font-weight="900" fill="#F8FAFC">シンドラ</text>
               <text x="1000" y="433" font-size="17" font-weight="900" fill="#16A34A">強化</text>
             </g>
-  <text x="78" y="494" font-size="22" font-weight="700" fill="#DDE7F3">• 公式パッチノートを基準に、主な変更方針、ソロランクへの影響、おすすめピックをカードと表で整理しました。</text><text x="78" y="526" font-size="22" font-weight="700" fill="#DDE7F3">• チャンピオン名と画像はRiot Data Dragon公式の韓国語/日本語データに合わせています。</text><text x="78" y="558" font-size="22" font-weight="700" fill="#DDE7F3">• 詳細な数値と原文の文脈は、記事末尾の公式ソースから確認できます。</text>
+  <text x="78" y="494" font-size="22" font-weight="700" fill="#DDE7F3">• 公式パッチノートを基準に、チャンピオン数値、Riotの調整意図、ソロランクでの体感、おすすめ/注意ピックをカード中心に整理しました。</text><text x="78" y="526" font-size="22" font-weight="700" fill="#DDE7F3">• チャンピオン名はRiot Data Dragon ko_KR/ja_JP公式データを使用し、画像はローカル保存した公式スプラッシュアートを参照しています</text>
 </svg>

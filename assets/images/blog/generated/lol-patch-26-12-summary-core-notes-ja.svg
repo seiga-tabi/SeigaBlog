@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="720" viewBox="0 0 1200 720" role="img">
   <title>LoL 26.12 要点ノートまとめ</title>
   <rect width="1200" height="720" fill="#FFF7ED"/>
   <rect x="40" y="40" width="1120" height="640" rx="18" fill="#F8FAFC" stroke="#CBD5E1"/>
@@ -8,28 +8,28 @@
               <rect x="74" y="178" width="1052" height="64" rx="10" fill="#FFFFFF" stroke="#D7E0EA"/>
               <circle cx="112" cy="210" r="16" fill="#C2410C"/>
               <text x="112" y="217" text-anchor="middle" font-size="18" font-weight="900" fill="#FFFFFF">1</text>
-              <text x="148" y="216" font-size="22" font-weight="800" fill="#1F2937">第一に、強化カードはレーン安定性と戦闘復帰力を伸ばす方向が中心</text>
-<text x="148" y="247" font-size="22" font-weight="800" fill="#1F2937">です。</text>
+              <text x="148" y="216" font-size="22" font-weight="800" fill="#1F2937">MSI前に選択肢を広げつつ、APシン・ジャオのサステインと過剰なジ</text>
+<text x="148" y="247" font-size="22" font-weight="800" fill="#1F2937">ャングルキャリー力を抑える方向です。</text>
             </g>
             <g>
               <rect x="74" y="270" width="1052" height="64" rx="10" fill="#FFFFFF" stroke="#D7E0EA"/>
               <circle cx="112" cy="302" r="16" fill="#C2410C"/>
               <text x="112" y="309" text-anchor="middle" font-size="18" font-weight="900" fill="#FFFFFF">2</text>
-              <text x="148" y="308" font-size="22" font-weight="800" fill="#1F2937">第二に、弱体化カードは序盤性能や反復戦闘で積み上がる利点を抑え</text>
-<text x="148" y="339" font-size="22" font-weight="800" fill="#1F2937">る方向です。</text>
+              <text x="148" y="308" font-size="22" font-weight="800" fill="#1F2937">リー・シン、ノクターン、ライズ、オリアナは序盤ミスのコストが増</text>
+<text x="148" y="339" font-size="22" font-weight="800" fill="#1F2937">え、熟練度差がより出ます。</text>
             </g>
             <g>
               <rect x="74" y="362" width="1052" height="64" rx="10" fill="#FFFFFF" stroke="#D7E0EA"/>
               <circle cx="112" cy="394" r="16" fill="#C2410C"/>
               <text x="112" y="401" text-anchor="middle" font-size="18" font-weight="900" fill="#FFFFFF">3</text>
-              <text x="148" y="400" font-size="22" font-weight="800" fill="#1F2937">第三に、システムとモード変更は通常のサモナーズリフトだけでなく</text>
-<text x="148" y="431" font-size="22" font-weight="800" fill="#1F2937">ARAMやアリーナの体感にも関わります。</text>
+              <text x="148" y="400" font-size="22" font-weight="800" fill="#1F2937">グウェン、フェイ、シンドラ、サイラス、トリスターナはパッチ序盤</text>
+<text x="148" y="431" font-size="22" font-weight="800" fill="#1F2937">に試す価値があります。</text>
             </g>
             <g>
               <rect x="74" y="454" width="1052" height="64" rx="10" fill="#FFFFFF" stroke="#D7E0EA"/>
               <circle cx="112" cy="486" r="16" fill="#C2410C"/>
               <text x="112" y="493" text-anchor="middle" font-size="18" font-weight="900" fill="#FFFFFF">4</text>
-              <text x="148" y="492" font-size="22" font-weight="800" fill="#1F2937">第四に、パッチ序盤は既存のティア表より熟練度とポジション適性を</text>
-<text x="148" y="523" font-size="22" font-weight="800" fill="#1F2937">先に見るのが安全です。</text>
+              <text x="148" y="492" font-size="22" font-weight="800" fill="#1F2937">大乱闘系とアリーナの変更は、サモナーズリフトよりモード勢に大き</text>
+<text x="148" y="523" font-size="22" font-weight="800" fill="#1F2937">く響きそうです。</text>
             </g>
 </svg>

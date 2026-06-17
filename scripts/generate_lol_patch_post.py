@@ -571,23 +571,30 @@ def status_label(status: str) -> dict:
 def champion_card_data(champion: ChampionChange, status: str, name_map: dict | None) -> dict:
     entry = official_champion_entry(champion.name, name_map)
     detail = champion_detail(champion, status)
-    detail_text = f"공식 변경 포인트: {truncate(detail, 86)}" if detail else "공식 변경 방향을 기준으로 솔랭 체감을 점검해야 합니다."
+    detail_text = truncate(detail, 120) if detail else "공식 변경 수치는 패치노트 원문에서 확인해야 합니다."
+    context = sentence_summary(" ".join(champion.context), max_sentences=1, limit=150)
 
     if status == "버프":
-        summary_ko = detail_text
-        summary_ja = "強化により、レーン戦や集団戦での価値を確認したいカードです。"
         impact_ko = "패치 초반에는 주 포지션과 조합 적합도를 먼저 확인하세요."
         impact_ja = "パッチ序盤はメインポジションと構成適性を先に確認しましょう。"
+        tip_ko = "상향된 스킬을 중심으로 짧은 교환과 오브젝트 전 교전을 먼저 실험하세요."
+        tip_ja = "強化されたスキルを中心に、短いトレードとオブジェクト前の戦闘を試しましょう。"
+        caution_ko = "수치가 올랐더라도 라인 상성과 숙련도 조건을 무시하면 효율이 떨어집니다."
+        caution_ja = "数値が上がっても、レーン相性と熟練度条件を無視すると効率は落ちます。"
     elif status == "너프":
-        summary_ko = detail_text
-        summary_ja = "弱体化により、序盤性能や交戦タイミングの再確認が必要です。"
         impact_ko = "익숙한 픽이라도 교전 기준을 한 단계 보수적으로 잡으세요."
         impact_ja = "慣れたピックでも交戦基準を一段階慎重に見ましょう。"
+        tip_ko = "하향된 스킬이 필요한 타이밍을 늦추고, 확정 교전 위주로 운영하세요."
+        tip_ja = "弱体化されたスキルが必要なタイミングを遅らせ、確定気味の戦闘を選びましょう。"
+        caution_ko = "숙련 픽은 여전히 쓸 수 있지만 패치 첫날에는 과한 선픽을 피하는 편이 안전합니다."
+        caution_ja = "熟練ピックならまだ使えますが、パッチ初日は強引な先出しを避ける方が安全です。"
     else:
-        summary_ko = detail_text
-        summary_ja = "調整内容を確認し、役割とビルドの変化を見直しましょう。"
         impact_ko = "빌드와 역할 변화가 실제 체감으로 이어지는지 확인하세요."
         impact_ja = "ビルドと役割の変化が体感につながるか確認しましょう。"
+        tip_ko = "공식 변경 수치를 기준으로 기존 콤보와 빌드 타이밍을 다시 점검하세요."
+        tip_ja = "公式変更数値を基準に、既存コンボとビルドタイミングを見直しましょう。"
+        caution_ko = "조정 카드는 승률 표본이 쌓이기 전까지 단정하지 않는 편이 좋습니다."
+        caution_ja = "調整カードは勝率サンプルが集まるまで断定しない方が安全です。"
 
     return {
         "key": entry["key"],
@@ -599,8 +606,26 @@ def champion_card_data(champion: ChampionChange, status: str, name_map: dict | N
             "ja": f"{entry['ja']}のスプラッシュアート",
         },
         "status_label": status_label(status),
-        "summary": {"ko": summary_ko, "ja": summary_ja},
-        "impact": {"ko": impact_ko, "ja": impact_ja},
+        "role": {"ko": "주 포지션 확인", "ja": "主ロール確認"},
+        "change_summary": {
+            "ko": [detail_text],
+            "ja": [detail_text],
+        },
+        "riot_context": {
+            "ko": context or "Riot 공식 패치노트의 변경 의도를 기준으로 요약했습니다.",
+            "ja": "Riot公式パッチノートの変更意図を基準に整理しています。",
+        },
+        "solo_queue_impact": {"ko": impact_ko, "ja": impact_ja},
+        "play_tip": {"ko": tip_ko, "ja": tip_ja},
+        "caution": {"ko": caution_ko, "ja": caution_ja},
+        "priority": "medium",
+        "priority_label": {"ko": "중간", "ja": "中"},
+        "difficulty": "medium",
+        "difficulty_label": {"ko": "중간", "ja": "中"},
+        "tags": {
+            "ko": ["솔랭", "공식 수치", status],
+            "ja": ["ソロランク", "公式数値", status_label(status)["ja"]],
+        },
     }
 
 
@@ -611,9 +636,23 @@ def recommended_card_data(champion: ChampionChange, name_map: dict | None) -> di
         "ko": "상향 폭, 솔랭 적응 난이도, 조합 유연성을 함께 볼 때 먼저 연습할 만합니다.",
         "ja": "強化幅、ソロランクでの適応難度、構成への柔軟性を考えると先に練習する価値があります。",
     }
-    card["impact"] = {
+    card["solo_queue_impact"] = {
         "ko": "주 포지션과 맞는다면 패치 초반 우선 실험하세요.",
         "ja": "メインポジションに合うならパッチ序盤に優先して試しましょう。",
+    }
+    card["recommendation_grade"] = "A"
+    card["recommended_line"] = card["role"]
+    card["recommend_reason"] = {
+        "ko": "공식 상향 수치가 있고 솔랭 적응 난도가 과하게 높지 않은 후보입니다.",
+        "ja": "公式強化数値があり、ソロランクでの適応難度も高すぎない候補です。",
+    }
+    card["recommended_for"] = {
+        "ko": "해당 포지션을 꾸준히 플레이하고 패치 초반 실험을 좋아하는 유저",
+        "ja": "該当ロールを継続して使い、パッチ序盤の試行が好きなプレイヤー",
+    }
+    card["matchup_caution"] = {
+        "ko": "추천 카드라도 라인 상성과 조합 조건이 맞지 않으면 우선순위를 낮추세요.",
+        "ja": "おすすめカードでもレーン相性と構成条件が合わない場合は優先度を下げましょう。",
     }
     card["alt"] = {
         "ko": f"{card['ko']} 추천 픽 스플래시 아트",
@@ -627,15 +666,16 @@ def build_toc() -> dict:
         "title": {"ko": "목차", "ja": "目次"},
         "items": [
             {"id": "patch-overview", "title": {"ko": "한눈에 보는 패치", "ja": "パッチ早見表"}},
-            {"id": "patch-summary", "title": {"ko": "패치 요약", "ja": "パッチ概要"}},
-            {"id": "key-changes", "title": {"ko": "핵심 변경점", "ja": "主な変更点"}},
-            {"id": "buff-champions", "title": {"ko": "챔피언 버프 카드", "ja": "チャンピオン強化カード"}},
-            {"id": "nerf-champions", "title": {"ko": "챔피언 너프 카드", "ja": "チャンピオン弱体化カード"}},
-            {"id": "item-rune-system", "title": {"ko": "아이템/룬/시스템 변경", "ja": "アイテム/ルーン/システム変更"}},
-            {"id": "solo-queue-tier-impact", "title": {"ko": "솔랭 티어 영향", "ja": "ソロランクティア影響"}},
-            {"id": "recommended-picks", "title": {"ko": "추천 픽", "ja": "おすすめピック"}},
-            {"id": "closing-summary", "title": {"ko": "마무리 요약", "ja": "まとめ"}},
+            {"id": "quick-summary", "title": {"ko": "30초 핵심 요약", "ja": "30秒で分かる要点"}},
+            {"id": "buff-champions", "title": {"ko": "버프 챔피언 총정리", "ja": "強化チャンピオン総まとめ"}},
+            {"id": "nerf-champions", "title": {"ko": "너프 챔피언 총정리", "ja": "弱体化チャンピオン総まとめ"}},
+            {"id": "solo-queue-tier-impact", "title": {"ko": "라인별 솔랭 영향", "ja": "ロール別ソロランク影響"}},
+            {"id": "recommended-picks", "title": {"ko": "추천 픽 TOP 5", "ja": "おすすめピックTOP5"}},
+            {"id": "watch-picks", "title": {"ko": "주의해야 할 픽", "ja": "注意したいピック"}},
+            {"id": "item-rune-system", "title": {"ko": "시스템/모드 변경", "ja": "システム/モード変更"}},
+            {"id": "patch-day-checklist", "title": {"ko": "패치 첫날 체크리스트", "ja": "パッチ初日チェックリスト"}},
             {"id": "faq", "title": {"ko": "FAQ", "ja": "FAQ"}},
+            {"id": "source-note", "title": {"ko": "공식 출처 및 이미지 출처", "ja": "公式ソースと画像出典"}},
         ],
     }
 
@@ -673,129 +713,103 @@ def build_overview_table(version: str, buff_count: int, nerf_count: int, adjuste
 def build_sections(version: str, intro: str) -> list[dict]:
     return [
         {
-            "id": "patch-summary",
-            "kind": "text",
-            "title": {"ko": "패치 요약", "ja": "パッチ概要"},
+            "id": "quick-summary",
+            "kind": "quick_summary",
+            "title": {"ko": "30초 핵심 요약", "ja": "30秒で分かる要点"},
             "body": {
                 "ko": [
-                    f"{version} 패치는 공식 패치노트 기준으로 챔피언 체급과 시스템 경험을 함께 다듬는 업데이트입니다.",
-                    sentence_summary(intro, max_sentences=1, limit=180),
+                    f"{version} 패치의 방향을 먼저 보면 챔피언 카드의 의미가 더 빨리 잡힙니다.",
                 ],
                 "ja": [
-                    f"{version}パッチは公式パッチノートを基準に、チャンピオン性能とシステム体験を整えるアップデートです。",
-                    "大きな構造変更よりも、ソロランクでの体感ラインを見直す内容として読むと分かりやすいです。",
-                ],
-            },
-        },
-        {
-            "id": "key-changes",
-            "kind": "text",
-            "title": {"ko": "핵심 변경점", "ja": "主な変更点"},
-            "body": {
-                "ko": [
-                    "첫째, 상향 카드는 라인전 안정성과 교전 복귀력을 살리는 쪽에 초점이 있습니다.",
-                    "둘째, 하향 카드는 초반 체급이나 반복 교전에서 누적되는 이점을 줄이는 방향입니다.",
-                    "셋째, 시스템과 모드 변경은 협곡 외 플레이 경험에도 영향을 줄 수 있습니다.",
-                    "넷째, 패치 초반에는 티어표보다 숙련도와 포지션 적합도를 먼저 보는 편이 안전합니다.",
-                ],
-                "ja": [
-                    "第一に、強化カードはレーン安定性と戦闘復帰力を伸ばす方向が中心です。",
-                    "第二に、弱体化カードは序盤性能や反復戦闘で積み上がる利点を抑える方向です。",
-                    "第三に、システムとモード変更はサモナーズリフト以外の体感にも関わります。",
-                    "第四に、パッチ序盤はティア表より熟練度とポジション適性を先に見るのが安全です。",
+                    f"{version}パッチの方針を先に見ると、各カードの意味がつかみやすくなります。",
                 ],
             },
         },
         {
             "id": "buff-champions",
             "kind": "buff_cards",
-            "title": {"ko": "챔피언 버프 카드", "ja": "チャンピオン強化カード"},
+            "title": {"ko": "버프 챔피언 총정리", "ja": "強化チャンピオン総まとめ"},
             "body": {
                 "ko": [
-                    "상향 대상은 아래 카드에서 역할과 솔랭 영향을 나눠 확인할 수 있습니다.",
-                    "각 카드는 Riot Data Dragon 공식 명칭과 스플래시 아트를 기준으로 구성했습니다.",
+                    "상향 카드는 공식 변경 수치와 솔랭 활용 조건을 함께 확인해야 합니다.",
                 ],
                 "ja": [
-                    "強化対象は下のカードで役割とソロランクへの影響を分けて確認できます。",
-                    "各カードはRiot Data Dragon公式名称とスプラッシュアートを基準にしています。",
+                    "強化カードは公式変更数値とソロランクでの使いどころを合わせて確認しましょう。",
                 ],
             },
         },
         {
             "id": "nerf-champions",
             "kind": "nerf_cards",
-            "title": {"ko": "챔피언 너프 카드", "ja": "チャンピオン弱体化カード"},
+            "title": {"ko": "너프 챔피언 총정리", "ja": "弱体化チャンピオン総まとめ"},
             "body": {
                 "ko": [
-                    "하향 대상은 플레이 난이도보다 성능 기대값이 먼저 바뀌는지 확인하는 것이 중요합니다.",
-                    "초반 체급, 성장값, 반복 피해량 변화는 솔랭 승률에 빠르게 반영될 수 있습니다.",
+                    "하향 카드는 성능이 내려간 지점과 그래도 쓸 수 있는 조건을 나눠 봐야 합니다.",
                 ],
                 "ja": [
-                    "弱体化対象は操作難度よりも性能期待値がどう変わるかを見ることが重要です。",
-                    "序盤性能、成長値、反復ダメージの変化はソロランク勝率に早く反映される可能性があります。",
-                ],
-            },
-        },
-        {
-            "id": "item-rune-system",
-            "kind": "text",
-            "title": {"ko": "아이템/룬/시스템 변경", "ja": "アイテム/ルーン/システム変更"},
-            "body": {
-                "ko": [
-                    "아이템, 룬, 소환사 주문, 모드 변경은 챔피언 카드와 별도로 확인해야 합니다.",
-                    "협곡 외 모드를 자주 플레이한다면 무작위 총력전과 아레나 변경도 함께 체크하세요.",
-                ],
-                "ja": [
-                    "アイテム、ルーン、サモナースペル、モード変更はチャンピオンカードとは別に確認しましょう。",
-                    "サモナーズリフト以外のモードをよく遊ぶならARAMとアリーナの変更も合わせて確認してください。",
+                    "弱体化カードは落ちた性能と、それでも使える条件を分けて見るのが重要です。",
                 ],
             },
         },
         {
             "id": "solo-queue-tier-impact",
-            "kind": "text",
-            "title": {"ko": "솔랭 티어 영향", "ja": "ソロランクティア影響"},
+            "kind": "lane_impact",
+            "title": {"ko": "라인별 솔랭 영향", "ja": "ロール別ソロランク影響"},
             "body": {
                 "ko": [
-                    "솔랭에서는 상향 카드가 곧바로 고정 추천으로 이어지기보다, 라인 상성과 숙련도에 따라 티어 상승 폭이 갈릴 가능성이 큽니다.",
-                    "하향 카드는 밴 가치가 낮아질 수 있지만, 숙련도가 높은 유저에게는 여전히 충분한 선택지가 될 수 있습니다.",
-                    "패치 직후에는 10판 내외의 표본보다 직접 라인전 체감과 교전 타이밍을 확인하는 편이 좋습니다.",
+                    "자기 포지션에 해당하는 카드만 먼저 읽어도 패치 첫날 판단이 쉬워집니다.",
                 ],
                 "ja": [
-                    "ソロランクでは強化カードがすぐ固定おすすめになるというより、レーン相性と熟練度でティア上昇幅が分かれやすいです。",
-                    "弱体化カードはバン価値が下がる可能性がありますが、熟練度の高いプレイヤーにはまだ十分な選択肢です。",
-                    "パッチ直後は少数の試合データより、自分のレーン体感と戦闘タイミングを確認するのがおすすめです。",
+                    "自分のロールに関係するカードだけ先に読んでも、パッチ初日の判断がしやすくなります。",
                 ],
             },
         },
         {
             "id": "recommended-picks",
             "kind": "recommended_cards",
-            "title": {"ko": "추천 픽", "ja": "おすすめピック"},
+            "title": {"ko": "추천 픽 TOP 5", "ja": "おすすめピックTOP5"},
             "body": {
                 "ko": [
-                    "추천 픽은 상향 폭, 솔랭 적응 난이도, 팀 조합 유연성을 함께 보고 골랐습니다.",
-                    "카드에 적힌 포인트가 본인의 주 포지션과 맞을 때 먼저 연습해보면 효율적입니다.",
+                    "추천 픽은 상향 폭, 솔랭 적응 난도, 팀 조합 유연성을 함께 보고 골랐습니다.",
                 ],
                 "ja": [
                     "おすすめピックは強化幅、ソロランクでの適応難度、チーム構成への柔軟性を合わせて選びました。",
-                    "カードのポイントが自分のメインポジションと合う場合に先に練習すると効率的です。",
                 ],
             },
         },
         {
-            "id": "closing-summary",
-            "kind": "text",
-            "title": {"ko": "마무리 요약", "ja": "まとめ"},
+            "id": "watch-picks",
+            "kind": "watch_cards",
+            "title": {"ko": "주의해야 할 픽", "ja": "注意したいピック"},
             "body": {
                 "ko": [
-                    f"{version} 패치는 특정 조합 하나로 메타를 고정하기보다, 여러 선택지의 체감선을 다시 맞추는 업데이트입니다.",
-                    "상향 카드는 실험 가치가 있고, 하향 카드는 익숙한 플레이 패턴을 그대로 가져가도 되는지 점검해야 합니다.",
+                    "너프를 받았어도 숙련도나 조합 조건이 맞으면 완전히 버릴 필요는 없습니다.",
                 ],
                 "ja": [
-                    f"{version}パッチは特定の構成でメタを固定するより、複数の選択肢の体感ラインを整えるアップデートです。",
-                    "強化カードは試す価値があり、弱体化カードは慣れたプレイパターンをそのまま使えるか再確認が必要です。",
+                    "弱体化されても、熟練度や構成条件が合えば完全に捨てる必要はありません。",
                 ],
+            },
+        },
+        {
+            "id": "item-rune-system",
+            "kind": "system_cards",
+            "title": {"ko": "시스템/모드 변경", "ja": "システム/モード変更"},
+            "body": {
+                "ko": [
+                    "협곡 유저와 모드 유저가 체감할 지점을 나눠 요약했습니다.",
+                ],
+                "ja": [
+                    "サモナーズリフト勢とモード勢が体感しやすい点を分けてまとめています。",
+                ],
+            },
+        },
+        {
+            "id": "patch-day-checklist",
+            "kind": "checklist",
+            "title": {"ko": "패치 첫날 체크리스트", "ja": "パッチ初日チェックリスト"},
+            "body": {
+                "ko": ["랭크에 들어가기 전 아래 항목만 확인해도 실험 비용을 줄일 수 있습니다."],
+                "ja": ["ランクに入る前に下の項目だけ確認しても、試行コストを抑えられます。"],
             },
         },
         {
@@ -805,6 +819,15 @@ def build_sections(version: str, intro: str) -> list[dict]:
             "body": {
                 "ko": ["자주 묻는 질문은 패치 초반 판단에 필요한 내용만 짧게 정리했습니다."],
                 "ja": ["よくある質問はパッチ序盤の判断に必要な内容だけを短く整理しました。"],
+            },
+        },
+        {
+            "id": "source-note",
+            "kind": "source_note",
+            "title": {"ko": "공식 출처 및 이미지 출처", "ja": "公式ソースと画像出典"},
+            "body": {
+                "ko": ["본문 수치와 챔피언 명칭은 공식 패치노트와 Riot Data Dragon 기준으로 확인했습니다."],
+                "ja": ["本文の数値とチャンピオン名称は、公式パッチノートとRiot Data Dragonを基準に確認しています。"],
             },
         },
     ]
@@ -827,6 +850,13 @@ def build_faq() -> list[dict]:
             },
         },
         {
+            "question": {"ko": "추천 픽은 어떤 기준으로 고르나요?", "ja": "おすすめピックはどんな基準で選びますか？"},
+            "answer": {
+                "ko": "공식 상향 수치, 솔랭 적응 난도, 조합 유연성, 과대평가 위험을 함께 봅니다. 단순히 버프를 받았다는 이유만으로 추천하지 않습니다.",
+                "ja": "公式の強化数値、ソロランクでの適応難度、構成柔軟性、過大評価リスクを合わせて見ます。強化されたという理由だけではおすすめしません。",
+            },
+        },
+        {
             "question": {"ko": "너프 카드는 바로 피해야 하나요?", "ja": "弱体化カードはすぐ避けるべきですか？"},
             "answer": {
                 "ko": "숙련도가 높은 픽은 여전히 쓸 수 있습니다. 다만 초반 체급이나 핵심 피해량이 낮아진 경우에는 교전 타이밍을 더 보수적으로 잡아야 합니다.",
@@ -838,6 +868,13 @@ def build_faq() -> list[dict]:
             "answer": {
                 "ko": "한국어와 일본어 모두 Riot Data Dragon의 공식 champion.json 데이터를 기준으로 표기했습니다.",
                 "ja": "韓国語と日本語の両方をRiot Data Dragon公式のchampion.jsonデータに基づいて表記しています。",
+            },
+        },
+        {
+            "question": {"ko": "공식 출처는 어디에서 확인하나요?", "ja": "公式ソースはどこで確認できますか？"},
+            "answer": {
+                "ko": "글 하단의 공식 출처 링크에서 Riot Games 패치노트 원문을 확인할 수 있습니다. 이미지와 챔피언명은 Riot Data Dragon 기준으로 맞춥니다.",
+                "ja": "記事末尾の公式ソースリンクからRiot Gamesのパッチノート原文を確認できます。画像とチャンピオン名はRiot Data Dragon基準でそろえます。",
             },
         },
     ]
@@ -895,8 +932,8 @@ def build_post_data(
     ko_title = f"리그오브레전드 {version} 패치노트 핵심 정리"
     ja_title = f"リーグ・オブ・レジェンド {version} パッチノート要点まとめ"
     ko_description = (
-        f"LoL {version} 패치의 챔피언 변경, 아이템/시스템 조정, "
-        "솔랭 메타 영향을 카드와 표로 쉽게 정리했습니다."
+        f"LoL {version} 패치의 버프·너프 챔피언, 솔랭 추천 픽, "
+        "시스템 조정과 메타 영향을 공식 수치 카드로 정리했습니다."
     )
     ja_description = (
         f"LoL {version} パッチのチャンピオン変更、アイテムやシステム調整、"
@@ -930,7 +967,8 @@ def build_post_data(
                 ]
             )
 
-    recommended_changes = buff_changes[:4] or champions[:4]
+    recommended_changes = buff_changes[:5] or champions[:5]
+    watch_changes = nerf_changes[:6]
 
     return {
         "slug": slug,
@@ -964,7 +1002,7 @@ def build_post_data(
         },
         "content_images": [
             {
-                "after_section": "key-changes",
+                "after_section": "quick-summary",
                 "src": core_notes_src,
                 "width": 1200,
                 "height": 720,
@@ -1034,7 +1072,7 @@ def build_post_data(
                 },
             },
             {
-                "after_section": "faq",
+                "after_section": "source-note",
                 "src": source_note_src,
                 "width": 1200,
                 "height": 720,
@@ -1070,9 +1108,136 @@ def build_post_data(
             changed_area_summary,
         ),
         "sections": structured_sections,
+        "quick_summary_items": [
+            {
+                "label": {"ko": "Riot 의도", "ja": "Riotの意図"},
+                "body": {
+                    "ko": "공식 패치노트의 변경 의도를 기준으로 선택지와 과한 성능을 함께 조정한 패치입니다.",
+                    "ja": "公式パッチノートの変更意図を基準に、選択肢と過剰性能を同時に調整するパッチです。",
+                },
+            },
+            {
+                "label": {"ko": "솔랭 영향", "ja": "ソロランク影響"},
+                "body": {
+                    "ko": "상향/하향 카드 모두 숙련도와 라인 상성에 따라 체감 차이가 크게 갈릴 수 있습니다.",
+                    "ja": "強化/弱体化カードはいずれも、熟練度とレーン相性で体感差が大きく分かれます。",
+                },
+            },
+            {
+                "label": {"ko": "실험 가치", "ja": "試す価値"},
+                "body": {
+                    "ko": "추천 픽은 공식 수치와 솔랭 적응 난도를 함께 보고 우선순위를 잡는 편이 안전합니다.",
+                    "ja": "おすすめピックは公式数値とソロランクでの適応難度を合わせて優先度を決めるのが安全です。",
+                },
+            },
+            {
+                "label": {"ko": "모드 영향", "ja": "モード影響"},
+                "body": {
+                    "ko": "시스템과 모드 변경은 협곡 외 플레이 경험에도 영향을 줄 수 있습니다.",
+                    "ja": "システムとモード変更はサモナーズリフト以外の体感にも影響する可能性があります。",
+                },
+            },
+        ],
         "buff_champion_cards": [champion_card_data(champion, "버프", name_map) for champion in buff_changes],
         "nerf_champion_cards": [champion_card_data(champion, "너프", name_map) for champion in nerf_changes],
+        "lane_impact_cards": [
+            {
+                "lane": {"ko": "탑", "ja": "トップ"},
+                "summary": {"ko": "상향/하향 카드가 탑 라인 교환과 사이드 운영에 미치는 영향을 확인하세요.", "ja": "強化/弱体化カードがトップのトレードとサイド運用に与える影響を確認しましょう。"},
+                "priority": {"ko": "매치업 확인", "ja": "対面確認"},
+                "points": {
+                    "ko": ["상향 카드는 라인 상성과 숙련도 조건을 함께 봐야 합니다.", "하향 카드는 초반 체급과 갱킹 대응을 먼저 점검하세요."],
+                    "ja": ["強化カードはレーン相性と熟練度条件を合わせて見ましょう。", "弱体化カードは序盤性能とガンク対応を先に確認しましょう。"],
+                },
+            },
+            {
+                "lane": {"ko": "정글", "ja": "ジャングル"},
+                "summary": {"ko": "정글은 초반 교전 설계와 오브젝트 전 성장 안정성이 핵심입니다.", "ja": "ジャングルは序盤戦闘設計とオブジェクト前の成長安定が重要です。"},
+                "priority": {"ko": "리스크 관리", "ja": "リスク管理"},
+                "points": {
+                    "ko": ["하향 정글은 첫 갱킹 실패 후 복구 난도를 확인하세요.", "상향 정글은 캠프 속도와 교전 타이밍을 직접 체감해보세요."],
+                    "ja": ["弱体化ジャングルは最初のガンク失敗後の立て直しを確認しましょう。", "強化ジャングルはクリア速度と戦闘タイミングを体感しましょう。"],
+                },
+            },
+            {
+                "lane": {"ko": "미드", "ja": "ミッド"},
+                "summary": {"ko": "미드는 라인 안정성, 로밍 타이밍, 한타 설계가 티어 변동을 가릅니다.", "ja": "ミッドはレーン安定性、ロームタイミング、集団戦設計がティア変動を分けます。"},
+                "priority": {"ko": "숙련도 우선", "ja": "熟練度優先"},
+                "points": {
+                    "ko": ["메이지와 암살자 모두 변경 수치가 실제 콤보에 미치는 영향을 확인하세요.", "초반 체급이 낮아진 픽은 웨이브 위치를 더 보수적으로 잡으세요."],
+                    "ja": ["メイジもアサシンも、変更数値が実際のコンボに与える影響を確認しましょう。", "序盤性能が落ちたピックはウェーブ位置をより慎重に取りましょう。"],
+                },
+            },
+            {
+                "lane": {"ko": "원딜", "ja": "ADC"},
+                "summary": {"ko": "원딜은 라인 주도권과 오브젝트 전 합류 가치가 중요합니다.", "ja": "ADCはレーン主導権とオブジェクト前の寄り価値が重要です。"},
+                "priority": {"ko": "조합 의존", "ja": "構成依存"},
+                "points": {
+                    "ko": ["상향 픽은 서포터 연계와 포탑 압박 능력을 함께 보세요.", "하향 픽은 포킹 화력과 라인 유지력을 분리해서 확인하세요."],
+                    "ja": ["強化ピックはサポート連携とタワー圧を合わせて見ましょう。", "弱体化ピックはポーク火力とレーン維持力を分けて確認しましょう。"],
+                },
+            },
+            {
+                "lane": {"ko": "서포터", "ja": "サポート"},
+                "summary": {"ko": "서포터는 라인 주도권과 성장형 딜러 보조 가치가 갈립니다.", "ja": "サポートはレーン主導権と成長型キャリー支援の価値が分かれます。"},
+                "priority": {"ko": "듀오 조건 확인", "ja": "デュオ条件確認"},
+                "points": {
+                    "ko": ["보조술사 상향은 원딜 성장 타이밍과 함께 봐야 합니다.", "라인전 약점이 있는 조합은 첫 귀환 전 교전을 줄이세요."],
+                    "ja": ["エンチャンター強化はADCの成長タイミングと一緒に見ましょう。", "レーン戦に弱点がある構成は最初のリコール前の交戦を減らしましょう。"],
+                },
+            },
+        ],
         "recommended_pick_cards": [recommended_card_data(champion, name_map) for champion in recommended_changes],
+        "watch_pick_cards": [
+            {
+                **champion_card_data(champion, "너프", name_map),
+                "status_label": {"ko": "주의", "ja": "注意"},
+                "rank_day_recommendation": {"ko": "첫날 보수적", "ja": "初日は慎重"},
+                "still_playable_condition": {
+                    "ko": "숙련도가 높고 조합 조건이 맞을 때만 랭크 첫날 사용을 고려하세요.",
+                    "ja": "熟練度が高く構成条件が合う時だけ、ランク初日の使用を考えましょう。",
+                },
+            }
+            for champion in watch_changes
+        ],
+        "system_change_cards": [
+            {
+                "title": {"ko": "시스템/모드 변경", "ja": "システム/モード変更"},
+                "badge": {"ko": "공식 패치노트", "ja": "公式パッチノート"},
+                "change_summary": {
+                    "ko": [summarize_system_sections(sections)],
+                    "ja": ["公式パッチノートのシステム/モード変更を確認してください。"],
+                },
+                "interpretation": {"ko": "챔피언 카드와 별도로 플레이 경험에 영향을 줄 수 있는 영역입니다.", "ja": "チャンピオンカードとは別に、プレイ体験へ影響する可能性がある領域です。"},
+                "solo_queue_impact": {"ko": "랭크와 모드 플레이를 나눠서 체감 변화를 확인하세요.", "ja": "ランクとモードプレイを分けて体感変化を確認しましょう。"},
+            }
+        ],
+        "checklist_items": [
+            {
+                "label": {"ko": "주 포지션 카드 먼저 확인", "ja": "メインロールのカードを先に確認"},
+                "body": {"ko": "라인별 영향 카드에서 내 포지션의 상승 후보와 주의 픽을 먼저 고르세요.", "ja": "ロール別影響カードで自分のロールの上昇候補と注意ピックを先に選びましょう。"},
+            },
+            {
+                "label": {"ko": "변경 수치가 큰 스킬 연습", "ja": "変更幅の大きいスキルを練習"},
+                "body": {"ko": "수치가 직접 바뀐 스킬은 일반 게임에서 체감한 뒤 랭크에 들어가세요.", "ja": "数値が直接変わったスキルはノーマルで体感してからランクに入りましょう。"},
+            },
+            {
+                "label": {"ko": "너프 픽은 첫날 보수적으로", "ja": "弱体化ピックは初日慎重に"},
+                "body": {"ko": "익숙한 픽이라도 교전 기준을 한 단계 보수적으로 잡으세요.", "ja": "慣れたピックでも戦闘基準を一段慎重にしましょう。"},
+            },
+        ],
+        "source_notes": [
+            {
+                "label": {"ko": "공식 패치노트", "ja": "公式パッチノート"},
+                "body": {"ko": "본문 변경 수치는 Riot Games 공식 패치노트 기준입니다.", "ja": "本文の変更数値はRiot Games公式パッチノート基準です。"},
+                "url": listing.url,
+            },
+            {
+                "label": {"ko": "챔피언명/이미지", "ja": "チャンピオン名/画像"},
+                "body": {"ko": "챔피언명과 이미지는 Riot Data Dragon 공식 데이터를 기준으로 저장합니다.", "ja": "チャンピオン名と画像はRiot Data Dragon公式データを基準に保存します。"},
+                "url": "https://ddragon.leagueoflegends.com",
+            },
+        ],
         "faq": build_faq(),
         "quote": {
             "ko": "이번 패치는 카드별 체감 차이를 빠르게 읽고, 내 포지션에 맞는 실험 픽을 고르는 것이 핵심입니다.",
@@ -1224,7 +1389,9 @@ def generated_blog_image_paths(slug: str) -> list[Path]:
         "recommended-picks",
         "source-note",
     ]
-    return [image_dir / f"{slug}-{kind}-{lang}.svg" for kind in kinds for lang in ["ko", "ja"]]
+    localized = [image_dir / f"{slug}-{kind}-{lang}.svg" for kind in kinds for lang in ["ko", "ja"]]
+    default_aliases = [image_dir / f"{slug}-{kind}.svg" for kind in kinds]
+    return [*localized, *default_aliases]
 
 
 def generate_blog_images(slug: str) -> list[Path]:

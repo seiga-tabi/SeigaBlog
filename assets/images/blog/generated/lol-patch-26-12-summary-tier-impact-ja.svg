@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="720" viewBox="0 0 1200 720" role="img">
   <title>LoL 26.12 ソロランクティア影響</title>
   <rect width="1200" height="720" fill="#E0F2FE"/>
   <rect x="40" y="40" width="1120" height="640" rx="18" fill="#F8FAFC" stroke="#CBD5E1"/>
@@ -8,21 +8,7 @@
               <rect x="74" y="178" width="1052" height="64" rx="10" fill="#FFFFFF" stroke="#D7E0EA"/>
               <circle cx="112" cy="210" r="16" fill="#0369A1"/>
               <text x="112" y="217" text-anchor="middle" font-size="18" font-weight="900" fill="#FFFFFF">1</text>
-              <text x="148" y="216" font-size="22" font-weight="800" fill="#1F2937">ソロランクでは強化カードがすぐ固定おすすめになるというより、レ</text>
-<text x="148" y="247" font-size="22" font-weight="800" fill="#1F2937">ーン相性と熟練度でティア上昇幅が分かれやすいです。</text>
-            </g>
-            <g>
-              <rect x="74" y="270" width="1052" height="64" rx="10" fill="#FFFFFF" stroke="#D7E0EA"/>
-              <circle cx="112" cy="302" r="16" fill="#0369A1"/>
-              <text x="112" y="309" text-anchor="middle" font-size="18" font-weight="900" fill="#FFFFFF">2</text>
-              <text x="148" y="308" font-size="22" font-weight="800" fill="#1F2937">弱体化カードはバン価値が下がる可能性がありますが、熟練度の高い</text>
-<text x="148" y="339" font-size="22" font-weight="800" fill="#1F2937">プレイヤーにはまだ十分な選択肢です。</text>
-            </g>
-            <g>
-              <rect x="74" y="362" width="1052" height="64" rx="10" fill="#FFFFFF" stroke="#D7E0EA"/>
-              <circle cx="112" cy="394" r="16" fill="#0369A1"/>
-              <text x="112" y="401" text-anchor="middle" font-size="18" font-weight="900" fill="#FFFFFF">3</text>
-              <text x="148" y="400" font-size="22" font-weight="800" fill="#1F2937">パッチ直後は少数の試合データより、自分のレーン体感と戦闘タイミ</text>
-<text x="148" y="431" font-size="22" font-weight="800" fill="#1F2937">ングを確認するのがおすすめです。</text>
+              <text x="148" y="216" font-size="22" font-weight="800" fill="#1F2937">自分のロールに関係するカードだけ先に読んでも、パッチ初日の判断</text>
+<text x="148" y="247" font-size="22" font-weight="800" fill="#1F2937">がしやすくなります。</text>
             </g>
 </svg>

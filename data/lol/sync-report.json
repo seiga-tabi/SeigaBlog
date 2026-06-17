@@ -1,6 +1,6 @@
 {
   "version": "16.12.1",
-  "updated_at": "2026-06-17T08:49:12+00:00",
+  "updated_at": "2026-06-17T16:00:54+00:00",
   "champion_count": 172,
   "asset_results": [
     {
@@ -22,6 +22,27 @@
       "asset_type": "splash",
       "path": "assets/images/lol/champions/Aatrox/splash.jpg",
       "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Gnar",
+      "asset_type": "square",
+      "path": "assets/images/lol/champions/Gnar/square.png",
+      "status": "downloaded",
+      "error": ""
+    },
+    {
+      "champion": "Gnar",
+      "asset_type": "loading",
+      "path": "assets/images/lol/champions/Gnar/loading.jpg",
+      "status": "downloaded",
+      "error": ""
+    },
+    {
+      "champion": "Gnar",
+      "asset_type": "splash",
+      "path": "assets/images/lol/champions/Gnar/splash.jpg",
+      "status": "downloaded",
       "error": ""
     },
     {
@@ -85,6 +106,27 @@
       "asset_type": "splash",
       "path": "assets/images/lol/champions/Jax/splash.jpg",
       "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Kayle",
+      "asset_type": "square",
+      "path": "assets/images/lol/champions/Kayle/square.png",
+      "status": "downloaded",
+      "error": ""
+    },
+    {
+      "champion": "Kayle",
+      "asset_type": "loading",
+      "path": "assets/images/lol/champions/Kayle/loading.jpg",
+      "status": "downloaded",
+      "error": ""
+    },
+    {
+      "champion": "Kayle",
+      "asset_type": "splash",
+      "path": "assets/images/lol/champions/Kayle/splash.jpg",
+      "status": "downloaded",
       "error": ""
     },
     {
@@ -217,21 +259,21 @@
       "champion": "Tristana",
       "asset_type": "square",
       "path": "assets/images/lol/champions/Tristana/square.png",
-      "status": "downloaded",
+      "status": "skipped",
       "error": ""
     },
     {
       "champion": "Tristana",
       "asset_type": "loading",
       "path": "assets/images/lol/champions/Tristana/loading.jpg",
-      "status": "downloaded",
+      "status": "skipped",
       "error": ""
     },
     {
       "champion": "Tristana",
       "asset_type": "splash",
       "path": "assets/images/lol/champions/Tristana/splash.jpg",
-      "status": "downloaded",
+      "status": "skipped",
       "error": ""
     },
     {

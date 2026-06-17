@@ -15,6 +15,7 @@
       data-alt-ko="{{ image.alt.ko | default: post.title.ko | escape }}"
       data-alt-ja="{{ image.alt.ja | default: post.title.ja | escape }}"
       loading="{{ include.loading | default: 'lazy' }}"
+      decoding="async"
     />
     {% if image.caption %}
       <figcaption
