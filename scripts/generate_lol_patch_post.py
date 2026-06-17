@@ -17,6 +17,8 @@ from html.parser import HTMLParser
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+from lol_content_utils import load_champion_map, normalize_name
+
 
 BASE_URL = "https://www.leagueoflegends.com"
 PATCH_LIST_URL = f"{BASE_URL}/ko-kr/news/tags/patch-notes/"
@@ -63,6 +65,13 @@ class ChampionChange:
 class SectionSummary:
     title: str
     snippets: list[str] = field(default_factory=list)
+
+
+def load_optional_name_map() -> dict | None:
+    try:
+        return load_champion_map()
+    except FileNotFoundError:
+        return None
 
 
 class RichTextParser(HTMLParser):
@@ -500,6 +509,53 @@ def champ_name_summary_ja(champions: list[ChampionChange], classification: str, 
     return pick_items_ja(names, limit)
 
 
+def official_champion_name(name: str, lang: str, name_map: dict | None) -> str:
+    if not name_map:
+        return name
+    normalized = normalize_name(name)
+    for entry in name_map.get("champions", {}).values():
+        aliases = [entry.get("key", ""), entry.get("en", ""), entry.get("ko", ""), entry.get("ja", "")]
+        aliases.extend(entry.get("aliases", []))
+        if normalized in {normalize_name(alias) for alias in aliases if alias}:
+            return entry.get(lang) or name
+    return name
+
+
+def official_names_for_class(
+    champions: list[ChampionChange],
+    classification: str,
+    lang: str,
+    name_map: dict | None,
+    limit: int,
+) -> str:
+    names = [
+        official_champion_name(champion.name, lang, name_map)
+        for champion in champions
+        if champion.classification == classification
+    ]
+    return pick_items_ja(names, limit) if lang == "ja" else pick_items(names, limit)
+
+
+def champion_metadata(champions: list[ChampionChange], name_map: dict | None) -> list[dict]:
+    result = []
+    for champion in champions:
+        key = normalize_name(champion.name)
+        ko = champion.name
+        ja = champion.name
+        if name_map:
+            normalized = normalize_name(champion.name)
+            for entry in name_map.get("champions", {}).values():
+                aliases = [entry.get("key", ""), entry.get("en", ""), entry.get("ko", ""), entry.get("ja", "")]
+                aliases.extend(entry.get("aliases", []))
+                if normalized in {normalize_name(alias) for alias in aliases if alias}:
+                    key = entry["key"]
+                    ko = entry["ko"]
+                    ja = entry["ja"]
+                    break
+        result.append({"key": key, "ko": ko, "ja": ja, "status": champion.classification})
+    return result
+
+
 def build_post_data(
     listing: PatchListing,
     masthead: dict,
@@ -509,12 +565,25 @@ def build_post_data(
 ) -> dict:
     version = listing.version
     champions = extract_champions(events)
+    name_map = load_optional_name_map()
     sections = extract_sections(events)
     intro = extract_intro(events, listing.description)
 
-    buff_champions = [champion.name for champion in champions if champion.classification == "버프"]
-    nerf_champions = [champion.name for champion in champions if champion.classification == "너프"]
-    adjusted_champions = [champion.name for champion in champions if champion.classification == "조정"]
+    buff_champions = [
+        official_champion_name(champion.name, "ko", name_map)
+        for champion in champions
+        if champion.classification == "버프"
+    ]
+    nerf_champions = [
+        official_champion_name(champion.name, "ko", name_map)
+        for champion in champions
+        if champion.classification == "너프"
+    ]
+    adjusted_champions = [
+        official_champion_name(champion.name, "ko", name_map)
+        for champion in champions
+        if champion.classification == "조정"
+    ]
 
     buff_summary = summarize_champions(champions, "버프")
     nerf_summary = summarize_champions(champions, "너프")
@@ -523,6 +592,9 @@ def build_post_data(
     publish_date = parse_iso_date(listing.published_at)
     today = checked_at.date().isoformat()
 
+    slug = f"lol-patch-{version_slug(version)}-summary"
+    summary_src = f"/assets/images/blog/generated/{slug}-summary.svg"
+    champions_src = f"/assets/images/blog/generated/{slug}-champions.svg"
     ko_title = f"리그오브레전드 {version} 패치노트 핵심 정리"
     ja_title = f"リーグ・オブ・レジェンド {version} パッチノート要点まとめ"
     ko_description = (
@@ -566,16 +638,16 @@ def build_post_data(
             f"主な変更点: 強化 {len(buff_champions)}名、弱体化 {len(nerf_champions)}名、"
             f"その他調整 {len(adjusted_champions)}名です。"
         ),
-        f"チャンピオン強化: {champ_name_summary_ja(champions, '버프', 6)}",
-        f"チャンピオン弱体化: {champ_name_summary_ja(champions, '너프', 6)}",
+        f"チャンピオン強化: {official_names_for_class(champions, '버프', 'ja', name_map, 6)}",
+        f"チャンピオン弱体化: {official_names_for_class(champions, '너프', 'ja', name_map, 6)}",
         f"アイテム/ルーン/システム変更: {pick_items_ja([section.title for section in relevant_sections(sections)], 3)}",
         (
             "ソロランクへの影響: 強化されたチャンピオンは序盤に使用率が上がりやすく、"
-            f"{pick_items_ja(nerf_champions, 4)} はレーン戦や集団戦の基準を見直す必要があります。"
+            f"{official_names_for_class(champions, '너프', 'ja', name_map, 4)} はレーン戦や集団戦の基準を見直す必要があります。"
         ),
         (
-            f"おすすめ/注意チャンピオン: おすすめ候補は {pick_items_ja(buff_champions, 4)}、"
-            f"注意したい候補は {pick_items_ja(nerf_champions, 4)} です。"
+            f"おすすめ/注意チャンピオン: おすすめ候補は {official_names_for_class(champions, '버프', 'ja', name_map, 4)}、"
+            f"注意したい候補は {official_names_for_class(champions, '너프', 'ja', name_map, 4)} です。"
         ),
         (
             f"まとめ: {version} パッチはメタ全体を大きく壊すより、"
@@ -586,11 +658,12 @@ def build_post_data(
     ]
 
     return {
-        "slug": f"lol-patch-{version_slug(version)}-summary",
+        "slug": slug,
         "category": "lol",
         "accent": "blue",
         "read_time": "5 min",
         "image": image_path,
+        "og_image": summary_src,
         "date": today,
         "patch_version": version,
         "source_url": listing.url,
@@ -600,6 +673,36 @@ def build_post_data(
         "description": ko_description,
         "categories": ["League of Legends", "Patch Notes"],
         "tags": ["롤", "리그오브레전드", "LoL", "패치노트", "솔랭", "메타"],
+        "lol_champions": champion_metadata(champions, name_map),
+        "summary_image": {
+            "src": summary_src,
+            "width": 1200,
+            "height": 630,
+            "alt": {
+                "ko": f"리그오브레전드 {version} 패치 핵심 요약 인포그래픽",
+                "ja": f"リーグ・オブ・レジェンド {version} パッチ要点インフォグラフィック",
+            },
+            "caption": {
+                "ko": "챔피언 변경과 솔랭 메타 영향을 한 장으로 정리했습니다.",
+                "ja": "チャンピオン変更とソロランクへの影響を一枚に整理しました。",
+            },
+        },
+        "content_images": [
+            {
+                "after": 4,
+                "src": champions_src,
+                "width": 1200,
+                "height": 800,
+                "alt": {
+                    "ko": f"리그오브레전드 {version} 패치 챔피언 변경 카드",
+                    "ja": f"リーグ・オブ・レジェンド {version} パッチのチャンピオン変更カード",
+                },
+                "caption": {
+                    "ko": "Data Dragon 공식 한국어/일본어 챔피언명 기준으로 정리한 변경 카드입니다.",
+                    "ja": "Data Dragon公式の韓国語/日本語チャンピオン名に基づく変更カードです。",
+                },
+            }
+        ],
         "author": {"ko": "세이가", "ja": "セイガ"},
         "badge": {"ko": "LOL 패치", "ja": "LoLパッチ"},
         "title": {"ko": ko_title, "ja": ja_title},

@@ -1,5 +1,10 @@
 {
   "scripts": {
-    "blog:lol-patch": "python3 scripts/generate_lol_patch_post.py"
+    "blog:lol-patch": "python3 scripts/generate_lol_patch_post.py",
+    "sync:lol": "python3 scripts/sync_lol_ddragon.py",
+    "fix:champions": "python3 scripts/fix_champion_locales.py",
+    "generate:blog-images": "python3 scripts/generate_blog_images.py",
+    "validate:blog": "python3 scripts/validate_blog_content.py",
+    "build": "jekyll build"
   }
 }

@@ -17,7 +17,7 @@
   <span class="article-thumb-wrap">
     <img
       class="article-thumb"
-      src="{{ post.image }}"
+      src="{{ post.image | relative_url }}"
       alt="{{ post.title.ko | escape }}"
       data-alt-ko="{{ post.title.ko | escape }}"
       data-alt-ja="{{ post.title.ja | escape }}"

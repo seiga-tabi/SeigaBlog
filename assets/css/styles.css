@@ -718,6 +718,32 @@ img {
   margin: 0;
 }
 
+.article-figure {
+  display: grid;
+  gap: 9px;
+  margin: 4px 0;
+}
+
+.article-figure img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  background: var(--surface-soft);
+  box-shadow: var(--inner-shadow);
+}
+
+.article-figure figcaption {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.article-figure-summary {
+  margin: 2px 0 6px;
+}
+
 .quote-box {
   max-width: 760px;
   border-left: 4px solid var(--blue);

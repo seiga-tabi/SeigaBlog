@@ -32,4 +32,14 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
       - name: 최신 LoL 패치 글 생성
-        run: python scripts/generate_lol_patch_post.py
+        run: |
+          python3 scripts/sync_lol_ddragon.py
+          LOL_PATCH_SKIP_GIT=1 python3 scripts/generate_lol_patch_post.py
+          python3 scripts/fix_champion_locales.py
+          python3 scripts/generate_blog_images.py
+          python3 scripts/validate_blog_content.py
+          if [ -n "$(git status --short)" ]; then
+            git add _posts assets/images data/lol reports scripts package.json
+            git commit -m "blog: add latest LoL patch summary"
+            git push
+          fi

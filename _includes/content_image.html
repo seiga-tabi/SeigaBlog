@@ -1,0 +1,24 @@
+{% assign image = include.image %}
+{% assign post = include.post %}
+
+{% if image and image.src %}
+  <figure class="article-figure{% if include.variant %} article-figure-{{ include.variant }}{% endif %}">
+    <img
+      src="{{ image.src | relative_url }}"
+      width="{{ image.width | default: 1200 }}"
+      height="{{ image.height | default: 630 }}"
+      alt="{{ image.alt.ko | default: post.title.ko | escape }}"
+      data-alt-ko="{{ image.alt.ko | default: post.title.ko | escape }}"
+      data-alt-ja="{{ image.alt.ja | default: post.title.ja | escape }}"
+      loading="{{ include.loading | default: 'lazy' }}"
+    />
+    {% if image.caption %}
+      <figcaption
+        data-ko="{{ image.caption.ko | escape }}"
+        data-ja="{{ image.caption.ja | escape }}"
+      >
+        {{ image.caption.ko }}
+      </figcaption>
+    {% endif %}
+  </figure>
+{% endif %}

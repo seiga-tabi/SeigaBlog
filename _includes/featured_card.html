@@ -15,7 +15,7 @@
   <div class="featured-image-wrap">
     <img
       class="featured-image"
-      src="{{ post.image }}"
+      src="{{ post.image | relative_url }}"
       alt="{{ post.title.ko | escape }}"
       data-alt-ko="{{ post.title.ko | escape }}"
       data-alt-ja="{{ post.title.ja | escape }}"

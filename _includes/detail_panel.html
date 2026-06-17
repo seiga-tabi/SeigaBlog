@@ -32,7 +32,7 @@
 
   <div class="detail-hero">
     <img
-      src="{{ post.image }}"
+      src="{{ post.image | relative_url }}"
       alt="{{ post.title.ko | escape }}"
       data-alt-ko="{{ post.title.ko | escape }}"
       data-alt-ja="{{ post.title.ja | escape }}"
@@ -73,11 +73,21 @@
       {{ post.lead.ko }}
     </p>
 
+    {% if post.summary_image %}
+      {% include content_image.html image=post.summary_image post=post variant="summary" loading="eager" %}
+    {% endif %}
+
     <div class="article-body">
       {% for paragraph in post.body.ko %}
         <p data-ko="{{ paragraph | escape }}" data-ja="{{ body_ja[forloop.index0] | escape }}">
           {{ paragraph }}
         </p>
+        {% assign paragraph_index = forloop.index %}
+        {% for content_image in post.content_images %}
+          {% if content_image.after == paragraph_index %}
+            {% include content_image.html image=content_image post=post %}
+          {% endif %}
+        {% endfor %}
       {% endfor %}
     </div>
 

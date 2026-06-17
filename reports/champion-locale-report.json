@@ -1,0 +1,177 @@
+[
+  {
+    "file": "_posts/2026-06-17-lol-patch-26-12-summary.md",
+    "changed": true,
+    "change_count": 24,
+    "changes": [
+      {
+        "alias": "아트록스",
+        "official": "エイトロックス",
+        "key": "Aatrox",
+        "lang": "ja",
+        "line": 65
+      },
+      {
+        "alias": "사일러스",
+        "official": "サイラス",
+        "key": "Sylas",
+        "lang": "ja",
+        "line": 65
+      },
+      {
+        "alias": "흐웨이",
+        "official": "フェイ",
+        "key": "Hwei",
+        "lang": "ja",
+        "line": 65
+      },
+      {
+        "alias": "신드라",
+        "official": "シンドラ",
+        "key": "Syndra",
+        "lang": "ja",
+        "line": 65
+      },
+      {
+        "alias": "그웬",
+        "official": "グウェン",
+        "key": "Gwen",
+        "lang": "ja",
+        "line": 65
+      },
+      {
+        "alias": "잭스",
+        "official": "ジャックス",
+        "key": "Jax",
+        "lang": "ja",
+        "line": 65
+      },
+      {
+        "alias": "오리아나",
+        "official": "オリアナ",
+        "key": "Orianna",
+        "lang": "ja",
+        "line": 66
+      },
+      {
+        "alias": "신 짜오",
+        "official": "シン・ジャオ",
+        "key": "XinZhao",
+        "lang": "ja",
+        "line": 66
+      },
+      {
+        "alias": "리 신",
+        "official": "リー・シン",
+        "key": "LeeSin",
+        "lang": "ja",
+        "line": 66
+      },
+      {
+        "alias": "라이즈",
+        "official": "ライズ",
+        "key": "Ryze",
+        "lang": "ja",
+        "line": 66
+      },
+      {
+        "alias": "바루스",
+        "official": "ヴァルス",
+        "key": "Varus",
+        "lang": "ja",
+        "line": 66
+      },
+      {
+        "alias": "녹턴",
+        "official": "ノクターン",
+        "key": "Nocturne",
+        "lang": "ja",
+        "line": 66
+      },
+      {
+        "alias": "오리아나",
+        "official": "オリアナ",
+        "key": "Orianna",
+        "lang": "ja",
+        "line": 68
+      },
+      {
+        "alias": "리 신",
+        "official": "リー・シン",
+        "key": "LeeSin",
+        "lang": "ja",
+        "line": 68
+      },
+      {
+        "alias": "라이즈",
+        "official": "ライズ",
+        "key": "Ryze",
+        "lang": "ja",
+        "line": 68
+      },
+      {
+        "alias": "녹턴",
+        "official": "ノクターン",
+        "key": "Nocturne",
+        "lang": "ja",
+        "line": 68
+      },
+      {
+        "alias": "아트록스",
+        "official": "エイトロックス",
+        "key": "Aatrox",
+        "lang": "ja",
+        "line": 69
+      },
+      {
+        "alias": "오리아나",
+        "official": "オリアナ",
+        "key": "Orianna",
+        "lang": "ja",
+        "line": 69
+      },
+      {
+        "alias": "흐웨이",
+        "official": "フェイ",
+        "key": "Hwei",
+        "lang": "ja",
+        "line": 69
+      },
+      {
+        "alias": "리 신",
+        "official": "リー・シン",
+        "key": "LeeSin",
+        "lang": "ja",
+        "line": 69
+      },
+      {
+        "alias": "라이즈",
+        "official": "ライズ",
+        "key": "Ryze",
+        "lang": "ja",
+        "line": 69
+      },
+      {
+        "alias": "그웬",
+        "official": "グウェン",
+        "key": "Gwen",
+        "lang": "ja",
+        "line": 69
+      },
+      {
+        "alias": "잭스",
+        "official": "ジャックス",
+        "key": "Jax",
+        "lang": "ja",
+        "line": 69
+      },
+      {
+        "alias": "녹턴",
+        "official": "ノクターン",
+        "key": "Nocturne",
+        "lang": "ja",
+        "line": 69
+      }
+    ]
+  }
+]
