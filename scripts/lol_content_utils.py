@@ -280,11 +280,27 @@ def wrap_text(value: str, width: int) -> list[str]:
 
     lines: list[str] = []
     current = ""
-    for token in re.split(r"(\s+)", value):
-        candidate = f"{current}{token}".strip()
+    for word in re.findall(r"\S+", value):
+        if visual_length(word) > width:
+            if current:
+                lines.append(current)
+                current = ""
+            chunk = ""
+            for char in word:
+                candidate = f"{chunk}{char}"
+                if visual_length(candidate) > width and chunk:
+                    lines.append(chunk)
+                    chunk = char
+                else:
+                    chunk = candidate
+            if chunk:
+                current = chunk
+            continue
+
+        candidate = word if not current else f"{current} {word}"
         if visual_length(candidate) > width and current:
             lines.append(current.strip())
-            current = token.strip()
+            current = word
         else:
             current = candidate
     if current:
@@ -309,10 +325,12 @@ def local_asset_exists(src: str) -> bool:
 
 def image_srcs_from_frontmatter(frontmatter: str) -> list[str]:
     srcs = []
-    for pattern in [r"^\s*image:\s*(.+)$", r"^og_image:\s*(.+)$", r"^\s*src:\s*(.+)$"]:
+    for pattern in [r"^[ \t]*image:[ \t]*(.+)$", r"^og_image:[ \t]*(.+)$", r"^[ \t]*src:[ \t]*(.+)$"]:
         for match in re.finditer(pattern, frontmatter, flags=re.MULTILINE):
             srcs.append(unquote(match.group(1).strip()))
-    return srcs
+    for match in re.finditer(r"['\"](/assets/images/[^'\"]+)['\"]", frontmatter):
+        srcs.append(match.group(1))
+    return unique([src for src in srcs if src])
 
 
 def write_report(name: str, data: object) -> Path:

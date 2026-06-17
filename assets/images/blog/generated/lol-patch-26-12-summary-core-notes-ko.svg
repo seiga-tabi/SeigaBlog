@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img">
+  <title>LoL 26.12 핵심노트 정리</title>
+  <rect width="1200" height="720" fill="#FFF7ED"/>
+  <rect x="40" y="40" width="1120" height="640" rx="18" fill="#F8FAFC" stroke="#CBD5E1"/>
+  <text x="74" y="116" font-size="42" font-weight="900" fill="#0F172A">LoL 26.12 핵심노트 정리</text>
+
+            <g>
+              <rect x="74" y="178" width="1052" height="64" rx="10" fill="#FFFFFF" stroke="#D7E0EA"/>
+              <circle cx="112" cy="210" r="16" fill="#C2410C"/>
+              <text x="112" y="217" text-anchor="middle" font-size="18" font-weight="900" fill="#FFFFFF">1</text>
+              <text x="148" y="216" font-size="22" font-weight="800" fill="#1F2937">첫째, 상향 카드는 라인전 안정성과 교전 복귀력을 살리는 쪽에</text>
+<text x="148" y="247" font-size="22" font-weight="800" fill="#1F2937">초점이 있습니다.</text>
+            </g>
+            <g>
+              <rect x="74" y="270" width="1052" height="64" rx="10" fill="#FFFFFF" stroke="#D7E0EA"/>
+              <circle cx="112" cy="302" r="16" fill="#C2410C"/>
+              <text x="112" y="309" text-anchor="middle" font-size="18" font-weight="900" fill="#FFFFFF">2</text>
+              <text x="148" y="308" font-size="22" font-weight="800" fill="#1F2937">둘째, 하향 카드는 초반 체급이나 반복 교전에서 누적되는 이점을</text>
+<text x="148" y="339" font-size="22" font-weight="800" fill="#1F2937">줄이는 방향입니다.</text>
+            </g>
+            <g>
+              <rect x="74" y="362" width="1052" height="64" rx="10" fill="#FFFFFF" stroke="#D7E0EA"/>
+              <circle cx="112" cy="394" r="16" fill="#C2410C"/>
+              <text x="112" y="401" text-anchor="middle" font-size="18" font-weight="900" fill="#FFFFFF">3</text>
+              <text x="148" y="400" font-size="22" font-weight="800" fill="#1F2937">셋째, 시스템과 모드 변경은 일반 협곡 플레이뿐 아니라 무작위</text>
+<text x="148" y="431" font-size="22" font-weight="800" fill="#1F2937">총력전과 아레나 체감에도 영향을 줍니다.</text>
+            </g>
+            <g>
+              <rect x="74" y="454" width="1052" height="64" rx="10" fill="#FFFFFF" stroke="#D7E0EA"/>
+              <circle cx="112" cy="486" r="16" fill="#C2410C"/>
+              <text x="112" y="493" text-anchor="middle" font-size="18" font-weight="900" fill="#FFFFFF">4</text>
+              <text x="148" y="492" font-size="22" font-weight="800" fill="#1F2937">넷째, 패치 초반에는 기존 티어표보다 숙련도와 포지션 적합도를</text>
+<text x="148" y="523" font-size="22" font-weight="800" fill="#1F2937">먼저 보는 편이 안전합니다.</text>
+            </g>
+</svg>

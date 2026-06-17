@@ -1,13 +1,40 @@
 [
   {
     "file": "_posts/2026-06-17-lol-patch-26-12-summary.md",
-    "summary_image": "assets/images/blog/generated/lol-patch-26-12-summary-summary.svg",
-    "champions_image": "assets/images/blog/generated/lol-patch-26-12-summary-champions.svg",
-    "buff_group_image": "assets/images/blog/generated/lol-patch-26-12-summary-buff-group.svg",
-    "nerf_group_image": "assets/images/blog/generated/lol-patch-26-12-summary-nerf-group.svg",
-    "tier_impact_image": "assets/images/blog/generated/lol-patch-26-12-summary-tier-impact.svg",
-    "recommended_picks_image": "assets/images/blog/generated/lol-patch-26-12-summary-recommended-picks.svg",
-    "source_note_image": "assets/images/blog/generated/lol-patch-26-12-summary-source-note.svg",
+    "images": {
+      "summary": {
+        "ko": "assets/images/blog/generated/lol-patch-26-12-summary-summary-ko.svg",
+        "ja": "assets/images/blog/generated/lol-patch-26-12-summary-summary-ja.svg"
+      },
+      "champions": {
+        "ko": "assets/images/blog/generated/lol-patch-26-12-summary-champions-ko.svg",
+        "ja": "assets/images/blog/generated/lol-patch-26-12-summary-champions-ja.svg"
+      },
+      "core-notes": {
+        "ko": "assets/images/blog/generated/lol-patch-26-12-summary-core-notes-ko.svg",
+        "ja": "assets/images/blog/generated/lol-patch-26-12-summary-core-notes-ja.svg"
+      },
+      "buff-group": {
+        "ko": "assets/images/blog/generated/lol-patch-26-12-summary-buff-group-ko.svg",
+        "ja": "assets/images/blog/generated/lol-patch-26-12-summary-buff-group-ja.svg"
+      },
+      "nerf-group": {
+        "ko": "assets/images/blog/generated/lol-patch-26-12-summary-nerf-group-ko.svg",
+        "ja": "assets/images/blog/generated/lol-patch-26-12-summary-nerf-group-ja.svg"
+      },
+      "tier-impact": {
+        "ko": "assets/images/blog/generated/lol-patch-26-12-summary-tier-impact-ko.svg",
+        "ja": "assets/images/blog/generated/lol-patch-26-12-summary-tier-impact-ja.svg"
+      },
+      "recommended-picks": {
+        "ko": "assets/images/blog/generated/lol-patch-26-12-summary-recommended-picks-ko.svg",
+        "ja": "assets/images/blog/generated/lol-patch-26-12-summary-recommended-picks-ja.svg"
+      },
+      "source-note": {
+        "ko": "assets/images/blog/generated/lol-patch-26-12-summary-source-note-ko.svg",
+        "ja": "assets/images/blog/generated/lol-patch-26-12-summary-source-note-ja.svg"
+      }
+    },
     "champion_count": 14
   }
 ]

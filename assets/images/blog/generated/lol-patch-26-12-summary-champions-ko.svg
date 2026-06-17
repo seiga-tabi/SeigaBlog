@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img">
-  <title>리그오브레전드 26.12 패치노트 핵심 정리 챔피언 요약</title>
+  <title>리그오브레전드 26.12 패치노트 핵심 정리</title>
   <rect width="1200" height="800" fill="#F6F8FB"/>
   <rect x="40" y="40" width="1120" height="720" rx="18" fill="#FFFFFF" stroke="#E2E8F0"/>
   <text x="64" y="102" font-size="42" font-weight="900" fill="#111827">리그오브레전드 26.12 패치노트 핵심 정리</text>
@@ -8,85 +8,73 @@
             <g>
               <rect x="64" y="158" width="318" height="104" rx="8" fill="#0B1220" stroke="#1F2937"/>
               <image href="../../lol/champions/Aatrox/square.png" x="80" y="174" width="72" height="72" preserveAspectRatio="xMidYMid slice"/>
-              <text x="170" y="200" font-size="25" font-weight="900" fill="#F8FAFC">아트록스</text>
-              <text x="170" y="228" font-size="18" font-weight="700" fill="#CBD5E1">エイトロックス</text>
-              <text x="314" y="226" font-size="17" font-weight="900" fill="#16A34A">버프</text>
+              <text x="170" y="205" font-size="25" font-weight="900" fill="#F8FAFC">아트록스</text>
+              <text x="312" y="230" font-size="17" font-weight="900" fill="#16A34A">버프</text>
             </g>
             <g>
               <rect x="420" y="158" width="318" height="104" rx="8" fill="#0B1220" stroke="#1F2937"/>
               <image href="../../lol/champions/Gwen/square.png" x="436" y="174" width="72" height="72" preserveAspectRatio="xMidYMid slice"/>
-              <text x="526" y="200" font-size="25" font-weight="900" fill="#F8FAFC">그웬</text>
-              <text x="526" y="228" font-size="18" font-weight="700" fill="#CBD5E1">グウェン</text>
-              <text x="670" y="226" font-size="17" font-weight="900" fill="#16A34A">버프</text>
+              <text x="526" y="205" font-size="25" font-weight="900" fill="#F8FAFC">그웬</text>
+              <text x="668" y="230" font-size="17" font-weight="900" fill="#16A34A">버프</text>
             </g>
             <g>
               <rect x="776" y="158" width="318" height="104" rx="8" fill="#0B1220" stroke="#1F2937"/>
               <image href="../../lol/champions/Hwei/square.png" x="792" y="174" width="72" height="72" preserveAspectRatio="xMidYMid slice"/>
-              <text x="882" y="200" font-size="25" font-weight="900" fill="#F8FAFC">흐웨이</text>
-              <text x="882" y="228" font-size="18" font-weight="700" fill="#CBD5E1">フェイ</text>
-              <text x="1026" y="226" font-size="17" font-weight="900" fill="#16A34A">버프</text>
+              <text x="882" y="205" font-size="25" font-weight="900" fill="#F8FAFC">흐웨이</text>
+              <text x="1024" y="230" font-size="17" font-weight="900" fill="#16A34A">버프</text>
             </g>
             <g>
               <rect x="64" y="302" width="318" height="104" rx="8" fill="#0B1220" stroke="#1F2937"/>
               <image href="../../lol/champions/Jax/square.png" x="80" y="318" width="72" height="72" preserveAspectRatio="xMidYMid slice"/>
-              <text x="170" y="344" font-size="25" font-weight="900" fill="#F8FAFC">잭스</text>
-              <text x="170" y="372" font-size="18" font-weight="700" fill="#CBD5E1">ジャックス</text>
-              <text x="314" y="370" font-size="17" font-weight="900" fill="#16A34A">버프</text>
+              <text x="170" y="349" font-size="25" font-weight="900" fill="#F8FAFC">잭스</text>
+              <text x="312" y="374" font-size="17" font-weight="900" fill="#16A34A">버프</text>
             </g>
             <g>
               <rect x="420" y="302" width="318" height="104" rx="8" fill="#0B1220" stroke="#1F2937"/>
               <image href="../../lol/champions/Sylas/square.png" x="436" y="318" width="72" height="72" preserveAspectRatio="xMidYMid slice"/>
-              <text x="526" y="344" font-size="25" font-weight="900" fill="#F8FAFC">사일러스</text>
-              <text x="526" y="372" font-size="18" font-weight="700" fill="#CBD5E1">サイラス</text>
-              <text x="670" y="370" font-size="17" font-weight="900" fill="#16A34A">버프</text>
+              <text x="526" y="349" font-size="25" font-weight="900" fill="#F8FAFC">사일러스</text>
+              <text x="668" y="374" font-size="17" font-weight="900" fill="#16A34A">버프</text>
             </g>
             <g>
               <rect x="776" y="302" width="318" height="104" rx="8" fill="#0B1220" stroke="#1F2937"/>
               <image href="../../lol/champions/Syndra/square.png" x="792" y="318" width="72" height="72" preserveAspectRatio="xMidYMid slice"/>
-              <text x="882" y="344" font-size="25" font-weight="900" fill="#F8FAFC">신드라</text>
-              <text x="882" y="372" font-size="18" font-weight="700" fill="#CBD5E1">シンドラ</text>
-              <text x="1026" y="370" font-size="17" font-weight="900" fill="#16A34A">버프</text>
+              <text x="882" y="349" font-size="25" font-weight="900" fill="#F8FAFC">신드라</text>
+              <text x="1024" y="374" font-size="17" font-weight="900" fill="#16A34A">버프</text>
             </g>
             <g>
               <rect x="64" y="446" width="318" height="104" rx="8" fill="#0B1220" stroke="#1F2937"/>
               <image href="../../lol/champions/Tristana/square.png" x="80" y="462" width="72" height="72" preserveAspectRatio="xMidYMid slice"/>
-              <text x="170" y="488" font-size="25" font-weight="900" fill="#F8FAFC">트리스타나</text>
-              <text x="170" y="516" font-size="18" font-weight="700" fill="#CBD5E1">トリスターナ</text>
-              <text x="314" y="514" font-size="17" font-weight="900" fill="#16A34A">버프</text>
+              <text x="170" y="493" font-size="25" font-weight="900" fill="#F8FAFC">트리스타나</text>
+              <text x="312" y="518" font-size="17" font-weight="900" fill="#16A34A">버프</text>
             </g>
             <g>
               <rect x="420" y="446" width="318" height="104" rx="8" fill="#0B1220" stroke="#1F2937"/>
               <image href="../../lol/champions/Yuumi/square.png" x="436" y="462" width="72" height="72" preserveAspectRatio="xMidYMid slice"/>
-              <text x="526" y="488" font-size="25" font-weight="900" fill="#F8FAFC">유미</text>
-              <text x="526" y="516" font-size="18" font-weight="700" fill="#CBD5E1">ユーミ</text>
-              <text x="670" y="514" font-size="17" font-weight="900" fill="#16A34A">버프</text>
+              <text x="526" y="493" font-size="25" font-weight="900" fill="#F8FAFC">유미</text>
+              <text x="668" y="518" font-size="17" font-weight="900" fill="#16A34A">버프</text>
             </g>
             <g>
               <rect x="776" y="446" width="318" height="104" rx="8" fill="#0B1220" stroke="#1F2937"/>
               <image href="../../lol/champions/LeeSin/square.png" x="792" y="462" width="72" height="72" preserveAspectRatio="xMidYMid slice"/>
-              <text x="882" y="488" font-size="25" font-weight="900" fill="#F8FAFC">리 신</text>
-              <text x="882" y="516" font-size="18" font-weight="700" fill="#CBD5E1">リー・シン</text>
-              <text x="1026" y="514" font-size="17" font-weight="900" fill="#EA580C">너프</text>
+              <text x="882" y="493" font-size="25" font-weight="900" fill="#F8FAFC">리 신</text>
+              <text x="1024" y="518" font-size="17" font-weight="900" fill="#EA580C">너프</text>
             </g>
             <g>
               <rect x="64" y="590" width="318" height="104" rx="8" fill="#0B1220" stroke="#1F2937"/>
               <image href="../../lol/champions/Nocturne/square.png" x="80" y="606" width="72" height="72" preserveAspectRatio="xMidYMid slice"/>
-              <text x="170" y="632" font-size="25" font-weight="900" fill="#F8FAFC">녹턴</text>
-              <text x="170" y="660" font-size="18" font-weight="700" fill="#CBD5E1">ノクターン</text>
-              <text x="314" y="658" font-size="17" font-weight="900" fill="#EA580C">너프</text>
+              <text x="170" y="637" font-size="25" font-weight="900" fill="#F8FAFC">녹턴</text>
+              <text x="312" y="662" font-size="17" font-weight="900" fill="#EA580C">너프</text>
             </g>
             <g>
               <rect x="420" y="590" width="318" height="104" rx="8" fill="#0B1220" stroke="#1F2937"/>
               <image href="../../lol/champions/Orianna/square.png" x="436" y="606" width="72" height="72" preserveAspectRatio="xMidYMid slice"/>
-              <text x="526" y="632" font-size="25" font-weight="900" fill="#F8FAFC">오리아나</text>
-              <text x="526" y="660" font-size="18" font-weight="700" fill="#CBD5E1">オリアナ</text>
-              <text x="670" y="658" font-size="17" font-weight="900" fill="#EA580C">너프</text>
+              <text x="526" y="637" font-size="25" font-weight="900" fill="#F8FAFC">오리아나</text>
+              <text x="668" y="662" font-size="17" font-weight="900" fill="#EA580C">너프</text>
             </g>
             <g>
               <rect x="776" y="590" width="318" height="104" rx="8" fill="#0B1220" stroke="#1F2937"/>
               <image href="../../lol/champions/Ryze/square.png" x="792" y="606" width="72" height="72" preserveAspectRatio="xMidYMid slice"/>
-              <text x="882" y="632" font-size="25" font-weight="900" fill="#F8FAFC">라이즈</text>
-              <text x="882" y="660" font-size="18" font-weight="700" fill="#CBD5E1">ライズ</text>
-              <text x="1026" y="658" font-size="17" font-weight="900" fill="#EA580C">너프</text>
+              <text x="882" y="637" font-size="25" font-weight="900" fill="#F8FAFC">라이즈</text>
+              <text x="1024" y="662" font-size="17" font-weight="900" fill="#EA580C">너프</text>
             </g>
 </svg>

@@ -39,6 +39,10 @@ function setLocalizedText() {
     node.alt = node.dataset[`alt${suffix()}`];
   });
 
+  document.querySelectorAll("[data-src-ko][data-src-ja]").forEach((node) => {
+    node.src = node.dataset[`src${suffix()}`];
+  });
+
   document.querySelectorAll(".lang-button").forEach((button) => {
     button.classList.toggle("is-active", button.dataset.lang === state.lang);
   });

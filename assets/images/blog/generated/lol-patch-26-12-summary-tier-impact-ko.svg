@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img">
+  <title>LoL 26.12 솔랭 티어 영향</title>
+  <rect width="1200" height="720" fill="#E0F2FE"/>
+  <rect x="40" y="40" width="1120" height="640" rx="18" fill="#F8FAFC" stroke="#CBD5E1"/>
+  <text x="74" y="116" font-size="42" font-weight="900" fill="#0F172A">LoL 26.12 솔랭 티어 영향</text>
+
+            <g>
+              <rect x="74" y="178" width="1052" height="64" rx="10" fill="#FFFFFF" stroke="#D7E0EA"/>
+              <circle cx="112" cy="210" r="16" fill="#0369A1"/>
+              <text x="112" y="217" text-anchor="middle" font-size="18" font-weight="900" fill="#FFFFFF">1</text>
+              <text x="148" y="216" font-size="22" font-weight="800" fill="#1F2937">솔랭에서는 상향 카드가 곧바로 고정 추천으로 이어지기보다, 라인</text>
+<text x="148" y="247" font-size="22" font-weight="800" fill="#1F2937">상성과 숙련도에 따라 티어 상승 폭이 갈릴 가능성이 큽니다.</text>
+            </g>
+            <g>
+              <rect x="74" y="270" width="1052" height="64" rx="10" fill="#FFFFFF" stroke="#D7E0EA"/>
+              <circle cx="112" cy="302" r="16" fill="#0369A1"/>
+              <text x="112" y="309" text-anchor="middle" font-size="18" font-weight="900" fill="#FFFFFF">2</text>
+              <text x="148" y="308" font-size="22" font-weight="800" fill="#1F2937">하향 카드는 밴 가치가 낮아질 수 있지만, 숙련도가 높은</text>
+<text x="148" y="339" font-size="22" font-weight="800" fill="#1F2937">유저에게는 여전히 충분한 선택지가 될 수 있습니다.</text>
+            </g>
+            <g>
+              <rect x="74" y="362" width="1052" height="64" rx="10" fill="#FFFFFF" stroke="#D7E0EA"/>
+              <circle cx="112" cy="394" r="16" fill="#0369A1"/>
+              <text x="112" y="401" text-anchor="middle" font-size="18" font-weight="900" fill="#FFFFFF">3</text>
+              <text x="148" y="400" font-size="22" font-weight="800" fill="#1F2937">패치 직후에는 10판 내외의 표본보다 직접 라인전 체감과 교전</text>
+<text x="148" y="431" font-size="22" font-weight="800" fill="#1F2937">타이밍을 확인하는 편이 좋습니다.</text>
+            </g>
+</svg>

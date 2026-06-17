@@ -4,7 +4,7 @@ category: "lol"
 accent: "blue"
 read_time: "7 min"
 image: "/assets/images/lol-patch/26-12/cover.webp"
-og_image: "/assets/images/blog/generated/lol-patch-26-12-summary-summary.svg"
+og_image: "/assets/images/blog/generated/lol-patch-26-12-summary-summary-ko.svg"
 date: "2026-06-17"
 patch_version: "26.12"
 source_url: "https://www.leagueoflegends.com/ko-kr/news/game-updates/league-of-legends-patch-26-12-notes"
@@ -80,7 +80,9 @@ lol_champions:
     ja: "シン・ジャオ"
     status: "너프"
 summary_image:
-  src: "/assets/images/blog/generated/lol-patch-26-12-summary-summary.svg"
+  src:
+    ko: "/assets/images/blog/generated/lol-patch-26-12-summary-summary-ko.svg"
+    ja: "/assets/images/blog/generated/lol-patch-26-12-summary-summary-ja.svg"
   width: 1200
   height: 630
   alt:
@@ -91,17 +93,21 @@ summary_image:
     ja: "パッチ方針、チャンピオン調整数、ソロランクへの影響を一枚に整理しました。"
 content_images:
   - after_section: "key-changes"
-    src: "/assets/images/blog/generated/lol-patch-26-12-summary-champions.svg"
+    src:
+      ko: "/assets/images/blog/generated/lol-patch-26-12-summary-core-notes-ko.svg"
+      ja: "/assets/images/blog/generated/lol-patch-26-12-summary-core-notes-ja.svg"
     width: 1200
-    height: 800
+    height: 720
     alt:
-      ko: "리그오브레전드 26.12 패치 챔피언 카드 인포그래픽"
-      ja: "リーグ・オブ・レジェンド 26.12 パッチのチャンピオンカードインフォグラフィック"
+      ko: "리그오브레전드 26.12 패치 핵심노트 정리 이미지"
+      ja: "リーグ・オブ・レジェンド 26.12 パッチ要点ノートまとめ画像"
     caption:
-      ko: "Data Dragon 공식 명칭과 로컬 챔피언 이미지를 기준으로 만든 카드 요약입니다."
-      ja: "Data Dragon公式名称とローカル保存したチャンピオン画像に基づくカード要約です。"
+      ko: "핵심 변경점은 언어별 전용 이미지로 분리해 겹침 없이 볼 수 있게 정리했습니다."
+      ja: "主な変更点は言語別の専用画像に分け、重なりなく確認できるよう整理しました。"
   - after_section: "buff-champions"
-    src: "/assets/images/blog/generated/lol-patch-26-12-summary-buff-group.svg"
+    src:
+      ko: "/assets/images/blog/generated/lol-patch-26-12-summary-buff-group-ko.svg"
+      ja: "/assets/images/blog/generated/lol-patch-26-12-summary-buff-group-ja.svg"
     width: 1200
     height: 720
     alt:
@@ -111,7 +117,9 @@ content_images:
       ko: "상향 카드는 라인전 보강, 교전 가치, 픽률 변화를 중심으로 읽으면 좋습니다."
       ja: "強化カードはレーン戦補強、戦闘価値、ピック率変化を中心に確認すると分かりやすいです。"
   - after_section: "nerf-champions"
-    src: "/assets/images/blog/generated/lol-patch-26-12-summary-nerf-group.svg"
+    src:
+      ko: "/assets/images/blog/generated/lol-patch-26-12-summary-nerf-group-ko.svg"
+      ja: "/assets/images/blog/generated/lol-patch-26-12-summary-nerf-group-ja.svg"
     width: 1200
     height: 720
     alt:
@@ -121,7 +129,9 @@ content_images:
       ko: "하향 카드는 초반 체급, 스킬 피해량, 성장 기대값을 다시 보는 용도로 정리했습니다."
       ja: "弱体化カードは序盤の耐久、スキルダメージ、成長期待値の見直しに使えます。"
   - after_section: "solo-queue-tier-impact"
-    src: "/assets/images/blog/generated/lol-patch-26-12-summary-tier-impact.svg"
+    src:
+      ko: "/assets/images/blog/generated/lol-patch-26-12-summary-tier-impact-ko.svg"
+      ja: "/assets/images/blog/generated/lol-patch-26-12-summary-tier-impact-ja.svg"
     width: 1200
     height: 720
     alt:
@@ -131,7 +141,9 @@ content_images:
       ko: "솔랭에서는 초반 체급 변화와 숙련도 요구치가 티어 변동의 핵심입니다."
       ja: "ソロランクでは序盤性能と熟練度要求の変化がティア変動の中心です。"
   - after_section: "recommended-picks"
-    src: "/assets/images/blog/generated/lol-patch-26-12-summary-recommended-picks.svg"
+    src:
+      ko: "/assets/images/blog/generated/lol-patch-26-12-summary-recommended-picks-ko.svg"
+      ja: "/assets/images/blog/generated/lol-patch-26-12-summary-recommended-picks-ja.svg"
     width: 1200
     height: 720
     alt:
@@ -141,7 +153,9 @@ content_images:
       ko: "추천 픽은 패치 초반 실험 가치와 조작 난이도를 함께 고려했습니다."
       ja: "おすすめピックはパッチ序盤の試用価値と操作難度を合わせて整理しました。"
   - after_section: "faq"
-    src: "/assets/images/blog/generated/lol-patch-26-12-summary-source-note.svg"
+    src:
+      ko: "/assets/images/blog/generated/lol-patch-26-12-summary-source-note-ko.svg"
+      ja: "/assets/images/blog/generated/lol-patch-26-12-summary-source-note-ja.svg"
     width: 1200
     height: 720
     alt:

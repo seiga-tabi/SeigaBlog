@@ -864,13 +864,34 @@ def build_post_data(
     today = checked_at.date().isoformat()
 
     slug = f"lol-patch-{version_slug(version)}-summary"
-    summary_src = f"/assets/images/blog/generated/{slug}-summary.svg"
-    champions_src = f"/assets/images/blog/generated/{slug}-champions.svg"
-    buff_group_src = f"/assets/images/blog/generated/{slug}-buff-group.svg"
-    nerf_group_src = f"/assets/images/blog/generated/{slug}-nerf-group.svg"
-    tier_impact_src = f"/assets/images/blog/generated/{slug}-tier-impact.svg"
-    recommended_src = f"/assets/images/blog/generated/{slug}-recommended-picks.svg"
-    source_note_src = f"/assets/images/blog/generated/{slug}-source-note.svg"
+    summary_src = {
+        "ko": f"/assets/images/blog/generated/{slug}-summary-ko.svg",
+        "ja": f"/assets/images/blog/generated/{slug}-summary-ja.svg",
+    }
+    core_notes_src = {
+        "ko": f"/assets/images/blog/generated/{slug}-core-notes-ko.svg",
+        "ja": f"/assets/images/blog/generated/{slug}-core-notes-ja.svg",
+    }
+    buff_group_src = {
+        "ko": f"/assets/images/blog/generated/{slug}-buff-group-ko.svg",
+        "ja": f"/assets/images/blog/generated/{slug}-buff-group-ja.svg",
+    }
+    nerf_group_src = {
+        "ko": f"/assets/images/blog/generated/{slug}-nerf-group-ko.svg",
+        "ja": f"/assets/images/blog/generated/{slug}-nerf-group-ja.svg",
+    }
+    tier_impact_src = {
+        "ko": f"/assets/images/blog/generated/{slug}-tier-impact-ko.svg",
+        "ja": f"/assets/images/blog/generated/{slug}-tier-impact-ja.svg",
+    }
+    recommended_src = {
+        "ko": f"/assets/images/blog/generated/{slug}-recommended-picks-ko.svg",
+        "ja": f"/assets/images/blog/generated/{slug}-recommended-picks-ja.svg",
+    }
+    source_note_src = {
+        "ko": f"/assets/images/blog/generated/{slug}-source-note-ko.svg",
+        "ja": f"/assets/images/blog/generated/{slug}-source-note-ja.svg",
+    }
     ko_title = f"리그오브레전드 {version} 패치노트 핵심 정리"
     ja_title = f"リーグ・オブ・レジェンド {version} パッチノート要点まとめ"
     ko_description = (
@@ -917,7 +938,7 @@ def build_post_data(
         "accent": "blue",
         "read_time": "7 min",
         "image": image_path,
-        "og_image": summary_src,
+        "og_image": summary_src["ko"],
         "date": today,
         "patch_version": version,
         "source_url": listing.url,
@@ -944,16 +965,16 @@ def build_post_data(
         "content_images": [
             {
                 "after_section": "key-changes",
-                "src": champions_src,
+                "src": core_notes_src,
                 "width": 1200,
-                "height": 800,
+                "height": 720,
                 "alt": {
-                    "ko": f"리그오브레전드 {version} 패치 챔피언 변경 카드",
-                    "ja": f"リーグ・オブ・レジェンド {version} パッチのチャンピオン変更カード",
+                    "ko": f"리그오브레전드 {version} 패치 핵심노트 정리 이미지",
+                    "ja": f"リーグ・オブ・レジェンド {version} パッチ要点ノートまとめ画像",
                 },
                 "caption": {
-                    "ko": "Data Dragon 공식 한국어/일본어 챔피언명 기준으로 정리한 변경 카드입니다.",
-                    "ja": "Data Dragon公式の韓国語/日本語チャンピオン名に基づく変更カードです。",
+                    "ko": "핵심 변경점은 언어별 전용 이미지로 분리해 겹침 없이 볼 수 있게 정리했습니다.",
+                    "ja": "主な変更点は言語別の専用画像に分け、重なりなく確認できるよう整理しました。",
                 },
             },
             {
@@ -1193,16 +1214,17 @@ def write_post(post_data: dict, checked_at: dt.datetime, dry_run: bool) -> Path:
 
 def generated_blog_image_paths(slug: str) -> list[Path]:
     image_dir = Path("assets/images/blog/generated")
-    suffixes = [
+    kinds = [
         "summary",
         "champions",
+        "core-notes",
         "buff-group",
         "nerf-group",
         "tier-impact",
         "recommended-picks",
         "source-note",
     ]
-    return [image_dir / f"{slug}-{suffix}.svg" for suffix in suffixes]
+    return [image_dir / f"{slug}-{kind}-{lang}.svg" for kind in kinds for lang in ["ko", "ja"]]
 
 
 def generate_blog_images(slug: str) -> list[Path]:

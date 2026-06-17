@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img">
+  <title>LoL 26.12 強化チャンピオンカード</title>
+  <rect width="1200" height="720" fill="#F6F8FB"/>
+  <rect x="40" y="40" width="1120" height="640" rx="18" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="64" y="112" font-size="42" font-weight="900" fill="#111827">LoL 26.12 強化チャンピオンカード</text>
+
+            <g>
+              <rect x="64" y="176" width="252" height="202" rx="12" fill="#FFFFFF" stroke="#D7E0EA"/>
+              <image href="../../lol/champions/Aatrox/splash.jpg" x="78" y="190" width="224" height="118" preserveAspectRatio="xMidYMid slice"/>
+              <rect x="78" y="322" width="80" height="26" rx="13" fill="#16A34A"/>
+              <text x="118" y="341" text-anchor="middle" font-size="15" font-weight="900" fill="#FFFFFF">強化</text>
+              <text x="172" y="342" font-size="22" font-weight="900" fill="#0F172A">エイトロックス</text>
+            </g>
+            <g>
+              <rect x="340" y="176" width="252" height="202" rx="12" fill="#FFFFFF" stroke="#D7E0EA"/>
+              <image href="../../lol/champions/Gwen/splash.jpg" x="354" y="190" width="224" height="118" preserveAspectRatio="xMidYMid slice"/>
+              <rect x="354" y="322" width="80" height="26" rx="13" fill="#16A34A"/>
+              <text x="394" y="341" text-anchor="middle" font-size="15" font-weight="900" fill="#FFFFFF">強化</text>
+              <text x="448" y="342" font-size="22" font-weight="900" fill="#0F172A">グウェン</text>
+            </g>
+            <g>
+              <rect x="616" y="176" width="252" height="202" rx="12" fill="#FFFFFF" stroke="#D7E0EA"/>
+              <image href="../../lol/champions/Hwei/splash.jpg" x="630" y="190" width="224" height="118" preserveAspectRatio="xMidYMid slice"/>
+              <rect x="630" y="322" width="80" height="26" rx="13" fill="#16A34A"/>
+              <text x="670" y="341" text-anchor="middle" font-size="15" font-weight="900" fill="#FFFFFF">強化</text>
+              <text x="724" y="342" font-size="22" font-weight="900" fill="#0F172A">フェイ</text>
+            </g>
+            <g>
+              <rect x="892" y="176" width="252" height="202" rx="12" fill="#FFFFFF" stroke="#D7E0EA"/>
+              <image href="../../lol/champions/Jax/splash.jpg" x="906" y="190" width="224" height="118" preserveAspectRatio="xMidYMid slice"/>
+              <rect x="906" y="322" width="80" height="26" rx="13" fill="#16A34A"/>
+              <text x="946" y="341" text-anchor="middle" font-size="15" font-weight="900" fill="#FFFFFF">強化</text>
+              <text x="1000" y="342" font-size="22" font-weight="900" fill="#0F172A">ジャックス</text>
+            </g>
+            <g>
+              <rect x="64" y="408" width="252" height="202" rx="12" fill="#FFFFFF" stroke="#D7E0EA"/>
+              <image href="../../lol/champions/Sylas/splash.jpg" x="78" y="422" width="224" height="118" preserveAspectRatio="xMidYMid slice"/>
+              <rect x="78" y="554" width="80" height="26" rx="13" fill="#16A34A"/>
+              <text x="118" y="573" text-anchor="middle" font-size="15" font-weight="900" fill="#FFFFFF">強化</text>
+              <text x="172" y="574" font-size="22" font-weight="900" fill="#0F172A">サイラス</text>
+            </g>
+            <g>
+              <rect x="340" y="408" width="252" height="202" rx="12" fill="#FFFFFF" stroke="#D7E0EA"/>
+              <image href="../../lol/champions/Syndra/splash.jpg" x="354" y="422" width="224" height="118" preserveAspectRatio="xMidYMid slice"/>
+              <rect x="354" y="554" width="80" height="26" rx="13" fill="#16A34A"/>
+              <text x="394" y="573" text-anchor="middle" font-size="15" font-weight="900" fill="#FFFFFF">強化</text>
+              <text x="448" y="574" font-size="22" font-weight="900" fill="#0F172A">シンドラ</text>
+            </g>
+            <g>
+              <rect x="616" y="408" width="252" height="202" rx="12" fill="#FFFFFF" stroke="#D7E0EA"/>
+              <image href="../../lol/champions/Tristana/splash.jpg" x="630" y="422" width="224" height="118" preserveAspectRatio="xMidYMid slice"/>
+              <rect x="630" y="554" width="80" height="26" rx="13" fill="#16A34A"/>
+              <text x="670" y="573" text-anchor="middle" font-size="15" font-weight="900" fill="#FFFFFF">強化</text>
+              <text x="724" y="574" font-size="22" font-weight="900" fill="#0F172A">トリスターナ</text>
+            </g>
+            <g>
+              <rect x="892" y="408" width="252" height="202" rx="12" fill="#FFFFFF" stroke="#D7E0EA"/>
+              <image href="../../lol/champions/Yuumi/splash.jpg" x="906" y="422" width="224" height="118" preserveAspectRatio="xMidYMid slice"/>
+              <rect x="906" y="554" width="80" height="26" rx="13" fill="#16A34A"/>
+              <text x="946" y="573" text-anchor="middle" font-size="15" font-weight="900" fill="#FFFFFF">強化</text>
+              <text x="1000" y="574" font-size="22" font-weight="900" fill="#0F172A">ユーミ</text>
+            </g>
+</svg>

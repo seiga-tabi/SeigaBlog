@@ -1,10 +1,14 @@
 {% assign image = include.image %}
 {% assign post = include.post %}
+{% assign image_src_ko = image.src.ko | default: image.src %}
+{% assign image_src_ja = image.src.ja | default: image_src_ko %}
 
-{% if image and image.src %}
+{% if image and image_src_ko %}
   <figure class="article-figure{% if include.variant %} article-figure-{{ include.variant }}{% endif %}">
     <img
-      src="{{ image.src | relative_url }}"
+      src="{{ image_src_ko | relative_url }}"
+      data-src-ko="{{ image_src_ko | relative_url }}"
+      data-src-ja="{{ image_src_ja | relative_url }}"
       width="{{ image.width | default: 1200 }}"
       height="{{ image.height | default: 630 }}"
       alt="{{ image.alt.ko | default: post.title.ko | escape }}"

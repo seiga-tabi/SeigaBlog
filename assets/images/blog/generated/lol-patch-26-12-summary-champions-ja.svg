@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img">
+  <title>リーグ・オブ・レジェンド 26.12 パッチノート要点まとめ</title>
+  <rect width="1200" height="800" fill="#F6F8FB"/>
+  <rect x="40" y="40" width="1120" height="720" rx="18" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="64" y="102" font-size="42" font-weight="900" fill="#111827">リーグ・オブ・レジェンド 26.12 パッチノート要点まとめ</text>
+  <text x="64" y="132" font-size="22" font-weight="800" fill="#64748B">Data Dragon公式名称に基づくチャンピオン要約</text>
+
+            <g>
+              <rect x="64" y="158" width="318" height="104" rx="8" fill="#0B1220" stroke="#1F2937"/>
+              <image href="../../lol/champions/Aatrox/square.png" x="80" y="174" width="72" height="72" preserveAspectRatio="xMidYMid slice"/>
+              <text x="170" y="205" font-size="25" font-weight="900" fill="#F8FAFC">エイトロックス</text>
+              <text x="312" y="230" font-size="17" font-weight="900" fill="#16A34A">強化</text>
+            </g>
+            <g>
+              <rect x="420" y="158" width="318" height="104" rx="8" fill="#0B1220" stroke="#1F2937"/>
+              <image href="../../lol/champions/Gwen/square.png" x="436" y="174" width="72" height="72" preserveAspectRatio="xMidYMid slice"/>
+              <text x="526" y="205" font-size="25" font-weight="900" fill="#F8FAFC">グウェン</text>
+              <text x="668" y="230" font-size="17" font-weight="900" fill="#16A34A">強化</text>
+            </g>
+            <g>
+              <rect x="776" y="158" width="318" height="104" rx="8" fill="#0B1220" stroke="#1F2937"/>
+              <image href="../../lol/champions/Hwei/square.png" x="792" y="174" width="72" height="72" preserveAspectRatio="xMidYMid slice"/>
+              <text x="882" y="205" font-size="25" font-weight="900" fill="#F8FAFC">フェイ</text>
+              <text x="1024" y="230" font-size="17" font-weight="900" fill="#16A34A">強化</text>
+            </g>
+            <g>
+              <rect x="64" y="302" width="318" height="104" rx="8" fill="#0B1220" stroke="#1F2937"/>
+              <image href="../../lol/champions/Jax/square.png" x="80" y="318" width="72" height="72" preserveAspectRatio="xMidYMid slice"/>
+              <text x="170" y="349" font-size="25" font-weight="900" fill="#F8FAFC">ジャックス</text>
+              <text x="312" y="374" font-size="17" font-weight="900" fill="#16A34A">強化</text>
+            </g>
+            <g>
+              <rect x="420" y="302" width="318" height="104" rx="8" fill="#0B1220" stroke="#1F2937"/>
+              <image href="../../lol/champions/Sylas/square.png" x="436" y="318" width="72" height="72" preserveAspectRatio="xMidYMid slice"/>
+              <text x="526" y="349" font-size="25" font-weight="900" fill="#F8FAFC">サイラス</text>
+              <text x="668" y="374" font-size="17" font-weight="900" fill="#16A34A">強化</text>
+            </g>
+            <g>
+              <rect x="776" y="302" width="318" height="104" rx="8" fill="#0B1220" stroke="#1F2937"/>
+              <image href="../../lol/champions/Syndra/square.png" x="792" y="318" width="72" height="72" preserveAspectRatio="xMidYMid slice"/>
+              <text x="882" y="349" font-size="25" font-weight="900" fill="#F8FAFC">シンドラ</text>
+              <text x="1024" y="374" font-size="17" font-weight="900" fill="#16A34A">強化</text>
+            </g>
+            <g>
+              <rect x="64" y="446" width="318" height="104" rx="8" fill="#0B1220" stroke="#1F2937"/>
+              <image href="../../lol/champions/Tristana/square.png" x="80" y="462" width="72" height="72" preserveAspectRatio="xMidYMid slice"/>
+              <text x="170" y="493" font-size="25" font-weight="900" fill="#F8FAFC">トリスターナ</text>
+              <text x="312" y="518" font-size="17" font-weight="900" fill="#16A34A">強化</text>
+            </g>
+            <g>
+              <rect x="420" y="446" width="318" height="104" rx="8" fill="#0B1220" stroke="#1F2937"/>
+              <image href="../../lol/champions/Yuumi/square.png" x="436" y="462" width="72" height="72" preserveAspectRatio="xMidYMid slice"/>
+              <text x="526" y="493" font-size="25" font-weight="900" fill="#F8FAFC">ユーミ</text>
+              <text x="668" y="518" font-size="17" font-weight="900" fill="#16A34A">強化</text>
+            </g>
+            <g>
+              <rect x="776" y="446" width="318" height="104" rx="8" fill="#0B1220" stroke="#1F2937"/>
+              <image href="../../lol/champions/LeeSin/square.png" x="792" y="462" width="72" height="72" preserveAspectRatio="xMidYMid slice"/>
+              <text x="882" y="493" font-size="25" font-weight="900" fill="#F8FAFC">リー・シン</text>
+              <text x="1024" y="518" font-size="17" font-weight="900" fill="#EA580C">弱体化</text>
+            </g>
+            <g>
+              <rect x="64" y="590" width="318" height="104" rx="8" fill="#0B1220" stroke="#1F2937"/>
+              <image href="../../lol/champions/Nocturne/square.png" x="80" y="606" width="72" height="72" preserveAspectRatio="xMidYMid slice"/>
+              <text x="170" y="637" font-size="25" font-weight="900" fill="#F8FAFC">ノクターン</text>
+              <text x="312" y="662" font-size="17" font-weight="900" fill="#EA580C">弱体化</text>
+            </g>
+            <g>
+              <rect x="420" y="590" width="318" height="104" rx="8" fill="#0B1220" stroke="#1F2937"/>
+              <image href="../../lol/champions/Orianna/square.png" x="436" y="606" width="72" height="72" preserveAspectRatio="xMidYMid slice"/>
+              <text x="526" y="637" font-size="25" font-weight="900" fill="#F8FAFC">オリアナ</text>
+              <text x="668" y="662" font-size="17" font-weight="900" fill="#EA580C">弱体化</text>
+            </g>
+            <g>
+              <rect x="776" y="590" width="318" height="104" rx="8" fill="#0B1220" stroke="#1F2937"/>
+              <image href="../../lol/champions/Ryze/square.png" x="792" y="606" width="72" height="72" preserveAspectRatio="xMidYMid slice"/>
+              <text x="882" y="637" font-size="25" font-weight="900" fill="#F8FAFC">ライズ</text>
+              <text x="1024" y="662" font-size="17" font-weight="900" fill="#EA580C">弱体化</text>
+            </g>
+</svg>
