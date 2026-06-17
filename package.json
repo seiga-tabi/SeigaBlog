@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "blog:lol-patch": "python3 scripts/generate_lol_patch_post.py"
+  }
+}
