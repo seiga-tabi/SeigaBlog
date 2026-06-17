@@ -105,9 +105,16 @@ function updateEmptyState(count) {
   }
 
   emptyState.hidden = count > 0;
-  emptyState.textContent = state.savedOnly
+  const message = state.savedOnly
     ? app.dataset[`savedEmpty${suffix()}`]
     : app.dataset[`empty${suffix()}`];
+  const messageNode = emptyState.querySelector("[data-empty-message]");
+
+  if (messageNode) {
+    messageNode.textContent = message;
+  } else {
+    emptyState.textContent = message;
+  }
 }
 
 function ensureActivePost() {

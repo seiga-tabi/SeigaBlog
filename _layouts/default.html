@@ -15,7 +15,9 @@
     <div class="page-shell">
       <header class="site-header">
         <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }}">
-          <span class="brand-mark">S</span>
+          <span class="brand-mark">
+            <img src="{{ site.profile_image | relative_url }}" alt="{{ site.title }} 프로필" />
+          </span>
           <span>{{ site.title }}</span>
         </a>
         <nav

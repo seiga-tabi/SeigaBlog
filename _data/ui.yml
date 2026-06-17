@@ -1,9 +1,6 @@
 category_order:
   - all
-  - metaverse
-  - design
-  - business
-  - culture
+  - lol
 
 ko:
   language_label: 언어 선택
@@ -19,7 +16,8 @@ ko:
   nav_language: 언어
   back: 목록
   related: 이어 읽기
-  empty: 조건에 맞는 글이 없습니다.
+  empty: 아직 게시된 글이 없습니다.
+  empty_description: 첫 글을 추가하면 이 영역이 글 목록으로 바뀝니다.
   saved_empty: 저장한 글이 아직 없습니다.
   saved: 글을 저장했습니다.
   removed: 저장을 해제했습니다.
@@ -29,10 +27,7 @@ ko:
   author_prefix: 글쓴이
   categories:
     all: 전체
-    metaverse: 메타버스
-    design: 디자인
-    business: 비즈니스
-    culture: 문화
+    lol: LOL
 
 ja:
   language_label: 言語選択
@@ -48,7 +43,8 @@ ja:
   nav_language: 言語
   back: 一覧
   related: 続けて読む
-  empty: 条件に合う記事がありません。
+  empty: まだ投稿された記事はありません。
+  empty_description: 最初の記事を追加すると、この領域が記事一覧に変わります。
   saved_empty: 保存した記事はまだありません。
   saved: 記事を保存しました。
   removed: 保存を解除しました。
@@ -58,7 +54,4 @@ ja:
   author_prefix: 著者
   categories:
     all: すべて
-    metaverse: メタバース
-    design: デザイン
-    business: ビジネス
-    culture: カルチャー
+    lol: LOL

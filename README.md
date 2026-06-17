@@ -10,6 +10,7 @@ Figma의 모바일 블로그 리스트/상세 화면 분위기를 참고해 만�
 - `_includes/`: 카드, 상세 패널처럼 반복되는 HTML 조각
 - `assets/css/styles.css`: 화면 스타일
 - `assets/js/main.js`: 검색, 필터, 언어 전환, 북마크, 상세 패널 전환
+- `assets/images/profile.png`: 프로필 이미지
 - `_config.yml`: Jekyll 설정
 
 ## 글 추가
@@ -19,7 +20,7 @@ Figma의 모바일 블로그 리스트/상세 화면 분위기를 참고해 만�
 ```yaml
 ---
 slug: example-post
-category: design
+category: lol
 accent: green
 read_time: 4 min
 image: https://example.com/image.jpg
