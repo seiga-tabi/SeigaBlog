@@ -15,10 +15,12 @@ title_text: Blog
   data-saved-ja="{{ ui_ja.saved }}"
   data-removed-ko="{{ ui_ko.removed }}"
   data-removed-ja="{{ ui_ja.removed }}"
+  {% if site.posts == empty %}
   data-empty-ko="{{ ui_ko.empty }}"
   data-empty-ja="{{ ui_ja.empty }}"
   data-saved-empty-ko="{{ ui_ko.saved_empty }}"
   data-saved-empty-ja="{{ ui_ja.saved_empty }}"
+  {% endif %}
 >
   <section
     class="blog-app"
@@ -98,24 +100,26 @@ title_text: Blog
       {% endfor %}
     </section>
 
-    <section class="empty-state profile-empty" id="emptyState" hidden>
-      <img
-        class="profile-empty-image"
-        src="{{ site.profile_image | relative_url }}"
-        alt="{{ site.title }} 프로필"
-        loading="eager"
-      />
-      <h2
-        data-empty-message
-        data-ko="{{ ui_ko.empty }}"
-        data-ja="{{ ui_ja.empty }}"
-      >
-        {{ ui_ko.empty }}
-      </h2>
-      <p data-ko="{{ ui_ko.empty_description }}" data-ja="{{ ui_ja.empty_description }}">
-        {{ ui_ko.empty_description }}
-      </p>
-    </section>
+    {% if site.posts == empty %}
+      <section class="empty-state profile-empty" id="emptyState">
+        <img
+          class="profile-empty-image"
+          src="{{ site.profile_image | relative_url }}"
+          alt="{{ site.title }} 프로필"
+          loading="eager"
+        />
+        <h2
+          data-empty-message
+          data-ko="{{ ui_ko.empty }}"
+          data-ja="{{ ui_ja.empty }}"
+        >
+          {{ ui_ko.empty }}
+        </h2>
+        <p data-ko="{{ ui_ko.empty_description }}" data-ja="{{ ui_ja.empty_description }}">
+          {{ ui_ko.empty_description }}
+        </p>
+      </section>
+    {% endif %}
 
     <nav class="bottom-nav" aria-label="{{ ui_ko.list_label }}">
       <button class="nav-button is-active" type="button" data-action="home">
@@ -137,9 +141,11 @@ title_text: Blog
     </nav>
   </section>
 
-  <section class="detail-stack" aria-live="polite">
-    {% for post in site.posts %}
-      {% include detail_panel.html post=post active=forloop.first %}
-    {% endfor %}
-  </section>
+  {% unless site.posts == empty %}
+    <section class="detail-stack" aria-live="polite" aria-hidden="true" inert>
+      {% for post in site.posts %}
+        {% include detail_panel.html post=post active=forloop.first %}
+      {% endfor %}
+    </section>
+  {% endunless %}
 </main>

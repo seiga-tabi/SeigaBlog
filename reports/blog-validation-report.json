@@ -5,6 +5,6 @@
   "issues": [],
   "build": {
     "ok": true,
-    "output": "Configuration file: /Users/kokonenne/codex/SeigaBlog/_config.yml\n            Source: /Users/kokonenne/codex/SeigaBlog\n       Destination: /Users/kokonenne/codex/SeigaBlog/_site\n Incremental build: disabled. Enable with --incremental\n      Generating... \n                    done in 0.12 seconds.\n Auto-regeneration: disabled. Use --watch to enable."
+    "output": "Configuration file: /Users/kokonenne/codex/SeigaBlog/_config.yml\n            Source: /Users/kokonenne/codex/SeigaBlog\n       Destination: /Users/kokonenne/codex/SeigaBlog/_site\n Incremental build: disabled. Enable with --incremental\n      Generating... \n                    done in 0.108 seconds.\n Auto-regeneration: disabled. Use --watch to enable."
   }
 }

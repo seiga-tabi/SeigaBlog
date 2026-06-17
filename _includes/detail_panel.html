@@ -33,10 +33,14 @@
   <div class="detail-hero">
     <img
       src="{{ post.image | relative_url }}"
+      width="1200"
+      height="675"
       alt="{{ post.title.ko | escape }}"
       data-alt-ko="{{ post.title.ko | escape }}"
       data-alt-ja="{{ post.title.ja | escape }}"
       loading="{% if include.active %}eager{% else %}lazy{% endif %}"
+      decoding="async"
+      {% if include.active %}fetchpriority="high"{% endif %}
     />
   </div>
 
@@ -74,23 +78,25 @@
     </p>
 
     {% if post.summary_image %}
-      {% include content_image.html image=post.summary_image post=post variant="summary" loading="eager" %}
+      {% include content_image.html image=post.summary_image post=post variant="summary" loading="eager" fetchpriority="high" %}
     {% endif %}
 
     <div class="article-body">
       {% if post.sections %}
         {% if post.toc %}
-          <nav class="article-toc" aria-label="{{ post.toc.title.ko }}">
+          <nav class="post-toc article-toc" aria-label="글 목차" data-ko="글 목차" data-ja="記事目次">
             <h3 data-ko="{{ post.toc.title.ko }}" data-ja="{{ post.toc.title.ja }}">
               {{ post.toc.title.ko }}
             </h3>
-            <div class="toc-grid">
+            <ol class="post-toc-list toc-grid">
               {% for item in post.toc.items %}
-                <a href="#{{ item.id }}" data-ko="{{ item.title.ko }}" data-ja="{{ item.title.ja }}">
-                  {{ item.title.ko }}
-                </a>
+                <li>
+                  <a href="#{{ item.id }}" data-ko="{{ item.title.ko }}" data-ja="{{ item.title.ja }}">
+                    {{ item.title.ko }}
+                  </a>
+                </li>
               {% endfor %}
-            </div>
+            </ol>
           </nav>
         {% endif %}
 
@@ -99,14 +105,14 @@
             <h3 data-ko="{{ post.overview_table.title.ko }}" data-ja="{{ post.overview_table.title.ja }}">
               {{ post.overview_table.title.ko }}
             </h3>
-            <div class="overview-grid">
+            <dl class="overview-grid">
               {% for row in post.overview_table.rows %}
-                <article class="overview-cell">
-                  <span data-ko="{{ row.label.ko }}" data-ja="{{ row.label.ja }}">{{ row.label.ko }}</span>
-                  <strong data-ko="{{ row.value.ko }}" data-ja="{{ row.value.ja }}">{{ row.value.ko }}</strong>
-                </article>
+                <div class="overview-item overview-cell">
+                  <dt class="overview-label" data-ko="{{ row.label.ko }}" data-ja="{{ row.label.ja }}">{{ row.label.ko }}</dt>
+                  <dd class="overview-value" data-ko="{{ row.value.ko }}" data-ja="{{ row.value.ja }}">{{ row.value.ko }}</dd>
+                </div>
               {% endfor %}
-            </div>
+            </dl>
           </section>
         {% endif %}
 
@@ -125,7 +131,7 @@
             {% if section.kind == "buff_cards" %}
               <div class="champion-card-grid">
                 {% for card in post.buff_champion_cards %}
-                  {% include champion_card.html card=card status="buff" %}
+                  {% include champion_card.html card=card status="buff" variant="full" %}
                 {% endfor %}
               </div>
             {% endif %}
@@ -133,15 +139,23 @@
             {% if section.kind == "nerf_cards" %}
               <div class="champion-card-grid">
                 {% for card in post.nerf_champion_cards %}
-                  {% include champion_card.html card=card status="nerf" %}
+                  {% include champion_card.html card=card status="nerf" variant="full" %}
                 {% endfor %}
               </div>
             {% endif %}
 
             {% if section.kind == "recommended_cards" %}
-              <div class="champion-card-grid champion-card-grid-compact">
+              <div class="mini-card-grid recommended-card-grid">
                 {% for card in post.recommended_pick_cards %}
-                  {% include champion_card.html card=card status="pick" %}
+                  {% include champion_card.html card=card status="pick" variant="mini-pick" %}
+                {% endfor %}
+              </div>
+            {% endif %}
+
+            {% if section.kind == "conditional_cards" %}
+              <div class="mini-card-grid conditional-pick-grid">
+                {% for card in post.conditional_recommended_cards %}
+                  {% include champion_card.html card=card status="pick" variant="mini-conditional" %}
                 {% endfor %}
               </div>
             {% endif %}
@@ -184,15 +198,29 @@
                         </li>
                       {% endfor %}
                     </ul>
+                    {% if item.champion_links %}
+                      <div class="anchor-chip-row">
+                        {% for champion_link in item.champion_links %}
+                          <a
+                            class="anchor-chip"
+                            href="{{ champion_link.target_anchor }}"
+                            data-ko="{{ champion_link.label.ko | escape }}"
+                            data-ja="{{ champion_link.label.ja | escape }}"
+                          >
+                            {{ champion_link.label.ko }}
+                          </a>
+                        {% endfor %}
+                      </div>
+                    {% endif %}
                   </article>
                 {% endfor %}
               </div>
             {% endif %}
 
             {% if section.kind == "watch_cards" %}
-              <div class="champion-card-grid champion-card-grid-compact">
+              <div class="mini-card-grid watch-card-grid">
                 {% for card in post.watch_pick_cards %}
-                  {% include champion_card.html card=card status="caution" %}
+                  {% include champion_card.html card=card status="caution" variant="mini-watch" %}
                 {% endfor %}
               </div>
             {% endif %}
@@ -201,6 +229,7 @@
               <div class="detail-card-grid system-card-grid">
                 {% for item in post.system_change_cards %}
                   {% assign changes_ja = item.change_summary.ja %}
+                  {% assign checks_ja = item.immediate_check.ja %}
                   <article class="detail-info-card system-card">
                     <div class="detail-info-card-head">
                       <h4 data-ko="{{ item.title.ko | escape }}" data-ja="{{ item.title.ja | escape }}">
@@ -210,7 +239,10 @@
                         {{ item.badge.ko }}
                       </span>
                     </div>
-                    <div class="champion-card-change">
+                    <p class="system-target" data-ko="{{ item.target.ko | escape }}" data-ja="{{ item.target.ja | escape }}">
+                      {{ item.target.ko }}
+                    </p>
+                    <div class="change-box champion-card-change">
                       <span data-ko="공식 변경 수치" data-ja="公式変更数値">공식 변경 수치</span>
                       <ul>
                         {% for change in item.change_summary.ko %}
@@ -220,15 +252,29 @@
                         {% endfor %}
                       </ul>
                     </div>
-                    <p data-ko="{{ item.interpretation.ko | escape }}" data-ja="{{ item.interpretation.ja | escape }}">
-                      {{ item.interpretation.ko }}
-                    </p>
+                    <div class="champion-card-detail">
+                      <strong data-ko="바로 확인할 것" data-ja="すぐ確認すること">바로 확인할 것</strong>
+                      <ul class="detail-point-list">
+                        {% for check in item.immediate_check.ko %}
+                          <li data-ko="{{ check | escape }}" data-ja="{{ checks_ja[forloop.index0] | escape }}">
+                            {{ check }}
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    </div>
                     <p
                       class="detail-info-impact"
-                      data-ko="{{ item.solo_queue_impact.ko | escape }}"
-                      data-ja="{{ item.solo_queue_impact.ja | escape }}"
+                      data-ko="{{ item.judgment.ko | escape }}"
+                      data-ja="{{ item.judgment.ja | escape }}"
                     >
-                      {{ item.solo_queue_impact.ko }}
+                      {{ item.judgment.ko }}
+                    </p>
+                    <p
+                      class="system-less-important"
+                      data-ko="{{ item.less_important.ko | escape }}"
+                      data-ja="{{ item.less_important.ja | escape }}"
+                    >
+                      {{ item.less_important.ko }}
                     </p>
                   </article>
                 {% endfor %}

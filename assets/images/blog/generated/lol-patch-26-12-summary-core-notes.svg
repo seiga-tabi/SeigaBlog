@@ -8,28 +8,14 @@
               <rect x="74" y="178" width="1052" height="64" rx="10" fill="#FFFFFF" stroke="#D7E0EA"/>
               <circle cx="112" cy="210" r="16" fill="#C2410C"/>
               <text x="112" y="217" text-anchor="middle" font-size="18" font-weight="900" fill="#FFFFFF">1</text>
-              <text x="148" y="216" font-size="22" font-weight="800" fill="#1F2937">MSI 전 선택지 다양성을 넓히고, AP 신 짜오 유지력과 과한 정글</text>
-<text x="148" y="247" font-size="22" font-weight="800" fill="#1F2937">캐리력을 누르는 방향입니다.</text>
+              <text x="148" y="216" font-size="22" font-weight="800" fill="#1F2937">공식 패치노트를 기준으로 챔피언 수치, Riot의 조정 의도, 솔랭</text>
+<text x="148" y="247" font-size="22" font-weight="800" fill="#1F2937">체감, 추천/주의 픽을 카드 중심으로 정리했습니다.</text>
             </g>
             <g>
               <rect x="74" y="270" width="1052" height="64" rx="10" fill="#FFFFFF" stroke="#D7E0EA"/>
               <circle cx="112" cy="302" r="16" fill="#C2410C"/>
               <text x="112" y="309" text-anchor="middle" font-size="18" font-weight="900" fill="#FFFFFF">2</text>
-              <text x="148" y="308" font-size="22" font-weight="800" fill="#1F2937">리 신, 녹턴, 라이즈, 오리아나는 초반 실수 비용이 커져 숙련도</text>
-<text x="148" y="339" font-size="22" font-weight="800" fill="#1F2937">차이가 더 드러납니다.</text>
-            </g>
-            <g>
-              <rect x="74" y="362" width="1052" height="64" rx="10" fill="#FFFFFF" stroke="#D7E0EA"/>
-              <circle cx="112" cy="394" r="16" fill="#C2410C"/>
-              <text x="112" y="401" text-anchor="middle" font-size="18" font-weight="900" fill="#FFFFFF">3</text>
-              <text x="148" y="400" font-size="22" font-weight="800" fill="#1F2937">그웬, 흐웨이, 신드라, 사일러스, 트리스타나는 패치 초반 직접</text>
-<text x="148" y="431" font-size="22" font-weight="800" fill="#1F2937">체감해볼 만한 상향입니다.</text>
-            </g>
-            <g>
-              <rect x="74" y="454" width="1052" height="64" rx="10" fill="#FFFFFF" stroke="#D7E0EA"/>
-              <circle cx="112" cy="486" r="16" fill="#C2410C"/>
-              <text x="112" y="493" text-anchor="middle" font-size="18" font-weight="900" fill="#FFFFFF">4</text>
-              <text x="148" y="492" font-size="22" font-weight="800" fill="#1F2937">아수라장과 아레나 변경은 협곡보다 모드 유저에게 더 크게 느껴질</text>
-<text x="148" y="523" font-size="22" font-weight="800" fill="#1F2937">수 있습니다.</text>
+              <text x="148" y="308" font-size="22" font-weight="800" fill="#1F2937">챔피언명은 Riot Data Dragon ko_KR/ja_JP 공식 데이터를</text>
+<text x="148" y="339" font-size="22" font-weight="800" fill="#1F2937">사용했고, 이미지는 로컬에 저장한 공식 스플래시 아트를 참조</text>
             </g>
 </svg>

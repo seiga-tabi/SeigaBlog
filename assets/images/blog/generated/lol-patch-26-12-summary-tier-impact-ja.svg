@@ -8,7 +8,16 @@
               <rect x="74" y="178" width="1052" height="64" rx="10" fill="#FFFFFF" stroke="#D7E0EA"/>
               <circle cx="112" cy="210" r="16" fill="#0369A1"/>
               <text x="112" y="217" text-anchor="middle" font-size="18" font-weight="900" fill="#FFFFFF">1</text>
-              <text x="148" y="216" font-size="22" font-weight="800" fill="#1F2937">自分のロールに関係するカードだけ先に読んでも、パッチ初日の判断</text>
-<text x="148" y="247" font-size="22" font-weight="800" fill="#1F2937">がしやすくなります。</text>
+              <text x="148" y="216" font-size="22" font-weight="800" fill="#1F2937">公式パッチノートを基準に、チャンピオン数値、Riotの調整意図、ソ</text>
+<text x="148" y="247" font-size="22" font-weight="800" fill="#1F2937">ロランクでの体感、おすすめ/注意ピックをカード中心に整理しまし</text>
+<text x="148" y="278" font-size="22" font-weight="800" fill="#1F2937">た。</text>
+            </g>
+            <g>
+              <rect x="74" y="270" width="1052" height="64" rx="10" fill="#FFFFFF" stroke="#D7E0EA"/>
+              <circle cx="112" cy="302" r="16" fill="#0369A1"/>
+              <text x="112" y="309" text-anchor="middle" font-size="18" font-weight="900" fill="#FFFFFF">2</text>
+              <text x="148" y="308" font-size="22" font-weight="800" fill="#1F2937">チャンピオン名はRiot Data Dragon</text>
+<text x="148" y="339" font-size="22" font-weight="800" fill="#1F2937">ko_KR/ja_JP公式データを使用し、画像はローカル保存した公式スプ</text>
+<text x="148" y="370" font-size="22" font-weight="800" fill="#1F2937">ラッシュアートを参照しています</text>
             </g>
 </svg>

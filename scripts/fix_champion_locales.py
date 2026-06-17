@@ -17,6 +17,21 @@ def log(message: str) -> None:
     print(f"[Champion Fix] {message}")
 
 
+def should_replace_line(line: str) -> bool:
+    stripped = line.lstrip()
+    protected_prefixes = (
+        "source_url:",
+        "image:",
+        "src:",
+        "url:",
+        "target_anchor:",
+        "source_anchor:",
+        "key:",
+        "- key:",
+    )
+    return not stripped.startswith(protected_prefixes)
+
+
 def fix_post(text: str, name_map: dict) -> tuple[str, list[dict]]:
     lines = text.splitlines(keepends=True)
     current: tuple[str | None, int] = (None, 0)
@@ -26,7 +41,7 @@ def fix_post(text: str, name_map: dict) -> tuple[str, list[dict]]:
     for line_no, line in enumerate(lines, start=1):
         current = localized_line_language(line, current)
         lang = current[0]
-        if lang in {"ko", "ja"} and not line.lstrip().startswith(("source_url:", "image:", "src:")):
+        if lang in {"ko", "ja"} and should_replace_line(line):
             replaced, line_changes = replace_champion_names(line, lang, name_map)
             fixed_lines.append(replaced)
             for change in line_changes:

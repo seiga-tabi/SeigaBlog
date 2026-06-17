@@ -8,7 +8,14 @@
               <rect x="74" y="178" width="1052" height="64" rx="10" fill="#FFFFFF" stroke="#D7E0EA"/>
               <circle cx="112" cy="210" r="16" fill="#0369A1"/>
               <text x="112" y="217" text-anchor="middle" font-size="18" font-weight="900" fill="#FFFFFF">1</text>
-              <text x="148" y="216" font-size="22" font-weight="800" fill="#1F2937">자기 포지션에 해당하는 카드만 먼저 읽어도 패치 첫날 판단이</text>
-<text x="148" y="247" font-size="22" font-weight="800" fill="#1F2937">쉬워집니다.</text>
+              <text x="148" y="216" font-size="22" font-weight="800" fill="#1F2937">공식 패치노트를 기준으로 챔피언 수치, Riot의 조정 의도, 솔랭</text>
+<text x="148" y="247" font-size="22" font-weight="800" fill="#1F2937">체감, 추천/주의 픽을 카드 중심으로 정리했습니다.</text>
+            </g>
+            <g>
+              <rect x="74" y="270" width="1052" height="64" rx="10" fill="#FFFFFF" stroke="#D7E0EA"/>
+              <circle cx="112" cy="302" r="16" fill="#0369A1"/>
+              <text x="112" y="309" text-anchor="middle" font-size="18" font-weight="900" fill="#FFFFFF">2</text>
+              <text x="148" y="308" font-size="22" font-weight="800" fill="#1F2937">챔피언명은 Riot Data Dragon ko_KR/ja_JP 공식 데이터를</text>
+<text x="148" y="339" font-size="22" font-weight="800" fill="#1F2937">사용했고, 이미지는 로컬에 저장한 공식 스플래시 아트를 참조</text>
             </g>
 </svg>

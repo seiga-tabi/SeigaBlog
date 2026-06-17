@@ -8,28 +8,16 @@
               <rect x="74" y="178" width="1052" height="64" rx="10" fill="#FFFFFF" stroke="#D7E0EA"/>
               <circle cx="112" cy="210" r="16" fill="#C2410C"/>
               <text x="112" y="217" text-anchor="middle" font-size="18" font-weight="900" fill="#FFFFFF">1</text>
-              <text x="148" y="216" font-size="22" font-weight="800" fill="#1F2937">MSI前に選択肢を広げつつ、APシン・ジャオのサステインと過剰なジ</text>
-<text x="148" y="247" font-size="22" font-weight="800" fill="#1F2937">ャングルキャリー力を抑える方向です。</text>
+              <text x="148" y="216" font-size="22" font-weight="800" fill="#1F2937">公式パッチノートを基準に、チャンピオン数値、Riotの調整意図、ソ</text>
+<text x="148" y="247" font-size="22" font-weight="800" fill="#1F2937">ロランクでの体感、おすすめ/注意ピックをカード中心に整理しまし</text>
+<text x="148" y="278" font-size="22" font-weight="800" fill="#1F2937">た。</text>
             </g>
             <g>
               <rect x="74" y="270" width="1052" height="64" rx="10" fill="#FFFFFF" stroke="#D7E0EA"/>
               <circle cx="112" cy="302" r="16" fill="#C2410C"/>
               <text x="112" y="309" text-anchor="middle" font-size="18" font-weight="900" fill="#FFFFFF">2</text>
-              <text x="148" y="308" font-size="22" font-weight="800" fill="#1F2937">リー・シン、ノクターン、ライズ、オリアナは序盤ミスのコストが増</text>
-<text x="148" y="339" font-size="22" font-weight="800" fill="#1F2937">え、熟練度差がより出ます。</text>
-            </g>
-            <g>
-              <rect x="74" y="362" width="1052" height="64" rx="10" fill="#FFFFFF" stroke="#D7E0EA"/>
-              <circle cx="112" cy="394" r="16" fill="#C2410C"/>
-              <text x="112" y="401" text-anchor="middle" font-size="18" font-weight="900" fill="#FFFFFF">3</text>
-              <text x="148" y="400" font-size="22" font-weight="800" fill="#1F2937">グウェン、フェイ、シンドラ、サイラス、トリスターナはパッチ序盤</text>
-<text x="148" y="431" font-size="22" font-weight="800" fill="#1F2937">に試す価値があります。</text>
-            </g>
-            <g>
-              <rect x="74" y="454" width="1052" height="64" rx="10" fill="#FFFFFF" stroke="#D7E0EA"/>
-              <circle cx="112" cy="486" r="16" fill="#C2410C"/>
-              <text x="112" y="493" text-anchor="middle" font-size="18" font-weight="900" fill="#FFFFFF">4</text>
-              <text x="148" y="492" font-size="22" font-weight="800" fill="#1F2937">大乱闘系とアリーナの変更は、サモナーズリフトよりモード勢に大き</text>
-<text x="148" y="523" font-size="22" font-weight="800" fill="#1F2937">く響きそうです。</text>
+              <text x="148" y="308" font-size="22" font-weight="800" fill="#1F2937">チャンピオン名はRiot Data Dragon</text>
+<text x="148" y="339" font-size="22" font-weight="800" fill="#1F2937">ko_KR/ja_JP公式データを使用し、画像はローカル保存した公式スプ</text>
+<text x="148" y="370" font-size="22" font-weight="800" fill="#1F2937">ラッシュアートを参照しています</text>
             </g>
 </svg>

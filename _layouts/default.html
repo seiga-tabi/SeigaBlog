@@ -34,6 +34,7 @@
     {% if page.last_checked %}
       <meta property="article:modified_time" content="{{ page.last_checked | date_to_xmlschema }}" />
     {% endif %}
+    <link rel="canonical" href="{{ page.url | absolute_url }}" />
     <title>{{ meta_title }}</title>
     <link rel="preconnect" href="https://images.unsplash.com" />
     <link rel="preconnect" href="https://unpkg.com" />
@@ -72,7 +73,7 @@
                   "name": {{ item.question.ko | jsonify }},
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": {{ item.answer.ko | jsonify }}
+                    "text": {{ item.answer.ko | strip_html | strip_newlines | jsonify }}
                   }
                 }{% unless forloop.last %},{% endunless %}
               {% endfor %}

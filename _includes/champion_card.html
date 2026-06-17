@@ -1,176 +1,244 @@
 {% assign card = include.card %}
+{% assign variant = include.variant | default: "full" %}
+{% assign status = include.status | default: "default" %}
 {% assign change_summary_ja = card.change_summary.ja %}
 {% assign tags_ja = card.tags.ja %}
+{% assign key_change = card.key_change | default: card.change_summary %}
+{% assign key_change_ja = key_change.ja %}
+{% assign target_anchor = card.target_anchor | default: "" %}
+{% assign source_anchor = card.source_anchor | default: "#source-note" %}
+{% assign anchor_id = target_anchor | remove_first: "#" %}
 
-<article class="champion-card champion-card-{{ include.status | default: 'default' }}">
-  <img
-    class="champion-card-image"
-    src="{{ card.image | relative_url }}"
-    width="308"
-    height="172"
-    alt="{{ card.alt.ko | default: card.ko | escape }}"
-    data-alt-ko="{{ card.alt.ko | default: card.ko | escape }}"
-    data-alt-ja="{{ card.alt.ja | default: card.ja | escape }}"
-    loading="lazy"
-  />
-  <div class="champion-card-body">
-    <div class="champion-card-topline">
+{% if variant == "mini-pick" %}
+  <article
+    class="champion-card champion-card--mini champion-card--mini-pick champion-card-{{ status }}"
+    data-card-variant="mini-pick"
+    data-champion-key="{{ card.key }}"
+  >
+    <div class="champion-card-mini-head">
       <span
-        class="champion-card-status champion-card-status-{{ include.status | default: 'default' }}"
-        data-ko="{{ card.status_label.ko }}"
-        data-ja="{{ card.status_label.ja }}"
+        class="champion-card-status champion-card-status-{{ status }}"
+        data-ko="{{ card.status_label.ko | escape }}"
+        data-ja="{{ card.status_label.ja | escape }}"
       >
         {{ card.status_label.ko }}
       </span>
-      {% if card.role %}
-        <span
-          class="champion-card-role"
-          data-ko="{{ card.role.ko | escape }}"
-          data-ja="{{ card.role.ja | escape }}"
-        >
-          {{ card.role.ko }}
-        </span>
-      {% endif %}
-      {% if card.recommendation_grade %}
-        <span class="champion-card-grade">{{ card.recommendation_grade }}</span>
-      {% endif %}
+      <span class="champion-card-grade">{{ card.grade | default: "A" }}</span>
     </div>
-
     <h4 class="champion-card-title" data-ko="{{ card.ko | escape }}" data-ja="{{ card.ja | escape }}">
       {{ card.ko }}
     </h4>
+    <span class="champion-card-role" data-ko="{{ card.role.ko | escape }}" data-ja="{{ card.role.ja | escape }}">
+      {{ card.role.ko }}
+    </span>
+    <div class="mini-card-row">
+      <strong data-ko="추천 이유" data-ja="おすすめ理由">추천 이유</strong>
+      <p data-ko="{{ card.reason.ko | escape }}" data-ja="{{ card.reason.ja | escape }}">
+        {{ card.reason.ko }}
+      </p>
+    </div>
+    <div class="mini-card-row">
+      <strong data-ko="잘 맞는 유저" data-ja="合うプレイヤー">잘 맞는 유저</strong>
+      <p data-ko="{{ card.fit_user.ko | escape }}" data-ja="{{ card.fit_user.ja | escape }}">
+        {{ card.fit_user.ko }}
+      </p>
+    </div>
+    <div class="change-box mini-change-box">
+      <span data-ko="핵심 변경 수치" data-ja="主な変更数値">핵심 변경 수치</span>
+      <p data-ko="{{ key_change.ko | escape }}" data-ja="{{ key_change_ja | escape }}">
+        {{ key_change.ko }}
+      </p>
+    </div>
+    {% if target_anchor %}
+      <a class="champion-anchor-link" href="{{ target_anchor }}" data-ko="상세 카드로 이동" data-ja="詳細カードへ移動">
+        상세 카드로 이동
+      </a>
+    {% endif %}
+  </article>
+{% elsif variant == "mini-watch" %}
+  <article
+    class="champion-card champion-card--mini champion-card--mini-watch champion-card-{{ status }}"
+    data-card-variant="mini-watch"
+    data-champion-key="{{ card.key }}"
+  >
+    <div class="champion-card-mini-head">
+      <span
+        class="champion-card-status champion-card-status-{{ status }}"
+        data-ko="{{ card.status_label.ko | escape }}"
+        data-ja="{{ card.status_label.ja | escape }}"
+      >
+        {{ card.status_label.ko }}
+      </span>
+      <span class="meta-chip meta-chip-warning" data-ko="{{ card.first_day_rating.ko | escape }}" data-ja="{{ card.first_day_rating.ja | escape }}">
+        {{ card.first_day_rating.ko }}
+      </span>
+    </div>
+    <h4 class="champion-card-title" data-ko="{{ card.ko | escape }}" data-ja="{{ card.ja | escape }}">
+      {{ card.ko }}
+    </h4>
+    <span class="champion-card-role" data-ko="{{ card.role.ko | escape }}" data-ja="{{ card.role.ja | escape }}">
+      {{ card.role.ko }}
+    </span>
+    <div class="change-box mini-change-box">
+      <span data-ko="핵심 너프 수치" data-ja="主な弱体化数値">핵심 너프 수치</span>
+      <p data-ko="{{ card.key_nerf.ko | escape }}" data-ja="{{ card.key_nerf.ja | escape }}">
+        {{ card.key_nerf.ko }}
+      </p>
+    </div>
+    <div class="mini-card-row">
+      <strong data-ko="그래도 쓸 수 있는 조건" data-ja="使える条件">그래도 쓸 수 있는 조건</strong>
+      <p data-ko="{{ card.usable_condition.ko | escape }}" data-ja="{{ card.usable_condition.ja | escape }}">
+        {{ card.usable_condition.ko }}
+      </p>
+    </div>
+    <div class="mini-card-row">
+      <strong data-ko="주의할 플레이" data-ja="注意するプレイ">주의할 플레이</strong>
+      <p data-ko="{{ card.risk.ko | escape }}" data-ja="{{ card.risk.ja | escape }}">
+        {{ card.risk.ko }}
+      </p>
+    </div>
+    {% if target_anchor %}
+      <a class="champion-anchor-link" href="{{ target_anchor }}" data-ko="상세 카드로 이동" data-ja="詳細カードへ移動">
+        상세 카드로 이동
+      </a>
+    {% endif %}
+  </article>
+{% elsif variant == "mini-conditional" %}
+  <article
+    class="champion-card champion-card--mini champion-card--mini-conditional champion-card-{{ status }}"
+    data-card-variant="mini-conditional"
+    data-champion-key="{{ card.key }}"
+  >
+    <div class="champion-card-mini-head">
+      <span
+        class="champion-card-status champion-card-status-{{ status }}"
+        data-ko="{{ card.status_label.ko | escape }}"
+        data-ja="{{ card.status_label.ja | escape }}"
+      >
+        {{ card.status_label.ko }}
+      </span>
+      <span class="champion-card-role" data-ko="{{ card.role.ko | escape }}" data-ja="{{ card.role.ja | escape }}">
+        {{ card.role.ko }}
+      </span>
+    </div>
+    <h4 class="champion-card-title" data-ko="{{ card.ko | escape }}" data-ja="{{ card.ja | escape }}">
+      {{ card.ko }}
+    </h4>
+    <div class="mini-card-row">
+      <strong data-ko="조건" data-ja="条件">조건</strong>
+      <p data-ko="{{ card.condition.ko | escape }}" data-ja="{{ card.condition.ja | escape }}">
+        {{ card.condition.ko }}
+      </p>
+    </div>
+    <div class="change-box mini-change-box">
+      <span data-ko="이유" data-ja="理由">이유</span>
+      <p data-ko="{{ card.reason.ko | escape }}" data-ja="{{ card.reason.ja | escape }}">
+        {{ card.reason.ko }}
+      </p>
+    </div>
+    <div class="mini-card-row">
+      <strong data-ko="주의" data-ja="注意">주의</strong>
+      <p data-ko="{{ card.caution.ko | escape }}" data-ja="{{ card.caution.ja | escape }}">
+        {{ card.caution.ko }}
+      </p>
+    </div>
+    {% if target_anchor %}
+      <a class="champion-anchor-link" href="{{ target_anchor }}" data-ko="상세 카드로 이동" data-ja="詳細カードへ移動">
+        상세 카드로 이동
+      </a>
+    {% endif %}
+  </article>
+{% else %}
+  <article
+    {% if anchor_id %}id="{{ anchor_id }}"{% endif %}
+    class="champion-card champion-card--full champion-card-{{ status }}"
+    data-card-variant="full"
+    data-champion-key="{{ card.key }}"
+  >
+    <div class="champion-card__media">
+      <img
+        class="champion-card-image"
+        src="{{ card.image | relative_url }}"
+        width="308"
+        height="173"
+        alt="{{ card.alt.ko | escape }}"
+        data-alt-ko="{{ card.alt.ko | escape }}"
+        data-alt-ja="{{ card.alt.ja | escape }}"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+    <div class="champion-card-body">
+      <div class="champion-card-topline">
+        <span
+          class="champion-card-status champion-card-status-{{ status }}"
+          data-ko="{{ card.status_label.ko | escape }}"
+          data-ja="{{ card.status_label.ja | escape }}"
+        >
+          {{ card.status_label.ko }}
+        </span>
+        <span class="champion-card-role" data-ko="{{ card.role.ko | escape }}" data-ja="{{ card.role.ja | escape }}">
+          {{ card.role.ko }}
+        </span>
+      </div>
 
-    {% if card.change_summary %}
-      <div class="champion-card-change">
-        <span data-ko="공식 변경 수치" data-ja="公式変更数値">공식 변경 수치</span>
+      <h4 class="champion-card-title" data-ko="{{ card.ko | escape }}" data-ja="{{ card.ja | escape }}">
+        {{ card.ko }}
+      </h4>
+
+      <div class="champion-card-meta">
+        <span class="meta-chip" data-ko="{{ card.priority_label.ko | escape }}" data-ja="{{ card.priority_label.ja | escape }}">
+          {{ card.priority_label.ko }}
+        </span>
+        <span class="meta-chip" data-ko="{{ card.difficulty_label.ko | escape }}" data-ja="{{ card.difficulty_label.ja | escape }}">
+          {{ card.difficulty_label.ko }}
+        </span>
+      </div>
+
+      <div class="change-box champion-card-change">
+        <div class="change-box-head">
+          <span data-ko="공식 변경 수치" data-ja="公式変更数値">공식 변경 수치</span>
+          <a class="official-number-badge" href="{{ source_anchor }}" data-ko="출처" data-ja="出典">출처</a>
+        </div>
         <ul>
-          {% for item in card.change_summary.ko %}
-            <li data-ko="{{ item | escape }}" data-ja="{{ change_summary_ja[forloop.index0] | escape }}">
-              {{ item }}
+          {% for change in card.change_summary.ko %}
+            <li data-ko="{{ change | escape }}" data-ja="{{ change_summary_ja[forloop.index0] | escape }}">
+              {{ change }}
             </li>
           {% endfor %}
         </ul>
       </div>
-    {% elsif card.summary %}
-      <p data-ko="{{ card.summary.ko | escape }}" data-ja="{{ card.summary.ja | escape }}">
-        {{ card.summary.ko }}
-      </p>
-    {% endif %}
 
-    {% if card.riot_context %}
-      <section class="champion-card-detail">
+      <div class="champion-card-detail">
         <strong data-ko="Riot 의도" data-ja="Riotの意図">Riot 의도</strong>
         <p data-ko="{{ card.riot_context.ko | escape }}" data-ja="{{ card.riot_context.ja | escape }}">
           {{ card.riot_context.ko }}
         </p>
-      </section>
-    {% endif %}
+      </div>
 
-    {% if card.solo_queue_impact %}
-      <section class="champion-card-detail champion-card-impact">
+      <div class="champion-card-detail">
         <strong data-ko="솔랭 영향" data-ja="ソロランク影響">솔랭 영향</strong>
         <p data-ko="{{ card.solo_queue_impact.ko | escape }}" data-ja="{{ card.solo_queue_impact.ja | escape }}">
           {{ card.solo_queue_impact.ko }}
         </p>
-      </section>
-    {% elsif card.impact %}
-      <p
-        class="champion-card-impact"
-        data-ko="{{ card.impact.ko | escape }}"
-        data-ja="{{ card.impact.ja | escape }}"
-      >
-        {{ card.impact.ko }}
-      </p>
-    {% endif %}
+      </div>
 
-    {% if card.recommend_reason %}
-      <section class="champion-card-detail">
-        <strong data-ko="추천 이유" data-ja="おすすめ理由">추천 이유</strong>
-        <p data-ko="{{ card.recommend_reason.ko | escape }}" data-ja="{{ card.recommend_reason.ja | escape }}">
-          {{ card.recommend_reason.ko }}
-        </p>
-      </section>
-    {% endif %}
+      <details class="champion-card-more">
+        <summary data-ko="플레이 팁과 주의점" data-ja="プレイのコツと注意点">플레이 팁과 주의점</summary>
+        <div class="champion-card-detail">
+          <strong data-ko="플레이 팁" data-ja="プレイのコツ">플레이 팁</strong>
+          <p data-ko="{{ card.play_tip.ko | escape }}" data-ja="{{ card.play_tip.ja | escape }}">
+            {{ card.play_tip.ko }}
+          </p>
+        </div>
+        <div class="champion-card-detail champion-card-caution">
+          <strong data-ko="주의" data-ja="注意">주의</strong>
+          <p data-ko="{{ card.caution.ko | escape }}" data-ja="{{ card.caution.ja | escape }}">
+            {{ card.caution.ko }}
+          </p>
+        </div>
+      </details>
 
-    {% if card.recommended_for %}
-      <section class="champion-card-detail">
-        <strong data-ko="잘 맞는 유저" data-ja="向いている人">잘 맞는 유저</strong>
-        <p data-ko="{{ card.recommended_for.ko | escape }}" data-ja="{{ card.recommended_for.ja | escape }}">
-          {{ card.recommended_for.ko }}
-        </p>
-      </section>
-    {% endif %}
-
-    {% if card.still_playable_condition %}
-      <section class="champion-card-detail">
-        <strong data-ko="그래도 쓸 수 있는 조건" data-ja="まだ使える条件">그래도 쓸 수 있는 조건</strong>
-        <p
-          data-ko="{{ card.still_playable_condition.ko | escape }}"
-          data-ja="{{ card.still_playable_condition.ja | escape }}"
-        >
-          {{ card.still_playable_condition.ko }}
-        </p>
-      </section>
-    {% endif %}
-
-    {% if card.play_tip %}
-      <section class="champion-card-detail">
-        <strong data-ko="플레이 팁" data-ja="プレイのコツ">플레이 팁</strong>
-        <p data-ko="{{ card.play_tip.ko | escape }}" data-ja="{{ card.play_tip.ja | escape }}">
-          {{ card.play_tip.ko }}
-        </p>
-      </section>
-    {% endif %}
-
-    {% if card.caution %}
-      <section class="champion-card-detail champion-card-caution">
-        <strong data-ko="주의" data-ja="注意">주의</strong>
-        <p data-ko="{{ card.caution.ko | escape }}" data-ja="{{ card.caution.ja | escape }}">
-          {{ card.caution.ko }}
-        </p>
-      </section>
-    {% endif %}
-
-    {% if card.matchup_caution %}
-      <section class="champion-card-detail champion-card-caution">
-        <strong data-ko="매치업 조건" data-ja="マッチアップ条件">매치업 조건</strong>
-        <p data-ko="{{ card.matchup_caution.ko | escape }}" data-ja="{{ card.matchup_caution.ja | escape }}">
-          {{ card.matchup_caution.ko }}
-        </p>
-      </section>
-    {% endif %}
-
-    <div class="champion-card-meta">
-      {% if card.priority_label %}
-        <span
-          class="meta-chip"
-          data-ko="우선순위 {{ card.priority_label.ko }}"
-          data-ja="優先度 {{ card.priority_label.ja }}"
-        >
-          우선순위 {{ card.priority_label.ko }}
-        </span>
-      {% endif %}
-      {% if card.difficulty_label %}
-        <span
-          class="meta-chip"
-          data-ko="난도 {{ card.difficulty_label.ko }}"
-          data-ja="難度 {{ card.difficulty_label.ja }}"
-        >
-          난도 {{ card.difficulty_label.ko }}
-        </span>
-      {% endif %}
-      {% if card.rank_day_recommendation %}
-        <span
-          class="meta-chip meta-chip-warning"
-          data-ko="{{ card.rank_day_recommendation.ko }}"
-          data-ja="{{ card.rank_day_recommendation.ja }}"
-        >
-          {{ card.rank_day_recommendation.ko }}
-        </span>
-      {% endif %}
-    </div>
-
-    {% if card.tags %}
       <div class="champion-card-tags">
         {% for tag in card.tags.ko %}
           <span data-ko="{{ tag | escape }}" data-ja="{{ tags_ja[forloop.index0] | escape }}">
@@ -178,6 +246,6 @@
           </span>
         {% endfor %}
       </div>
-    {% endif %}
-  </div>
-</article>
+    </div>
+  </article>
+{% endif %}

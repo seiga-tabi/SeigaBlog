@@ -10,7 +10,7 @@
   <rect width="1200" height="630" fill="url(#bg)"/>
   <rect x="42" y="42" width="1116" height="546" rx="18" fill="none" stroke="#2F80ED" stroke-width="2"/>
   <text x="78" y="102" font-size="28" font-weight="900" fill="#7DD3FC">Seiga Blog · LoL Patch 26.12</text>
-  <text x="900" y="102" font-size="28" font-weight="900" fill="#FDE68A">버프 8 / 너프 6</text>
+  <text x="900" y="102" font-size="28" font-weight="900" fill="#FDE68A">버프 0 / 너프 0</text>
   <text x="78" y="172" font-size="48" font-weight="900" fill="#FFFFFF">LoL 26.12 패치노트</text>
 <text x="78" y="241" font-size="48" font-weight="900" fill="#FFFFFF">요약｜버프·너프 챔피언, 솔랭</text>
 <text x="78" y="310" font-size="48" font-weight="900" fill="#FFFFFF">추천 픽, MSI 메타 영향</text>
@@ -18,32 +18,32 @@
             <g>
               <rect x="78" y="292" width="304" height="76" rx="8" fill="#111827" stroke="#334155"/>
               <text x="98" y="327" font-size="25" font-weight="900" fill="#F8FAFC">아트록스</text>
-              <text x="316" y="327" font-size="17" font-weight="900" fill="#16A34A">버프</text>
+              <text x="316" y="327" font-size="17" font-weight="900" fill="#64748B">핵심</text>
             </g>
             <g>
               <rect x="420" y="292" width="304" height="76" rx="8" fill="#111827" stroke="#334155"/>
-              <text x="440" y="327" font-size="25" font-weight="900" fill="#F8FAFC">그웬</text>
-              <text x="658" y="327" font-size="17" font-weight="900" fill="#16A34A">버프</text>
+              <text x="440" y="327" font-size="25" font-weight="900" fill="#F8FAFC">나르</text>
+              <text x="658" y="327" font-size="17" font-weight="900" fill="#64748B">핵심</text>
             </g>
             <g>
               <rect x="762" y="292" width="304" height="76" rx="8" fill="#111827" stroke="#334155"/>
-              <text x="782" y="327" font-size="25" font-weight="900" fill="#F8FAFC">흐웨이</text>
-              <text x="1000" y="327" font-size="17" font-weight="900" fill="#16A34A">버프</text>
+              <text x="782" y="327" font-size="25" font-weight="900" fill="#F8FAFC">그웬</text>
+              <text x="1000" y="327" font-size="17" font-weight="900" fill="#64748B">핵심</text>
             </g>
             <g>
               <rect x="78" y="398" width="304" height="76" rx="8" fill="#111827" stroke="#334155"/>
-              <text x="98" y="433" font-size="25" font-weight="900" fill="#F8FAFC">잭스</text>
-              <text x="316" y="433" font-size="17" font-weight="900" fill="#16A34A">버프</text>
+              <text x="98" y="433" font-size="25" font-weight="900" fill="#F8FAFC">흐웨이</text>
+              <text x="316" y="433" font-size="17" font-weight="900" fill="#64748B">핵심</text>
             </g>
             <g>
               <rect x="420" y="398" width="304" height="76" rx="8" fill="#111827" stroke="#334155"/>
-              <text x="440" y="433" font-size="25" font-weight="900" fill="#F8FAFC">사일러스</text>
-              <text x="658" y="433" font-size="17" font-weight="900" fill="#16A34A">버프</text>
+              <text x="440" y="433" font-size="25" font-weight="900" fill="#F8FAFC">잭스</text>
+              <text x="658" y="433" font-size="17" font-weight="900" fill="#64748B">핵심</text>
             </g>
             <g>
               <rect x="762" y="398" width="304" height="76" rx="8" fill="#111827" stroke="#334155"/>
-              <text x="782" y="433" font-size="25" font-weight="900" fill="#F8FAFC">신드라</text>
-              <text x="1000" y="433" font-size="17" font-weight="900" fill="#16A34A">버프</text>
+              <text x="782" y="433" font-size="25" font-weight="900" fill="#F8FAFC">케일</text>
+              <text x="1000" y="433" font-size="17" font-weight="900" fill="#64748B">핵심</text>
             </g>
   <text x="78" y="494" font-size="22" font-weight="700" fill="#DDE7F3">• 공식 패치노트를 기준으로 챔피언 수치, Riot의 조정 의도, 솔랭 체감, 추천/주의 픽을 카드 중심으로 정리했습니다.</text><text x="78" y="526" font-size="22" font-weight="700" fill="#DDE7F3">• 챔피언명은 Riot Data Dragon ko_KR/ja_JP 공식 데이터를 사용했고, 이미지는 로컬에 저장한 공식 스플래시 아트를 참조</text>
 </svg>

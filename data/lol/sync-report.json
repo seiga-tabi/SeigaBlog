@@ -1,6 +1,6 @@
 {
   "version": "16.12.1",
-  "updated_at": "2026-06-17T16:00:54+00:00",
+  "updated_at": "2026-06-17T16:54:20+00:00",
   "champion_count": 172,
   "asset_results": [
     {
@@ -28,21 +28,21 @@
       "champion": "Gnar",
       "asset_type": "square",
       "path": "assets/images/lol/champions/Gnar/square.png",
-      "status": "downloaded",
+      "status": "skipped",
       "error": ""
     },
     {
       "champion": "Gnar",
       "asset_type": "loading",
       "path": "assets/images/lol/champions/Gnar/loading.jpg",
-      "status": "downloaded",
+      "status": "skipped",
       "error": ""
     },
     {
       "champion": "Gnar",
       "asset_type": "splash",
       "path": "assets/images/lol/champions/Gnar/splash.jpg",
-      "status": "downloaded",
+      "status": "skipped",
       "error": ""
     },
     {
@@ -112,21 +112,21 @@
       "champion": "Kayle",
       "asset_type": "square",
       "path": "assets/images/lol/champions/Kayle/square.png",
-      "status": "downloaded",
+      "status": "skipped",
       "error": ""
     },
     {
       "champion": "Kayle",
       "asset_type": "loading",
       "path": "assets/images/lol/champions/Kayle/loading.jpg",
-      "status": "downloaded",
+      "status": "skipped",
       "error": ""
     },
     {
       "champion": "Kayle",
       "asset_type": "splash",
       "path": "assets/images/lol/champions/Kayle/splash.jpg",
-      "status": "downloaded",
+      "status": "skipped",
       "error": ""
     },
     {

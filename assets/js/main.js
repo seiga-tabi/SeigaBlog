@@ -60,6 +60,24 @@ function detailPanels() {
   return [...document.querySelectorAll("[data-detail-panel]")];
 }
 
+function detailStack() {
+  return document.querySelector(".detail-stack");
+}
+
+function setDetailStackHidden(isHidden) {
+  const stack = detailStack();
+  if (!stack) {
+    return;
+  }
+
+  stack.setAttribute("aria-hidden", String(isHidden));
+  if (isHidden) {
+    stack.setAttribute("inert", "");
+  } else {
+    stack.removeAttribute("inert");
+  }
+}
+
 function selectedPostId() {
   return document.querySelector("[data-detail-panel].is-active")?.dataset.postId;
 }
@@ -109,10 +127,12 @@ function updateEmptyState(count) {
   }
 
   emptyState.hidden = count > 0;
-  const message = state.savedOnly
-    ? app.dataset[`savedEmpty${suffix()}`]
-    : app.dataset[`empty${suffix()}`];
   const messageNode = emptyState.querySelector("[data-empty-message]");
+  const message = (
+    state.savedOnly
+      ? app.dataset[`savedEmpty${suffix()}`]
+      : app.dataset[`empty${suffix()}`]
+  ) || messageNode?.dataset[state.lang] || "";
 
   if (messageNode) {
     messageNode.textContent = message;
@@ -142,12 +162,14 @@ function activatePost(postId, openDetail = true) {
 
   if (openDetail) {
     app?.classList.add("show-detail");
+    setDetailStackHidden(false);
     history.replaceState(null, "", `#${postId}`);
   }
 }
 
 function closeDetail() {
   app?.classList.remove("show-detail");
+  setDetailStackHidden(true);
   if (location.hash) {
     history.replaceState(null, "", location.pathname);
   }
@@ -244,7 +266,15 @@ document.addEventListener("click", (event) => {
     return;
   }
 
-  if (postLink && app?.dataset.page === "home") {
+  if (
+    postLink
+    && app?.dataset.page === "home"
+    && event.button === 0
+    && !event.metaKey
+    && !event.ctrlKey
+    && !event.shiftKey
+    && !event.altKey
+  ) {
     event.preventDefault();
     activatePost(postLink.dataset.openPost);
     return;

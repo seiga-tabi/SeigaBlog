@@ -565,6 +565,10 @@ def status_label(status: str) -> dict:
         return {"ko": "너프", "ja": "弱体化"}
     if status == "추천":
         return {"ko": "추천", "ja": "おすすめ"}
+    if status == "주의":
+        return {"ko": "주의", "ja": "注意"}
+    if status == "조건부 추천":
+        return {"ko": "조건부 추천", "ja": "条件付きおすすめ"}
     return {"ko": "조정", "ja": "調整"}
 
 
@@ -626,6 +630,8 @@ def champion_card_data(champion: ChampionChange, status: str, name_map: dict | N
             "ko": ["솔랭", "공식 수치", status],
             "ja": ["ソロランク", "公式数値", status_label(status)["ja"]],
         },
+        "target_anchor": f"#champion-{entry['key'].lower()}",
+        "source_anchor": "#source-note",
     }
 
 
@@ -654,10 +660,53 @@ def recommended_card_data(champion: ChampionChange, name_map: dict | None) -> di
         "ko": "추천 카드라도 라인 상성과 조합 조건이 맞지 않으면 우선순위를 낮추세요.",
         "ja": "おすすめカードでもレーン相性と構成条件が合わない場合は優先度を下げましょう。",
     }
+    card["grade"] = "A"
+    card["reason"] = card["recommend_reason"]
+    card["fit_user"] = card["recommended_for"]
+    card["key_change"] = {
+        "ko": card["change_summary"]["ko"][0],
+        "ja": card["change_summary"]["ja"][0],
+    }
     card["alt"] = {
         "ko": f"{card['ko']} 추천 픽 스플래시 아트",
         "ja": f"{card['ja']}おすすめピックのスプラッシュアート",
     }
+    return card
+
+
+def conditional_card_data(champion: ChampionChange, name_map: dict | None) -> dict:
+    card = recommended_card_data(champion, name_map)
+    card["status_label"] = status_label("조건부 추천")
+    card["grade"] = "B"
+    card["condition"] = {
+        "ko": "주 포지션 숙련도와 조합 조건이 맞을 때",
+        "ja": "メインロールの熟練度と構成条件が合う時",
+    }
+    card["reason"] = card["key_change"]
+    card["caution"] = {
+        "ko": "상향 수치만 보고 선픽하면 라인 상성에 흔들릴 수 있습니다.",
+        "ja": "強化数値だけを見て先出しすると、レーン相性に左右されやすいです。",
+    }
+    return card
+
+
+def watch_card_data(champion: ChampionChange, name_map: dict | None) -> dict:
+    card = champion_card_data(champion, "너프", name_map)
+    card["status_label"] = status_label("주의")
+    card["alt"] = {
+        "ko": f"{card['ko']} 주의 픽 스플래시 아트",
+        "ja": f"{card['ja']}注意ピックのスプラッシュアート",
+    }
+    card["first_day_rating"] = {"ko": "첫날 보수적", "ja": "初日は慎重"}
+    card["key_nerf"] = {
+        "ko": card["change_summary"]["ko"][0],
+        "ja": card["change_summary"]["ja"][0],
+    }
+    card["usable_condition"] = {
+        "ko": "숙련도가 높고 조합 조건이 맞을 때만 랭크 첫날 사용을 고려하세요.",
+        "ja": "熟練度が高く構成条件が合う時だけ、ランク初日の使用を考えましょう。",
+    }
+    card["risk"] = card["caution"]
     return card
 
 
@@ -671,6 +720,7 @@ def build_toc() -> dict:
             {"id": "nerf-champions", "title": {"ko": "너프 챔피언 총정리", "ja": "弱体化チャンピオン総まとめ"}},
             {"id": "solo-queue-tier-impact", "title": {"ko": "라인별 솔랭 영향", "ja": "ロール別ソロランク影響"}},
             {"id": "recommended-picks", "title": {"ko": "추천 픽 TOP 5", "ja": "おすすめピックTOP5"}},
+            {"id": "conditional-picks", "title": {"ko": "조건부 추천 픽", "ja": "条件付きおすすめピック"}},
             {"id": "watch-picks", "title": {"ko": "주의해야 할 픽", "ja": "注意したいピック"}},
             {"id": "item-rune-system", "title": {"ko": "시스템/모드 변경", "ja": "システム/モード変更"}},
             {"id": "patch-day-checklist", "title": {"ko": "패치 첫날 체크리스트", "ja": "パッチ初日チェックリスト"}},
@@ -680,11 +730,21 @@ def build_toc() -> dict:
     }
 
 
-def build_overview_table(version: str, buff_count: int, nerf_count: int, adjusted_count: int, changed_area_summary: str) -> dict:
+def build_overview_table(
+    version: str,
+    source_published_at: str,
+    last_checked: str,
+    buff_count: int,
+    nerf_count: int,
+    adjusted_count: int,
+    changed_area_summary: str,
+) -> dict:
     return {
         "title": {"ko": "한눈에 보는 패치", "ja": "パッチ早見表"},
         "rows": [
             {"label": {"ko": "패치 버전", "ja": "パッチバージョン"}, "value": {"ko": version, "ja": version}},
+            {"label": {"ko": "공식 게시일", "ja": "公式公開日"}, "value": {"ko": source_published_at, "ja": source_published_at}},
+            {"label": {"ko": "블로그 확인일", "ja": "ブログ確認日"}, "value": {"ko": last_checked, "ja": last_checked}},
             {
                 "label": {"ko": "챔피언 조정", "ja": "チャンピオン調整"},
                 "value": {
@@ -697,6 +757,34 @@ def build_overview_table(version: str, buff_count: int, nerf_count: int, adjuste
                 "value": {
                     "ko": "대회 전 선택지 다양성과 솔랭 체감 조정",
                     "ja": "大会前の選択肢多様性とソロランク体感の調整",
+                },
+            },
+            {
+                "label": {"ko": "핵심 상향", "ja": "主な強化"},
+                "value": {
+                    "ko": "상향 카드는 풀 카드에서 공식 수치와 조건을 확인",
+                    "ja": "強化カードはフルカードで公式数値と条件を確認",
+                },
+            },
+            {
+                "label": {"ko": "핵심 하향", "ja": "主な弱体化"},
+                "value": {
+                    "ko": "하향 카드는 피해량, 체급, 유지력 변화를 분리 확인",
+                    "ja": "弱体化カードはダメージ、基礎性能、サステインを分けて確認",
+                },
+            },
+            {
+                "label": {"ko": "가장 큰 솔랭 포인트", "ja": "最大のソロランク要点"},
+                "value": {
+                    "ko": "추천 미니 카드와 주의 미니 카드를 먼저 비교",
+                    "ja": "おすすめミニカードと注意ミニカードを先に比較",
+                },
+            },
+            {
+                "label": {"ko": "추천 독자", "ja": "おすすめ読者"},
+                "value": {
+                    "ko": "패치 첫날 랭크 전에 핵심 수치만 빠르게 확인할 유저",
+                    "ja": "パッチ初日のランク前に主な数値を素早く確認したいプレイヤー",
                 },
             },
             {
@@ -770,10 +858,23 @@ def build_sections(version: str, intro: str) -> list[dict]:
             "title": {"ko": "추천 픽 TOP 5", "ja": "おすすめピックTOP5"},
             "body": {
                 "ko": [
-                    "추천 픽은 상향 폭, 솔랭 적응 난도, 팀 조합 유연성을 함께 보고 골랐습니다.",
+                    "이 추천은 공식 변경 수치와 솔랭 적용 난도를 바탕으로 한 패치 초반 예상입니다. 실시간 승률 데이터가 아님을 전제로 참고하세요.",
                 ],
                 "ja": [
-                    "おすすめピックは強化幅、ソロランクでの適応難度、チーム構成への柔軟性を合わせて選びました。",
+                    "このおすすめは公式変更数値とソロランクでの扱いやすさをもとにしたパッチ序盤の予想です。リアルタイム勝率データを反映したティア表ではありません。",
+                ],
+            },
+        },
+        {
+            "id": "conditional-picks",
+            "kind": "conditional_cards",
+            "title": {"ko": "조건부 추천 픽", "ja": "条件付きおすすめピック"},
+            "body": {
+                "ko": [
+                    "TOP 5에는 넣지 않았지만, 조건이 맞으면 패치 초반 실험 가치가 있는 선택지입니다.",
+                ],
+                "ja": [
+                    "TOP5には入れていませんが、条件が合えばパッチ序盤に試す価値がある候補です。",
                 ],
             },
         },
@@ -880,6 +981,18 @@ def build_faq() -> list[dict]:
     ]
 
 
+def unique_champion_changes(champions: list[ChampionChange]) -> list[ChampionChange]:
+    result: list[ChampionChange] = []
+    seen: set[str] = set()
+    for champion in champions:
+        key = normalize_name(champion.name)
+        if key in seen:
+            continue
+        seen.add(key)
+        result.append(champion)
+    return result
+
+
 def build_post_data(
     listing: PatchListing,
     masthead: dict,
@@ -967,7 +1080,14 @@ def build_post_data(
                 ]
             )
 
-    recommended_changes = buff_changes[:5] or champions[:5]
+    recommendation_pool = unique_champion_changes(buff_changes + adjusted_changes + champions)
+    recommended_changes = recommendation_pool[:5]
+    recommended_names = {normalize_name(champion.name) for champion in recommended_changes}
+    conditional_changes = [
+        champion
+        for champion in unique_champion_changes(buff_changes + adjusted_changes)
+        if normalize_name(champion.name) not in recommended_names
+    ][:2]
     watch_changes = nerf_changes[:6]
 
     return {
@@ -1102,6 +1222,8 @@ def build_post_data(
         "toc": build_toc(),
         "overview_table": build_overview_table(
             version,
+            publish_date,
+            today,
             len(buff_changes),
             len(nerf_changes),
             len(adjusted_changes),
@@ -1188,28 +1310,71 @@ def build_post_data(
             },
         ],
         "recommended_pick_cards": [recommended_card_data(champion, name_map) for champion in recommended_changes],
-        "watch_pick_cards": [
-            {
-                **champion_card_data(champion, "너프", name_map),
-                "status_label": {"ko": "주의", "ja": "注意"},
-                "rank_day_recommendation": {"ko": "첫날 보수적", "ja": "初日は慎重"},
-                "still_playable_condition": {
-                    "ko": "숙련도가 높고 조합 조건이 맞을 때만 랭크 첫날 사용을 고려하세요.",
-                    "ja": "熟練度が高く構成条件が合う時だけ、ランク初日の使用を考えましょう。",
-                },
-            }
-            for champion in watch_changes
-        ],
+        "conditional_recommended_cards": [conditional_card_data(champion, name_map) for champion in conditional_changes],
+        "watch_pick_cards": [watch_card_data(champion, name_map) for champion in watch_changes],
         "system_change_cards": [
             {
-                "title": {"ko": "시스템/모드 변경", "ja": "システム/モード変更"},
-                "badge": {"ko": "공식 패치노트", "ja": "公式パッチノート"},
+                "title": {"ko": "협곡 운영", "ja": "サモナーズリフト運用"},
+                "badge": {"ko": "협곡", "ja": "サモナーズリフト"},
+                "target": {"ko": "랭크와 일반 협곡 유저", "ja": "ランクと通常サモナーズリフトのプレイヤー"},
                 "change_summary": {
                     "ko": [summarize_system_sections(sections)],
                     "ja": ["公式パッチノートのシステム/モード変更を確認してください。"],
                 },
-                "interpretation": {"ko": "챔피언 카드와 별도로 플레이 경험에 영향을 줄 수 있는 영역입니다.", "ja": "チャンピオンカードとは別に、プレイ体験へ影響する可能性がある領域です。"},
-                "solo_queue_impact": {"ko": "랭크와 모드 플레이를 나눠서 체감 변화를 확인하세요.", "ja": "ランクとモードプレイを分けて体感変化を確認しましょう。"},
+                "immediate_check": {
+                    "ko": ["라인 복귀와 합류 타이밍", "오브젝트 전 교전 기준"],
+                    "ja": ["レーン復帰と合流タイミング", "オブジェクト前の戦闘基準"],
+                },
+                "less_important": {
+                    "ko": "패치 전 감각만으로 고정하는 운영",
+                    "ja": "パッチ前の感覚だけに固定する運用",
+                },
+                "judgment": {
+                    "ko": "공식 변경 수치가 직접 플레이 흐름에 닿는지 먼저 확인하세요.",
+                    "ja": "公式変更数値が実際の試合展開に影響するかを先に確認しましょう。",
+                },
+            },
+            {
+                "title": {"ko": "모드 변경", "ja": "モード変更"},
+                "badge": {"ko": "ARAM/이벤트", "ja": "ARAM/イベント"},
+                "target": {"ko": "협곡 외 모드 유저", "ja": "サモナーズリフト以外のモードプレイヤー"},
+                "change_summary": {
+                    "ko": ["공식 패치노트의 모드 변경 항목을 별도로 확인해야 합니다."],
+                    "ja": ["公式パッチノートのモード変更項目を別途確認してください。"],
+                },
+                "immediate_check": {
+                    "ko": ["새 증강 또는 규칙 변경", "삭제된 빌드와 반복 플레이 패턴"],
+                    "ja": ["新しいオーグメントやルール変更", "削除されたビルドと反復プレイパターン"],
+                },
+                "less_important": {
+                    "ko": "이전 패치의 고정 빌드만 반복하는 판단",
+                    "ja": "以前のパッチの固定ビルドだけを繰り返す判断",
+                },
+                "judgment": {
+                    "ko": "모드 변경은 익숙한 빌드보다 새 조합 실험 가치가 먼저 커집니다.",
+                    "ja": "モード変更では慣れたビルドより新しい組み合わせを試す価値が先に高まります。",
+                },
+            },
+            {
+                "title": {"ko": "아이템/룬 점검", "ja": "アイテム/ルーン確認"},
+                "badge": {"ko": "빌드", "ja": "ビルド"},
+                "target": {"ko": "빌드 영향을 받는 모든 포지션", "ja": "ビルド影響を受ける全ロール"},
+                "change_summary": {
+                    "ko": ["아이템, 룬, 시스템 변경은 챔피언 카드와 분리해서 확인합니다."],
+                    "ja": ["アイテム、ルーン、システム変更はチャンピオンカードと分けて確認します。"],
+                },
+                "immediate_check": {
+                    "ko": ["핵심 아이템 완성 타이밍", "룬 선택과 초반 교전 기준"],
+                    "ja": ["主要アイテム完成タイミング", "ルーン選択と序盤戦闘基準"],
+                },
+                "less_important": {
+                    "ko": "승률 표본 없이 모든 빌드를 단정하는 판단",
+                    "ja": "勝率サンプルなしに全ビルドを断定する判断",
+                },
+                "judgment": {
+                    "ko": "빌드 변화는 실시간 승률 데이터가 쌓이기 전까지 보수적으로 해석하세요.",
+                    "ja": "ビルド変化はリアルタイム勝率データが集まるまでは慎重に解釈しましょう。",
+                },
             }
         ],
         "checklist_items": [
@@ -1233,9 +1398,24 @@ def build_post_data(
                 "url": listing.url,
             },
             {
-                "label": {"ko": "챔피언명/이미지", "ja": "チャンピオン名/画像"},
+                "label": {"ko": "게시일", "ja": "公開日"},
+                "body": {"ko": publish_date, "ja": publish_date},
+            },
+            {
+                "label": {"ko": "블로그 확인일", "ja": "ブログ確認日"},
+                "body": {"ko": today, "ja": today},
+            },
+            {
+                "label": {"ko": "Riot Data Dragon 기준", "ja": "Riot Data Dragon基準"},
                 "body": {"ko": "챔피언명과 이미지는 Riot Data Dragon 공식 데이터를 기준으로 저장합니다.", "ja": "チャンピオン名と画像はRiot Data Dragon公式データを基準に保存します。"},
                 "url": "https://ddragon.leagueoflegends.com",
+            },
+            {
+                "label": {"ko": "메타 해석 고지", "ja": "メタ解釈の注記"},
+                "body": {
+                    "ko": "본문 메타 평가는 공식 수치를 바탕으로 한 솔랭 해석이며, 실시간 승률 데이터가 아님을 밝힙니다.",
+                    "ja": "本文のメタ評価は公式数値をもとにしたソロランク向けの解釈であり、リアルタイム勝率データではありません。",
+                },
             },
         ],
         "faq": build_faq(),

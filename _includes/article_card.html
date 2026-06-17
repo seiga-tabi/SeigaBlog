@@ -4,9 +4,9 @@
 {% assign tags_ko_text = post.post_tags.ko | join: " " %}
 {% assign tags_ja_text = post.post_tags.ja | join: " " %}
 
-<button
+<a
   class="article-card post-card"
-  type="button"
+  href="{{ post.url | relative_url }}"
   data-post-card
   data-open-post="{{ post.slug }}"
   data-post-id="{{ post.slug }}"
@@ -39,4 +39,4 @@
       {{ post.excerpt.ko }}
     </span>
   </span>
-</button>
+</a>

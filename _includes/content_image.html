@@ -4,7 +4,7 @@
 {% assign image_src_ja = image.src.ja | default: image_src_ko %}
 
 {% if image and image_src_ko %}
-  <figure class="article-figure{% if include.variant %} article-figure-{{ include.variant }}{% endif %}">
+  <figure class="article-figure content-image{% if include.variant %} article-figure-{{ include.variant }}{% endif %}{% if include.variant == 'summary' %} summary-image{% endif %}">
     <img
       src="{{ image_src_ko | relative_url }}"
       data-src-ko="{{ image_src_ko | relative_url }}"
@@ -16,6 +16,7 @@
       data-alt-ja="{{ image.alt.ja | default: post.title.ja | escape }}"
       loading="{{ include.loading | default: 'lazy' }}"
       decoding="async"
+      {% if include.fetchpriority %}fetchpriority="{{ include.fetchpriority }}"{% endif %}
     />
     {% if image.caption %}
       <figcaption

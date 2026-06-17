@@ -128,7 +128,7 @@ def extract_localized_list(frontmatter: str, section: str, lang: str) -> list[st
             in_lang = True
             lang_indent = indent
             continue
-        if in_lang and indent <= lang_indent and stripped:
+        if in_lang and indent <= lang_indent and stripped and not stripped.startswith("-"):
             break
         if in_lang:
             match = re.match(r"\s*-\s*(.+)$", line)

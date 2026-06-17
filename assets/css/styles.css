@@ -1461,3 +1461,271 @@ img {
     padding: 12px;
   }
 }
+
+.detail-stack {
+  display: none;
+}
+
+.workspace.show-detail .detail-stack {
+  display: block;
+}
+
+.article-card {
+  text-decoration: none;
+}
+
+.single-post-workspace {
+  width: min(1080px, 100%);
+}
+
+.article-body {
+  max-width: 1040px;
+}
+
+.post-toc-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.post-toc-list li {
+  min-width: 0;
+}
+
+.post-toc-list a {
+  min-height: 44px;
+  align-items: center;
+  justify-content: flex-start;
+  line-height: 1.35;
+}
+
+.overview-grid {
+  margin: 0;
+}
+
+.overview-item {
+  display: grid;
+  min-height: 92px;
+  gap: 5px;
+}
+
+.overview-label,
+.overview-value {
+  margin: 0;
+}
+
+.overview-label {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.overview-value {
+  color: var(--ink);
+  font-size: 0.92rem;
+  font-weight: 900;
+  line-height: 1.35;
+}
+
+.content-image img {
+  aspect-ratio: 1200 / 630;
+  object-fit: cover;
+}
+
+.summary-image img {
+  aspect-ratio: 1200 / 675;
+}
+
+.champion-card__media {
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: #dfe9f4;
+}
+
+.champion-card__media .champion-card-image {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+}
+
+.change-box {
+  display: grid;
+  gap: 7px;
+  border: 1px solid #d8e5dc;
+  border-radius: var(--radius-card);
+  background: #f3fbf6;
+  padding: 10px;
+}
+
+.change-box-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.official-number-badge,
+.champion-anchor-link,
+.anchor-chip {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.74rem;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.official-number-badge {
+  border: 1px solid #b8d8ef;
+  background: #eaf6ff;
+  color: #1e5d99;
+  padding: 4px 9px;
+}
+
+.mini-card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.champion-card--mini {
+  display: grid;
+  gap: 10px;
+  padding: 13px;
+}
+
+.champion-card--mini .champion-card-title {
+  font-size: 1rem;
+}
+
+.champion-card-mini-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mini-card-row {
+  display: grid;
+  gap: 4px;
+  border-top: 1px solid #edf0f4;
+  padding-top: 8px;
+}
+
+.mini-card-row strong,
+.mini-change-box > span,
+.system-target {
+  color: var(--ink);
+  font-size: 0.74rem;
+  font-weight: 900;
+}
+
+.mini-card-row p,
+.mini-change-box p,
+.system-less-important {
+  margin: 0;
+  color: #47505d;
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+.champion-anchor-link {
+  width: max-content;
+  max-width: 100%;
+  border: 1px solid #ced8e6;
+  background: #f8fafc;
+  color: #26445f;
+  padding: 7px 11px;
+}
+
+.anchor-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.anchor-chip {
+  border: 1px solid #cfdced;
+  background: #f6f9fd;
+  color: #26445f;
+  padding: 6px 10px;
+}
+
+.champion-card-more {
+  border-top: 1px solid #edf0f4;
+  padding-top: 8px;
+}
+
+.champion-card-more summary {
+  min-height: 38px;
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 900;
+  line-height: 1.4;
+}
+
+.champion-card-more .champion-card-detail {
+  margin-top: 8px;
+}
+
+.system-card {
+  align-content: start;
+}
+
+.system-target {
+  margin: 0;
+}
+
+.system-less-important {
+  border-left: 3px solid #b7791f;
+  padding-left: 10px;
+}
+
+@media (min-width: 700px) {
+  .mini-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1100px) {
+  .post-toc-list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .champion-card-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .mini-card-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .post-toc-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .champion-card-more[open] summary {
+    margin-bottom: 4px;
+  }
+}
+
+@media (max-width: 430px) {
+  .post-toc-list {
+    grid-template-columns: 1fr;
+  }
+
+  .overview-item {
+    min-height: auto;
+  }
+
+  .champion-card--mini {
+    padding: 12px;
+  }
+}
