@@ -5,13 +5,14 @@
 ## 현재 상태
 
 ```text
-CUSTOM_DOMAIN: 미설정
+CUSTOM_DOMAIN: blog.seigatabi.com
 custom_domain_verified: false
 GA4_MEASUREMENT_ID: 미설정
 GA4_PROPERTY_ID: 미설정
 GOOGLE_SITE_VERIFICATION: 미설정
 ADSENSE_CLIENT_ID: 미설정
 ADSENSE_ACCOUNT_ID: 미설정
+ADSENSE_PUBLISHER_ID: 미설정
 ADSENSE_ENABLED: false
 RIOT_PRODUCT_REGISTRATION_STATUS: 미설정
 ```
@@ -40,6 +41,7 @@ GA4_PROPERTY_ID
 GOOGLE_SITE_VERIFICATION
 ADSENSE_CLIENT_ID
 ADSENSE_ACCOUNT_ID
+ADSENSE_PUBLISHER_ID
 ADSENSE_ENABLED
 RIOT_PRODUCT_REGISTRATION_STATUS
 GSC_SITE_URL
@@ -48,7 +50,7 @@ GOOGLE_APPLICATION_CREDENTIALS
 
 ## 커스텀 도메인 규칙
 
-- `CUSTOM_DOMAIN`이 없으면 기존 GitHub Pages 주소 `https://seiga-tabi.github.io/SeigaBlog/`로 정상 빌드한다.
+- 현재 공개 도메인은 `https://blog.seigatabi.com/`이다.
 - 커스텀 도메인을 설정한 뒤에는 `_config.yml`의 `url` 또는 GitHub Pages 설정이 실제 도메인과 일치하는지 확인한다.
 - Search Console 인증이 끝나기 전에는 `custom_domain_verified`를 `true`로 바꾸지 않는다.
 
@@ -61,6 +63,7 @@ CUSTOM_DOMAIN 존재
 custom_domain_verified == true
 adsense_approved == true
 ADSENSE_CLIENT_ID 존재
+ADSENSE_PUBLISHER_ID 존재
 ADSENSE_ENABLED == true
 Privacy 페이지 존재
 Cookie/CMP 설정 완료
@@ -87,4 +90,3 @@ placeholder publisher ID를 `ads.txt`, `_data/monetization.yml`, workflow 로그
 - 서비스 계정 JSON
 - Riot API key
 - 사용자 IP 또는 개인 식별 정보
-

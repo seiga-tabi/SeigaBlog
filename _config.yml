@@ -1,14 +1,17 @@
 title: Seiga Blog
 description: 한국어와 일본어로 리그 오브 레전드와 Minecraft Java Edition 업데이트를 정리하는 비공식 전문 블로그
 description_ja: リーグ・オブ・レジェンドとMinecraft Java Editionアップデートを韓国語と日本語で整理する非公式専門ブログ
-url: "https://seiga-tabi.github.io"
-baseurl: "/SeigaBlog"
+url: "https://blog.seigatabi.com"
+baseurl: ""
 profile_image: /assets/images/profile.png
 lang: ko
 timezone: Asia/Tokyo
 author:
   name: 세이가
   name_ja: セイガ
+
+include:
+  - CNAME
 
 permalink: /posts/:slug/
 

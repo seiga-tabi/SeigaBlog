@@ -478,7 +478,7 @@ def validate_built_post_html(file_label: str, frontmatter: str) -> list[dict]:
 
     html = path.read_text(encoding="utf-8")
     slug = extract_scalar(frontmatter, "slug")
-    expected_canonical = f"https://seiga-tabi.github.io/SeigaBlog/posts/{slug}/"
+    expected_canonical = f"https://blog.seigatabi.com/posts/{slug}/"
     read_time = extract_scalar(frontmatter, "read_time")
     lol_followup = is_lol_followup_post(frontmatter)
 

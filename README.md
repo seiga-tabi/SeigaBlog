@@ -179,7 +179,7 @@ npm run build
 jekyll serve
 ```
 
-프로젝트 Pages 경로가 `/SeigaBlog`로 설정되어 있으므로 로컬 서버에서는 `http://127.0.0.1:4000/SeigaBlog/`에서 확인합니다.
+커스텀 도메인 기준으로 루트 경로에 배포되므로 로컬 서버에서는 `http://127.0.0.1:4000/`에서 확인합니다.
 
 GitHub Pages는 Jekyll을 자동으로 빌드하므로 저장소에 올리면 별도 빌드 결과물 없이 배포할 수 있습니다.
-배포 URL은 `https://seiga-tabi.github.io/SeigaBlog/`입니다.
+배포 URL은 `https://blog.seigatabi.com/`입니다.

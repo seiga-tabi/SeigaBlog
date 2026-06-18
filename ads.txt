@@ -2,6 +2,11 @@
 layout: null
 permalink: /ads.txt
 ---
+{%- assign ads = site.data.monetization -%}
+{%- assign publisher_id = ads.publisher_id | default: "" | strip -%}
+{%- assign publisher_prefix = publisher_id | slice: 0, 4 -%}
 # SeigaBlog ads.txt
 # AdSense is disabled until custom domain verification, AdSense approval, CMP setup, and a real publisher ID are complete.
-
+{% if ads.ads_txt_ready == true and publisher_prefix == "pub-" %}
+google.com, {{ publisher_id }}, DIRECT, f08c47fec0942fa0
+{% endif %}

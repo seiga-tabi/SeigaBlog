@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://seiga-tabi.github.io/SeigaBlog/schemas/lol_content.schema.json",
+  "$id": "https://blog.seigatabi.com/schemas/lol_content.schema.json",
   "title": "SeigaBlog LoL follow-up content input",
   "type": "object",
   "required": ["content_type"],
@@ -132,4 +132,3 @@
   ],
   "additionalProperties": true
 }
-

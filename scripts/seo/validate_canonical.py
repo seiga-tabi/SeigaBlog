@@ -7,7 +7,7 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SITE_ROOT = REPO_ROOT / "_site"
-BASE_URL = "https://seiga-tabi.github.io/SeigaBlog"
+BASE_URL = "https://blog.seigatabi.com"
 
 
 def expected_url(path: Path) -> str:
@@ -56,4 +56,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

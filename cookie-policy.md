@@ -32,3 +32,19 @@ no_ads: true
   </p>
 </section>
 
+<section class="static-section">
+  <h2 data-ko="광고 쿠키 사용 범위" data-ja="広告Cookieの利用範囲">광고 쿠키 사용 범위</h2>
+  <p
+    data-ko="AdSense가 승인되고 광고가 활성화되면 Google과 광고 파트너가 광고 개인화, 비개인 맞춤 광고, 빈도 제한, 집계 보고, 부정 사용 방지를 위해 쿠키 또는 유사 기술을 사용할 수 있습니다."
+    data-ja="AdSenseが承認され広告が有効になると、Googleおよび広告パートナーが広告のパーソナライズ、非パーソナライズ広告、頻度制限、集計レポート、不正利用防止のためにCookieまたは類似技術を使用する場合があります。"
+  >
+    AdSense가 승인되고 광고가 활성화되면 Google과 광고 파트너가 광고 개인화, 비개인 맞춤 광고, 빈도 제한, 집계 보고, 부정 사용 방지를 위해 쿠키 또는 유사 기술을 사용할 수 있습니다.
+  </p>
+  <p
+    data-ko="방문자는 브라우저 설정 또는 Google 광고 설정에서 일부 쿠키와 개인 맞춤 광고를 관리할 수 있습니다."
+    data-ja="訪問者はブラウザ設定またはGoogle広告設定で一部のCookieとパーソナライズ広告を管理できます。"
+  >
+    방문자는 브라우저 설정 또는 Google 광고 설정에서 일부 쿠키와 개인 맞춤 광고를 관리할 수 있습니다.
+  </p>
+  <a class="text-link" href="https://adssettings.google.com/" rel="noopener noreferrer" target="_blank" data-ko="Google 광고 설정" data-ja="Google広告設定">Google 광고 설정</a>
+</section>

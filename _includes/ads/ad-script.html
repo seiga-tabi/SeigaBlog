@@ -1,9 +1,10 @@
 {% assign ads = site.data.monetization %}
-{% if ads.ads_enabled == true and ads.adsense_approved == true and ads.custom_domain_verified == true and ads.cookie_cmp_ready == true and ads.adsense_client_id %}
+{% assign ad_client = ads.adsense_client_id | default: "" | strip %}
+{% assign ad_client_prefix = ad_client | slice: 0, 7 %}
+{% if page.no_ads != true and ads.ads_enabled == true and ads.adsense_approved == true and ads.custom_domain_verified == true and ads.cookie_cmp_ready == true and ad_client_prefix == "ca-pub-" %}
   <script
     async
-    src="{{ ads.adsense_script_host }}/pagead/js/adsbygoogle.js?client={{ ads.adsense_client_id | escape }}"
+    src="{{ ads.adsense_script_host }}/pagead/js/adsbygoogle.js?client={{ ad_client | escape }}"
     crossorigin="anonymous"
   ></script>
 {% endif %}
-

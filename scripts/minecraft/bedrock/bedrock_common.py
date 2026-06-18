@@ -178,7 +178,7 @@ def fetch_url(url: str, timeout: int = 25) -> tuple[str, str]:
     request = urllib.request.Request(
         url,
         headers={
-            "User-Agent": "SeigaBlogBot/1.0 (+https://seiga-tabi.github.io/SeigaBlog/)",
+            "User-Agent": "SeigaBlogBot/1.0 (+https://blog.seigatabi.com/)",
             "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
         },
     )

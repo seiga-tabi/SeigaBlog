@@ -24,6 +24,17 @@ class SiteStructureTest(unittest.TestCase):
         html = "\n".join(path.read_text(encoding="utf-8") for path in SITE_ROOT.rglob("*.html"))
         self.assertNotIn("adsbygoogle", html)
         self.assertNotIn("pagead/js/adsbygoogle.js", html)
+        self.assertNotIn('data-ad-slot=""', html)
+
+    def test_ads_txt_does_not_include_placeholder_publisher_id(self) -> None:
+        ads_txt = (SITE_ROOT / "ads.txt").read_text(encoding="utf-8")
+        self.assertNotIn("pub-0000000000000000", ads_txt)
+        self.assertNotIn("ca-pub-0000000000000000", ads_txt)
+
+    def test_policy_pages_are_linked_from_home(self) -> None:
+        html = (SITE_ROOT / "index.html").read_text(encoding="utf-8")
+        for href in ["/about/", "/contact/", "/privacy/", "/cookie-policy/", "/sources-and-corrections/"]:
+            self.assertIn(f'href="{href}"', html)
 
     def test_no_hash_canonical(self) -> None:
         for path in SITE_ROOT.rglob("*.html"):
@@ -35,4 +46,3 @@ class SiteStructureTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

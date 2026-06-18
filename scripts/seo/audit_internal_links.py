@@ -8,7 +8,7 @@ from urllib.parse import urlparse
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 SITE_ROOT = REPO_ROOT / "_site"
-BASE_PATH = "/SeigaBlog"
+BASE_PATH = ""
 HREF_RE = re.compile(r'href="([^"]+)"')
 ID_RE = re.compile(r'\sid="([^"]+)"')
 
@@ -16,7 +16,7 @@ ID_RE = re.compile(r'\sid="([^"]+)"')
 def target_exists(url_path: str) -> bool:
     if url_path == "" or url_path == "/":
         return (SITE_ROOT / "index.html").exists()
-    if url_path.startswith(BASE_PATH):
+    if BASE_PATH and url_path.startswith(BASE_PATH):
         url_path = url_path[len(BASE_PATH):] or "/"
     url_path = url_path.lstrip("/")
     target = SITE_ROOT / url_path
@@ -64,4 +64,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

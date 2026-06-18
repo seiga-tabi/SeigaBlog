@@ -2,6 +2,13 @@
 
 AdSense는 기본적으로 비활성화한다. 승인과 CMP 설정이 끝나기 전에는 광고 스크립트나 빈 광고 컨테이너를 렌더링하지 않는다.
 
+## 심사 준비
+
+- AdSense 사이트 등록 URL은 `https://blog.seigatabi.com/`를 사용한다.
+- 실제 publisher ID를 받기 전에는 `_data/monetization.yml`과 `ads.txt`에 임의 ID를 넣지 않는다.
+- AdSense가 제공한 `ads.txt` 인증 방식을 사용할 때만 `publisher_id`를 실제 `pub-...` 값으로 넣고 `ads_txt_ready: true`로 바꾼다.
+- 승인 전에는 `ads_enabled: false`와 `adsense_approved: false`를 유지한다.
+
 ## 금지
 
 - 광고 클릭을 유도하는 문구
@@ -19,4 +26,3 @@ AdSense는 기본적으로 비활성화한다. 승인과 CMP 설정이 끝나기
 ## CLS 방지
 
 광고 슬롯에는 최소 높이를 예약한다. `ADSENSE_ENABLED=false` 또는 `_data/monetization.yml`의 승인 조건이 충족되지 않으면 슬롯을 렌더링하지 않는다.
-
