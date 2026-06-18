@@ -83,18 +83,6 @@ lol_champions:
   ja: シン・ジャオ
   status: 너프
 content_images:
-- after_section: quick-summary
-  src:
-    ko: "/assets/images/blog/generated/lol-patch-26-12-summary-core-notes-ko.svg"
-    ja: "/assets/images/blog/generated/lol-patch-26-12-summary-core-notes-ja.svg"
-  width: 1200
-  height: 720
-  alt:
-    ko: LoL 26.12 핵심노트 정리 인포그래픽
-    ja: LoL 26.12要点ノートまとめインフォグラフィック
-  caption:
-    ko: 핵심 노트는 한국어와 일본어 이미지를 따로 생성해 텍스트 겹침 없이 보여줍니다.
-    ja: 要点ノートは韓国語版と日本語版を分けて生成し、文字が重ならないようにしています。
 - after_section: buff-champions
   src:
     ko: "/assets/images/blog/generated/lol-patch-26-12-summary-buff-group-ko.svg"

@@ -1446,10 +1446,6 @@ def build_post_data(
     today = checked_at.date().isoformat()
 
     slug = f"lol-patch-{version_slug(version)}-summary"
-    core_notes_src = {
-        "ko": f"/assets/images/blog/generated/{slug}-core-notes-ko.svg",
-        "ja": f"/assets/images/blog/generated/{slug}-core-notes-ja.svg",
-    }
     buff_group_src = {
         "ko": f"/assets/images/blog/generated/{slug}-buff-group-ko.svg",
         "ja": f"/assets/images/blog/generated/{slug}-buff-group-ja.svg",
@@ -1528,20 +1524,6 @@ def build_post_data(
         "tags": ["롤", "리그오브레전드", "LoL", "패치노트", "솔랭", "메타"],
         "lol_champions": champion_metadata(champions, name_map),
         "content_images": [
-            {
-                "after_section": "quick-summary",
-                "src": core_notes_src,
-                "width": 1200,
-                "height": 720,
-                "alt": {
-                    "ko": f"리그오브레전드 {version} 패치 핵심노트 정리 이미지",
-                    "ja": f"リーグ・オブ・レジェンド {version} パッチ要点ノートまとめ画像",
-                },
-                "caption": {
-                    "ko": "핵심 변경점은 언어별 전용 이미지로 분리해 겹침 없이 볼 수 있게 정리했습니다.",
-                    "ja": "主な変更点は言語別の専用画像に分け、重なりなく確認できるよう整理しました。",
-                },
-            },
             {
                 "after_section": "buff-champions",
                 "src": buff_group_src,
@@ -1941,8 +1923,6 @@ def write_post(post_data: dict, checked_at: dt.datetime, dry_run: bool) -> Path:
 def generated_blog_image_paths(slug: str) -> list[Path]:
     image_dir = Path("assets/images/blog/generated")
     kinds = [
-        "champions",
-        "core-notes",
         "buff-group",
         "nerf-group",
         "recommended-picks",

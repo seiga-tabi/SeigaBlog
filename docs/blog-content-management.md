@@ -85,7 +85,7 @@ npm run build
 - 입력에 없는 빌드, 룬, 상성, 카운터 관계
 - Riot이 확정하지 않은 일정이나 기능
 
-후속 글도 `category: lol`, 다국어 `title/excerpt/lead/body/post_tags`, `toc`, `overview_table`, `sections`, `faq`, `source_notes`, `content_images`를 사용합니다. `content_images`는 `/assets/images/blog/generated/{slug}-core-notes-{ko|ja}.svg`처럼 언어별 로컬 이미지 경로를 참조합니다.
+후속 글도 `category: lol`, 다국어 `title/excerpt/lead/body/post_tags`, `toc`, `overview_table`, `sections`, `faq`, `source_notes`, `content_images`를 사용합니다. `content_images`는 `/assets/images/blog/generated/{slug}-{kind}-{ko|ja}.svg`처럼 언어별 로컬 이미지 경로를 참조합니다.
 
 ## 선택형 AI 보강
 

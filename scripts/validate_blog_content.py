@@ -664,7 +664,7 @@ def validate_post(path, name_map: dict) -> list[dict]:
         issues.extend(validate_image_block(file_label, top_section(frontmatter, "summary_image"), "summary_image"))
 
     content_image_count = top_list_count(frontmatter, "content_images")
-    min_content_images = 4 if lol_patch_summary else 1 if lol_followup else 0
+    min_content_images = 3 if lol_patch_summary else 1 if lol_followup else 0
     if content_image_count < min_content_images:
         issues.append(
             {

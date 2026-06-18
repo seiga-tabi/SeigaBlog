@@ -444,6 +444,11 @@ def image_path(slug: str, kind: str, lang: str | None = None):
     return BLOG_IMAGE_DIR / f"{slug}-{kind}{suffix}.svg"
 
 
+def referenced_generated_kinds(frontmatter: str, slug: str, known_kinds: list[str]) -> list[str]:
+    matched = [kind for kind in known_kinds if f"{slug}-{kind}" in frontmatter]
+    return matched or known_kinds
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="블로그 글별 언어별 SVG 이미지를 생성합니다.")
     return parser.parse_args()
@@ -479,13 +484,15 @@ def main() -> int:
         if not recommended_champions:
             recommended_champions = [entry for entry in champions if entry_status(entry) == "버프"][:5] or champions[:5]
 
-        generated: dict[str, dict[str, str]] = {kind: {} for kind in [
+        known_kinds = [
             "champions",
             "core-notes",
             "buff-group",
             "nerf-group",
             "recommended-picks",
-        ]}
+        ]
+        target_kinds = referenced_generated_kinds(frontmatter, slug, known_kinds)
+        generated: dict[str, dict[str, str]] = {kind: {} for kind in target_kinds}
 
         for lang in LANGS:
             title = extract_localized_scalar(frontmatter, "title", lang) or slug
@@ -509,7 +516,8 @@ def main() -> int:
                 "recommended-picks": render_recommended_svg(picks_title, recommended_champions, lang),
             }
 
-            for kind, svg in outputs.items():
+            for kind in target_kinds:
+                svg = outputs[kind]
                 out_path = image_path(slug, kind, lang)
                 out_path.write_text(clean_svg(svg), encoding="utf-8")
                 generated[kind][lang] = repo_path(out_path)

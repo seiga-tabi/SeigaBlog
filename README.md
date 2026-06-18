@@ -36,10 +36,10 @@ accent: green
 read_time: 4 min
 image: /assets/images/lol-patch/26-13/cover.webp
 content_images:
-  - after_section: quick-summary
+  - after_section: buff-champions
     src:
-      ko: /assets/images/blog/generated/lol-patch-26-13-summary-core-notes-ko.svg
-      ja: /assets/images/blog/generated/lol-patch-26-13-summary-core-notes-ja.svg
+      ko: /assets/images/blog/generated/lol-patch-26-13-summary-buff-group-ko.svg
+      ja: /assets/images/blog/generated/lol-patch-26-13-summary-buff-group-ja.svg
     width: 1200
     height: 720
     alt:
