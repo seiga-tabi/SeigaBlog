@@ -40,11 +40,31 @@ LOL_FOLLOWUP_CONTENT_TYPES = {
     "riot-dev-update",
     "system-guide",
 }
+LOL_DAILY_CONTENT_TYPES = {"lol-daily-intel"}
+INFORMATION_STATUS_PREFIXES = {
+    "official_scheduled": "[공식 예정]",
+    "official_planned": "[개발 중]",
+    "official_considering": "[검토 중]",
+    "pbe_testing": "[PBE 테스트]",
+    "reported": "[보도]",
+    "rumor": "[미확인]",
+    "rejected": "[철회·반박]",
+}
 
 
 def line_has_pattern(text: str, patterns: list[str]) -> list[str]:
-    lowered = text.lower()
-    return [pattern for pattern in patterns if pattern.lower() in lowered]
+    hits: list[str] = []
+    for line in text.splitlines():
+        lowered = line.lower()
+        allowed_test_context = any(term in line for term in ["PBE 테스트", "PBEテスト", "테스트 서버", "テストサーバー"])
+        for pattern in patterns:
+            if pattern.lower() not in lowered:
+                continue
+            if pattern.lower() in {"test", "테스트"} and allowed_test_context:
+                continue
+            if pattern not in hits:
+                hits.append(pattern)
+    return hits
 
 
 def top_section(frontmatter: str, key: str) -> str:
@@ -229,8 +249,70 @@ def is_lol_followup_post(frontmatter: str) -> bool:
     return extract_scalar(frontmatter, "content_type") in LOL_FOLLOWUP_CONTENT_TYPES
 
 
+def is_lol_daily_intel_post(frontmatter: str) -> bool:
+    return extract_scalar(frontmatter, "content_type") in LOL_DAILY_CONTENT_TYPES
+
+
 def is_lol_patch_summary_post(frontmatter: str) -> bool:
     return is_lol_patch_post(frontmatter) and not is_lol_followup_post(frontmatter)
+
+
+def information_status_code(frontmatter: str) -> str:
+    section = top_section(frontmatter, "information_status")
+    return field_value(section, "code")
+
+
+def validate_sources_block(file_label: str, frontmatter: str) -> list[dict]:
+    issues: list[dict] = []
+    source_url = extract_scalar(frontmatter, "source_url")
+    if not source_url:
+        issues.append({"file": file_label, "type": "source", "message": "source_url 값이 없습니다."})
+    elif not re.match(r"^https?://", source_url):
+        issues.append({"file": file_label, "type": "source", "message": f"source_url 프로토콜이 올바르지 않습니다: {source_url}"})
+
+    for key in ["source_title", "source_published_at", "last_checked"]:
+        if not extract_scalar(frontmatter, key):
+            issues.append({"file": file_label, "type": "source", "message": f"{key} 값이 없습니다."})
+
+    source_items = top_list_items(frontmatter, "sources")
+    if not source_items:
+        issues.append({"file": file_label, "type": "source", "message": "sources 배열이 없습니다."})
+    seen_urls: set[str] = set()
+    for index, item in enumerate(source_items, start=1):
+        for field in ["url", "title", "publisher", "published_at", "last_verified_at", "source_tier"]:
+            if not field_exists(item, field):
+                issues.append({"file": file_label, "type": "source", "message": f"sources[{index}]에 {field} 값이 없습니다."})
+        url = field_value(item, "url")
+        if url:
+            if not re.match(r"^https?://", url):
+                issues.append({"file": file_label, "type": "source", "message": f"sources[{index}] URL 프로토콜이 올바르지 않습니다: {url}"})
+            if url in seen_urls:
+                issues.append({"file": file_label, "type": "source", "message": f"sources[{index}] URL이 중복됩니다: {url}"})
+            seen_urls.add(url)
+    return issues
+
+
+def validate_information_status(file_label: str, frontmatter: str) -> list[dict]:
+    issues: list[dict] = []
+    section = top_section(frontmatter, "information_status")
+    if not section:
+        return [{"file": file_label, "type": "information_status", "message": "information_status 배너 데이터가 없습니다."}]
+    code = field_value(section, "code")
+    if not code:
+        issues.append({"file": file_label, "type": "information_status", "message": "information_status.code 값이 없습니다."})
+    for field in ["label", "notice"]:
+        for lang in ["ko", "ja"]:
+            if not nested_localized_exists(section, field, lang):
+                issues.append({"file": file_label, "type": "information_status", "message": f"information_status.{field}.{lang} 값이 없습니다."})
+    title_ko = extract_localized_scalar(frontmatter, "title", "ko")
+    expected_prefix = INFORMATION_STATUS_PREFIXES.get(code)
+    if expected_prefix and not title_ko.startswith(expected_prefix):
+        issues.append({"file": file_label, "type": "information_status", "message": f"제목과 정보 상태 접두어가 맞지 않습니다: {code}"})
+    if code in {"pbe_testing", "reported", "rumor"} and "확정" in title_ko and code != "confirmed":
+        issues.append({"file": file_label, "type": "information_status", "message": "미확정 정보 제목에 확정 표현이 있습니다."})
+    if code == "rumor" and "create_pull_request: true" in frontmatter:
+        issues.append({"file": file_label, "type": "information_status", "message": "루머 글이 PR 생성 대상으로 표시되어 있습니다."})
+    return issues
 
 
 def validate_followup_stat_basis(file_label: str, frontmatter: str, content_type: str) -> list[dict]:
@@ -635,8 +717,9 @@ def validate_post(path, name_map: dict) -> list[dict]:
 
     content_type = extract_scalar(frontmatter, "content_type")
     lol_followup = is_lol_followup_post(frontmatter)
+    lol_daily_intel = is_lol_daily_intel_post(frontmatter)
     lol_patch_summary = is_lol_patch_summary_post(frontmatter)
-    lol_content = lol_patch_summary or lol_followup
+    lol_content = lol_patch_summary or lol_followup or lol_daily_intel
     if lol_patch_summary:
         for key in ["source_url", "source_title", "source_published_at", "last_checked"]:
             if not extract_scalar(frontmatter, key):
@@ -653,6 +736,15 @@ def validate_post(path, name_map: dict) -> list[dict]:
             if not top_section(frontmatter, key):
                 issues.append({"file": file_label, "type": "structure", "message": f"LoL 후속 글에 {key} 섹션이 없습니다."})
         issues.extend(validate_followup_stat_basis(file_label, frontmatter, content_type))
+    if lol_daily_intel:
+        for key in ["content_type", "last_checked", "read_time", "source_url", "source_title", "source_published_at"]:
+            if not extract_scalar(frontmatter, key):
+                issues.append({"file": file_label, "type": "frontmatter", "message": f"LoL 일일 정보 글에 {key} 값이 없습니다."})
+        for key in ["toc", "overview_table", "sections", "source_notes", "faq", "information_status", "sources", "update_history", "claim_fingerprints"]:
+            if not top_section(frontmatter, key):
+                issues.append({"file": file_label, "type": "structure", "message": f"LoL 일일 정보 글에 {key} 섹션이 없습니다."})
+        issues.extend(validate_information_status(file_label, frontmatter))
+        issues.extend(validate_sources_block(file_label, frontmatter))
     if lol_content:
         read_time = extract_scalar(frontmatter, "read_time")
         if not read_time:
@@ -664,7 +756,7 @@ def validate_post(path, name_map: dict) -> list[dict]:
         issues.extend(validate_image_block(file_label, top_section(frontmatter, "summary_image"), "summary_image"))
 
     content_image_count = top_list_count(frontmatter, "content_images")
-    min_content_images = 3 if lol_patch_summary else 1 if lol_followup else 0
+    min_content_images = 3 if lol_patch_summary else 1 if (lol_followup or lol_daily_intel) else 0
     if content_image_count < min_content_images:
         issues.append(
             {
@@ -790,7 +882,7 @@ def validate_post(path, name_map: dict) -> list[dict]:
             issues.append({"file": file_label, "type": "source", "message": "외부 통계 미포함 일본어 고지가 없습니다."})
         issues.extend(validate_stat_claims(file_label, frontmatter))
     faq_count = top_list_count(frontmatter, "faq")
-    min_faq_count = 5 if lol_patch_summary else 3 if lol_followup else 0
+    min_faq_count = 5 if lol_patch_summary else 3 if (lol_followup or lol_daily_intel) else 0
     if faq_count < min_faq_count:
         issues.append({"file": file_label, "type": "faq", "message": f"FAQ는 최소 {min_faq_count}개여야 합니다: {faq_count}개"})
     for index, faq_item in enumerate(top_list_items(frontmatter, "faq"), start=1):
@@ -864,6 +956,43 @@ def run_build() -> tuple[bool, str]:
     return result.returncode == 0, (result.stdout + result.stderr).strip()
 
 
+def list_values_from_top_section(frontmatter: str, key: str) -> list[str]:
+    section = top_section(frontmatter, key)
+    values = []
+    for match in re.finditer(r"^\s*-\s*(.+)$", section, flags=re.MULTILINE):
+        values.append(unquote(match.group(1).strip()))
+    return [value for value in values if value]
+
+
+def validate_cross_post_duplicates() -> list[dict]:
+    issues: list[dict] = []
+    slugs: dict[str, str] = {}
+    source_urls: dict[str, str] = {}
+    fingerprints: dict[str, str] = {}
+
+    for path in post_paths():
+        frontmatter, _, _ = split_frontmatter(path.read_text(encoding="utf-8", errors="ignore"))
+        file_label = repo_path(path)
+        slug = extract_scalar(frontmatter, "slug")
+        if slug:
+            if slug in slugs:
+                issues.append({"file": file_label, "type": "duplicate", "message": f"slug가 중복됩니다: {slug} ({slugs[slug]})"})
+            slugs[slug] = file_label
+
+        source_url = extract_scalar(frontmatter, "source_url")
+        if source_url:
+            if source_url in source_urls:
+                issues.append({"file": file_label, "type": "duplicate", "message": f"source_url이 중복됩니다: {source_url} ({source_urls[source_url]})"})
+            source_urls[source_url] = file_label
+
+        for fingerprint in list_values_from_top_section(frontmatter, "claim_fingerprints"):
+            if fingerprint in fingerprints:
+                issues.append({"file": file_label, "type": "duplicate", "message": f"claim fingerprint가 중복됩니다: {fingerprint} ({fingerprints[fingerprint]})"})
+            fingerprints[fingerprint] = file_label
+
+    return issues
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="블로그 콘텐츠, 이미지 경로, 챔피언명 locale을 검증합니다.")
     parser.add_argument("--skip-build", action="store_true", help="Jekyll build 검증을 건너뜁니다.")
@@ -882,6 +1011,7 @@ def main() -> int:
 
     for path in post_paths():
         issues.extend(validate_post(path, name_map))
+    issues.extend(validate_cross_post_duplicates())
 
     build_ok = True
     build_output = ""

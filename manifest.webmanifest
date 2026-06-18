@@ -1,0 +1,21 @@
+---
+layout: null
+permalink: /manifest.webmanifest
+---
+{
+  "name": "SeigaBlog",
+  "short_name": "SeigaBlog",
+  "description": "{{ site.description | jsonify }}",
+  "start_url": "{{ '/' | relative_url }}",
+  "display": "standalone",
+  "background_color": "#eaf5ff",
+  "theme_color": "#1f8fff",
+  "icons": [
+    {
+      "src": "{{ site.profile_image | relative_url }}",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
+

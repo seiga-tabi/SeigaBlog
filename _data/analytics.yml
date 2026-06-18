@@ -1,0 +1,15 @@
+ga4_measurement_id: ""
+ga4_property_id: ""
+gsc_site_url: ""
+adsense_account_id: ""
+
+privacy:
+  store_raw_query_data_in_public_repo: false
+  store_exact_revenue_in_public_repo: false
+  store_oauth_tokens_in_public_repo: false
+
+collection:
+  ga4_enabled: false
+  search_console_enabled: false
+  adsense_enabled: false
+

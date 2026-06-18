@@ -1,0 +1,26 @@
+{% assign ads = site.data.monetization %}
+{% assign slot = include.slot | default: "in_article" %}
+{% assign slot_config = ads.slots[slot] %}
+{% if ads.ads_enabled == true and ads.adsense_approved == true and ads.custom_domain_verified == true and ads.cookie_cmp_ready == true and ads.adsense_client_id and slot_config.enabled == true and page.no_ads != true %}
+  <aside class="ad-slot ad-slot-{{ slot }}" style="min-height: {{ slot_config.min_height | default: 280 }}px">
+    <span
+      class="ad-label"
+      data-ko="{{ slot_config.label.ko | default: '광고' }}"
+      data-ja="{{ slot_config.label.ja | default: '広告' }}"
+    >
+      {{ slot_config.label.ko | default: "광고" }}
+    </span>
+    <ins
+      class="adsbygoogle"
+      style="display:block"
+      data-ad-client="{{ ads.adsense_client_id | escape }}"
+      data-ad-slot="{{ include.ad_slot_id | default: '' | escape }}"
+      data-ad-format="auto"
+      data-full-width-responsive="true"
+    ></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </aside>
+{% endif %}
+

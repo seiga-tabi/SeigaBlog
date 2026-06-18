@@ -1,0 +1,100 @@
+{% assign current_lang = page.lang | default: site.lang | default: "ko" %}
+{% assign structured_title = page.title_text %}
+{% if current_lang == "ja" %}
+  {% assign structured_title = page.title.ja | default: page.title_i18n.ja | default: page.title_text | default: page.title %}
+  {% assign structured_description = page.description_i18n.ja | default: page.description | default: page.excerpt.ja | default: site.description_ja | default: site.description %}
+  {% assign structured_author = page.author.ja | default: site.author.name_ja | default: site.author.name | default: site.title %}
+{% else %}
+  {% assign structured_title = page.title.ko | default: page.title_i18n.ko | default: page.title_text | default: page.title %}
+  {% assign structured_description = page.description_i18n.ko | default: page.description | default: page.excerpt.ko | default: site.description %}
+  {% assign structured_author = page.author.ko | default: site.author.name | default: site.title %}
+{% endif %}
+{% assign structured_image = page.og_image | default: page.image | default: site.profile_image %}
+
+{% if page.url == "/" %}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": {{ site.title | jsonify }},
+      "url": {{ site.url | append: site.baseurl | append: "/" | jsonify }},
+      "description": {{ site.description | jsonify }},
+      "inLanguage": ["ko", "ja"],
+      "publisher": {
+        "@type": "Organization",
+        "name": {{ site.title | jsonify }}
+      }
+    }
+  </script>
+{% endif %}
+
+{% if page.layout == "post" %}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": {{ structured_title | jsonify }},
+      "description": {{ structured_description | strip_html | strip_newlines | jsonify }},
+      "datePublished": {{ page.date | date_to_xmlschema | jsonify }},
+      "dateModified": {{ page.last_checked | default: page.date | date_to_xmlschema | jsonify }},
+      "author": {
+        "@type": "Person",
+        "name": {{ structured_author | jsonify }}
+      },
+      "image": {{ structured_image | absolute_url | jsonify }},
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": {{ page.url | absolute_url | jsonify }}
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": {{ site.title | jsonify }}
+      },
+      "isAccessibleForFree": true
+    }
+  </script>
+  {% if page.faq %}
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {% for item in page.faq %}
+            {
+              "@type": "Question",
+              "name": {{ item.question.ko | jsonify }},
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": {{ item.answer.ko | strip_html | strip_newlines | jsonify }}
+              }
+            }{% unless forloop.last %},{% endunless %}
+          {% endfor %}
+        ]
+      }
+    </script>
+  {% endif %}
+{% endif %}
+
+{% unless page.url == "/" %}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "SeigaBlog",
+          "item": {{ "/" | absolute_url | jsonify }}
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": {{ structured_title | jsonify }},
+          "item": {{ page.url | absolute_url | jsonify }}
+        }
+      ]
+    }
+  </script>
+{% endunless %}
+

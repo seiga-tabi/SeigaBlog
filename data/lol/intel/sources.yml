@@ -1,0 +1,39 @@
+riot_official:
+  - id: riot-ko-patch-notes
+    enabled: true
+    tier: 1
+    priority: 100
+    product: lol_pc
+    type: riot_official_patch_notes
+    category: patch
+    publisher: Riot Games
+    url: "https://www.leagueoflegends.com/ko-kr/news/tags/patch-notes/"
+  - id: riot-ko-game-updates
+    enabled: true
+    tier: 1
+    priority: 90
+    product: lol_pc
+    type: riot_official_game_update
+    category: dev
+    publisher: Riot Games
+    url: "https://www.leagueoflegends.com/ko-kr/news/game-updates/"
+  - id: riot-ko-dev
+    enabled: true
+    tier: 1
+    priority: 85
+    product: lol_pc
+    type: riot_dev_article
+    category: dev
+    publisher: Riot Games
+    url: "https://www.leagueoflegends.com/ko-kr/news/dev/"
+
+limited_sources:
+  journalists: []
+  dataminers: []
+  community_sources: []
+
+excluded_products:
+  - wild_rift
+  - tft
+  - lor
+  - valorant

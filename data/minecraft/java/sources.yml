@@ -1,0 +1,19 @@
+sources:
+  - id: minecraft-feedback-release-changelogs
+    url: https://feedback.minecraft.net/hc/en-us/sections/360001186971-Release-Changelogs
+    publisher: Mojang Studios
+    source_tier: 1
+    enabled: true
+    channel: stable
+  - id: minecraft-feedback-knowledge-base
+    url: https://feedback.minecraft.net/hc/en-us/categories/115000410252-Knowledge-Base
+    publisher: Mojang Studios
+    source_tier: 1
+    enabled: true
+    channel: all
+  - id: minecraft-net-articles
+    url: https://www.minecraft.net/en-us/article
+    publisher: Mojang Studios
+    source_tier: 1
+    enabled: true
+    channel: all

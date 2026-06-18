@@ -1,0 +1,18 @@
+---
+layout: null
+permalink: /robots.txt
+---
+User-agent: *
+Allow: {{ "/" | relative_url }}
+Disallow: {{ "/reports/" | relative_url }}
+Disallow: {{ "/data/" | relative_url }}
+Disallow: {{ "/scripts/" | relative_url }}
+Disallow: {{ "/prompts/" | relative_url }}
+Disallow: {{ "/docs/" | relative_url }}
+Disallow: {{ "/assets/images/raw/" | relative_url }}
+
+User-agent: Mediapartners-Google
+Allow: {{ "/" | relative_url }}
+
+Sitemap: {{ "/sitemap.xml" | absolute_url }}
+

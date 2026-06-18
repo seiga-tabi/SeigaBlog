@@ -1,0 +1,9 @@
+{% assign ads = site.data.monetization %}
+{% if ads.ads_enabled == true and ads.adsense_approved == true and ads.custom_domain_verified == true and ads.cookie_cmp_ready == true and ads.adsense_client_id %}
+  <script
+    async
+    src="{{ ads.adsense_script_host }}/pagead/js/adsbygoogle.js?client={{ ads.adsense_client_id | escape }}"
+    crossorigin="anonymous"
+  ></script>
+{% endif %}
+

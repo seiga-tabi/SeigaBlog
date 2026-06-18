@@ -77,6 +77,47 @@
       {{ post.lead.ko }}
     </p>
 
+    <aside class="post-trust-box">
+      <div>
+        <strong data-ko="출처와 확인" data-ja="出典と確認">출처와 확인</strong>
+        <p
+          data-ko="{% if post.source_title %}대표 출처: {{ post.source_title }}. {% endif %}{% if post.last_checked %}마지막 확인: {{ post.last_checked }}.{% endif %}"
+          data-ja="{% if post.source_title %}代表出典: {{ post.source_title }}. {% endif %}{% if post.last_checked %}最終確認: {{ post.last_checked }}.{% endif %}"
+        >
+          {% if post.source_title %}대표 출처: {{ post.source_title }}. {% endif %}{% if post.last_checked %}마지막 확인: {{ post.last_checked }}.{% endif %}
+        </p>
+        {% if post.source_url %}
+          <a href="{{ post.source_url }}" rel="noopener noreferrer" target="_blank" data-ko="공식 출처 열기" data-ja="公式出典を開く">공식 출처 열기</a>
+        {% endif %}
+      </div>
+      <div>
+        <strong data-ko="자동화 고지" data-ja="自動化開示">자동화 고지</strong>
+        <p
+          data-ko="{{ post.automation_disclosure.ko | default: '이 글은 구조화된 공식 자료와 검증 스크립트를 바탕으로 작성되었으며, 입력에 없는 수치나 챔피언 변경은 추가하지 않습니다.' | escape }}"
+          data-ja="{{ post.automation_disclosure.ja | default: 'この記事は構造化された公式資料と検証スクリプトをもとに作成され、入力にない数値やチャンピオン変更は追加しません。' | escape }}"
+        >
+          {{ post.automation_disclosure.ko | default: "이 글은 구조화된 공식 자료와 검증 스크립트를 바탕으로 작성되었으며, 입력에 없는 수치나 챔피언 변경은 추가하지 않습니다." }}
+        </p>
+      </div>
+    </aside>
+
+    {% if post.information_status %}
+      <aside class="information-status-banner information-status-{{ post.information_status.code | default: 'unknown' }}">
+        <strong
+          data-ko="{{ post.information_status.label.ko | escape }}"
+          data-ja="{{ post.information_status.label.ja | escape }}"
+        >
+          {{ post.information_status.label.ko }}
+        </strong>
+        <p
+          data-ko="{{ post.information_status.notice.ko | escape }}"
+          data-ja="{{ post.information_status.notice.ja | escape }}"
+        >
+          {{ post.information_status.notice.ko }}
+        </p>
+      </aside>
+    {% endif %}
+
     {% if post.summary_image %}
       {% include content_image.html image=post.summary_image post=post variant="summary" loading="eager" fetchpriority="high" %}
     {% endif %}
@@ -373,11 +414,13 @@
         {% assign related_count = 0 %}
         {% for related in site.posts %}
           {% if related.slug != post.slug and related_count < 2 %}
-            <button class="related-card" type="button" data-open-post="{{ related.slug }}">
+            <a class="related-card" href="{{ related.url | relative_url }}" data-open-post="{{ related.slug }}">
               <span class="related-thumb-wrap">
                 <img
                   class="related-thumb"
-                  src="{{ related.image }}"
+                  src="{{ related.image | relative_url }}"
+                  width="172"
+                  height="172"
                   alt="{{ related.title.ko | escape }}"
                   data-alt-ko="{{ related.title.ko | escape }}"
                   data-alt-ja="{{ related.title.ja | escape }}"
@@ -391,7 +434,7 @@
               >
                 {{ related.title.ko }}
               </span>
-            </button>
+            </a>
             {% assign related_count = related_count | plus: 1 %}
           {% endif %}
         {% endfor %}

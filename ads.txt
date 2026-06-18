@@ -1,0 +1,7 @@
+---
+layout: null
+permalink: /ads.txt
+---
+# SeigaBlog ads.txt
+# AdSense is disabled until custom domain verification, AdSense approval, CMP setup, and a real publisher ID are complete.
+

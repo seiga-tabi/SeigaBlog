@@ -142,6 +142,10 @@ function updateEmptyState(count) {
 }
 
 function ensureActivePost() {
+  if (!detailPanels().length) {
+    return;
+  }
+
   const currentId = selectedPostId();
   const currentCardVisible = visibleCards().some((card) => card.dataset.postId === currentId);
   const fallbackId = visibleCards()[0]?.dataset.postId;
@@ -161,6 +165,14 @@ function activatePost(postId, openDetail = true) {
   });
 
   if (openDetail) {
+    if (!detailPanels().length) {
+      const target = findPostUrl(postId);
+      if (target) {
+        window.location.href = target;
+      }
+      return;
+    }
+
     app?.classList.add("show-detail");
     setDetailStackHidden(false);
     history.replaceState(null, "", `#${postId}`);
@@ -216,9 +228,32 @@ function showToast(message) {
 
 function syncFromHash() {
   const postId = location.hash.replace("#", "");
-  if (postId && document.querySelector(`[data-detail-panel][data-post-id="${postId}"]`)) {
+  if (!postId) {
+    return;
+  }
+
+  if (app?.dataset.page === "home") {
+    const target = findPostUrl(postId);
+    if (target) {
+      window.location.replace(target);
+    }
+    return;
+  }
+
+  if (document.querySelector(`[data-detail-panel][data-post-id="${postId}"]`)) {
     activatePost(postId, true);
   }
+}
+
+function findPostUrl(postId) {
+  const postLink = [...document.querySelectorAll("[data-open-post]")].find(
+    (node) => node.dataset.openPost === postId && node.getAttribute("href"),
+  );
+  const cardLink = [...document.querySelectorAll("[data-post-card]")].find(
+    (node) => node.dataset.postId === postId && node.getAttribute("href"),
+  );
+
+  return postLink?.getAttribute("href") || cardLink?.getAttribute("href") || "";
 }
 
 function refreshIcons() {
@@ -266,17 +301,7 @@ document.addEventListener("click", (event) => {
     return;
   }
 
-  if (
-    postLink
-    && app?.dataset.page === "home"
-    && event.button === 0
-    && !event.metaKey
-    && !event.ctrlKey
-    && !event.shiftKey
-    && !event.altKey
-  ) {
-    event.preventDefault();
-    activatePost(postLink.dataset.openPost);
+  if (postLink && app?.dataset.page === "home") {
     return;
   }
 

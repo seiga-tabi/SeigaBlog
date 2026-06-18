@@ -1,0 +1,404 @@
+{
+  "ok": true,
+  "date": "2026-06-18",
+  "fetched_at": "2026-06-18T17:07:17+09:00",
+  "checked_sources": [
+    {
+      "id": "minecraft-feedback-release-changelogs",
+      "url": "https://feedback.minecraft.net/hc/en-us/sections/360001186971-Release-Changelogs",
+      "publisher": "Mojang Studios",
+      "source_tier": 1,
+      "enabled": true,
+      "channel": "stable"
+    },
+    {
+      "id": "minecraft-feedback-knowledge-base",
+      "url": "https://feedback.minecraft.net/hc/en-us/categories/115000410252-Knowledge-Base",
+      "publisher": "Mojang Studios",
+      "source_tier": 1,
+      "enabled": true,
+      "channel": "all"
+    },
+    {
+      "id": "minecraft-net-articles",
+      "url": "https://www.minecraft.net/en-us/article",
+      "publisher": "Mojang Studios",
+      "source_tier": 1,
+      "enabled": true,
+      "channel": "all"
+    }
+  ],
+  "item_count": 12,
+  "items": [
+    {
+      "raw_item_id": "minecraft-java-raw-c0ae9797e5db7c24",
+      "product": "minecraft",
+      "edition_hint": "java",
+      "source_id": "minecraft-feedback-release-changelogs",
+      "source_tier": 1,
+      "publisher": "Mojang Studios",
+      "title": "Minecraft Java Edition - 26.2",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/46690753273997-Minecraft-Java-Edition-26-2",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/46690753273997-Minecraft-Java-Edition-26-2",
+      "published_at": "",
+      "fetched_at": "2026-06-18T17:06:47+09:00"
+    },
+    {
+      "raw_item_id": "minecraft-java-raw-ab63642065dde2d9",
+      "product": "minecraft",
+      "edition_hint": "java",
+      "source_id": "minecraft-feedback-release-changelogs",
+      "source_tier": 1,
+      "publisher": "Mojang Studios",
+      "title": "Minecraft Java Edition - 26.1.1 Hotfix",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/44759148669325-Minecraft-Java-Edition-26-1-1-Hotfix",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/44759148669325-Minecraft-Java-Edition-26-1-1-Hotfix",
+      "published_at": "",
+      "fetched_at": "2026-06-18T17:06:47+09:00"
+    },
+    {
+      "raw_item_id": "minecraft-java-raw-98545a1287c13ec1",
+      "product": "minecraft",
+      "edition_hint": "java",
+      "source_id": "minecraft-feedback-release-changelogs",
+      "source_tier": 1,
+      "publisher": "Mojang Studios",
+      "title": "Minecraft Java Edition 26.1",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/44551668333837-Minecraft-Java-Edition-26-1",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/44551668333837-Minecraft-Java-Edition-26-1",
+      "published_at": "",
+      "fetched_at": "2026-06-18T17:06:47+09:00"
+    },
+    {
+      "raw_item_id": "minecraft-java-raw-03625c8aa8c43cb3",
+      "product": "minecraft",
+      "edition_hint": "java",
+      "source_id": "minecraft-feedback-release-changelogs",
+      "source_tier": 1,
+      "publisher": "Mojang Studios",
+      "title": "Minecraft: Java Edition 1.21.11 - Mounts of Mayhem",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/41809981427213-Minecraft-Java-Edition-1-21-11-Mounts-of-Mayhem",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/41809981427213-Minecraft-Java-Edition-1-21-11-Mounts-of-Mayhem",
+      "published_at": "",
+      "fetched_at": "2026-06-18T17:06:47+09:00"
+    },
+    {
+      "raw_item_id": "minecraft-java-raw-2c35e4106b121d34",
+      "product": "minecraft",
+      "edition_hint": "java",
+      "source_id": "minecraft-feedback-release-changelogs",
+      "source_tier": 1,
+      "publisher": "Mojang Studios",
+      "title": "Minecraft: Java Edition 1.21.10 Hotfix",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/40290064247693-Minecraft-Java-Edition-1-21-10-Hotfix",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/40290064247693-Minecraft-Java-Edition-1-21-10-Hotfix",
+      "published_at": "",
+      "fetched_at": "2026-06-18T17:06:47+09:00"
+    },
+    {
+      "raw_item_id": "minecraft-java-raw-187c997215d785b5",
+      "product": "minecraft",
+      "edition_hint": "java",
+      "source_id": "minecraft-feedback-release-changelogs",
+      "source_tier": 1,
+      "publisher": "Mojang Studios",
+      "title": "Minecraft: Java Edition 1.21.9 - The Copper Age",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/39966147272589-Minecraft-Java-Edition-1-21-9-The-Copper-Age",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/39966147272589-Minecraft-Java-Edition-1-21-9-The-Copper-Age",
+      "published_at": "",
+      "fetched_at": "2026-06-18T17:06:47+09:00"
+    },
+    {
+      "raw_item_id": "minecraft-java-raw-524c22d2f4ef27c1",
+      "product": "minecraft",
+      "edition_hint": "java",
+      "source_id": "minecraft-feedback-knowledge-base",
+      "source_tier": 1,
+      "publisher": "Mojang Studios",
+      "title": "Minecraft Java Edition - 26.2 Release Candidate 2",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/46597269427341-Minecraft-Java-Edition-26-2-Release-Candidate-2",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/46597269427341-Minecraft-Java-Edition-26-2-Release-Candidate-2",
+      "published_at": "",
+      "fetched_at": "2026-06-18T17:06:47+09:00"
+    },
+    {
+      "raw_item_id": "minecraft-java-raw-1f25036eeb45e906",
+      "product": "minecraft",
+      "edition_hint": "java",
+      "source_id": "minecraft-feedback-knowledge-base",
+      "source_tier": 1,
+      "publisher": "Mojang Studios",
+      "title": "Minecraft Java Edition - 26.2 Release Candidate 1",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/46593385918477-Minecraft-Java-Edition-26-2-Release-Candidate-1",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/46593385918477-Minecraft-Java-Edition-26-2-Release-Candidate-1",
+      "published_at": "",
+      "fetched_at": "2026-06-18T17:06:47+09:00"
+    },
+    {
+      "raw_item_id": "minecraft-java-raw-5d92f3ea9d869bc8",
+      "product": "minecraft",
+      "edition_hint": "java",
+      "source_id": "minecraft-feedback-knowledge-base",
+      "source_tier": 1,
+      "publisher": "Mojang Studios",
+      "title": "Minecraft Java Edition - 26.2 Pre-Release 6",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/46539775201165-Minecraft-Java-Edition-26-2-Pre-Release-6",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/46539775201165-Minecraft-Java-Edition-26-2-Pre-Release-6",
+      "published_at": "",
+      "fetched_at": "2026-06-18T17:06:47+09:00"
+    },
+    {
+      "raw_item_id": "minecraft-java-raw-f611d1e88b8c38d3",
+      "product": "minecraft",
+      "edition_hint": "java",
+      "source_id": "minecraft-feedback-knowledge-base",
+      "source_tier": 1,
+      "publisher": "Mojang Studios",
+      "title": "Minecraft Java Edition - 26.2 Pre-Release 5",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/46484282747021-Minecraft-Java-Edition-26-2-Pre-Release-5",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/46484282747021-Minecraft-Java-Edition-26-2-Pre-Release-5",
+      "published_at": "",
+      "fetched_at": "2026-06-18T17:06:47+09:00"
+    },
+    {
+      "raw_item_id": "minecraft-java-raw-0668f518234c6b0a",
+      "product": "minecraft",
+      "edition_hint": "java",
+      "source_id": "minecraft-feedback-knowledge-base",
+      "source_tier": 1,
+      "publisher": "Mojang Studios",
+      "title": "Minecraft Java Edition - 26.2 Pre-release 4",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/46393304366349-Minecraft-Java-Edition-26-2-Pre-release-4",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/46393304366349-Minecraft-Java-Edition-26-2-Pre-release-4",
+      "published_at": "",
+      "fetched_at": "2026-06-18T17:06:47+09:00"
+    },
+    {
+      "raw_item_id": "minecraft-java-raw-9cf516c9349ef4f0",
+      "product": "minecraft",
+      "edition_hint": "java",
+      "source_id": "minecraft-feedback-knowledge-base",
+      "source_tier": 1,
+      "publisher": "Mojang Studios",
+      "title": "Minecraft Java Edition - 26.2 Pre-release 3",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/46332172222861-Minecraft-Java-Edition-26-2-Pre-release-3",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/46332172222861-Minecraft-Java-Edition-26-2-Pre-release-3",
+      "published_at": "",
+      "fetched_at": "2026-06-18T17:06:47+09:00"
+    }
+  ],
+  "excluded_bedrock": [
+    {
+      "title": "Minecraft: Bedrock Edition 26.30 Changelog - Chaos Cubed",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/46570672409997-Minecraft-Bedrock-Edition-26-30-Changelog-Chaos-Cubed",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/46570672409997-Minecraft-Bedrock-Edition-26-30-Changelog-Chaos-Cubed"
+    },
+    {
+      "title": "Minecraft: Bedrock Edition 26.23 Hotfix Changelog",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/46043306833805-Minecraft-Bedrock-Edition-26-23-Hotfix-Changelog",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/46043306833805-Minecraft-Bedrock-Edition-26-23-Hotfix-Changelog"
+    },
+    {
+      "title": "Minecraft: Bedrock Edition 26.21 Hotfix Changelog",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/45844706302221-Minecraft-Bedrock-Edition-26-21-Hotfix-Changelog",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/45844706302221-Minecraft-Bedrock-Edition-26-21-Hotfix-Changelog"
+    },
+    {
+      "title": "Minecraft: Bedrock Edition 26.20 Changelog",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/45400537384333-Minecraft-Bedrock-Edition-26-20-Changelog",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/45400537384333-Minecraft-Bedrock-Edition-26-20-Changelog"
+    },
+    {
+      "title": "Minecraft: Bedrock Edition 26.13 Hotfix Changelog",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/44799887672973-Minecraft-Bedrock-Edition-26-13-Hotfix-Changelog",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/44799887672973-Minecraft-Bedrock-Edition-26-13-Hotfix-Changelog"
+    },
+    {
+      "title": "Minecraft: Bedrock Edition 26.12 Hotfix Changelog",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/44732288765837-Minecraft-Bedrock-Edition-26-12-Hotfix-Changelog",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/44732288765837-Minecraft-Bedrock-Edition-26-12-Hotfix-Changelog"
+    },
+    {
+      "title": "Minecraft: Bedrock Edition 26.11 Hotfix Changelog",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/44610903078797-Minecraft-Bedrock-Edition-26-11-Hotfix-Changelog",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/44610903078797-Minecraft-Bedrock-Edition-26-11-Hotfix-Changelog"
+    },
+    {
+      "title": "Minecraft: Bedrock Edition 26.10 - Tiny Takeover",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/44418129038733-Minecraft-Bedrock-Edition-26-10-Tiny-Takeover",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/44418129038733-Minecraft-Bedrock-Edition-26-10-Tiny-Takeover"
+    },
+    {
+      "title": "Minecraft: Bedrock Edition 26.3 Changelog",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/43861703542925-Minecraft-Bedrock-Edition-26-3-Changelog",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/43861703542925-Minecraft-Bedrock-Edition-26-3-Changelog"
+    },
+    {
+      "title": "Minecraft: Bedrock Edition 26.2 Changelog",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/43812188348813-Minecraft-Bedrock-Edition-26-2-Changelog",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/43812188348813-Minecraft-Bedrock-Edition-26-2-Changelog"
+    },
+    {
+      "title": "Minecraft: Bedrock Edition 26.1 Changelog",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/43648860943245-Minecraft-Bedrock-Edition-26-1-Changelog",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/43648860943245-Minecraft-Bedrock-Edition-26-1-Changelog"
+    },
+    {
+      "title": "Minecraft: Bedrock Edition 26.0 Changelog",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/43274629736717-Minecraft-Bedrock-Edition-26-0-Changelog",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/43274629736717-Minecraft-Bedrock-Edition-26-0-Changelog"
+    },
+    {
+      "title": "Minecraft - 1.21.132 (Bedrock)",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/42519424555021-Minecraft-1-21-132-Bedrock",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/42519424555021-Minecraft-1-21-132-Bedrock"
+    },
+    {
+      "title": "Minecraft - 1.21.131 (Bedrock)",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/41979788279181-Minecraft-1-21-131-Bedrock",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/41979788279181-Minecraft-1-21-131-Bedrock"
+    },
+    {
+      "title": "Minecraft: Bedrock Edition 1.21.130 - Mounts of Mayhem",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/41446685014669-Minecraft-Bedrock-Edition-1-21-130-Mounts-of-Mayhem",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/41446685014669-Minecraft-Bedrock-Edition-1-21-130-Mounts-of-Mayhem"
+    },
+    {
+      "title": "Minecraft - 1.21.124 (Bedrock)",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/41224903492621-Minecraft-1-21-124-Bedrock",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/41224903492621-Minecraft-1-21-124-Bedrock"
+    },
+    {
+      "title": "Minecraft - 1.21.123 (Bedrock)",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/41112550913677-Minecraft-1-21-123-Bedrock",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/41112550913677-Minecraft-1-21-123-Bedrock"
+    },
+    {
+      "title": "Minecraft - 1.21.122 (Bedrock)",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/40947085632141-Minecraft-1-21-122-Bedrock",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/40947085632141-Minecraft-1-21-122-Bedrock"
+    },
+    {
+      "title": "Minecraft - 1.21.121 (Bedrock)",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/40877613133709-Minecraft-1-21-121-Bedrock",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/40877613133709-Minecraft-1-21-121-Bedrock"
+    },
+    {
+      "title": "Minecraft - 1.21.120 (Bedrock)",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/40566672351885-Minecraft-1-21-120-Bedrock",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/40566672351885-Minecraft-1-21-120-Bedrock"
+    },
+    {
+      "title": "Minecraft - 1.21.114 (Bedrock)",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/40380755991181-Minecraft-1-21-114-Bedrock",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/40380755991181-Minecraft-1-21-114-Bedrock"
+    },
+    {
+      "title": "Minecraft: Bedrock Edition 1.21.111 - The Copper Age",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/39932063411213-Minecraft-Bedrock-Edition-1-21-111-The-Copper-Age",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/39932063411213-Minecraft-Bedrock-Edition-1-21-111-The-Copper-Age"
+    },
+    {
+      "title": "Minecraft: Bedrock Edition 26.30 Changelog - Chaos Cubed",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/46570672409997-Minecraft-Bedrock-Edition-26-30-Changelog-Chaos-Cubed",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/46570672409997-Minecraft-Bedrock-Edition-26-30-Changelog-Chaos-Cubed"
+    },
+    {
+      "title": "Minecraft: Bedrock Edition 26.23 Hotfix Changelog",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/46043306833805-Minecraft-Bedrock-Edition-26-23-Hotfix-Changelog",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/46043306833805-Minecraft-Bedrock-Edition-26-23-Hotfix-Changelog"
+    },
+    {
+      "title": "Minecraft: Bedrock Edition 26.21 Hotfix Changelog",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/45844706302221-Minecraft-Bedrock-Edition-26-21-Hotfix-Changelog",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/45844706302221-Minecraft-Bedrock-Edition-26-21-Hotfix-Changelog"
+    },
+    {
+      "title": "Minecraft: Bedrock Edition 26.20 Changelog",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/45400537384333-Minecraft-Bedrock-Edition-26-20-Changelog",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/45400537384333-Minecraft-Bedrock-Edition-26-20-Changelog"
+    },
+    {
+      "title": "Minecraft: Bedrock Edition 26.13 Hotfix Changelog",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/44799887672973-Minecraft-Bedrock-Edition-26-13-Hotfix-Changelog",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/44799887672973-Minecraft-Bedrock-Edition-26-13-Hotfix-Changelog"
+    },
+    {
+      "title": "Minecraft Beta & Preview - 26.40.26",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/46719091494797-Minecraft-Beta-Preview-26-40-26",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/46719091494797-Minecraft-Beta-Preview-26-40-26"
+    },
+    {
+      "title": "Minecraft Beta & Preview - 26.40.22/23",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/46506466842125-Minecraft-Beta-Preview-26-40-22-23",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/46506466842125-Minecraft-Beta-Preview-26-40-22-23"
+    },
+    {
+      "title": "Minecraft Beta & Preview - 26.40.20",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/46333309174669-Minecraft-Beta-Preview-26-40-20",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/46333309174669-Minecraft-Beta-Preview-26-40-20"
+    },
+    {
+      "title": "Minecraft Beta & Preview - 26.30.32",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/46149394356877-Minecraft-Beta-Preview-26-30-32",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/46149394356877-Minecraft-Beta-Preview-26-30-32"
+    },
+    {
+      "title": "Minecraft Beta & Preview - 26.30.29/31",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/45975590959117-Minecraft-Beta-Preview-26-30-29-31",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/45975590959117-Minecraft-Beta-Preview-26-30-29-31"
+    },
+    {
+      "title": "Minecraft Beta & Preview - 26.30.28",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/45785756698381-Minecraft-Beta-Preview-26-30-28",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/45785756698381-Minecraft-Beta-Preview-26-30-28"
+    },
+    {
+      "title": "Minecraft Education Changelog",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/32821136168333-Minecraft-Education-Changelog",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/32821136168333-Minecraft-Education-Changelog"
+    },
+    {
+      "title": "Bedrock Add-On Templates",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/4414295731725-Bedrock-Add-On-Templates",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/4414295731725-Bedrock-Add-On-Templates"
+    },
+    {
+      "title": "Marketplace Maps Affected By Villager Bug",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/360027304891-Marketplace-Maps-Affected-By-Villager-Bug",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/360027304891-Marketplace-Maps-Affected-By-Villager-Bug"
+    },
+    {
+      "title": "Minecraft for Nintendo Switch (Bedrock)",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/360004818752-Minecraft-for-Nintendo-Switch-Bedrock",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/360004818752-Minecraft-for-Nintendo-Switch-Bedrock"
+    },
+    {
+      "title": "Marketplace FAQ",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/360004166751-Marketplace-FAQ",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/360004166751-Marketplace-FAQ"
+    }
+  ],
+  "duplicates": [
+    {
+      "raw_item_id": "minecraft-java-raw-c0ae9797e5db7c24",
+      "product": "minecraft",
+      "edition_hint": "java",
+      "source_id": "minecraft-feedback-knowledge-base",
+      "source_tier": 1,
+      "publisher": "Mojang Studios",
+      "title": "Minecraft Java Edition - 26.2",
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/46690753273997-Minecraft-Java-Edition-26-2",
+      "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/46690753273997-Minecraft-Java-Edition-26-2",
+      "published_at": "",
+      "fetched_at": "2026-06-18T17:06:47+09:00"
+    }
+  ],
+  "failures": [
+    {
+      "id": "minecraft-net-articles",
+      "url": "https://www.minecraft.net/en-us/article",
+      "error": "The read operation timed out"
+    }
+  ]
+}

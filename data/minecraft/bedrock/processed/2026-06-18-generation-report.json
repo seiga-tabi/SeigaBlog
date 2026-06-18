@@ -1,0 +1,10 @@
+{
+  "ok": true,
+  "date": "2026-06-18",
+  "dry_run": true,
+  "generated": false,
+  "action": "NEW_POST",
+  "reason": "새 Bedrock 글 생성 기준을 충족했습니다.",
+  "post": "_posts/2026-06-18-minecraft-bedrock-26-30-summary.md",
+  "selected_item_id": "9d09a2d95acaf5963d3cf2a7"
+}

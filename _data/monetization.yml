@@ -1,0 +1,30 @@
+ads_enabled: false
+adsense_approved: false
+custom_domain_verified: false
+cookie_cmp_ready: false
+ads_txt_ready: false
+publisher_id: ""
+adsense_client_id: ""
+adsense_account_id: ""
+adsense_script_host: "https://pagead2.googlesyndication.com"
+
+policy:
+  artificial_click_incentives_allowed: false
+  show_ads_on_policy_pages: false
+  show_ads_on_error_pages: false
+  show_ads_on_draft_or_rumor_pages: false
+
+slots:
+  in_article:
+    enabled: false
+    min_height: 280
+    label:
+      ko: 광고
+      ja: 広告
+  after_article:
+    enabled: false
+    min_height: 280
+    label:
+      ko: 광고
+      ja: 広告
+

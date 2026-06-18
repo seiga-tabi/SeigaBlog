@@ -1,0 +1,35 @@
+monthly_revenue_target_usd: 200
+ads_enabled: false
+adsense_approved: false
+custom_domain_verified: false
+auto_merge: false
+
+publishing:
+  max_new_posts_per_day: 1
+  max_new_posts_per_week: 4
+  allow_forced_daily_post: false
+  minimum_quality_score: 85
+
+pagination:
+  posts_per_page: 10
+
+content_mix:
+  evergreen: 40
+  timely_official: 30
+  existing_post_updates: 20
+  pbe_and_dev: 10
+
+revenue_model:
+  formula:
+    page_rpm: "estimated_earnings / pageviews * 1000"
+    required_monthly_pageviews: "monthly_revenue_target_usd / rolling_30_day_page_rpm * 1000"
+  scenario_label: "가정값"
+  scenarios:
+    - page_rpm_usd: 2
+      required_monthly_pageviews: 100000
+    - page_rpm_usd: 5
+      required_monthly_pageviews: 40000
+    - page_rpm_usd: 8
+      required_monthly_pageviews: 25000
+    - page_rpm_usd: 10
+      required_monthly_pageviews: 20000

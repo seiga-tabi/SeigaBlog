@@ -1,0 +1,42 @@
+name: Site Quality
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2"
+
+      - name: Jekyll 설치
+        run: gem install jekyll
+
+      - name: 정적 사이트 빌드와 검증
+        run: |
+          npm run build
+          npm run validate:blog
+          npm run validate:canonical
+          npm run validate:schema
+          npm run audit:links
+          npm test
+
+      - name: 비밀정보 패턴 검사
+        run: |
+          if rg -n "AKIA|AIza|ghp_|github_pat|-----BEGIN|client_secret|private_key|refresh_token|RGAPI-|pub-[0-9]{16}" . -g '!_site/**' -g '!*.svg'; then
+            echo "비밀정보로 보이는 패턴이 발견되었습니다."
+            exit 1
+          fi
+

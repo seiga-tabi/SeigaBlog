@@ -1,0 +1,151 @@
+name: Minecraft Bedrock Daily Blog
+
+run-name: "Minecraft Bedrock · ${{ github.event_name }} · #${{ github.run_number }}"
+
+on:
+  schedule:
+    # GitHub Actions cron은 UTC 기준입니다. 08:17 UTC = 17:17 Asia/Tokyo.
+    - cron: "17 8 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "검색과 검증만 수행"
+        required: false
+        default: false
+        type: boolean
+      channel:
+        description: "수집 채널"
+        required: false
+        default: "all"
+        type: choice
+        options:
+          - all
+          - stable
+          - test
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: minecraft-content-automation
+  cancel-in-progress: false
+
+jobs:
+  bedrock-daily:
+    runs-on: ubuntu-latest
+    env:
+      TZ: Asia/Tokyo
+    steps:
+      - name: 저장소 checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Python 설정
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Ruby 및 Jekyll 설정
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2"
+
+      - name: Jekyll 설치
+        run: gem install jekyll
+
+      - name: Git 작성자 설정
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: 실행 시간 기록
+        id: runmeta
+        run: |
+          echo "date=$(date +%F)" >> "$GITHUB_OUTPUT"
+          echo "started_at=$(date --iso-8601=seconds)" >> "$GITHUB_OUTPUT"
+
+      - name: Bedrock 공식 정보 수집·분류·생성
+        run: |
+          ARGS="--channel ${{ github.event_name == 'workflow_dispatch' && inputs.channel || 'all' }}"
+          if [ "${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}" = "true" ]; then
+            ARGS="$ARGS --dry-run"
+          fi
+          npm run daily:minecraft-bedrock -- $ARGS
+
+      - name: 전체 블로그 검증
+        run: |
+          npm run validate:blog
+          npm run build
+
+      - name: 생성 결과 확인
+        id: generation
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import datetime as dt
+          import json
+          from pathlib import Path
+          from zoneinfo import ZoneInfo
+
+          today = dt.datetime.now(ZoneInfo("Asia/Tokyo")).date().isoformat()
+          path = Path(f"data/minecraft/bedrock/processed/{today}-generation-report.json")
+          data = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
+          print(f"generated={'true' if data.get('generated') else 'false'}")
+          print(f"post={data.get('post', '')}")
+          print(f"action={data.get('action', '')}")
+          print(f"reason={data.get('reason', '')}")
+          print(f"date={today}")
+          PY
+
+      - name: 변경사항 확인
+        id: changes
+        run: |
+          if [ -n "$(git status --short)" ]; then
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: PR 브랜치 push
+        if: steps.changes.outputs.has_changes == 'true' && steps.generation.outputs.generated == 'true'
+        run: |
+          BRANCH="automation/minecraft-bedrock-${{ steps.generation.outputs.date }}"
+          git checkout -B "$BRANCH"
+          git add .github/workflows/minecraft-bedrock-daily.yml package.json scripts data/minecraft prompts/minecraft reports/minecraft _posts assets/images/minecraft _data/ui.yml README.md AGENTS.md docs
+          git commit -m "blog: add Minecraft Bedrock update ${{ steps.generation.outputs.date }}"
+          git push --force-with-lease origin "$BRANCH"
+
+      - name: Pull Request 생성 또는 갱신
+        if: steps.changes.outputs.has_changes == 'true' && steps.generation.outputs.generated == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          BRANCH="automation/minecraft-bedrock-${{ steps.generation.outputs.date }}"
+          TITLE="blog: ${{ steps.generation.outputs.date }} Minecraft Bedrock Edition 업데이트"
+          EXISTING_PR=$(gh pr list --head "$BRANCH" --json number --jq '.[0].number')
+          BODY="## 생성 결과
+
+          - 실행일: ${{ steps.generation.outputs.date }}
+          - Action: ${{ steps.generation.outputs.action }}
+          - 생성 또는 갱신된 글: ${{ steps.generation.outputs.post }}
+          - 이유: ${{ steps.generation.outputs.reason }}
+
+          ## 검증
+
+          - npm run daily:minecraft-bedrock
+          - npm run validate:blog
+          - npm run build
+
+          ## 운영 원칙
+
+          Bedrock 공식 원문을 읽을 수 없거나, Java/Beta/Preview/플랫폼 정보 검증을 통과하지 못하면 PR을 만들지 않습니다."
+          if [ -n "$EXISTING_PR" ]; then
+            gh pr edit "$EXISTING_PR" --title "$TITLE" --body "$BODY"
+          else
+            gh pr create --title "$TITLE" --base main --head "$BRANCH" --body "$BODY"
+          fi
+
+      - name: 새 Bedrock 글 없음
+        if: steps.generation.outputs.generated != 'true'
+        run: echo "Bedrock 새 글 생성 기준을 충족한 항목이 없어 PR을 만들지 않습니다."

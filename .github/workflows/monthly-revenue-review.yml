@@ -1,0 +1,60 @@
+name: Monthly Revenue Review
+
+on:
+  schedule:
+    - cron: "0 13 1 * *"
+      timezone: "Asia/Tokyo"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: monthly-revenue-review
+  cancel-in-progress: false
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: 월간 수익 리포트 생성
+        env:
+          ADSENSE_ACCOUNT_ID: ${{ secrets.ADSENSE_ACCOUNT_ID }}
+          GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
+          GSC_SITE_URL: ${{ secrets.GSC_SITE_URL }}
+          GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+        run: npm run report:monthly
+
+      - name: 변경사항 확인
+        id: changes
+        run: |
+          if [ -n "$(git status --short)" ]; then
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Pull Request 생성
+        if: steps.changes.outputs.has_changes == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          DATE=$(date -u +%Y-%m-%d)
+          BRANCH="automation/monthly-revenue-review-${DATE}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$BRANCH"
+          git add reports/monetization
+          git commit -m "report: monthly revenue review ${DATE}"
+          git push --force-with-lease origin "$BRANCH"
+          gh pr create --title "report: ${DATE} 월간 수익 검토" --base main --head "$BRANCH" --body "정확한 수익 금액과 원본 트래픽 데이터는 공개 저장소에 포함하지 않습니다."
+

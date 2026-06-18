@@ -1,8 +1,6 @@
 name: LoL 패치 블로그 PR 생성
 
 on:
-  schedule:
-    - cron: "0 3 * * *"
   workflow_dispatch:
     inputs:
       use_ai:

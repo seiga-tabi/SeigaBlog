@@ -1,0 +1,47 @@
+{% assign current_lang = page.lang | default: site.lang | default: "ko" %}
+{% assign localized_title = page.title_text %}
+{% if current_lang == "ja" %}
+  {% assign localized_title = page.title.ja | default: page.title_i18n.ja | default: page.title_text | default: page.title %}
+{% else %}
+  {% assign localized_title = page.title.ko | default: page.title_i18n.ko | default: page.title_text | default: page.title %}
+{% endif %}
+{% assign meta_title = site.title %}
+{% if localized_title %}
+  {% assign meta_title = localized_title | append: " | " | append: site.title %}
+{% endif %}
+
+{% assign meta_description = site.description %}
+{% if current_lang == "ja" %}
+  {% assign meta_description = page.description_i18n.ja | default: page.description | default: page.excerpt.ja | default: site.description_ja | default: site.description %}
+{% else %}
+  {% assign meta_description = page.description_i18n.ko | default: page.description | default: page.excerpt.ko | default: site.description %}
+{% endif %}
+
+{% assign meta_image = page.og_image | default: page.image | default: site.profile_image %}
+<meta name="description" content="{{ meta_description | strip_html | strip_newlines | escape }}" />
+{% if site.data.analytics.ga4_measurement_id %}
+  <meta name="google-site-verification" content="{{ site.google_site_verification | default: site.data.analytics.google_site_verification | escape }}" />
+{% endif %}
+<meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}" />
+<meta property="og:title" content="{{ meta_title | escape }}" />
+<meta property="og:description" content="{{ meta_description | strip_html | strip_newlines | escape }}" />
+<meta property="og:url" content="{{ page.url | absolute_url }}" />
+<meta property="og:site_name" content="{{ site.title | escape }}" />
+<meta property="og:locale" content="{% if current_lang == 'ja' %}ja_JP{% else %}ko_KR{% endif %}" />
+{% if meta_image %}
+  <meta property="og:image" content="{{ meta_image | absolute_url }}" />
+  <meta name="twitter:image" content="{{ meta_image | absolute_url }}" />
+{% endif %}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ meta_title | escape }}" />
+<meta name="twitter:description" content="{{ meta_description | strip_html | strip_newlines | escape }}" />
+{% if page.date %}
+  <meta property="article:published_time" content="{{ page.date | date_to_xmlschema }}" />
+{% endif %}
+{% if page.last_checked or page.dateModified %}
+  <meta property="article:modified_time" content="{{ page.last_checked | default: page.dateModified | date_to_xmlschema }}" />
+{% endif %}
+{% include seo/canonical.html %}
+{% include seo/hreflang.html %}
+<title>{{ meta_title }}</title>
+

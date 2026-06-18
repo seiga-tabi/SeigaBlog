@@ -8,7 +8,7 @@ title_text: Blog
 {% assign categories = site.data.ui.category_order %}
 
 <main
-  class="workspace{% if site.posts == empty %} workspace-empty{% endif %}"
+  class="workspace home-workspace{% if site.posts == empty %} workspace-empty{% endif %}"
   id="app"
   data-page="home"
   data-saved-ko="{{ ui_ko.saved }}"
@@ -71,7 +71,8 @@ title_text: Blog
       </span>
     </div>
 
-    {% for post in site.posts %}
+    {% assign posts_per_page = site.data.growth.pagination.posts_per_page | default: 10 %}
+    {% for post in site.posts limit: posts_per_page %}
       {% if forloop.first %}
         {% include featured_card.html post=post %}
       {% endif %}
@@ -93,12 +94,23 @@ title_text: Blog
     </div>
 
     <section class="article-list" id="articleList" aria-label="{{ ui_ko.list_label }}">
-      {% for post in site.posts %}
+      {% for post in site.posts limit: posts_per_page %}
         {% unless forloop.first %}
           {% include article_card.html post=post %}
         {% endunless %}
       {% endfor %}
     </section>
+
+    {% if site.posts.size > posts_per_page %}
+      <nav class="pagination-nav" aria-label="페이지 이동" data-ko="페이지 이동" data-ja="ページ移動">
+        <span
+          data-ko="첫 {{ posts_per_page }}개 글만 표시합니다. 전체 아카이브는 다음 Phase에서 분리합니다."
+          data-ja="最初の{{ posts_per_page }}件だけ表示します。全体アーカイブは次のPhaseで分離します。"
+        >
+          첫 {{ posts_per_page }}개 글만 표시합니다. 전체 아카이브는 다음 Phase에서 분리합니다.
+        </span>
+      </nav>
+    {% endif %}
 
     {% if site.posts == empty %}
       <section class="empty-state profile-empty" id="emptyState">
@@ -141,11 +153,4 @@ title_text: Blog
     </nav>
   </section>
 
-  {% unless site.posts == empty %}
-    <section class="detail-stack" aria-live="polite" aria-hidden="true" inert>
-      {% for post in site.posts %}
-        {% include detail_panel.html post=post active=forloop.first %}
-      {% endfor %}
-    </section>
-  {% endunless %}
 </main>

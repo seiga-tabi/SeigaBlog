@@ -15,6 +15,34 @@ description: LoL 26.12 패치의 버프·너프 카드, 솔랭 체크 포인트,
 description_i18n:
   ko: LoL 26.12 패치의 버프·너프 카드, 솔랭 체크 포인트, 패치 기준 실험 픽 5선을 공식 패치노트 기준으로 정리했습니다.
   ja: LoL 26.12パッチの強化・弱体化カード、ソロランク確認点、パッチ基準の試用ピック5選を公式パッチノート基準で整理しました。
+information_status:
+  code: confirmed
+  label:
+    ko: 공식 패치노트 확인
+    ja: 公式パッチノート確認
+  notice:
+    ko: 이 글은 Riot 공식 26.12 패치노트와 Riot Data Dragon locale 데이터를 기준으로 작성했습니다.
+    ja: この記事はRiot公式26.12パッチノートとRiot Data Dragon localeデータを基準に作成しました。
+automation_disclosure:
+  ko: 이 글은 구조화된 공식 패치노트 데이터와 검증 스크립트를 바탕으로 작성되었으며, 별도의 승률/픽률/밴률 통계는 포함하지 않았습니다.
+  ja: この記事は構造化された公式パッチノートデータと検証スクリプトをもとに作成され、勝率・ピック率・BAN率などの外部統計は含んでいません。
+sources:
+  - url: https://www.leagueoflegends.com/ko-kr/news/game-updates/league-of-legends-patch-26-12-notes
+    title: 리그 오브 레전드 26.12 패치 노트
+    publisher: Riot Games
+    published_at: '2026-06-09'
+    last_verified_at: '2026-06-17T17:13:31+09:00'
+    source_tier: official
+  - url: https://developer.riotgames.com/docs/lol
+    title: Riot Data Dragon
+    publisher: Riot Games
+    published_at: ''
+    last_verified_at: '2026-06-17T17:13:31+09:00'
+    source_tier: official_static_data
+update_history:
+  - date: '2026-06-17'
+    ko: 공식 패치노트와 Data Dragon 기준으로 최초 발행했습니다.
+    ja: 公式パッチノートとData Dragon基準で初回公開しました。
 categories:
 - League of Legends
 - Patch Notes

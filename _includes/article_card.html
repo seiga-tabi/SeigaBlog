@@ -3,6 +3,8 @@
 {% assign ui_ja = site.data.ui.ja %}
 {% assign tags_ko_text = post.post_tags.ko | join: " " %}
 {% assign tags_ja_text = post.post_tags.ja | join: " " %}
+{% assign excerpt_ko = post.description_i18n.ko | default: post.lead.ko | default: post.description %}
+{% assign excerpt_ja = post.description_i18n.ja | default: post.lead.ja | default: post.description %}
 
 <a
   class="article-card post-card"
@@ -11,13 +13,15 @@
   data-open-post="{{ post.slug }}"
   data-post-id="{{ post.slug }}"
   data-category="{{ post.category }}"
-  data-search-ko="{{ post.title.ko | append: ' ' | append: post.excerpt.ko | append: ' ' | append: post.lead.ko | append: ' ' | append: post.badge.ko | append: ' ' | append: ui_ko.categories[post.category] | append: ' ' | append: tags_ko_text | escape }}"
-  data-search-ja="{{ post.title.ja | append: ' ' | append: post.excerpt.ja | append: ' ' | append: post.lead.ja | append: ' ' | append: post.badge.ja | append: ' ' | append: ui_ja.categories[post.category] | append: ' ' | append: tags_ja_text | escape }}"
+  data-search-ko="{{ post.title.ko | append: ' ' | append: excerpt_ko | append: ' ' | append: post.lead.ko | append: ' ' | append: post.badge.ko | append: ' ' | append: ui_ko.categories[post.category] | append: ' ' | append: tags_ko_text | escape }}"
+  data-search-ja="{{ post.title.ja | append: ' ' | append: excerpt_ja | append: ' ' | append: post.lead.ja | append: ' ' | append: post.badge.ja | append: ' ' | append: ui_ja.categories[post.category] | append: ' ' | append: tags_ja_text | escape }}"
 >
   <span class="article-thumb-wrap">
     <img
       class="article-thumb"
       src="{{ post.image | relative_url }}"
+      width="172"
+      height="172"
       alt="{{ post.title.ko | escape }}"
       data-alt-ko="{{ post.title.ko | escape }}"
       data-alt-ja="{{ post.title.ja | escape }}"
@@ -35,8 +39,8 @@
     <span class="article-title" data-ko="{{ post.title.ko | escape }}" data-ja="{{ post.title.ja | escape }}">
       {{ post.title.ko }}
     </span>
-    <span class="article-excerpt" data-ko="{{ post.excerpt.ko | escape }}" data-ja="{{ post.excerpt.ja | escape }}">
-      {{ post.excerpt.ko }}
+    <span class="article-excerpt" data-ko="{{ excerpt_ko | escape }}" data-ja="{{ excerpt_ja | escape }}">
+      {{ excerpt_ko }}
     </span>
   </span>
 </a>

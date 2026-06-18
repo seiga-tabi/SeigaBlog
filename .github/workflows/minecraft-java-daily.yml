@@ -1,0 +1,156 @@
+name: Minecraft Java Daily Blog
+
+run-name: "Minecraft Java · ${{ github.event_name }} · #${{ github.run_number }}"
+
+on:
+  schedule:
+    # 17:07 Asia/Tokyo
+    - cron: "7 8 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "검색과 검증만 수행"
+        required: false
+        default: false
+        type: boolean
+      channel:
+        description: "수집 채널"
+        required: false
+        default: "all"
+        type: choice
+        options:
+          - all
+          - stable
+          - test
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: minecraft-content-automation
+  cancel-in-progress: false
+
+jobs:
+  minecraft-java:
+    runs-on: ubuntu-latest
+    env:
+      TZ: Asia/Tokyo
+
+    steps:
+      - name: 저장소 checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Python 설정
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Ruby 및 Jekyll 설정
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2"
+
+      - name: 의존성 설치
+        run: |
+          python3 -m pip install --upgrade pip
+          gem install jekyll
+
+      - name: Git 작성자 설정
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Minecraft Java 공식 정보 수집 및 글 생성
+        run: |
+          ARGS="--channel ${{ github.event_name == 'workflow_dispatch' && inputs.channel || 'all' }}"
+          if [ "${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}" = "true" ]; then
+            ARGS="$ARGS --dry-run"
+          fi
+          npm run daily:minecraft-java -- $ARGS
+
+      - name: Java 전용 검증
+        run: npm run validate:minecraft-java
+
+      - name: 전체 블로그 검증
+        run: |
+          npm run validate:blog
+          npm run build
+
+      - name: 생성 결과 확인
+        id: generation
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import datetime as dt
+          import json
+          from pathlib import Path
+          from zoneinfo import ZoneInfo
+
+          today = dt.datetime.now(ZoneInfo("Asia/Tokyo")).date().isoformat()
+          path = Path(f"data/minecraft/java/processed/{today}-generation-report.json")
+          data = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
+          changed = bool(data.get("generated") or data.get("updated_existing"))
+          print(f"changed={'true' if changed else 'false'}")
+          print(f"date={today}")
+          print(f"post={data.get('post', '')}")
+          print(f"action={data.get('action', 'REPORT_ONLY')}")
+          PY
+
+      - name: 변경사항 확인
+        id: changes
+        run: |
+          if [ -n "$(git status --short)" ]; then
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Java 전용 브랜치 push
+        if: steps.changes.outputs.has_changes == 'true' && steps.generation.outputs.changed == 'true'
+        run: |
+          BRANCH="automation/minecraft-java-${{ steps.generation.outputs.date }}"
+          git checkout -B "$BRANCH"
+          git add README.md docs prompts/minecraft .github/workflows package.json _data scripts/minecraft scripts/run_minecraft_java_pipeline.py data/minecraft _posts assets/images/minecraft reports/minecraft
+          git commit -m "blog: ${{ steps.generation.outputs.date }} Minecraft Java Edition update"
+          git push --force-with-lease origin "$BRANCH"
+
+      - name: Pull Request 생성 또는 갱신
+        if: steps.changes.outputs.has_changes == 'true' && steps.generation.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          BRANCH="automation/minecraft-java-${{ steps.generation.outputs.date }}"
+          TITLE="blog: ${{ steps.generation.outputs.date }} Minecraft Java Edition 업데이트"
+          REPORT="reports/minecraft/java/${{ steps.generation.outputs.date }}-daily-report.md"
+          EXISTING_PR=$(gh pr list --head "$BRANCH" --json number --jq '.[0].number')
+          BODY="## 생성 결과
+
+          - 실행일: ${{ steps.generation.outputs.date }}
+          - 처리 방식: ${{ steps.generation.outputs.action }}
+          - 생성 또는 갱신된 글: ${{ steps.generation.outputs.post }}
+          - 실행 리포트: $REPORT
+
+          ## 검증
+
+          - npm run daily:minecraft-java
+          - npm run validate:minecraft-java
+          - npm run validate:blog
+          - npm run build
+
+          ## 리뷰 체크리스트
+
+          - [ ] Java Edition 전용 출처인지 확인
+          - [ ] Bedrock/Beta/Preview 항목이 섞이지 않았는지 확인
+          - [ ] Snapshot/Pre-Release/Release Candidate가 정식판처럼 표현되지 않았는지 확인
+          - [ ] 원문에 없는 버전, 날짜, 기능, 호환성 정보를 만들지 않았는지 확인"
+          if [ -n "$EXISTING_PR" ]; then
+            gh pr edit "$EXISTING_PR" --title "$TITLE" --body "$BODY"
+          else
+            gh pr create --title "$TITLE" --base main --head "$BRANCH" --body "$BODY"
+          fi
+
+      - name: 새 Java 글 없음
+        if: steps.generation.outputs.changed != 'true'
+        run: echo "Java Edition 새 글 또는 추적 글 변경이 없어 PR을 만들지 않습니다."

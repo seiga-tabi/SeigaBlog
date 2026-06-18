@@ -1,0 +1,16 @@
+sources:
+  - id: minecraft_feedback_release_changelogs
+    name: Minecraft Feedback Release Changelogs
+    url: https://feedback.minecraft.net/hc/en-us/sections/360001186971-Release-Changelogs
+    publisher: Mojang Studios
+    priority: 1
+  - id: minecraft_feedback_knowledge_base
+    name: Minecraft Feedback Knowledge Base
+    url: https://feedback.minecraft.net/hc/en-us/categories/115000410252-Knowledge-Base
+    publisher: Mojang Studios
+    priority: 2
+  - id: minecraft_net_articles
+    name: Minecraft.net Articles
+    url: https://www.minecraft.net/en-us/article
+    publisher: Mojang Studios
+    priority: 3

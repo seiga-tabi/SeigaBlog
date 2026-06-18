@@ -1,0 +1,11 @@
+riot:
+  legal_jibber_jabber: "https://www.riotgames.com/en/legal"
+  developer_general_policies: "https://support-developer.riotgames.com/hc/en-us/articles/22698591841939-General-Policies"
+  developer_terms: "https://developer.riotgames.com/terms"
+  data_dragon: "https://developer.riotgames.com/docs/lol"
+
+official_lol:
+  patch_notes_ko: "https://www.leagueoflegends.com/ko-kr/news/tags/patch-notes/"
+  game_updates_ko: "https://www.leagueoflegends.com/ko-kr/news/game-updates/"
+  dev_ko: "https://www.leagueoflegends.com/ko-kr/news/dev/"
+

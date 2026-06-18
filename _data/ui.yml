@@ -1,6 +1,7 @@
 category_order:
   - all
   - lol
+  - minecraft
 
 ko:
   language_label: 언어 선택
@@ -28,6 +29,7 @@ ko:
   categories:
     all: 전체
     lol: LOL
+    minecraft: Minecraft
 
 ja:
   language_label: 言語選択
@@ -55,3 +57,4 @@ ja:
   categories:
     all: すべて
     lol: LOL
+    minecraft: Minecraft

@@ -1,0 +1,2751 @@
+{
+  "date": "2026-06-18",
+  "run_started_at": "2026-06-18T17:11:23+09:00",
+  "checked_sources": [
+    {
+      "id": "minecraft_feedback_release_changelogs",
+      "url": "https://feedback.minecraft.net/hc/en-us/sections/360001186971-Release-Changelogs",
+      "name": "Minecraft Feedback Release Changelogs"
+    },
+    {
+      "id": "minecraft_feedback_knowledge_base",
+      "url": "https://feedback.minecraft.net/hc/en-us/categories/115000410252-Knowledge-Base",
+      "name": "Minecraft Feedback Knowledge Base"
+    }
+  ],
+  "items": [
+    {
+      "id": "9d09a2d95acaf5963d3cf2a7",
+      "product": "minecraft",
+      "edition": "bedrock",
+      "release_channel": "bedrock_stable_release",
+      "version": "26.30",
+      "release_name": null,
+      "source": {
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/46570672409997-Minecraft-Bedrock-Edition-26-30-Changelog-Chaos-Cubed",
+        "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/46570672409997-Minecraft-Bedrock-Edition-26-30-Changelog-Chaos-Cubed",
+        "title": "Minecraft: Bedrock Edition 26.30 Changelog - Chaos Cubed",
+        "publisher": "Mojang Studios",
+        "published_at": null,
+        "last_verified_at": "2026-06-18T17:10:48+09:00"
+      },
+      "summary": {
+        "ko": "Mojang Studios 공식 원문에서 확인한 Minecraft Bedrock Edition 26.30 정식 업데이트 후보입니다.",
+        "ja": "Mojang Studios公式原文で確認したMinecraft Bedrock Edition 26.30正式アップデート候補です。"
+      },
+      "added": [
+        "Chaos Cubed has landed in Minecraft! Hunt for vibrant Sulfur springs in the Overworld to discover a striking cave biome hidden below. Swim in bubbling Sulfur pools if you dare, build with colorful Cinnabar and Sulfur, but best of all – uncover the Sulfur Cube’s relentless appetite for blocks! From bouncing and sliding to explosive surprises, this unpredictable mob unlocks exciting new ways to build, compete, and survive depending on what you feed it. Chaos is only a block away in our newest drop. Play today in Minecraft!",
+        "Need an easy way of getting your new Sulfur Cube friend from the Sulfur caves to your base? Sure, you could experiment with blocks to make the Sulfur Cube bounce, slide, or traverse long distances – or you can just scoop it up with a bucket and tuck it safely away in your inventory.",
+        "Sulfur Cubes are a new mob coming to Minecraft with a curious appetite for... blocks! Found in Sulfur caves, this curious mob transforms depending on which block the player feeds it. Experiment and discover how to send Sulfur Cubes bouncing, sliding, and more!",
+        "Found across the Overworld, you’ll know if you’ve spotted a Sulfur pool thanks to its Sulfur and Cinnabar blocks – and the noxious gas coming from it! But dig beneath these and you’ll discover a Sulfur cave, filled with new blocks to mine and a new mob to meet!",
+        "The new potent Sulfur block is the reason why Sulfur springs are so bubbly – and a bit nauseating. You can also create hot bubbling pools by placing potent Sulfur beneath water! You’ll soon spy bubble columns, as well as puffs of noxious gas. Build with caution, because noxious gas will trigger nausea in players and nearby mobs!",
+        "Discover this new cave type, with shallow pools of water and glow lichen. Sulfur caves are filled with yellow blocks of Sulfur, red blocks of Cinnabar, Sulfur spikes, and a curious mob called the Sulfur Cube!",
+        "You’ll find two new block sets in Sulfur caves – Cinnabar and Sulfur! These new blocks allow you to add rich reds and yellows into your builds, and each comes with its own full block set. Cobble them, craft with them, turn them into stairs or bricks – the choice is yours!",
+        "Added a new music disc with the song \"Bounce\" that may be found inside Minecarts with Chests in abandoned mineshaft structures within Sulfur Caves",
+        "Added new music tracks Ebb, Home, Memories, Nightly, and Shores to the main Menu music, Creative Mode music, and several biomes",
+        "Added a Panorama Scroll Speed slider to Video settings that controls the rotation speed of the main menu background ( )",
+        "Added fog in the End Dimension while the Ender Dragon is alive.",
+        "Fixed loot table container filling so that when trying to insert a new item, existing partial stacks will be merged to open up slots for new additions ( )"
+      ],
+      "changed": [
+        "Improved character load time on the main menu",
+        "Updated the game credits",
+        "Updated the Cubemap"
+      ],
+      "fixed": [
+        "Fixed a bug where animations always generated closed captions regardless of distance ( )",
+        "Fixed a bug that caused custom Nether biomes to generate with a repeating tiling pattern across chunk boundaries",
+        "Fixed Command Block Hover Note text not updating after changing it until the world is reloaded ( )",
+        "Fixed wooden doors in strongholds being placed with the wrong orientation",
+        "Fixed Java parity issue where Cauldron/Composter blocks pulled by sticky pistons can pull player through walls ( )",
+        "Fixed a client-side display issue that caused falling blocks (such as Sand, Gravel, and Anvils) to appear to pass through Cobwebs without slowing down and to lose their collision after landing",
+        "Fixed error message displayed when importing a custom skin on Android without enough device space ( )",
+        "Fixed items being duplicated when crossing chunk borders in The End ( )",
+        "Fixed a bug that caused entities on the edge of less-than full-height water and lava to still be affected by the liquid. ( ) ( )",
+        "Fixed a bug where bees don't pollinate Spore Blossoms and Chorus Flowers ( )",
+        "Fixed a bug where Strider's loot was not affected by Looting Enchantment ( )",
+        "Fixed Experience Orbs spawning at an incorrect position after killing a Bee, Phantom, or Vex ( ) ( )"
+      ],
+      "removed": [
+        "Removed warning text that \"you can't earn achievements\" when creating a world with Add-ons enabled."
+      ],
+      "experimental_features": [
+        "Need an easy way of getting your new Sulfur Cube friend from the Sulfur caves to your base? Sure, you could experiment with blocks to make the Sulfur Cube bounce, slide, or traverse long distances – or you can just scoop it up with a bucket and tuck it safely away in your inventory.",
+        "Sulfur Cubes are a new mob coming to Minecraft with a curious appetite for... blocks! Found in Sulfur caves, this curious mob transforms depending on which block the player feeds it. Experiment and discover how to send Sulfur Cubes bouncing, sliding, and more!"
+      ],
+      "platform_changes": [
+        "Fixed error message displayed when importing a custom skin on Android without enough device space ( )",
+        "Fixed some animations not working correctly on certain Android devices ( )",
+        "Fixed an issue where emissive parts of Eyeblossom and Firefly Bush were affected by Dithering. ( )",
+        "Fixed Vibrant Visuals shadows and reflections not rendering on PlayStation 4",
+        "Fixed a crash that could occur on Windows when resizing the game window during initial loading",
+        "Fixed a bug where Ghasts could get stuck in the preparing-to-fire animation pose after the player walks out of attack range"
+      ],
+      "touch_control_changes": [
+        "Added a Panorama Scroll Speed slider to Video settings that controls the rotation speed of the main menu background ( )",
+        "Fixed a crash that can occur when prompted about extra Joy-Con controllers that are connected"
+      ],
+      "realms_changes": [
+        "Fixed a bug in the Realms saves screen where the \"Save to storage\" button on an automatic save displayed the active world's size instead of the selected save's size, and the \"Free up space\" dialog was not shown when the selected automatic save was too large to fit in the Realm's storage",
+        "Added information surrounding resource packs download progress to join Realm progress message",
+        "Fixed number of online players not showing on chosen Realm screen"
+      ],
+      "creator_changes": [],
+      "add_on_changes": [
+        "Removed warning text that \"you can't earn achievements\" when creating a world with Add-ons enabled."
+      ],
+      "technical_changes": [
+        "Watch your step or you’ll go flying! Geysers form when a Magma block is generated or placed underneath a potent Sulfur block that’s submerged underneath 1 to 4 blocks of water. Use them for a vertical boost or a dramatic landscaping element!",
+        "Fixed Command Block Hover Note text not updating after changing it until the world is reloaded ( )",
+        "Dedicated servers now have the allow list enabled by default in the server.properties, and will display a warning on server startup if the allow list is enabled but contains no entries",
+        "Party chat now appears in the world, and you can respond from world chat with the /party command"
+      ],
+      "known_issues": [],
+      "bug_ids": [],
+      "supported_platforms": [
+        "PlayStation",
+        "Windows",
+        "Android",
+        "Fire"
+      ],
+      "previous_version": null,
+      "target_stable_version": null,
+      "world_compatibility": null,
+      "realms_compatibility": null,
+      "add_on_compatibility": null,
+      "duplicate": {
+        "is_duplicate": false,
+        "reasons": []
+      },
+      "raw_excerpt": [
+        "By submitting this report, you confirm that the information you have provided is accurate and complete to the best of your knowledge.",
+        "16 June 2026",
+        "Chaos Cubed has landed in Minecraft! Hunt for vibrant Sulfur springs in the Overworld to discover a striking cave biome hidden below. Swim in bubbling Sulfur pools if you dare, build with colorful Cinnabar and Sulfur, but best of all – uncover the Sulfur Cube’s relentless appetite for blocks! From bouncing and sliding to explosive surprises, this unpredictable mob unlocks exciting new ways to build, compete, and survive depending on what you feed it. Chaos is only a block away in our newest drop. Play today in Minecraft!",
+        "Need an easy way of getting your new Sulfur Cube friend from the Sulfur caves to your base? Sure, you could experiment with blocks to make the Sulfur Cube bounce, slide, or traverse long distances – or you can just scoop it up with a bucket and tuck it safely away in your inventory.",
+        "Sulfur Cubes are a new mob coming to Minecraft with a curious appetite for... blocks! Found in Sulfur caves, this curious mob transforms depending on which block the player feeds it. Experiment and discover how to send Sulfur Cubes bouncing, sliding, and more!",
+        "Found across the Overworld, you’ll know if you’ve spotted a Sulfur pool thanks to its Sulfur and Cinnabar blocks – and the noxious gas coming from it! But dig beneath these and you’ll discover a Sulfur cave, filled with new blocks to mine and a new mob to meet!",
+        "The new potent Sulfur block is the reason why Sulfur springs are so bubbly – and a bit nauseating. You can also create hot bubbling pools by placing potent Sulfur beneath water! You’ll soon spy bubble columns, as well as puffs of noxious gas. Build with caution, because noxious gas will trigger nausea in players and nearby mobs!",
+        "Discover this new cave type, with shallow pools of water and glow lichen. Sulfur caves are filled with yellow blocks of Sulfur, red blocks of Cinnabar, Sulfur spikes, and a curious mob called the Sulfur Cube!",
+        "You’ll find two new block sets in Sulfur caves – Cinnabar and Sulfur! These new blocks allow you to add rich reds and yellows into your builds, and each comes with its own full block set. Cobble them, craft with them, turn them into stairs or bricks – the choice is yours!",
+        "Sulfur Spikes grow on Cinnabar and Sulfur blocks, giving Sulfur caves a distinctive look. Unlike Pointed Dripstone, stepping on Sulfur Spikes is harmless, but they can still fall and hurt you – it’s just a pretty rare occurrence.",
+        "Watch your step or you’ll go flying! Geysers form when a Magma block is generated or placed underneath a potent Sulfur block that’s submerged underneath 1 to 4 blocks of water. Use them for a vertical boost or a dramatic landscaping element!",
+        "Why would anyone feed a TNT block to a Sulfur Cube? To see what happens, of course! Try it out for yourself, ignite it, and enjoy (or deeply regret) the explosive results."
+      ]
+    },
+    {
+      "id": "58ca3cbef2dd55902fa65e2a",
+      "product": "minecraft",
+      "edition": "bedrock",
+      "release_channel": "bedrock_hotfix",
+      "version": "26.23",
+      "release_name": null,
+      "source": {
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/46043306833805-Minecraft-Bedrock-Edition-26-23-Hotfix-Changelog",
+        "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/46043306833805-Minecraft-Bedrock-Edition-26-23-Hotfix-Changelog",
+        "title": "Minecraft: Bedrock Edition 26.23 Hotfix Changelog",
+        "publisher": "Mojang Studios",
+        "published_at": null,
+        "last_verified_at": "2026-06-18T17:10:48+09:00"
+      },
+      "summary": {
+        "ko": "Minecraft Bedrock Edition 26.23 핫픽스 원문을 구조화했습니다.",
+        "ja": "Minecraft Bedrock Edition 26.23ホットフィックスの原文を構造化しました。"
+      },
+      "added": [
+        "A new hotfix for Android and Realms is rolling out to address issues found in the latest update. It will become available on each platform as it’s approved, so please allow a little time for it to reach you."
+      ],
+      "changed": [],
+      "fixed": [
+        "A new hotfix for Android and Realms is rolling out to address issues found in the latest update. It will become available on each platform as it’s approved, so please allow a little time for it to reach you.",
+        "Fixed an issue that caused black squares to appear on the screen when Vibrant Visuals was enabled on certain Android devices ( )",
+        "Fixed several crashes that could occur during gameplay"
+      ],
+      "removed": [],
+      "experimental_features": [],
+      "platform_changes": [
+        "A new hotfix for Android and Realms is rolling out to address issues found in the latest update. It will become available on each platform as it’s approved, so please allow a little time for it to reach you.",
+        "Fixed an issue that caused black squares to appear on the screen when Vibrant Visuals was enabled on certain Android devices ( )"
+      ],
+      "touch_control_changes": [],
+      "realms_changes": [
+        "A new hotfix for Android and Realms is rolling out to address issues found in the latest update. It will become available on each platform as it’s approved, so please allow a little time for it to reach you."
+      ],
+      "creator_changes": [],
+      "add_on_changes": [],
+      "technical_changes": [],
+      "known_issues": [],
+      "bug_ids": [],
+      "supported_platforms": [
+        "Android"
+      ],
+      "previous_version": null,
+      "target_stable_version": null,
+      "world_compatibility": null,
+      "realms_compatibility": null,
+      "add_on_compatibility": null,
+      "duplicate": {
+        "is_duplicate": false,
+        "reasons": []
+      },
+      "raw_excerpt": [
+        "By submitting this report, you confirm that the information you have provided is accurate and complete to the best of your knowledge.",
+        "21 May 2026",
+        "A new hotfix for Android and Realms is rolling out to address issues found in the latest update. It will become available on each platform as it’s approved, so please allow a little time for it to reach you.",
+        "Fixed an issue that caused black squares to appear on the screen when Vibrant Visuals was enabled on certain Android devices ( )",
+        "Fixed several crashes that could occur during gameplay",
+        "© Mojang AB. TM Microsoft Corporation.",
+        "© Mojang AB. TM Microsoft Corporation."
+      ]
+    },
+    {
+      "id": "297dc6f83b893523585c96b4",
+      "product": "minecraft",
+      "edition": "bedrock",
+      "release_channel": "bedrock_hotfix",
+      "version": "26.21",
+      "release_name": null,
+      "source": {
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/45844706302221-Minecraft-Bedrock-Edition-26-21-Hotfix-Changelog",
+        "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/45844706302221-Minecraft-Bedrock-Edition-26-21-Hotfix-Changelog",
+        "title": "Minecraft: Bedrock Edition 26.21 Hotfix Changelog",
+        "publisher": "Mojang Studios",
+        "published_at": null,
+        "last_verified_at": "2026-06-18T17:10:48+09:00"
+      },
+      "summary": {
+        "ko": "Minecraft Bedrock Edition 26.21 핫픽스 원문을 구조화했습니다.",
+        "ja": "Minecraft Bedrock Edition 26.21ホットフィックスの原文を構造化しました。"
+      },
+      "added": [
+        "A new hotfix is rolling out to address issues found in the latest update. It will become available on each platform as it’s approved, so please allow a little time for it to reach you.",
+        "Fixed block traits not respecting experimental requirements for"
+      ],
+      "changed": [],
+      "fixed": [
+        "A new hotfix is rolling out to address issues found in the latest update. It will become available on each platform as it’s approved, so please allow a little time for it to reach you.",
+        "Various bug fixes and improvements",
+        "Fixed a freeze when opening a furnace without recipes",
+        "Fixed Several crashes that could occur during gameplay",
+        "Fixed a crash that could occur on launch",
+        "Fixed a crash when clicking the 'Search for people' button while not signed in ( )",
+        "Fixed block traits not respecting experimental requirements for"
+      ],
+      "removed": [],
+      "experimental_features": [
+        "Fixed block traits not respecting experimental requirements for"
+      ],
+      "platform_changes": [],
+      "touch_control_changes": [],
+      "realms_changes": [],
+      "creator_changes": [],
+      "add_on_changes": [],
+      "technical_changes": [],
+      "known_issues": [],
+      "bug_ids": [],
+      "supported_platforms": [],
+      "previous_version": null,
+      "target_stable_version": null,
+      "world_compatibility": null,
+      "realms_compatibility": null,
+      "add_on_compatibility": null,
+      "duplicate": {
+        "is_duplicate": false,
+        "reasons": []
+      },
+      "raw_excerpt": [
+        "By submitting this report, you confirm that the information you have provided is accurate and complete to the best of your knowledge.",
+        "14 May 2026",
+        "A new hotfix is rolling out to address issues found in the latest update. It will become available on each platform as it’s approved, so please allow a little time for it to reach you.",
+        "Various bug fixes and improvements",
+        "Fixed a freeze when opening a furnace without recipes",
+        "Fixed Several crashes that could occur during gameplay",
+        "Fixed a crash that could occur on launch",
+        "Fixed a crash when clicking the 'Search for people' button while not signed in ( )",
+        "Fixed block traits not respecting experimental requirements for",
+        "© Mojang AB. TM Microsoft Corporation.",
+        "© Mojang AB. TM Microsoft Corporation."
+      ]
+    },
+    {
+      "id": "1b2e865390fd72e3fe4391f9",
+      "product": "minecraft",
+      "edition": "bedrock",
+      "release_channel": "bedrock_stable_release",
+      "version": "26.20",
+      "release_name": null,
+      "source": {
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/45400537384333-Minecraft-Bedrock-Edition-26-20-Changelog",
+        "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/45400537384333-Minecraft-Bedrock-Edition-26-20-Changelog",
+        "title": "Minecraft: Bedrock Edition 26.20 Changelog",
+        "publisher": "Mojang Studios",
+        "published_at": null,
+        "last_verified_at": "2026-06-18T17:10:49+09:00"
+      },
+      "summary": {
+        "ko": "Mojang Studios 공식 원문에서 확인한 Minecraft Bedrock Edition 26.20 정식 업데이트 후보입니다.",
+        "ja": "Mojang Studios公式原文で確認したMinecraft Bedrock Edition 26.20正式アップデート候補です。"
+      },
+      "added": [
+        "Sulfur Cubes are a new mob coming to Minecraft with a curious appetite for... blocks! Found in Sulfur caves, this curious mob transforms depending on which block the player feeds it. Experiment and discover how to send Sulfur Cubes bouncing, sliding, and more!",
+        "Found across the Overworld, you'll know if you've spotted a Sulfur pool thanks to its Sulfur and Cinnabar blocks – and the noxious gas coming from it! But dig beneath these and you'll discover a Sulfur cave, filled with new blocks to mine and a new mob to meet!",
+        "Potent Sulfur is a new block you can use to create bubbling hot pools! Place potent Sulfur beneath water and you'll soon spy bubble columns, as well as puffs of noxious gas. Build with caution – noxious gas will trigger nausea in players and nearby mobs!",
+        "Discover this new cave type, with shallow pools of water and glow lichen. Sulfur caves are filled with yellow blocks of Sulfur, red blocks of Cinnabar, and a curious mob called the Sulfur Cube!",
+        "You'll find two new block sets in Sulfur caves – Cinnabar and Sulfur! These new blocks allow you to add rich reds and yellows into your builds, and each comes with its own full block set. Cobble them, craft with them, turn them into stairs or bricks – the choice is yours!",
+        "Added Vibrant Visuals support for all Shelf blocks",
+        "Added Vibrant Visual support for Nautilus Armors",
+        "Introducing Realm Hub, your new home base for all things Realms, accessible from the Realms Play screen.",
+        "Support added to join Realms with a Party.",
+        "Trumpet note block instrument is now added to all Copper variants"
+      ],
+      "changed": [
+        "The baby Bees' textures have been updated to match the adult Bees' textures ( )",
+        "Updated MERS texture for Baby Lazy Panda ( )",
+        "Updated the top of the Chainmail Baby Armor Helmet to match the adult's",
+        "Updated the Snow Fox baby's sleeping texture; eyes are now dark blue to match adult's sleeping texture ( )",
+        "Note: Some screens like Member management are still to be updated. Stay tuned for more!"
+      ],
+      "fixed": [
+        "These features are still in development and may change. The physics for the Sulfur Cube is still a work in progress, and the directional knockback behavior is not fully implemented yet. Please keep sending us your feedback and bug reports!",
+        "Fixed incorrect UI scales when changing resolution",
+        "Fixed issue where large values for player profile stats are incorrectly displayed ( )",
+        "Fixed the Time Played stat briefly showing \"-1 hours\" on the Achievements screen while loading ( )",
+        "Fixed issue placing leaves on top of leaves after decay ( )",
+        "Fixed interacting with a Jukebox or Composter while holding armor creating a ghost item ( )",
+        "Fixed knockback effect to behave more like Java edition ( , )",
+        "Fixed an issue that caused players camera to rotate while interacting with blocks when using Full Keyboard Mode ( )",
+        "Fixed mouse camera sensitivity being higher than expected on Windows ( )",
+        "Fixed a bug to maintain aiming stick capabilities while the small emote screen is visible",
+        "Fixed a bug where Minecarts on the same track would not properly transfer momentum when colliding with each other",
+        "Fixed most cases where offline multiplayer would load infinitely ( )"
+      ],
+      "removed": [
+        "Removed subscriptions tabs from in-game Realms settings"
+      ],
+      "experimental_features": [
+        "Sulfur Cubes are a new mob coming to Minecraft with a curious appetite for... blocks! Found in Sulfur caves, this curious mob transforms depending on which block the player feeds it. Experiment and discover how to send Sulfur Cubes bouncing, sliding, and more!"
+      ],
+      "platform_changes": [
+        "Fixed mouse camera sensitivity being higher than expected on Windows ( )",
+        "Fixed an issue where free trials were incorrectly being advertised for Marketplace Pass and Realms Plus on Nintendo Switch and Nintendo Switch 2 platforms",
+        "Available on Xbox, Windows, PlayStation, and Nintendo Switch. iOS and Android support is coming soon"
+      ],
+      "touch_control_changes": [],
+      "realms_changes": [
+        "Fixed an issue where free trials were incorrectly being advertised for Marketplace Pass and Realms Plus on Nintendo Switch and Nintendo Switch 2 platforms",
+        "The Party System is now available! Create a party, chat with your friends, and follow the party leader seamlessly from world to world — including into Realms and featured servers.",
+        "Introducing Realm Hub, your new home base for all things Realms, accessible from the Realms Play screen.",
+        "Administrator Role – Realm owners can promote trusted players to help manage the world, members, and settings.",
+        "Timeline – See who's been playing on your Realm over the last month.",
+        "Subscription management – view and change your subscription to Minecraft Realms.",
+        "Other Realms changes:",
+        "Support added to join Realms with a Party.",
+        "Migrated pack management in the Realm edit world screen to OreUI.",
+        "Removed subscriptions tabs from in-game Realms settings",
+        "Fixed issue where player can be softlocked trying to join a Realm they're not a member of.",
+        "Fixed crash in Realms Stories for high member count Realms"
+      ],
+      "creator_changes": [],
+      "add_on_changes": [
+        "Edit World Screen – A redesigned screen for world changes, add-ons, and pack management."
+      ],
+      "technical_changes": [
+        "The Party System is now available! Create a party, chat with your friends, and follow the party leader seamlessly from world to world — including into Realms and featured servers."
+      ],
+      "known_issues": [],
+      "bug_ids": [
+        "MCPE-237211"
+      ],
+      "supported_platforms": [
+        "Xbox",
+        "PlayStation",
+        "Nintendo Switch",
+        "Windows",
+        "Android",
+        "iOS"
+      ],
+      "previous_version": null,
+      "target_stable_version": null,
+      "world_compatibility": null,
+      "realms_compatibility": null,
+      "add_on_compatibility": null,
+      "duplicate": {
+        "is_duplicate": false,
+        "reasons": []
+      },
+      "raw_excerpt": [
+        "By submitting this report, you confirm that the information you have provided is accurate and complete to the best of your knowledge.",
+        "5 May 2026",
+        "We've got an exciting release for you today – because alongside chaos and cubes in testing, we have Closed Captions coming in this release! Closed Captions have been a hotly requested feature – and now you can try it out for yourself alongside customisable positioning of the captions, duration, and sounds. Alongside this we've made some sound fixes and tweaks to the baby mobs after our Tiny Takeover drop, some texture and geometry fixes, and more. And don't forget there's plenty to test from our upcoming Chaos Cubed drop – including its hero mob, the sulfur cube, the home of said curious cube, the sulfur caves, plus sulfur springs and potent sulfur! With so much to talk about, we'd better dive in!",
+        "These features are still in development and may change. The physics for the Sulfur Cube is still a work in progress, and the directional knockback behavior is not fully implemented yet. Please keep sending us your feedback and bug reports!",
+        "Sulfur Cubes are a new mob coming to Minecraft with a curious appetite for... blocks! Found in Sulfur caves, this curious mob transforms depending on which block the player feeds it. Experiment and discover how to send Sulfur Cubes bouncing, sliding, and more!",
+        "When it is hit on the left it moves to the right and vice versa",
+        "When it is hit on the top it moves along the ground",
+        "When it is hit on the bottom it moves higher upwards",
+        "When it is hit with a greater damage it is knocked back more",
+        "When the attacker is positioned higher it moves downwards",
+        "When the attacker is positioned lower it moves upwards",
+        "Found across the Overworld, you'll know if you've spotted a Sulfur pool thanks to its Sulfur and Cinnabar blocks – and the noxious gas coming from it! But dig beneath these and you'll discover a Sulfur cave, filled with new blocks to mine and a new mob to meet!"
+      ]
+    },
+    {
+      "id": "2aeffae94e74bae0a31608df",
+      "product": "minecraft",
+      "edition": "bedrock",
+      "release_channel": "bedrock_hotfix",
+      "version": "26.13",
+      "release_name": null,
+      "source": {
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/44799887672973-Minecraft-Bedrock-Edition-26-13-Hotfix-Changelog",
+        "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/44799887672973-Minecraft-Bedrock-Edition-26-13-Hotfix-Changelog",
+        "title": "Minecraft: Bedrock Edition 26.13 Hotfix Changelog",
+        "publisher": "Mojang Studios",
+        "published_at": null,
+        "last_verified_at": "2026-06-18T17:10:49+09:00"
+      },
+      "summary": {
+        "ko": "Minecraft Bedrock Edition 26.13 핫픽스 원문을 구조화했습니다.",
+        "ja": "Minecraft Bedrock Edition 26.13ホットフィックスの原文を構造化しました。"
+      },
+      "added": [
+        "A new hotfix is rolling out to address issues discovered in the latest update. This update will be rolling out to various platforms as it becomes available, so please allow time for the update to reach you."
+      ],
+      "changed": [],
+      "fixed": [
+        "A new hotfix is rolling out to address issues discovered in the latest update. This update will be rolling out to various platforms as it becomes available, so please allow time for the update to reach you.",
+        "Fixed several bugs that could affect gameplay",
+        "Fixed an issue with custom entity components locked behind runtime IDs ( )"
+      ],
+      "removed": [],
+      "experimental_features": [],
+      "platform_changes": [],
+      "touch_control_changes": [],
+      "realms_changes": [],
+      "creator_changes": [],
+      "add_on_changes": [],
+      "technical_changes": [],
+      "known_issues": [],
+      "bug_ids": [],
+      "supported_platforms": [],
+      "previous_version": null,
+      "target_stable_version": null,
+      "world_compatibility": null,
+      "realms_compatibility": null,
+      "add_on_compatibility": null,
+      "duplicate": {
+        "is_duplicate": false,
+        "reasons": []
+      },
+      "raw_excerpt": [
+        "By submitting this report, you confirm that the information you have provided is accurate and complete to the best of your knowledge.",
+        "A new hotfix is rolling out to address issues discovered in the latest update. This update will be rolling out to various platforms as it becomes available, so please allow time for the update to reach you.",
+        "Fixed several bugs that could affect gameplay",
+        "Fixed an issue with custom entity components locked behind runtime IDs ( )",
+        "Selected emotes no longer revert to defaults when relaunching the title ( )",
+        "© Mojang AB. TM Microsoft Corporation.",
+        "© Mojang AB. TM Microsoft Corporation."
+      ]
+    },
+    {
+      "id": "f277a42ffa68684671606144",
+      "product": "minecraft",
+      "edition": "bedrock",
+      "release_channel": "bedrock_hotfix",
+      "version": "26.12",
+      "release_name": null,
+      "source": {
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/44732288765837-Minecraft-Bedrock-Edition-26-12-Hotfix-Changelog",
+        "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/44732288765837-Minecraft-Bedrock-Edition-26-12-Hotfix-Changelog",
+        "title": "Minecraft: Bedrock Edition 26.12 Hotfix Changelog",
+        "publisher": "Mojang Studios",
+        "published_at": null,
+        "last_verified_at": "2026-06-18T17:10:49+09:00"
+      },
+      "summary": {
+        "ko": "Minecraft Bedrock Edition 26.12 핫픽스 원문을 구조화했습니다.",
+        "ja": "Minecraft Bedrock Edition 26.12ホットフィックスの原文を構造化しました。"
+      },
+      "added": [
+        "A new hotfix is rolling out to address issues discovered in the latest update. This update will be rolling out to various platforms as it becomes available, so please allow time for the update to reach you."
+      ],
+      "changed": [],
+      "fixed": [
+        "A new hotfix is rolling out to address issues discovered in the latest update. This update will be rolling out to various platforms as it becomes available, so please allow time for the update to reach you.",
+        "Fixed several bugs that could affect gameplay",
+        "Fixed an issue in Realms Stories where the Members tab did not load in correctly",
+        "Fixed an allowlist issue for servers ( )"
+      ],
+      "removed": [],
+      "experimental_features": [],
+      "platform_changes": [],
+      "touch_control_changes": [],
+      "realms_changes": [
+        "Fixed an issue in Realms Stories where the Members tab did not load in correctly"
+      ],
+      "creator_changes": [],
+      "add_on_changes": [],
+      "technical_changes": [
+        "Fixed an allowlist issue for servers ( )"
+      ],
+      "known_issues": [],
+      "bug_ids": [],
+      "supported_platforms": [],
+      "previous_version": null,
+      "target_stable_version": null,
+      "world_compatibility": null,
+      "realms_compatibility": null,
+      "add_on_compatibility": null,
+      "duplicate": {
+        "is_duplicate": false,
+        "reasons": []
+      },
+      "raw_excerpt": [
+        "By submitting this report, you confirm that the information you have provided is accurate and complete to the best of your knowledge.",
+        "A new hotfix is rolling out to address issues discovered in the latest update. This update will be rolling out to various platforms as it becomes available, so please allow time for the update to reach you.",
+        "Fixed several bugs that could affect gameplay",
+        "Fixed an issue in Realms Stories where the Members tab did not load in correctly",
+        "Fixed an allowlist issue for servers ( )",
+        "© Mojang AB. TM Microsoft Corporation.",
+        "© Mojang AB. TM Microsoft Corporation."
+      ]
+    },
+    {
+      "id": "d1d3b26874e68d7524279f8d",
+      "product": "minecraft",
+      "edition": "bedrock",
+      "release_channel": "bedrock_hotfix",
+      "version": "26.11",
+      "release_name": null,
+      "source": {
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/44610903078797-Minecraft-Bedrock-Edition-26-11-Hotfix-Changelog",
+        "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/44610903078797-Minecraft-Bedrock-Edition-26-11-Hotfix-Changelog",
+        "title": "Minecraft: Bedrock Edition 26.11 Hotfix Changelog",
+        "publisher": "Mojang Studios",
+        "published_at": null,
+        "last_verified_at": "2026-06-18T17:10:50+09:00"
+      },
+      "summary": {
+        "ko": "Minecraft Bedrock Edition 26.11 핫픽스 원문을 구조화했습니다.",
+        "ja": "Minecraft Bedrock Edition 26.11ホットフィックスの原文を構造化しました。"
+      },
+      "added": [
+        "A new hotfix has been released (Windows only) to address issues discovered in the latest update. This update will be rolling out as it becomes available, so please allow time for the update to reach you."
+      ],
+      "changed": [],
+      "fixed": [
+        "A new hotfix has been released (Windows only) to address issues discovered in the latest update. This update will be rolling out as it becomes available, so please allow time for the update to reach you.",
+        "Fixed mouse camera sensitivity being higher than expected on Windows ( )"
+      ],
+      "removed": [],
+      "experimental_features": [],
+      "platform_changes": [
+        "A new hotfix has been released (Windows only) to address issues discovered in the latest update. This update will be rolling out as it becomes available, so please allow time for the update to reach you.",
+        "Fixed mouse camera sensitivity being higher than expected on Windows ( )"
+      ],
+      "touch_control_changes": [],
+      "realms_changes": [],
+      "creator_changes": [],
+      "add_on_changes": [],
+      "technical_changes": [],
+      "known_issues": [],
+      "bug_ids": [],
+      "supported_platforms": [
+        "Windows"
+      ],
+      "previous_version": null,
+      "target_stable_version": null,
+      "world_compatibility": null,
+      "realms_compatibility": null,
+      "add_on_compatibility": null,
+      "duplicate": {
+        "is_duplicate": false,
+        "reasons": []
+      },
+      "raw_excerpt": [
+        "By submitting this report, you confirm that the information you have provided is accurate and complete to the best of your knowledge.",
+        "26 March 2026",
+        "A new hotfix has been released (Windows only) to address issues discovered in the latest update. This update will be rolling out as it becomes available, so please allow time for the update to reach you.",
+        "Fixed mouse camera sensitivity being higher than expected on Windows ( )",
+        "© Mojang AB. TM Microsoft Corporation.",
+        "© Mojang AB. TM Microsoft Corporation."
+      ]
+    },
+    {
+      "id": "5633109862a0f16e0d94b5db",
+      "product": "minecraft",
+      "edition": "bedrock",
+      "release_channel": "bedrock_stable_release",
+      "version": "26.10",
+      "release_name": null,
+      "source": {
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/44418129038733-Minecraft-Bedrock-Edition-26-10-Tiny-Takeover",
+        "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/44418129038733-Minecraft-Bedrock-Edition-26-10-Tiny-Takeover",
+        "title": "Minecraft: Bedrock Edition 26.10 - Tiny Takeover",
+        "publisher": "Mojang Studios",
+        "published_at": null,
+        "last_verified_at": "2026-06-18T17:10:50+09:00"
+      },
+      "summary": {
+        "ko": "Mojang Studios 공식 원문에서 확인한 Minecraft Bedrock Edition 26.10 정식 업데이트 후보입니다.",
+        "ja": "Mojang Studios公式原文で確認したMinecraft Bedrock Edition 26.10正式アップデート候補です。"
+      },
+      "added": [
+        "Ready or not, here comes the Tiny Takeover drop! New versions of baby mobs have stormed Minecraft, causing cuteness overload across biomes and builds. Listen out for heart-melting sounds, craft name tags for your pets, and keep babies forever young with the golden dandelion. The babies are officially on the loose, so get ready to collect, coo over, and create chaos with these tiny rascals!",
+        "Tweaked the bounding box of both adult and baby to align with Java Edition and the new model",
+        "Tweaked the bounding box of both adult and baby to align with Java Edition and the new model",
+        "Tweaked the bounding box of both adult and baby to align with Java Edition and the new model",
+        "Both adult and baby Rabbits also received new animations",
+        "Tweaked the bounding box to align with the new model",
+        "Tweaked the baby's bounding box to align with the new model",
+        "Tweaked the bounding box to align with the new model",
+        "Added new baby-specific animations for the Axolotl",
+        "Added new baby-specific animations for the Fox",
+        "Added new baby-specific animations for the Camel",
+        "Added new baby-specific animations for the Armadillo"
+      ],
+      "changed": [
+        "Updated the models and textures of the following Baby Mobs:",
+        "Tweaked the bounding box of both adult and baby to align with Java Edition and the new model",
+        "Tweaked the bounding box of both adult and baby to align with Java Edition and the new model",
+        "Tweaked the bounding box of both adult and baby to align with Java Edition and the new model",
+        "Tweaked the bounding box to align with the new model",
+        "Tweaked the baby's bounding box to align with the new model",
+        "Tweaked the bounding box to align with the new model",
+        "Updated the name of Describe to Identify Block, a feature that lets you know through text and text to speech (TTS) what block or mob you have in front of you"
+      ],
+      "fixed": [
+        "Fixed issue where text to speech doesn't get enabled on launch despite the 'Text To Speech For UI' toggle being enabled",
+        "Fixed the issue preventing some item related achievements from being obtained.",
+        "Fixed an issue that could cause invalid classic skins to be shown as blank skins",
+        "Fixed a bug where the Trial Spawner in some cases spawned too many mobs ( )",
+        "Fixed an issue where some players on PlayStation had vertical sync disabled, causing image tearing"
+      ],
+      "removed": [],
+      "experimental_features": [],
+      "platform_changes": [
+        "Fixed an issue where some players on PlayStation had vertical sync disabled, causing image tearing"
+      ],
+      "touch_control_changes": [
+        "Available for keyboard and controller inputs"
+      ],
+      "realms_changes": [],
+      "creator_changes": [
+        "Skins will be correctly shown to other players when switching to a Classic skin and then back to a Character Creator choice."
+      ],
+      "add_on_changes": [],
+      "technical_changes": [],
+      "known_issues": [],
+      "bug_ids": [],
+      "supported_platforms": [
+        "PlayStation"
+      ],
+      "previous_version": null,
+      "target_stable_version": null,
+      "world_compatibility": null,
+      "realms_compatibility": null,
+      "add_on_compatibility": null,
+      "duplicate": {
+        "is_duplicate": false,
+        "reasons": []
+      },
+      "raw_excerpt": [
+        "By submitting this report, you confirm that the information you have provided is accurate and complete to the best of your knowledge.",
+        "24 March 2026",
+        "Ready or not, here comes the Tiny Takeover drop! New versions of baby mobs have stormed Minecraft, causing cuteness overload across biomes and builds. Listen out for heart-melting sounds, craft name tags for your pets, and keep babies forever young with the golden dandelion. The babies are officially on the loose, so get ready to collect, coo over, and create chaos with these tiny rascals!",
+        "Using a Spawn Egg on the corresponding Mob will now spawn the Baby form of that Mob",
+        "Updated the models and textures of the following Baby Mobs:",
+        "Cow",
+        "Tweaked the bounding box of both adult and baby to align with Java Edition and the new model",
+        "Mooshroom",
+        "Tweaked the bounding box of both adult and baby to align with Java Edition and the new model",
+        "Pig",
+        "Wolf",
+        "Tweaked the bounding box of both adult and baby to align with Java Edition and the new model"
+      ]
+    },
+    {
+      "id": "4a91b7cc9c2346052a6ff8d1",
+      "product": "minecraft",
+      "edition": "bedrock",
+      "release_channel": "bedrock_stable_release",
+      "version": "26.3",
+      "release_name": null,
+      "source": {
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/43861703542925-Minecraft-Bedrock-Edition-26-3-Changelog",
+        "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/43861703542925-Minecraft-Bedrock-Edition-26-3-Changelog",
+        "title": "Minecraft: Bedrock Edition 26.3 Changelog",
+        "publisher": "Mojang Studios",
+        "published_at": null,
+        "last_verified_at": "2026-06-18T17:10:50+09:00"
+      },
+      "summary": {
+        "ko": "Mojang Studios 공식 원문에서 확인한 Minecraft Bedrock Edition 26.3 정식 업데이트 후보입니다.",
+        "ja": "Mojang Studios公式原文で確認したMinecraft Bedrock Edition 26.3正式アップデート候補です。"
+      },
+      "added": [
+        "A new hotfix has been released to address issues discovered in the latest update. This update will be rolling out to the various platforms as they become available, so please allow time for the update to reach you."
+      ],
+      "changed": [],
+      "fixed": [
+        "A new hotfix has been released to address issues discovered in the latest update. This update will be rolling out to the various platforms as they become available, so please allow time for the update to reach you.",
+        "Fixed an issue with the localization of some items from the Mounts of Mayhem drop. These will now show in the chosen language correctly ( )",
+        "Fixed a crash that could occur when loading a world or Realm"
+      ],
+      "removed": [],
+      "experimental_features": [],
+      "platform_changes": [],
+      "touch_control_changes": [],
+      "realms_changes": [
+        "Fixed a crash that could occur when loading a world or Realm"
+      ],
+      "creator_changes": [],
+      "add_on_changes": [],
+      "technical_changes": [],
+      "known_issues": [],
+      "bug_ids": [],
+      "supported_platforms": [],
+      "previous_version": null,
+      "target_stable_version": null,
+      "world_compatibility": null,
+      "realms_compatibility": null,
+      "add_on_compatibility": null,
+      "duplicate": {
+        "is_duplicate": false,
+        "reasons": []
+      },
+      "raw_excerpt": [
+        "By submitting this report, you confirm that the information you have provided is accurate and complete to the best of your knowledge.",
+        "2 March 2026",
+        "A new hotfix has been released to address issues discovered in the latest update. This update will be rolling out to the various platforms as they become available, so please allow time for the update to reach you.",
+        "Fixed an issue with the localization of some items from the Mounts of Mayhem drop. These will now show in the chosen language correctly ( )",
+        "Fixed a crash that could occur when loading a world or Realm",
+        "© Mojang AB. TM Microsoft Corporation.",
+        "© Mojang AB. TM Microsoft Corporation."
+      ]
+    },
+    {
+      "id": "e77cbee67acfde15381e477f",
+      "product": "minecraft",
+      "edition": "bedrock",
+      "release_channel": "bedrock_stable_release",
+      "version": "26.2",
+      "release_name": null,
+      "source": {
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/43812188348813-Minecraft-Bedrock-Edition-26-2-Changelog",
+        "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/43812188348813-Minecraft-Bedrock-Edition-26-2-Changelog",
+        "title": "Minecraft: Bedrock Edition 26.2 Changelog",
+        "publisher": "Mojang Studios",
+        "published_at": null,
+        "last_verified_at": "2026-06-18T17:10:51+09:00"
+      },
+      "summary": {
+        "ko": "Mojang Studios 공식 원문에서 확인한 Minecraft Bedrock Edition 26.2 정식 업데이트 후보입니다.",
+        "ja": "Mojang Studios公式原文で確認したMinecraft Bedrock Edition 26.2正式アップデート候補です。"
+      },
+      "added": [
+        "A new hotfix has been released to address issues discovered in the latest update. This update will be rolling out to the various platforms as they become available, so please allow time for the update to reach you."
+      ],
+      "changed": [],
+      "fixed": [
+        "A new hotfix has been released to address issues discovered in the latest update. This update will be rolling out to the various platforms as they become available, so please allow time for the update to reach you.",
+        "Fixed an issue with add-ons that could result in crashes or missing textures ( )"
+      ],
+      "removed": [],
+      "experimental_features": [],
+      "platform_changes": [],
+      "touch_control_changes": [],
+      "realms_changes": [],
+      "creator_changes": [],
+      "add_on_changes": [
+        "Fixed an issue with add-ons that could result in crashes or missing textures ( )"
+      ],
+      "technical_changes": [],
+      "known_issues": [],
+      "bug_ids": [],
+      "supported_platforms": [],
+      "previous_version": null,
+      "target_stable_version": null,
+      "world_compatibility": null,
+      "realms_compatibility": null,
+      "add_on_compatibility": null,
+      "duplicate": {
+        "is_duplicate": false,
+        "reasons": []
+      },
+      "raw_excerpt": [
+        "By submitting this report, you confirm that the information you have provided is accurate and complete to the best of your knowledge.",
+        "25 February 2026",
+        "A new hotfix has been released to address issues discovered in the latest update. This update will be rolling out to the various platforms as they become available, so please allow time for the update to reach you.",
+        "Fixed an issue with add-ons that could result in crashes or missing textures ( )",
+        "© Mojang AB. TM Microsoft Corporation.",
+        "© Mojang AB. TM Microsoft Corporation."
+      ]
+    },
+    {
+      "id": "357450940c6f55b684e77575",
+      "product": "minecraft",
+      "edition": "bedrock",
+      "release_channel": "bedrock_stable_release",
+      "version": "26.1",
+      "release_name": null,
+      "source": {
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/43648860943245-Minecraft-Bedrock-Edition-26-1-Changelog",
+        "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/43648860943245-Minecraft-Bedrock-Edition-26-1-Changelog",
+        "title": "Minecraft: Bedrock Edition 26.1 Changelog",
+        "publisher": "Mojang Studios",
+        "published_at": null,
+        "last_verified_at": "2026-06-18T17:10:51+09:00"
+      },
+      "summary": {
+        "ko": "Mojang Studios 공식 원문에서 확인한 Minecraft Bedrock Edition 26.1 정식 업데이트 후보입니다.",
+        "ja": "Mojang Studios公式原文で確認したMinecraft Bedrock Edition 26.1正式アップデート候補です。"
+      },
+      "added": [
+        "A new hotfix has been released to address issues discovered in the latest update. This update will be rolling out to the various platforms as they become available, so please allow time for the update to reach you."
+      ],
+      "changed": [],
+      "fixed": [
+        "A new hotfix has been released to address issues discovered in the latest update. This update will be rolling out to the various platforms as they become available, so please allow time for the update to reach you.",
+        "Fixed scaling values on certain devices ( )"
+      ],
+      "removed": [],
+      "experimental_features": [],
+      "platform_changes": [],
+      "touch_control_changes": [],
+      "realms_changes": [],
+      "creator_changes": [],
+      "add_on_changes": [],
+      "technical_changes": [],
+      "known_issues": [],
+      "bug_ids": [],
+      "supported_platforms": [],
+      "previous_version": null,
+      "target_stable_version": null,
+      "world_compatibility": null,
+      "realms_compatibility": null,
+      "add_on_compatibility": null,
+      "duplicate": {
+        "is_duplicate": false,
+        "reasons": []
+      },
+      "raw_excerpt": [
+        "By submitting this report, you confirm that the information you have provided is accurate and complete to the best of your knowledge.",
+        "19 February 2026",
+        "A new hotfix has been released to address issues discovered in the latest update. This update will be rolling out to the various platforms as they become available, so please allow time for the update to reach you.",
+        "Fixed scaling values on certain devices ( )",
+        "© Mojang AB. TM Microsoft Corporation.",
+        "© Mojang AB. TM Microsoft Corporation."
+      ]
+    },
+    {
+      "id": "175d6d94d061327baf994bed",
+      "product": "minecraft",
+      "edition": "bedrock",
+      "release_channel": "bedrock_stable_release",
+      "version": "26.0",
+      "release_name": null,
+      "source": {
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/43274629736717-Minecraft-Bedrock-Edition-26-0-Changelog",
+        "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/43274629736717-Minecraft-Bedrock-Edition-26-0-Changelog",
+        "title": "Minecraft: Bedrock Edition 26.0 Changelog",
+        "publisher": "Mojang Studios",
+        "published_at": null,
+        "last_verified_at": "2026-06-18T17:10:52+09:00"
+      },
+      "summary": {
+        "ko": "Mojang Studios 공식 원문에서 확인한 Minecraft Bedrock Edition 26.0 정식 업데이트 후보입니다.",
+        "ja": "Mojang Studios公式原文で確認したMinecraft Bedrock Edition 26.0正式アップデート候補です。"
+      },
+      "added": [
+        "I'm not sure what to start with today – the baby mob redesigns and craftable name tags coming into testing? Or the fact that this release is the first that follows ? Actually, why choose! In this release we're entering 26.0, and thanks to the weeks we've spent teaching the nautilus some new moves, you'll find some new swimming animations for this underwater mount. We've also fixed a bug with Nether Portals so you can light them with lava again. In testing, you'll be able to try out crafting name tags, and meet new redesigns for baby mobs! And that's not all, either. Let's dive in!",
+        "Added experimental toggle for Drop 1 of 2026",
+        "Tweaked the bounding box of both adult and baby to align with Java Edition and the new model",
+        "Tweaked the bounding box of both adult and baby to align with Java Edition and the new model",
+        "Tweaked the bounding box of both adult and baby to align with Java Edition and the new model",
+        "Both adult and baby Rabbits also received new animations",
+        "Tweaked the bounding box to align with the new model",
+        "Tweaked the baby's bounding box to align with the new model",
+        "Tweaked the bounding box to align with the new model",
+        "The new Gameplay subtitles (closed captions) will remain in the Beta and Preview versions only for a while longer, while we work on polishing and bug fixing",
+        "Adds toggle to the Creator Settings screen, which when enabled adds 10 new key mappings to the keyboard/mouse controls settings screen which each have a text input for what command to run when the input is pressed",
+        "Added guard to prevent mapping a command macro key to Alt, as Alt is the coordinates key already"
+      ],
+      "changed": [
+        "Tweaked the bounding box of both adult and baby to align with Java Edition and the new model",
+        "Tweaked the bounding box of both adult and baby to align with Java Edition and the new model",
+        "Tweaked the bounding box of both adult and baby to align with Java Edition and the new model",
+        "Known Issue: The MERS texture of the tamed Wolf is currently a placeholder, and will be updated in a future Preview update",
+        "Tweaked the bounding box to align with the new model",
+        "Tweaked the baby's bounding box to align with the new model",
+        "Tweaked the bounding box to align with the new model",
+        "Updated Android Photo Picker instead of requesting media permissions.",
+        "Tweaked the chance of Zombie Riders spawning with Copper Armor to more closely match Java ( )",
+        "Tweaked the chance of Husk Riders spawning with Copper Armor to more closely match Java",
+        "Adjusted the ratio at which Drowned spawn with Tridents and Fishing Rods, matching Java Edition"
+      ],
+      "fixed": [
+        "I'm not sure what to start with today – the baby mob redesigns and craftable name tags coming into testing? Or the fact that this release is the first that follows ? Actually, why choose! In this release we're entering 26.0, and thanks to the weeks we've spent teaching the nautilus some new moves, you'll find some new swimming animations for this underwater mount. We've also fixed a bug with Nether Portals so you can light them with lava again. In testing, you'll be able to try out crafting name tags, and meet new redesigns for baby mobs! And that's not all, either. Let's dive in!",
+        "Known Issue: The MERS texture of the tamed Wolf is currently a placeholder, and will be updated in a future Preview update",
+        "Known Issue: Adult Wolf sound variants are currently not working as expected, and will be fixed in a future release",
+        "Fixed player data becoming disconnected from account for Xbox players in split-screen mode ( )",
+        "The new Gameplay subtitles (closed captions) will remain in the Beta and Preview versions only for a while longer, while we work on polishing and bug fixing",
+        "Fixed upgrade from UWP to GDK causing corrupt skin states",
+        "Fixed an issue that caused Nether Portals to not get ignited by lava ( )",
+        "Fixed the End gateway portal that teleported the player to the void area ( )",
+        "Fixed an issue on Windows where the window reset to a smaller size on reopening, even when a single monitor had sufficient space ( )",
+        "Fixed a bug where screenshots taken with Ray Traced graphics mode selected did not render accurately",
+        "Fixed an issue where block highlight was not visible when the Outline Selection toggle was turned off in Vibrant Visuals ( )",
+        "Fixed an issue where the graphics mode options were changing after game updates ( )"
+      ],
+      "removed": [],
+      "experimental_features": [
+        "Added experimental toggle for Drop 1 of 2026"
+      ],
+      "platform_changes": [
+        "Fixed player data becoming disconnected from account for Xbox players in split-screen mode ( )",
+        "Updated Android Photo Picker instead of requesting media permissions.",
+        "Fixed an issue on Windows where the window reset to a smaller size on reopening, even when a single monitor had sufficient space ( )",
+        "Made the fire effect on burning mobs and players dither when the player-camera is nearby",
+        "Fixed an issue on Windows where the camera would shift slightly after closing the pause menu ( )",
+        "Fixed a bug on Windows where scrolling could cause the camera to move ( )"
+      ],
+      "touch_control_changes": [
+        "Adds toggle to the Creator Settings screen, which when enabled adds 10 new key mappings to the keyboard/mouse controls settings screen which each have a text input for what command to run when the input is pressed",
+        "Drowned can now control the Zombie Nautilus they ride, allowing them to actively chase their target ( )"
+      ],
+      "realms_changes": [],
+      "creator_changes": [
+        "Adds toggle to the Creator Settings screen, which when enabled adds 10 new key mappings to the keyboard/mouse controls settings screen which each have a text input for what command to run when the input is pressed"
+      ],
+      "add_on_changes": [],
+      "technical_changes": [
+        "Adds toggle to the Creator Settings screen, which when enabled adds 10 new key mappings to the keyboard/mouse controls settings screen which each have a text input for what command to run when the input is pressed",
+        "Commands can only be run while in game",
+        "Added guard to prevent mapping a command macro key to Alt, as Alt is the coordinates key already",
+        "Attachable items no longer render when equipped to a Zombie Nautilus via commands"
+      ],
+      "known_issues": [
+        "Known Issue: The MERS texture of the tamed Wolf is currently a placeholder, and will be updated in a future Preview update",
+        "Known Issue: Adult Wolf sound variants are currently not working as expected, and will be fixed in a future release"
+      ],
+      "bug_ids": [],
+      "supported_platforms": [
+        "Xbox",
+        "Windows",
+        "Android",
+        "Fire"
+      ],
+      "previous_version": null,
+      "target_stable_version": null,
+      "world_compatibility": null,
+      "realms_compatibility": null,
+      "add_on_compatibility": null,
+      "duplicate": {
+        "is_duplicate": false,
+        "reasons": []
+      },
+      "raw_excerpt": [
+        "By submitting this report, you confirm that the information you have provided is accurate and complete to the best of your knowledge.",
+        "10 February 2026",
+        "I'm not sure what to start with today – the baby mob redesigns and craftable name tags coming into testing? Or the fact that this release is the first that follows ? Actually, why choose! In this release we're entering 26.0, and thanks to the weeks we've spent teaching the nautilus some new moves, you'll find some new swimming animations for this underwater mount. We've also fixed a bug with Nether Portals so you can light them with lava again. In testing, you'll be able to try out crafting name tags, and meet new redesigns for baby mobs! And that's not all, either. Let's dive in!",
+        "Added experimental toggle for Drop 1 of 2026",
+        "Name Tags are now craftable, using paper and any metal nugget",
+        "Tweaked the bounding box of both adult and baby to align with Java Edition and the new model",
+        "Tweaked the bounding box of both adult and baby to align with Java Edition and the new model",
+        "Pig",
+        "Tweaked the bounding box of both adult and baby to align with Java Edition and the new model",
+        "Known Issue: The MERS texture of the tamed Wolf is currently a placeholder, and will be updated in a future Preview update",
+        "Both adult and baby Rabbits also received new animations",
+        "Tweaked the bounding box to align with the new model"
+      ]
+    },
+    {
+      "id": "baae034184aef3e433429742",
+      "product": "minecraft",
+      "edition": "bedrock",
+      "release_channel": "bedrock_stable_release",
+      "version": "1.21.132",
+      "release_name": null,
+      "source": {
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/42519424555021-Minecraft-1-21-132-Bedrock",
+        "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/42519424555021-Minecraft-1-21-132-Bedrock",
+        "title": "Minecraft - 1.21.132 (Bedrock)",
+        "publisher": "Mojang Studios",
+        "published_at": null,
+        "last_verified_at": "2026-06-18T17:10:52+09:00"
+      },
+      "summary": {
+        "ko": "Mojang Studios 공식 원문에서 확인한 Minecraft Bedrock Edition 1.21.132 정식 업데이트 후보입니다.",
+        "ja": "Mojang Studios公式原文で確認したMinecraft Bedrock Edition 1.21.132正式アップデート候補です。"
+      },
+      "added": [
+        "A new hotfix has been released to address issues discovered in the latest update. This update will be rolling out to the various platforms as they become available, so please allow time for the update to reach you."
+      ],
+      "changed": [],
+      "fixed": [
+        "A new hotfix has been released to address issues discovered in the latest update. This update will be rolling out to the various platforms as they become available, so please allow time for the update to reach you.",
+        "Fixed player data becoming disconnected from account for Xbox players in split-screen mode ( )",
+        "Fixed an issue where textures would not be correctly reloaded when changing between graphics modes in the main menu",
+        "Fixed an issue where add-on resources disappeared after a second Player joined a split-screen session ( )",
+        "Fixed a bug that could cause players to get disconnected if \"/effect @e\" command is used on too many entities ( )",
+        "Fixed issue where compass sprite was occasionally invisible ( )",
+        "Fixed a freeze that could happen when buying a Realm on Nintendo Switch",
+        "Fixed attachables not rendering correctly when the game is paused or when rendered in an NPC UI window."
+      ],
+      "removed": [],
+      "experimental_features": [],
+      "platform_changes": [
+        "Fixed player data becoming disconnected from account for Xbox players in split-screen mode ( )",
+        "Fixed a freeze that could happen when buying a Realm on Nintendo Switch"
+      ],
+      "touch_control_changes": [],
+      "realms_changes": [
+        "Fixed a freeze that could happen when buying a Realm on Nintendo Switch"
+      ],
+      "creator_changes": [],
+      "add_on_changes": [
+        "Fixed an issue where add-on resources disappeared after a second Player joined a split-screen session ( )"
+      ],
+      "technical_changes": [
+        "Fixed a bug that could cause players to get disconnected if \"/effect @e\" command is used on too many entities ( )"
+      ],
+      "known_issues": [],
+      "bug_ids": [],
+      "supported_platforms": [
+        "Xbox",
+        "Nintendo Switch"
+      ],
+      "previous_version": null,
+      "target_stable_version": null,
+      "world_compatibility": null,
+      "realms_compatibility": null,
+      "add_on_compatibility": null,
+      "duplicate": {
+        "is_duplicate": false,
+        "reasons": []
+      },
+      "raw_excerpt": [
+        "By submitting this report, you confirm that the information you have provided is accurate and complete to the best of your knowledge.",
+        "8 January 2026",
+        "A new hotfix has been released to address issues discovered in the latest update. This update will be rolling out to the various platforms as they become available, so please allow time for the update to reach you.",
+        "Fixed player data becoming disconnected from account for Xbox players in split-screen mode ( )",
+        "Fixed an issue where textures would not be correctly reloaded when changing between graphics modes in the main menu",
+        "Fixed an issue where add-on resources disappeared after a second Player joined a split-screen session ( )",
+        "Fixed a bug that could cause players to get disconnected if \"/effect @e\" command is used on too many entities ( )",
+        "Fixed issue where compass sprite was occasionally invisible ( )",
+        "Fixed a freeze that could happen when buying a Realm on Nintendo Switch",
+        "Fixed attachables not rendering correctly when the game is paused or when rendered in an NPC UI window.",
+        "© Mojang AB. TM Microsoft Corporation.",
+        "© Mojang AB. TM Microsoft Corporation."
+      ]
+    },
+    {
+      "id": "9a7f91ece186ba170d54f9b4",
+      "product": "minecraft",
+      "edition": "bedrock",
+      "release_channel": "bedrock_stable_release",
+      "version": "1.21.131",
+      "release_name": null,
+      "source": {
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/41979788279181-Minecraft-1-21-131-Bedrock",
+        "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/41979788279181-Minecraft-1-21-131-Bedrock",
+        "title": "Minecraft - 1.21.131 (Bedrock)",
+        "publisher": "Mojang Studios",
+        "published_at": null,
+        "last_verified_at": "2026-06-18T17:10:52+09:00"
+      },
+      "summary": {
+        "ko": "Mojang Studios 공식 원문에서 확인한 Minecraft Bedrock Edition 1.21.131 정식 업데이트 후보입니다.",
+        "ja": "Mojang Studios公式原文で確認したMinecraft Bedrock Edition 1.21.131正式アップデート候補です。"
+      },
+      "added": [
+        "A new hotfix has been released to address issues discovered in the latest update. This update will be rolling out to the various platforms as they become available, so please allow time for the update to reach you."
+      ],
+      "changed": [
+        "Charge attack animations now align more closely with the Spear's gameplay phases (Engaged, Tired, Disengaged) for improved visual feedback"
+      ],
+      "fixed": [
+        "A new hotfix has been released to address issues discovered in the latest update. This update will be rolling out to the various platforms as they become available, so please allow time for the update to reach you.",
+        "Fixed a bug that could cause the Escape key to not return to the main menu after searching the Marketplace ( )",
+        "Fixed a bug that could trigger a 'Block' error code during level load or world creation when using multiple add-ons ( )",
+        "Fixed UI textures looking incorrect on Switch when loading add-ons or connecting to servers"
+      ],
+      "removed": [],
+      "experimental_features": [],
+      "platform_changes": [],
+      "touch_control_changes": [],
+      "realms_changes": [],
+      "creator_changes": [],
+      "add_on_changes": [
+        "Fixed a bug that could trigger a 'Block' error code during level load or world creation when using multiple add-ons ( )",
+        "Fixed UI textures looking incorrect on Switch when loading add-ons or connecting to servers"
+      ],
+      "technical_changes": [
+        "Fixed UI textures looking incorrect on Switch when loading add-ons or connecting to servers"
+      ],
+      "known_issues": [],
+      "bug_ids": [],
+      "supported_platforms": [],
+      "previous_version": null,
+      "target_stable_version": null,
+      "world_compatibility": null,
+      "realms_compatibility": null,
+      "add_on_compatibility": null,
+      "duplicate": {
+        "is_duplicate": false,
+        "reasons": []
+      },
+      "raw_excerpt": [
+        "By submitting this report, you confirm that the information you have provided is accurate and complete to the best of your knowledge.",
+        "16 December 2025",
+        "A new hotfix has been released to address issues discovered in the latest update. This update will be rolling out to the various platforms as they become available, so please allow time for the update to reach you.",
+        "The Adventuring Time achievement no longer unlocks after visiting fewer than 17 biomes on PC ( )",
+        "Increased the duration during which a Spear can apply knockback while charging",
+        "Charge attack animations now align more closely with the Spear's gameplay phases (Engaged, Tired, Disengaged) for improved visual feedback",
+        "Fixed a bug that could cause the Escape key to not return to the main menu after searching the Marketplace ( )",
+        "Fixed a bug that could trigger a 'Block' error code during level load or world creation when using multiple add-ons ( )",
+        "Fixed UI textures looking incorrect on Switch when loading add-ons or connecting to servers",
+        "© Mojang AB. TM Microsoft Corporation.",
+        "© Mojang AB. TM Microsoft Corporation."
+      ]
+    },
+    {
+      "id": "7cdaf368a19b43f25c1b6d03",
+      "product": "minecraft",
+      "edition": "bedrock",
+      "release_channel": "bedrock_stable_release",
+      "version": "1.21.130",
+      "release_name": null,
+      "source": {
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/41446685014669-Minecraft-Bedrock-Edition-1-21-130-Mounts-of-Mayhem",
+        "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/41446685014669-Minecraft-Bedrock-Edition-1-21-130-Mounts-of-Mayhem",
+        "title": "Minecraft: Bedrock Edition 1.21.130 - Mounts of Mayhem",
+        "publisher": "Mojang Studios",
+        "published_at": null,
+        "last_verified_at": "2026-06-18T17:10:53+09:00"
+      },
+      "summary": {
+        "ko": "Mojang Studios 공식 원문에서 확인한 Minecraft Bedrock Edition 1.21.130 정식 업데이트 후보입니다.",
+        "ja": "Mojang Studios公式原文で確認したMinecraft Bedrock Edition 1.21.130正式アップデート候補です。"
+      },
+      "added": [
+        "Today Mounts of Mayhem charges into Minecraft, bringing a new weapon to wield, mounts to tame, foes to face, and strategies to master! Challengers await beneath scorching suns, night skies, and deep in the ocean's depths - and each clash will demand a fresh strategy. Fight back with the spear, a new tiered weapon which deals damage based on your precision and the speed of your trusted steed. So, riders of the Overworld - mount up and lead the charge in the Mounts of Mayhem drop!",
+        "New neutral aquatic mob",
+        "New neutral underwater mob",
+        "New Zombie Nautilus variant",
+        "New weapon that can be crafted in Wood, Stone, Copper, Iron, Gold, Diamond, and Netherite versions",
+        "New Skeleton variant",
+        "New undead Camel variant",
+        "Added the Damage Tilt slider to Video settings, controlling how much the screen tilts when the player takes damage, in parity with Java",
+        "Added splash text \"One does not simply walk to the Far Lands\""
+      ],
+      "changed": [],
+      "fixed": [
+        "Fixed an issue where remote player skins would sometimes change to a default skin when they moved in and out of render range ( )",
+        "Hoppers now have a short cooldown after being moved by a Piston that prevents interaction. This fixes a bug with Bundle duplication",
+        "Fixed a bug preventing players from growing Pink Petals, Wildflowers, or Leaf Litter by targeting the side of a block ( )",
+        "Fixed a bug where pressing ALT + F4 in-game opened the pause menu instead of closing the game ( )",
+        "Resolved an issue on Windows where shared worlds (those available to all players) did not load resource or behavior packs ( )",
+        "Fixed an issue where signing in at the exact wrong time would make many online features unable to load for 5 minutes",
+        "Fixed large flipbook textures corrupting other textures",
+        "Fixed a bug where the fade command would fade to black instead of the specified color when Vibrant Visuals is enabled. Also fixed certain effects such as fire and the Spyglass overlay rendering in front of the fade effect ( )",
+        "Fixed snowflakes flickering during player movement",
+        "Fixed Mooshroom's mushrooms and armor on mobs not being affected by \"Enable Dithering\" setting ( ) ( )",
+        "Fixed a regression where Torches and Lanterns weren't emitting point lights in raytracing-enabled worlds",
+        "Fixed a bug on Windows where disabling the system setting \"Scroll inactive windows when hovering over them\" had no effect ( )"
+      ],
+      "removed": [],
+      "experimental_features": [],
+      "platform_changes": [
+        "Animals defeated in one hit by the charge attack of a Spear with the Fire Aspect enchantment will drop cooked food",
+        "Has a slower rate of fire compared to normal Skeletons, similar to Bogged",
+        "Resolved an issue on Windows where shared worlds (those available to all players) did not load resource or behavior packs ( )",
+        "Fixed a bug where the fade command would fade to black instead of the specified color when Vibrant Visuals is enabled. Also fixed certain effects such as fire and the Spyglass overlay rendering in front of the fade effect ( )",
+        "Automatically selects the Chat screen text field on opening for Windows when using Keyboard and Mouse, enabling text input as soon as screen opens ( )",
+        "Fixed a bug on Windows where disabling the system setting \"Scroll inactive windows when hovering over them\" had no effect ( )"
+      ],
+      "touch_control_changes": [
+        "Added the Damage Tilt slider to Video settings, controlling how much the screen tilts when the player takes damage, in parity with Java"
+      ],
+      "realms_changes": [],
+      "creator_changes": [],
+      "add_on_changes": [],
+      "technical_changes": [
+        "Fixed a bug where the fade command would fade to black instead of the specified color when Vibrant Visuals is enabled. Also fixed certain effects such as fire and the Spyglass overlay rendering in front of the fade effect ( )"
+      ],
+      "known_issues": [],
+      "bug_ids": [],
+      "supported_platforms": [
+        "Windows",
+        "Fire"
+      ],
+      "previous_version": null,
+      "target_stable_version": null,
+      "world_compatibility": null,
+      "realms_compatibility": null,
+      "add_on_compatibility": null,
+      "duplicate": {
+        "is_duplicate": false,
+        "reasons": []
+      },
+      "raw_excerpt": [
+        "By submitting this report, you confirm that the information you have provided is accurate and complete to the best of your knowledge.",
+        "9 December 2025",
+        "Today Mounts of Mayhem charges into Minecraft, bringing a new weapon to wield, mounts to tame, foes to face, and strategies to master! Challengers await beneath scorching suns, night skies, and deep in the ocean's depths - and each clash will demand a fresh strategy. Fight back with the spear, a new tiered weapon which deals damage based on your precision and the speed of your trusted steed. So, riders of the Overworld - mount up and lead the charge in the Mounts of Mayhem drop!",
+        "Horses, Zombie Horses, Donkeys, Mules, and Camels no longer sink when ridden by players while swimming",
+        "Can be crafted at a Smithing Table using a Diamond Horse Armor, a Netherite Ingot, and a Netherite Upgrade",
+        "Provides 19 armor points",
+        "New neutral aquatic mob",
+        "Attacks using a Dash attack if provoked",
+        "Spawns in all ocean biomes",
+        "Tamed using Pufferfish or a Bucket of Pufferfish",
+        "Tamed Nautilus can be mounted using a Saddle",
+        "Has a Dash skill similar to Camels, used by pressing Jump button"
+      ]
+    },
+    {
+      "id": "3a50e82941f0c686ab0356e5",
+      "product": "minecraft",
+      "edition": "bedrock",
+      "release_channel": "bedrock_stable_release",
+      "version": "1.21.124",
+      "release_name": null,
+      "source": {
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/41224903492621-Minecraft-1-21-124-Bedrock",
+        "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/41224903492621-Minecraft-1-21-124-Bedrock",
+        "title": "Minecraft - 1.21.124 (Bedrock)",
+        "publisher": "Mojang Studios",
+        "published_at": null,
+        "last_verified_at": "2026-06-18T17:10:53+09:00"
+      },
+      "summary": {
+        "ko": "Mojang Studios 공식 원문에서 확인한 Minecraft Bedrock Edition 1.21.124 정식 업데이트 후보입니다.",
+        "ja": "Mojang Studios公式原文で確認したMinecraft Bedrock Edition 1.21.124正式アップデート候補です。"
+      },
+      "added": [
+        "A new hotfix has been released to address issues discovered in recent releases. This update will be rolling out to the various platforms as they become available, so please allow time for the update to reach you."
+      ],
+      "changed": [
+        "We want to thank everyone again for keeping the feedback coming around game quality. The team is continuing to listen to what's being reported and making improvements. With this hotfix, we're addressing even more issues that have been identified. These changelogs are still the best place to stay updated on further improvements, and please keep your bug reports coming in through . Thank you!"
+      ],
+      "fixed": [
+        "A new hotfix has been released to address issues discovered in recent releases. This update will be rolling out to the various platforms as they become available, so please allow time for the update to reach you.",
+        "We want to thank everyone again for keeping the feedback coming around game quality. The team is continuing to listen to what's being reported and making improvements. With this hotfix, we're addressing even more issues that have been identified. These changelogs are still the best place to stay updated on further improvements, and please keep your bug reports coming in through . Thank you!",
+        "Fixed various crashes",
+        "Fixed texture memory leak that occurred while users were on a server with multiple users joining and disconnecting",
+        "Fixed a bug that could cause the mouse to interact with external windows (such as notification pop-ups) unexpectedly ( )",
+        "Fixed a bug that could prevent input controls from working when using an IME ( )",
+        "Fixed a packet verification that could prevent players from joining a Realm using certain add-ons ( )"
+      ],
+      "removed": [],
+      "experimental_features": [],
+      "platform_changes": [
+        "Fixed a bug that could cause the mouse to interact with external windows (such as notification pop-ups) unexpectedly ( )"
+      ],
+      "touch_control_changes": [
+        "Fixed a bug that could prevent input controls from working when using an IME ( )"
+      ],
+      "realms_changes": [
+        "Fixed a packet verification that could prevent players from joining a Realm using certain add-ons ( )"
+      ],
+      "creator_changes": [],
+      "add_on_changes": [
+        "Fixed a packet verification that could prevent players from joining a Realm using certain add-ons ( )"
+      ],
+      "technical_changes": [
+        "Fixed texture memory leak that occurred while users were on a server with multiple users joining and disconnecting"
+      ],
+      "known_issues": [],
+      "bug_ids": [],
+      "supported_platforms": [
+        "Windows"
+      ],
+      "previous_version": null,
+      "target_stable_version": null,
+      "world_compatibility": null,
+      "realms_compatibility": null,
+      "add_on_compatibility": null,
+      "duplicate": {
+        "is_duplicate": false,
+        "reasons": []
+      },
+      "raw_excerpt": [
+        "By submitting this report, you confirm that the information you have provided is accurate and complete to the best of your knowledge.",
+        "21 November 2025",
+        "A new hotfix has been released to address issues discovered in recent releases. This update will be rolling out to the various platforms as they become available, so please allow time for the update to reach you.",
+        "We want to thank everyone again for keeping the feedback coming around game quality. The team is continuing to listen to what's being reported and making improvements. With this hotfix, we're addressing even more issues that have been identified. These changelogs are still the best place to stay updated on further improvements, and please keep your bug reports coming in through . Thank you!",
+        "Fixed various crashes",
+        "Fixed texture memory leak that occurred while users were on a server with multiple users joining and disconnecting",
+        "Fixed a bug that could cause the mouse to interact with external windows (such as notification pop-ups) unexpectedly ( )",
+        "Fixed a bug that could prevent input controls from working when using an IME ( )",
+        "Fixed a packet verification that could prevent players from joining a Realm using certain add-ons ( )",
+        "© Mojang AB. TM Microsoft Corporation.",
+        "© Mojang AB. TM Microsoft Corporation."
+      ]
+    },
+    {
+      "id": "95311e16d0c644d4323ada80",
+      "product": "minecraft",
+      "edition": "bedrock",
+      "release_channel": "bedrock_stable_release",
+      "version": "1.21.123",
+      "release_name": null,
+      "source": {
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/41112550913677-Minecraft-1-21-123-Bedrock",
+        "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/41112550913677-Minecraft-1-21-123-Bedrock",
+        "title": "Minecraft - 1.21.123 (Bedrock)",
+        "publisher": "Mojang Studios",
+        "published_at": null,
+        "last_verified_at": "2026-06-18T17:10:53+09:00"
+      },
+      "summary": {
+        "ko": "Mojang Studios 공식 원문에서 확인한 Minecraft Bedrock Edition 1.21.123 정식 업데이트 후보입니다.",
+        "ja": "Mojang Studios公式原文で確認したMinecraft Bedrock Edition 1.21.123正式アップデート候補です。"
+      },
+      "added": [
+        "A new update has been released to address issues discovered in the 1.21.120 release. This update will be rolling out to the various platforms as they become available, so please allow time for the update to reach you."
+      ],
+      "changed": [
+        "Reduced increased memory utilization from using Improved Input Latency ( )"
+      ],
+      "fixed": [
+        "A new update has been released to address issues discovered in the 1.21.120 release. This update will be rolling out to the various platforms as they become available, so please allow time for the update to reach you.",
+        "Thank you for your patience while we continue to work on this issue. We’re pleased to hear it’s resolved for many of you, but we know more work is needed. Please be assured that we’re actively addressing the remaining problems and aim to have the bug fully fixed as soon as possible.",
+        "Fixed several crashes that could occur during gameplay",
+        "Fixed a crash when using hotbar hotkeys while hovering over the Stonecutter preview interface ( )",
+        "Fixed an issue where pink textures could occur on Windows devices ( )",
+        "Fixed an issue where IME Candidates would appear in the wrong monitor or misplaced in relation to text field",
+        "Fixed IME input when application lost and regained focus (switching from the app and back while editing)"
+      ],
+      "removed": [],
+      "experimental_features": [],
+      "platform_changes": [
+        "Fixed an issue where pink textures could occur on Windows devices ( )"
+      ],
+      "touch_control_changes": [],
+      "realms_changes": [],
+      "creator_changes": [],
+      "add_on_changes": [],
+      "technical_changes": [],
+      "known_issues": [],
+      "bug_ids": [],
+      "supported_platforms": [
+        "Windows"
+      ],
+      "previous_version": null,
+      "target_stable_version": null,
+      "world_compatibility": null,
+      "realms_compatibility": null,
+      "add_on_compatibility": null,
+      "duplicate": {
+        "is_duplicate": false,
+        "reasons": []
+      },
+      "raw_excerpt": [
+        "By submitting this report, you confirm that the information you have provided is accurate and complete to the best of your knowledge.",
+        "13 November 2025",
+        "A new update has been released to address issues discovered in the 1.21.120 release. This update will be rolling out to the various platforms as they become available, so please allow time for the update to reach you.",
+        ".",
+        "Thank you for your patience while we continue to work on this issue. We’re pleased to hear it’s resolved for many of you, but we know more work is needed. Please be assured that we’re actively addressing the remaining problems and aim to have the bug fully fixed as soon as possible.",
+        "Reduced increased memory utilization from using Improved Input Latency ( )",
+        "Fixed several crashes that could occur during gameplay",
+        "Fixed a crash when using hotbar hotkeys while hovering over the Stonecutter preview interface ( )",
+        "Fixed an issue where pink textures could occur on Windows devices ( )",
+        "Fixed an issue where IME Candidates would appear in the wrong monitor or misplaced in relation to text field",
+        "Fixed IME input when application lost and regained focus (switching from the app and back while editing)",
+        "Blocks with the tick component tick when placed by Jigsaw Structure during world generation"
+      ]
+    },
+    {
+      "id": "706dcccc3a2a8da17e0e152a",
+      "product": "minecraft",
+      "edition": "bedrock",
+      "release_channel": "bedrock_stable_release",
+      "version": "1.21.122",
+      "release_name": null,
+      "source": {
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/40947085632141-Minecraft-1-21-122-Bedrock",
+        "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/40947085632141-Minecraft-1-21-122-Bedrock",
+        "title": "Minecraft - 1.21.122 (Bedrock)",
+        "publisher": "Mojang Studios",
+        "published_at": null,
+        "last_verified_at": "2026-06-18T17:10:54+09:00"
+      },
+      "summary": {
+        "ko": "Mojang Studios 공식 원문에서 확인한 Minecraft Bedrock Edition 1.21.122 정식 업데이트 후보입니다.",
+        "ja": "Mojang Studios公式原文で確認したMinecraft Bedrock Edition 1.21.122正式アップデート候補です。"
+      },
+      "added": [
+        "A new update for players on Windows has been released to address issues discovered in the 1.21.120 release. This update will be rolling out as soon as it becomes available, so please allow time for the update to reach you."
+      ],
+      "changed": [],
+      "fixed": [
+        "A new update for players on Windows has been released to address issues discovered in the 1.21.120 release. This update will be rolling out as soon as it becomes available, so please allow time for the update to reach you.",
+        "Fixed a bug that caused the mouse cursor to move in the background during gameplay, disrupting gameplay ( )"
+      ],
+      "removed": [],
+      "experimental_features": [],
+      "platform_changes": [
+        "A new update for players on Windows has been released to address issues discovered in the 1.21.120 release. This update will be rolling out as soon as it becomes available, so please allow time for the update to reach you."
+      ],
+      "touch_control_changes": [],
+      "realms_changes": [],
+      "creator_changes": [],
+      "add_on_changes": [],
+      "technical_changes": [],
+      "known_issues": [],
+      "bug_ids": [],
+      "supported_platforms": [
+        "Windows"
+      ],
+      "previous_version": null,
+      "target_stable_version": null,
+      "world_compatibility": null,
+      "realms_compatibility": null,
+      "add_on_compatibility": null,
+      "duplicate": {
+        "is_duplicate": false,
+        "reasons": []
+      },
+      "raw_excerpt": [
+        "By submitting this report, you confirm that the information you have provided is accurate and complete to the best of your knowledge.",
+        "10 November 2025",
+        "A new update for players on Windows has been released to address issues discovered in the 1.21.120 release. This update will be rolling out as soon as it becomes available, so please allow time for the update to reach you.",
+        "Fixed a bug that caused the mouse cursor to move in the background during gameplay, disrupting gameplay ( )",
+        "MOAR Tools is now awarded by Copper tools correctly instead of being awarded by other items",
+        "You Need a Mint is no longer awarded from items other than Dragon Breath",
+        "© Mojang AB. TM Microsoft Corporation.",
+        "© Mojang AB. TM Microsoft Corporation."
+      ]
+    },
+    {
+      "id": "daf37b84d976e88e091a9713",
+      "product": "minecraft",
+      "edition": "bedrock",
+      "release_channel": "bedrock_stable_release",
+      "version": "1.21.121",
+      "release_name": null,
+      "source": {
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/40877613133709-Minecraft-1-21-121-Bedrock",
+        "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/40877613133709-Minecraft-1-21-121-Bedrock",
+        "title": "Minecraft - 1.21.121 (Bedrock)",
+        "publisher": "Mojang Studios",
+        "published_at": null,
+        "last_verified_at": "2026-06-18T17:10:54+09:00"
+      },
+      "summary": {
+        "ko": "Mojang Studios 공식 원문에서 확인한 Minecraft Bedrock Edition 1.21.121 정식 업데이트 후보입니다.",
+        "ja": "Mojang Studios公式原文で確認したMinecraft Bedrock Edition 1.21.121正式アップデート候補です。"
+      },
+      "added": [
+        "A new update has been released to address issues discovered in the 1.21.120 release. This update will be rolling out to the various platforms as they become available, so please allow time for the update to reach you."
+      ],
+      "changed": [
+        "Fixed a bug where resource pack settings would not apply in-game when changed ( )"
+      ],
+      "fixed": [
+        "A new update has been released to address issues discovered in the 1.21.120 release. This update will be rolling out to the various platforms as they become available, so please allow time for the update to reach you.",
+        "Fixed a bug on Windows where resuming the game with the Task Manager opened caused the cursor to stutter at the center of the screen ( )",
+        "Fixed a bug on Windows where the camera snapped to a random direction after closing the GUI and clicking any mouse button ( )",
+        "Fixed a crash from using a data-driven renderer",
+        "Fixed a crash on PlayStation 5 caused by excessive memory use when stacking large add-ons",
+        "Fixed a bug where resource pack settings would not apply in-game when changed ( )"
+      ],
+      "removed": [],
+      "experimental_features": [],
+      "platform_changes": [
+        "Fixed a bug on Windows where resuming the game with the Task Manager opened caused the cursor to stutter at the center of the screen ( )",
+        "Fixed a bug on Windows where the camera snapped to a random direction after closing the GUI and clicking any mouse button ( )",
+        "Restored support for input from IME on Windows ( )",
+        "Fixed a crash on PlayStation 5 caused by excessive memory use when stacking large add-ons"
+      ],
+      "touch_control_changes": [],
+      "realms_changes": [],
+      "creator_changes": [],
+      "add_on_changes": [
+        "Fixed a crash on PlayStation 5 caused by excessive memory use when stacking large add-ons"
+      ],
+      "technical_changes": [],
+      "known_issues": [],
+      "bug_ids": [],
+      "supported_platforms": [
+        "PlayStation",
+        "Windows"
+      ],
+      "previous_version": null,
+      "target_stable_version": null,
+      "world_compatibility": null,
+      "realms_compatibility": null,
+      "add_on_compatibility": null,
+      "duplicate": {
+        "is_duplicate": false,
+        "reasons": []
+      },
+      "raw_excerpt": [
+        "By submitting this report, you confirm that the information you have provided is accurate and complete to the best of your knowledge.",
+        "4 November 2025",
+        "A new update has been released to address issues discovered in the 1.21.120 release. This update will be rolling out to the various platforms as they become available, so please allow time for the update to reach you.",
+        "Fixed a bug on Windows where resuming the game with the Task Manager opened caused the cursor to stutter at the center of the screen ( )",
+        "Fixed a bug on Windows where the camera snapped to a random direction after closing the GUI and clicking any mouse button ( )",
+        "Restored support for input from IME on Windows ( )",
+        "Fixed a crash from using a data-driven renderer",
+        "Fixed a crash on PlayStation 5 caused by excessive memory use when stacking large add-ons",
+        "Fixed a bug where resource pack settings would not apply in-game when changed ( )",
+        "© Mojang AB. TM Microsoft Corporation.",
+        "© Mojang AB. TM Microsoft Corporation."
+      ]
+    },
+    {
+      "id": "114038f875bf348f7da57676",
+      "product": "minecraft",
+      "edition": "bedrock",
+      "release_channel": "bedrock_stable_release",
+      "version": "1.21.120",
+      "release_name": null,
+      "source": {
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/40566672351885-Minecraft-1-21-120-Bedrock",
+        "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/40566672351885-Minecraft-1-21-120-Bedrock",
+        "title": "Minecraft - 1.21.120 (Bedrock)",
+        "publisher": "Mojang Studios",
+        "published_at": null,
+        "last_verified_at": "2026-06-18T17:10:55+09:00"
+      },
+      "summary": {
+        "ko": "Mojang Studios 공식 원문에서 확인한 Minecraft Bedrock Edition 1.21.120 정식 업데이트 후보입니다.",
+        "ja": "Mojang Studios公式原文で確認したMinecraft Bedrock Edition 1.21.120正式アップデート候補です。"
+      },
+      "added": [
+        "Copper Lantern and Copper Torch have new textures to make them easier to distinguish from regular Lantern and Torch",
+        "Added TAA upscaling to weather effects like snow",
+        "The parameter \"sampleWidth\" was removed from the water configuration JSON file, and consequently the file has a new format and was upgraded to version 1.21.120",
+        "Added unique biome settings for the Roofed Forest biomes",
+        "Shifted download storage to new location. Players may need to redownload Marketplace content",
+        "A \"Reset to Defaults\" button was added to the gamma adjustment screen in Vibrant Visuals",
+        "The Game Menu has been updated with a new layout and design",
+        "Any feedback on this change can be added",
+        "Accessibility and Language Settings are now updated with a new layout and design",
+        "Added a toggle to the Accessibility menu to enable/disable the dithering effect on mobs",
+        "Fixed an issue that prevented playersfrom creating a new world from templates inside the Play Screen ( )",
+        "General Settings have been updated with a new layout and design"
+      ],
+      "changed": [
+        "Improved quality of gamma correction on PC and Consoles and fixed the brightness of Creeper textures in the gamma calibration screen in Vibrant Visuals",
+        "Adjusted rendering settings in Vibrant Visuals",
+        "Adjusted the sky color in the End dimension",
+        "Updated the mers for the Gray, Light Blue, Light Gray, and Green Dye items ( )",
+        "Improved stability around Hopper Block destruction",
+        "Updated the text that is shown when more players are required to sleep to skip to dawn ( )",
+        "The Game Menu has been updated with a new layout and design",
+        "Accessibility and Language Settings are now updated with a new layout and design",
+        "Text to Speech with Device Settings and Improved Input Response toggles are now available from settings screen on Windows ( )",
+        "General Settings have been updated with a new layout and design"
+      ],
+      "fixed": [
+        "While you've been having mayhem with mounts, we've been squashing bugs and implementing important fixes! Alongside adding animated lantern textures, the copper golem statues will now glow when placed in a glow item frame, and interacting with the copper golem will make it drop whatever its carrying. We've also done some work on older worlds for PlayStation 5 – which will now load in with the correct terrain and structures, as well as some work to make world generation more flexible for creators. Want to know what else we've been up to? Let's dive into this week's changelog!",
+        "Fixed an issue with being unable to continue destroying valid blocks in Adventure Mode when they are behind water",
+        "Fixed Copper Trapdoor recipe giving an extra Trapdoor ( )",
+        "Fixed an issue where the Damage command would incorrectly report failure when applying damage to an Ender Crystal ( )",
+        "Fixed /locate biome command to no longer direct the player into wrong biome areas ( )",
+        "Fixed loading of text for Sign blocks from very old worlds",
+        "Mitigated an issue that the player can get pushed to the void after teleporting from end portal. ( )",
+        "Fixed the Shield taking damage when mining with it ( )",
+        "Fixed knockback from projectiles applying even when blocking with the Shield ( )",
+        "Fixed a bug where the contents of a Bundle would get deleted if placed in a container above a Hopper with all slots filled ( )",
+        "Fixed enchantment glint animation still playing when the game was paused ( )",
+        "Fixed snowflakes flickering during player movement"
+      ],
+      "removed": [
+        "The parameter \"sampleWidth\" was removed from the water configuration JSON file, and consequently the file has a new format and was upgraded to version 1.21.120"
+      ],
+      "experimental_features": [],
+      "platform_changes": [
+        "While you've been having mayhem with mounts, we've been squashing bugs and implementing important fixes! Alongside adding animated lantern textures, the copper golem statues will now glow when placed in a glow item frame, and interacting with the copper golem will make it drop whatever its carrying. We've also done some work on older worlds for PlayStation 5 – which will now load in with the correct terrain and structures, as well as some work to make world generation more flexible for creators. Want to know what else we've been up to? Let's dive into this week's changelog!",
+        "Soul Fire Lantern textures are now animated ( )",
+        "Fixed the sky appearing black on certain Android devices ( )",
+        "Fixed a bug that caused some world data saved by previous PlayStation 5 releases to be loaded incorrectly, resulting in missing or altered terrain and structures ( )",
+        "Fixed issue where worlds backed by Xbox cloud storage would show a default tile when local data was present but invalid",
+        "Text to Speech with Device Settings and Improved Input Response toggles are now available from settings screen on Windows ( )"
+      ],
+      "touch_control_changes": [
+        "Keyboard button on the chat screen is now only visible for touch controls ( )",
+        "The slider widget that controls the Vibrant Visuals gamma value shows the current gamma value, and the center of the slider corresponds to the default value",
+        "Touch Controls: Sneak button now has its proper outline when activating Swap Jump and Sneak. ( )"
+      ],
+      "realms_changes": [],
+      "creator_changes": [
+        "While you've been having mayhem with mounts, we've been squashing bugs and implementing important fixes! Alongside adding animated lantern textures, the copper golem statues will now glow when placed in a glow item frame, and interacting with the copper golem will make it drop whatever its carrying. We've also done some work on older worlds for PlayStation 5 – which will now load in with the correct terrain and structures, as well as some work to make world generation more flexible for creators. Want to know what else we've been up to? Let's dive into this week's changelog!"
+      ],
+      "add_on_changes": [],
+      "technical_changes": [
+        "Fixed an issue where the Damage command would incorrectly report failure when applying damage to an Ender Crystal ( )",
+        "Fixed /locate biome command to no longer direct the player into wrong biome areas ( )",
+        "When interacting with a Copper Golem, Scraping and Waxing particles now appear at the Copper Golem's location instead of at the Block location"
+      ],
+      "known_issues": [],
+      "bug_ids": [],
+      "supported_platforms": [
+        "Xbox",
+        "PlayStation",
+        "Windows",
+        "Android",
+        "Fire"
+      ],
+      "previous_version": null,
+      "target_stable_version": null,
+      "world_compatibility": null,
+      "realms_compatibility": null,
+      "add_on_compatibility": null,
+      "duplicate": {
+        "is_duplicate": false,
+        "reasons": []
+      },
+      "raw_excerpt": [
+        "By submitting this report, you confirm that the information you have provided is accurate and complete to the best of your knowledge.",
+        "This update will roll out to various platforms as they become available throughout the day. It may take up to 24 hours to appear for everyone - thank you for your patience. Also, please note that Vibrant Visuals enhanced Marketplace content can only be downloaded after updating to the 1.21.120 version on Bedrock. We apologize for the inconvenience!",
+        "While you've been having mayhem with mounts, we've been squashing bugs and implementing important fixes! Alongside adding animated lantern textures, the copper golem statues will now glow when placed in a glow item frame, and interacting with the copper golem will make it drop whatever its carrying. We've also done some work on older worlds for PlayStation 5 – which will now load in with the correct terrain and structures, as well as some work to make world generation more flexible for creators. Want to know what else we've been up to? Let's dive into this week's changelog!",
+        "Tadpoles now spawn in the water block below the Frogspawn block ( )",
+        "Fixed an issue with being unable to continue destroying valid blocks in Adventure Mode when they are behind water",
+        "Weathered Copper Bars no longer have pixels that look out of place",
+        "Tilling Coarse Dirt no longer sometimes tills the block twice converting it directly to Farmland",
+        "Copper Lantern and Copper Torch have new textures to make them easier to distinguish from regular Lantern and Torch",
+        "Copper Golem Statue item is no longer offset when dropped ( )",
+        "Copper Lantern textures are now animated ( )",
+        "Soul Fire Lantern textures are now animated ( )",
+        "Interacting with a Shelf while empty-handed in Creative mode no longer produces a sound effect ( )"
+      ]
+    },
+    {
+      "id": "20efacd21cc01ad95a9c3e03",
+      "product": "minecraft",
+      "edition": "bedrock",
+      "release_channel": "bedrock_stable_release",
+      "version": "1.21.114",
+      "release_name": null,
+      "source": {
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/40380755991181-Minecraft-1-21-114-Bedrock",
+        "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/40380755991181-Minecraft-1-21-114-Bedrock",
+        "title": "Minecraft - 1.21.114 (Bedrock)",
+        "publisher": "Mojang Studios",
+        "published_at": null,
+        "last_verified_at": "2026-06-18T17:10:55+09:00"
+      },
+      "summary": {
+        "ko": "Mojang Studios 공식 원문에서 확인한 Minecraft Bedrock Edition 1.21.114 정식 업데이트 후보입니다.",
+        "ja": "Mojang Studios公式原文で確認したMinecraft Bedrock Edition 1.21.114正式アップデート候補です。"
+      },
+      "added": [
+        "A new update has been released to address issues discovered in the 1.21.111 release. This update will be rolling to the various platforms as they become available, so please allow time for the update to reach you."
+      ],
+      "changed": [],
+      "fixed": [
+        "A new update has been released to address issues discovered in the 1.21.111 release. This update will be rolling to the various platforms as they become available, so please allow time for the update to reach you.",
+        "Fixed several crashes that could occur",
+        "Fixed various issues related to player skins and character creator",
+        "Fixed a bug that prevented Summon tool from spawning custom entities"
+      ],
+      "removed": [],
+      "experimental_features": [],
+      "platform_changes": [],
+      "touch_control_changes": [],
+      "realms_changes": [],
+      "creator_changes": [
+        "Fixed various issues related to player skins and character creator"
+      ],
+      "add_on_changes": [],
+      "technical_changes": [],
+      "known_issues": [],
+      "bug_ids": [],
+      "supported_platforms": [],
+      "previous_version": null,
+      "target_stable_version": null,
+      "world_compatibility": null,
+      "realms_compatibility": null,
+      "add_on_compatibility": null,
+      "duplicate": {
+        "is_duplicate": false,
+        "reasons": []
+      },
+      "raw_excerpt": [
+        "By submitting this report, you confirm that the information you have provided is accurate and complete to the best of your knowledge.",
+        "16 October 2025",
+        "A new update has been released to address issues discovered in the 1.21.111 release. This update will be rolling to the various platforms as they become available, so please allow time for the update to reach you.",
+        "Fixed several crashes that could occur",
+        "Fixed various issues related to player skins and character creator",
+        "Fixed a bug that prevented Summon tool from spawning custom entities",
+        "© Mojang AB. TM Microsoft Corporation.",
+        "© Mojang AB. TM Microsoft Corporation."
+      ]
+    },
+    {
+      "id": "6587939d4e3005af53628409",
+      "product": "minecraft",
+      "edition": "bedrock",
+      "release_channel": "bedrock_stable_release",
+      "version": "1.21.111",
+      "release_name": null,
+      "source": {
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/39932063411213-Minecraft-Bedrock-Edition-1-21-111-The-Copper-Age",
+        "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/39932063411213-Minecraft-Bedrock-Edition-1-21-111-The-Copper-Age",
+        "title": "Minecraft: Bedrock Edition 1.21.111 - The Copper Age",
+        "publisher": "Mojang Studios",
+        "published_at": null,
+        "last_verified_at": "2026-06-18T17:10:55+09:00"
+      },
+      "summary": {
+        "ko": "Mojang Studios 공식 원문에서 확인한 Minecraft Bedrock Edition 1.21.111 정식 업데이트 후보입니다.",
+        "ja": "Mojang Studios公式原文で確認したMinecraft Bedrock Edition 1.21.111正式アップデート候補です。"
+      },
+      "added": [
+        "Minecraft has entered The Copper Age! Express yourself in every shade of copper as you transform this versatile metal into handy tools, shiny armor, gleaming light sources, oxidizing decor, smart storage, and even lively mechanical companions known as copper golems. Whether scraped or oxidized, this is the start of a new clonking era of creativity! Unearth the power of copper in Minecraft now!",
+        "Copper chests are a new block! Summon a copper golem to get your first copper chest, which you can leave to oxidize, or keep pristine with wax. Drop items into a copper chest, and then sit back and relax as your copper golem sorts them into normal chests around your base!",
+        "Copper Chest is a new type of chest that has waxed and oxidized variants",
+        "Copper Golem Statue Block is a new type of decorative block which has waxed and oxidized variants",
+        "Text to Speech support has been added to all Dressing Room pages",
+        "Added support for Subsurface Scattering on particle textures",
+        "Added an option to Hide Sky Flashes in the End when playing with Vibrant Visuals"
+      ],
+      "changed": [
+        "The pose of the block can be changed by interacting with it",
+        "Improved blending around Frozen River chunks ( )",
+        "Updated Volumetric Fog configs for PC to have more consistent steps in performance impact, while also maximizing image quality for cost",
+        "Updated max render distance to 28 on PC for Vibrant Visuals"
+      ],
+      "fixed": [
+        "Fixed a bug where placing water from a Water Bucket onto a block containing another block (e.g. Button or Lever) would not allow the user to remove that water block afterwards ( )",
+        "Fixed an issue with being unable to continue destroying valid blocks in Adventure Mode when they are behind water",
+        "Fixed an issue where the player sleeping animation would start before the player climbed into bed",
+        "Camera command no longer leads to crash when using the in_out_back method ( )",
+        "Fixed an issue where players could duplicate Bundle content using a Hopper ( )",
+        "Fixed an issue where equipping armor while aiming at a mob would create a \"ghost\" cloned item ( )",
+        "Fixed an issue where the control scheme set via control scheme commands would not be retained if a later-activated camera did not support it. The scheme will now persist as intended until explicitly cleared via /controlscheme clear, beginning since base game version 1.21.110",
+        "Fixed stuck progress arrow despite no process in Furnace/Blast Furnace/Smoker ( )",
+        "Fixed a bug that caused the facing direction of Command Blocks to differ from all other blocks like Pistons and Dispensers when placed in certain coordinates in the world ( )",
+        "Fixed grass color in Swamps that was too green ( )",
+        "Fixed Paintings from breaking when joining a multiplayer game in high-latency scenarios ( )",
+        "Enabling blending for Legacy Chunks. This fixes an issue where blocks were missing from the terrain after loading into the world on some Starter Biomes"
+      ],
+      "removed": [],
+      "experimental_features": [],
+      "platform_changes": [
+        "Some blocks that could catch fire with Flint and Steel, like the top Stone Slab or Wood Stair, will now also catch fire during fire explosion, such as those from Fireballs ( )",
+        "Glass Blocks will now catch fire with Flint and Steel or fire explosion ( )",
+        "Fixed Paintings from breaking when joining a multiplayer game in high-latency scenarios ( )"
+      ],
+      "touch_control_changes": [
+        "Fixed an issue where the control scheme set via control scheme commands would not be retained if a later-activated camera did not support it. The scheme will now persist as intended until explicitly cleared via /controlscheme clear, beginning since base game version 1.21.110"
+      ],
+      "realms_changes": [
+        "Realms invite page no longer loads endlessly on PS4/PS5",
+        "Leaving Realm now removes it from Realms list on Play screen"
+      ],
+      "creator_changes": [],
+      "add_on_changes": [],
+      "technical_changes": [
+        "Camera command no longer leads to crash when using the in_out_back method ( )",
+        "Fixed an issue where the control scheme set via control scheme commands would not be retained if a later-activated camera did not support it. The scheme will now persist as intended until explicitly cleared via /controlscheme clear, beginning since base game version 1.21.110",
+        "Fixed a bug that caused the facing direction of Command Blocks to differ from all other blocks like Pistons and Dispensers when placed in certain coordinates in the world ( )"
+      ],
+      "known_issues": [],
+      "bug_ids": [],
+      "supported_platforms": [
+        "Fire"
+      ],
+      "previous_version": null,
+      "target_stable_version": null,
+      "world_compatibility": null,
+      "realms_compatibility": null,
+      "add_on_compatibility": null,
+      "duplicate": {
+        "is_duplicate": false,
+        "reasons": []
+      },
+      "raw_excerpt": [
+        "By submitting this report, you confirm that the information you have provided is accurate and complete to the best of your knowledge.",
+        "30 September 2025",
+        "Minecraft has entered The Copper Age! Express yourself in every shade of copper as you transform this versatile metal into handy tools, shiny armor, gleaming light sources, oxidizing decor, smart storage, and even lively mechanical companions known as copper golems. Whether scraped or oxidized, this is the start of a new clonking era of creativity! Unearth the power of copper in Minecraft now!",
+        "Copper chests are a new block! Summon a copper golem to get your first copper chest, which you can leave to oxidize, or keep pristine with wax. Drop items into a copper chest, and then sit back and relax as your copper golem sorts them into normal chests around your base!",
+        "Copper Chest is a new type of chest that has waxed and oxidized variants",
+        "Copper Chests oxidize over time and can be waxed like other Copper blocks",
+        "Copper Chests can be crafted using a Chest and Copper Ingots",
+        "What comes between stone and iron? Now the answer is: copper! Craft tools, weapons, and armor from copper, giving this early-game ore more uses than ever before. Unlike copper blocks, these items won't oxidize, but like all copper blocks - they will look beautiful!",
+        "Copper armor has higher durability than leather but less than iron. Copper armor enchantability sits slightly lower than with iron",
+        "Copper equipment turns into Copper Nuggets when smelted",
+        "Hostile Monsters have a chance to spawn with Copper Armor equipped",
+        "Hostile Monsters can pick up and use Copper Weapons and Armor"
+      ]
+    },
+    {
+      "id": "1df4081753009cca6d475f5f",
+      "product": "minecraft",
+      "edition": "bedrock",
+      "release_channel": "bedrock_preview",
+      "version": "26.40.26",
+      "release_name": null,
+      "source": {
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/46719091494797-Minecraft-Beta-Preview-26-40-26",
+        "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/46719091494797-Minecraft-Beta-Preview-26-40-26",
+        "title": "Minecraft Beta & Preview - 26.40.26",
+        "publisher": "Mojang Studios",
+        "published_at": null,
+        "last_verified_at": "2026-06-18T17:10:56+09:00"
+      },
+      "summary": {
+        "ko": "정식판이 아닌 Bedrock 테스트 채널 변경점입니다. 원문에서 확인된 내용만 기록했습니다.",
+        "ja": "正式版ではないBedrockテストチャンネルの変更点です。原文で確認できた内容のみ記録しました。"
+      },
+      "added": [
+        "Fixed a bug where selected resource and behavior packs were removed from the active list after viewing a pack's technical details when creating a new world.",
+        "Made schemas for the following components stricter when parsing and will fail to load an entity json that has invalid data in versions 1.26.40 and newer.",
+        "Added a \"Scale By\" axis selector and a \"Change Mesh\" button to the Custom Mesh Tool, letting you size the mesh along its longest, width, height, or depth axis and swap in a different mesh file without leaving the tool.",
+        "Added a limit of 512 nested entries in Nbt ListTags and Compound tags (same as Java), this fixed a crash that could occur when loading NBT data with excessively deep nesting of compound and list tags",
+        "Block-entity's dynamic-properties stored on an item-stack can now be modified through the new method",
+        "There may be new artifacts with light leaking through or around blocks"
+      ],
+      "changed": [
+        "Improved furnace screen narration of navigation tabs, toggles and smelting context of furnace slots",
+        "Updated introduction floating window to be resizable",
+        "Optimized FrameGraph topological sorting algorithm by replacing DFS-based approach with Kahn's algorithm for improved performance and clarity",
+        "Storage structure was updated, your saved properties will be lost"
+      ],
+      "fixed": [
+        "It's time for another Preview and Beta release! For the full list of goodies, browse the changelog below. And as always, we’re keen to get your feedback at , and you can report any bugs you find at .",
+        "Fixed an issue that prevented split-screen join on PlayStation when the primary player was signed in with a local account ( )",
+        "Fixed an issue where a friend's world could not be joined with the \"A\" button after dismissing the \"Online play is not rated\" warning screen",
+        "Fixed thrown projectiles rendering as solid colors with Texture Streaming enabled ( )",
+        "Fixed a green outline that could appear on distant blocks when using Vibrant Visuals on some Android devices ( )",
+        "Fixed transparent blocks such as water and ice rendering in front of clouds when Vibrant Visuals is off",
+        "Fixed an issue where insides of a block would not be rendered while taking a screenshot inside the block.",
+        "Fixed Bundles not reliably playing the pickup-pop animation in the Hotbar when picked up",
+        "Fixed an issue where character creator changes could revert to their previous appearance after restarting the game.",
+        "Fixed an error that occurred when opening Realms Hub without Admin permissions",
+        "Fixed an issue where the Active Behaviour or Resource pack tab in Edit World wouldn't be selected by default when there was at least 1 active pack",
+        "Fixed restart modal showing for region settings when no changes were made"
+      ],
+      "removed": [
+        "Removed Observer and Redstone Lamp from the Sulfur Cube's slow bouncy archetype so they are no longer absorbed by it",
+        "Removed the possibility to trigger older join realm flow logic from using an invite link with the game closed",
+        "Fixed a bug where selected resource and behavior packs were removed from the active list after viewing a pack's technical details when creating a new world."
+      ],
+      "experimental_features": [],
+      "platform_changes": [
+        "Minecraft Preview is available on Xbox, PlayStation, Windows, and iOS devices. More information can be found at",
+        "The beta is available on Android (Google Play). To join or leave the beta, see for detailed instructions",
+        "Fixed an issue that prevented split-screen join on PlayStation when the primary player was signed in with a local account ( )",
+        "Fixed a green outline that could appear on distant blocks when using Vibrant Visuals on some Android devices ( )",
+        "Adds Cloud Sync support for World data on Windows, ensuring world data is backed up and accessible across devices on that platform."
+      ],
+      "touch_control_changes": [
+        "Fixed critical hit sounds and some jumping/landing sounds not being affected by the \"Player\" sounds volume control",
+        "Fix Controller Settings tab behavior when using a Gamepad with the Swap button option active ( )"
+      ],
+      "realms_changes": [
+        "Fixed an error that occurred when opening Realms Hub without Admin permissions",
+        "Removed the possibility to trigger older join realm flow logic from using an invite link with the game closed",
+        "Made various adjustments to the UI under Realms Hub->World->Slots to improve visual clarity and consistency"
+      ],
+      "creator_changes": [
+        "Fixed an issue where character creator changes could revert to their previous appearance after restarting the game.",
+        "Renamed the Content tab header on the Marketplace Pass product page to \"Included in Marketplace Pass\", surfaced the \"ALL PACKS\" and \"CHARACTER CREATOR SETS\" buttons above the pack grid, and moved the descriptive content type block to the bottom of the tab"
+      ],
+      "add_on_changes": [],
+      "technical_changes": [
+        "Removed Observer and Redstone Lamp from the Sulfur Cube's slow bouncy archetype so they are no longer absorbed by it",
+        "Fixed a bug where selected resource and behavior packs were removed from the active list after viewing a pack's technical details when creating a new world.",
+        "Fixed an issue where non-operator players connected to a dedicated server could see the world seed in the Game Settings menu. The seed and copy-seed button are now hidden for non-operator clients on multiplayer servers"
+      ],
+      "known_issues": [],
+      "bug_ids": [],
+      "supported_platforms": [
+        "Xbox",
+        "PlayStation",
+        "Windows",
+        "Android",
+        "iOS"
+      ],
+      "previous_version": null,
+      "target_stable_version": null,
+      "world_compatibility": null,
+      "realms_compatibility": null,
+      "add_on_compatibility": null,
+      "duplicate": {
+        "is_duplicate": false,
+        "reasons": []
+      },
+      "raw_excerpt": [
+        "By submitting this report, you confirm that the information you have provided is accurate and complete to the best of your knowledge.",
+        "17 June 2026",
+        "These work-in-progress versions can be unstable and may not be representative of final version quality",
+        "Minecraft Preview is available on Xbox, PlayStation, Windows, and iOS devices. More information can be found at",
+        "The beta is available on Android (Google Play). To join or leave the beta, see for detailed instructions",
+        "It's time for another Preview and Beta release! For the full list of goodies, browse the changelog below. And as always, we’re keen to get your feedback at , and you can report any bugs you find at .",
+        "Improved furnace screen narration of navigation tabs, toggles and smelting context of furnace slots",
+        "Hovered Items are no longer shown under search bar in recipe book ( )",
+        "Removed Observer and Redstone Lamp from the Sulfur Cube's slow bouncy archetype so they are no longer absorbed by it",
+        "The smoke particles of the TNT block are now emitted less frequently to better match Java Edition ( )",
+        "Limited how long the Sulfur Spikes can grow",
+        "Fences in pre-generated structures (Villages, Woodland Mansions, Ancient Cities, etc.) now connect correctly to their neighbors"
+      ]
+    },
+    {
+      "id": "2cd2f55d7a0682b48e16253a",
+      "product": "minecraft",
+      "edition": "bedrock",
+      "release_channel": "bedrock_preview",
+      "version": "26.40.22",
+      "release_name": null,
+      "source": {
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/46506466842125-Minecraft-Beta-Preview-26-40-22-23",
+        "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/46506466842125-Minecraft-Beta-Preview-26-40-22-23",
+        "title": "Minecraft Beta & Preview - 26.40.22/23",
+        "publisher": "Mojang Studios",
+        "published_at": null,
+        "last_verified_at": "2026-06-18T17:10:56+09:00"
+      },
+      "summary": {
+        "ko": "정식판이 아닌 Bedrock 테스트 채널 변경점입니다. 원문에서 확인된 내용만 기록했습니다.",
+        "ja": "正式版ではないBedrockテストチャンネルの変更点です。原文で確認できた内容のみ記録しました。"
+      },
+      "added": [
+        "Added a screen distortion option in the accessibility settings that controls how much the screen is distorted by the nausea effect and when going through Nether portals",
+        "Added in more Realms based tips",
+        "Added new variant for Marketplace Bundle UI",
+        "Changed -> , -> , and added property to in beta. is functionally identical to but is no longer accessed via , use instead.",
+        "Added glTF and GLB file format support to the Custom Mesh Tool.",
+        "Added Structures to the View menu",
+        "Added Keyboard Settings to the File menu",
+        "Added Biome Data Assignment to the World menu",
+        "Added Dimensions Panel to the Dimensions submenu in the World menu",
+        "Added a filterProfanity option to string property item so the editor's world export name field validates the input against a profanity filter, surfacing a warning modal and clearing the field when profanity is detected.",
+        "Added content error when loading features with identifiers that already exist within the same behavior pack",
+        "Improved the experimental JSON document upgrader: configuration parsing errors are now surfaced through the upgrader's error logging, errors that abort an upgrade are recorded in the error log, and files found outside of a pack are ignored instead of failing the run"
+      ],
+      "changed": [
+        "Changed furnace tabs order; furnace recipes reordered",
+        "Changed -> , -> , and added property to in beta. is functionally identical to but is no longer accessed via , use instead.",
+        "Updated item schema validation so now requires at least one component entry for item documents in v1_26_30 and beta",
+        "Improved the experimental JSON document upgrader: configuration parsing errors are now surfaced through the upgrader's error logging, errors that abort an upgrade are recorded in the error log, and files found outside of a pack are ignored instead of failing the run",
+        "Changed property name on class to in in beta.",
+        "Changed method of 's to have restricted execution privilege"
+      ],
+      "fixed": [
+        "It's time for another Preview and Beta release! For the full list of goodies, browse the changelog below. And as always, we’re keen to get your feedback at , and you can report any bugs you find at .",
+        "Fixed error message not showing when importing an invalid custom skin ( )",
+        "Fixed corrupted visuals on mobs when using Vibrant Visuals with PBR resource packs that include heightmap textures for actors",
+        "Fixed Shulker Boxes not playing the pickup-pop animation in inventory slots ( )",
+        "Fixed bug where Sulfur Cubes would sink or not be able to move after ejecting their block",
+        "Fixed an issue where the profanity popup wouldn't show when using profanity in the Realm title or description",
+        "Fixed an issue where Realms specific tips weren't showing when loading into a Realm",
+        "Fixed a bug where available storage was not being correctly measured when downloading resource packs to join multiplayer worlds.",
+        "Fixed a potential rare crash related to dimension changes on PlayStation",
+        "Fixed strikethrough alignment for sale prices",
+        "Fixed a bug where some pack configurations would load locally but not when uploaded to Realms.",
+        "Fixed Fullscreen mode to remember which screen it was last on"
+      ],
+      "removed": [
+        "Removed the Point Light Shadow Quality slider and merged its functionality into the Point Light Quality slider. These sliders are available only when the \"RenderDragon Features for Creators\" experiment toggle is enabled for Vibrant Visuals."
+      ],
+      "experimental_features": [
+        "Released trait. However, for the field horizontal directions will still require experiment",
+        "Improved the experimental JSON document upgrader: configuration parsing errors are now surfaced through the upgrader's error logging, errors that abort an upgrade are recorded in the error log, and files found outside of a pack are ignored instead of failing the run",
+        "Removed the Point Light Shadow Quality slider and merged its functionality into the Point Light Quality slider. These sliders are available only when the \"RenderDragon Features for Creators\" experiment toggle is enabled for Vibrant Visuals."
+      ],
+      "platform_changes": [
+        "Minecraft Preview is available on Xbox, PlayStation, Windows, and iOS devices. More information can be found at",
+        "The beta is available on Android (Google Play). To join or leave the beta, see for detailed instructions",
+        "Fixed a potential rare crash related to dimension changes on PlayStation",
+        "When the player is in a beta on PlayStation or iOS, the \"Get more\" Marketplace button is hidden as well"
+      ],
+      "touch_control_changes": [
+        "Added a screen distortion option in the accessibility settings that controls how much the screen is distorted by the nausea effect and when going through Nether portals"
+      ],
+      "realms_changes": [
+        "Fixed an issue where the profanity popup wouldn't show when using profanity in the Realm title or description",
+        "Fixed an issue where Realms specific tips weren't showing when loading into a Realm",
+        "Added in more Realms based tips",
+        "Fixed a bug where some pack configurations would load locally but not when uploaded to Realms.",
+        "A Jigsaw Structure's layout will now be persisted to disk if any intersecting chunks are saved. This makes partially saved Jigsaw Structures less prone to breaking because of configuration changes. The feature will be incrementally rolled out to online devices and Realms."
+      ],
+      "creator_changes": [
+        "Removed the Point Light Shadow Quality slider and merged its functionality into the Point Light Quality slider. These sliders are available only when the \"RenderDragon Features for Creators\" experiment toggle is enabled for Vibrant Visuals."
+      ],
+      "add_on_changes": [],
+      "technical_changes": [],
+      "known_issues": [],
+      "bug_ids": [],
+      "supported_platforms": [
+        "Xbox",
+        "PlayStation",
+        "Windows",
+        "Android",
+        "iOS"
+      ],
+      "previous_version": null,
+      "target_stable_version": null,
+      "world_compatibility": null,
+      "realms_compatibility": null,
+      "add_on_compatibility": null,
+      "duplicate": {
+        "is_duplicate": false,
+        "reasons": []
+      },
+      "raw_excerpt": [
+        "By submitting this report, you confirm that the information you have provided is accurate and complete to the best of your knowledge.",
+        "9 June 2026",
+        "These work-in-progress versions can be unstable and may not be representative of final version quality",
+        "Minecraft Preview is available on Xbox, PlayStation, Windows, and iOS devices. More information can be found at",
+        "The beta is available on Android (Google Play). To join or leave the beta, see for detailed instructions",
+        "It's time for another Preview and Beta release! For the full list of goodies, browse the changelog below. And as always, we’re keen to get your feedback at , and you can report any bugs you find at .",
+        "Added a screen distortion option in the accessibility settings that controls how much the screen is distorted by the nausea effect and when going through Nether portals",
+        "Fixed error message not showing when importing an invalid custom skin ( )",
+        "Clouds, sun, moon, and stars now render when the camera is underwater in Vibrant Visuals",
+        "Fixed corrupted visuals on mobs when using Vibrant Visuals with PBR resource packs that include heightmap textures for actors",
+        "Thrown Eggs no longer cause their targets to jump extra high in the air ( )",
+        "Fixed Shulker Boxes not playing the pickup-pop animation in inventory slots ( )"
+      ]
+    },
+    {
+      "id": "e4152bd0330cd0e372b2c57e",
+      "product": "minecraft",
+      "edition": "bedrock",
+      "release_channel": "bedrock_preview",
+      "version": "26.40.20",
+      "release_name": null,
+      "source": {
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/46333309174669-Minecraft-Beta-Preview-26-40-20",
+        "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/46333309174669-Minecraft-Beta-Preview-26-40-20",
+        "title": "Minecraft Beta & Preview - 26.40.20",
+        "publisher": "Mojang Studios",
+        "published_at": null,
+        "last_verified_at": "2026-06-18T17:10:56+09:00"
+      },
+      "summary": {
+        "ko": "정식판이 아닌 Bedrock 테스트 채널 변경점입니다. 원문에서 확인된 내용만 기록했습니다.",
+        "ja": "正式版ではないBedrockテストチャンネルの変更点です。原文で確認できた内容のみ記録しました。"
+      },
+      "added": [
+        "It's time for another Preview and Beta release! For the full list of goodies, browse the changelog below. And as always, we’re keen to get your feedback on these new features at , and you can report any bugs you find at .",
+        "Added toast notification when character creator fails to initalize on Realm join",
+        "Added a specific error message when adding or editing an external server with an address and port that already exists",
+        "Fixed missing Storage Location option in New Storage Tab for Android devices ( )",
+        "Fixed a bug that caused the New Settings Screen to display a deprecated warning modal when enabling text-to-speech while an unsupported language is selected",
+        "Made schemas for the following goals stricter when parsing and will fail to load an entity json that has invalid data in versions 1.26.40 and newer.",
+        "Made schemas for the following goals stricter when parsing and will fail to load an entity json that has invalid data in versions 1.26.40 and newer.",
+        "Made the schema for stricter when parsing, now will fail to load an entity json that has invalid data in versions 1.26.40 and newer. Int Range field now only accepts an object with and values. Other formats will fail to parse",
+        "Made the schema for stricter when parsing, now will fail to load an entity json that has invalid data in versions 1.26.40 and newer",
+        "Made the schema for stricter when parsing, now will fail to load an entity json that has invalid data in versions 1.26.40 and newer. Float Range field now only accepts an object with and values. Other formats will fail to parse",
+        "Made the schema for stricter when parsing, now will fail to load an entity json that has invalid data in versions 1.26.40 and newer",
+        "Made schemas for the following goals stricter when parsing and will fail to load an entity json that has invalid data in versions 1.26.40 and newer."
+      ],
+      "changed": [
+        "Updated hurt and death sounds for one of the chicken sound variants",
+        "Significantly improved block search speed when using BlockVolume for 'fillBlocks' API."
+      ],
+      "fixed": [
+        "It's time for another Preview and Beta release! For the full list of goodies, browse the changelog below. And as always, we’re keen to get your feedback on these new features at , and you can report any bugs you find at .",
+        "Fixed text field narration restarting label and description on every keypress",
+        "Fixed a bug where Sweet Berry Bush damage did not produce closed captions ( )",
+        "Fixed an issue where a ghost block was being created when simultaneously releasing crouch and placing a block on an interactive block such as a Decorated Pot, Item Frame, or Chest ( ) ( )",
+        "Fix issue where banner presenting \"Low Cloud Storage\" was displayed briefly when duplicating worlds. ( )",
+        "Fixed enchantment glint effect disappearing from items with texture streaming enabled after some time passes ( )",
+        "Fixed high resolution textures from Texture Packs appearing blurred when Texture Streaming is enabled ( )",
+        "Fixed Anti-Aliasing not being applied when launching the title in fullscreen mode ( )",
+        "Fixed a rare crash that could occur when relaunching the game near an End gateway beam after changing graphics mode.",
+        "Fixed an issue where cloud reflections in water were unusually bright for a few seconds after switching to midnight time in Vibrant Visuals. ( )",
+        "Fixed an issue where component-rendered custom blocks did not show emissive/MER effects when held, dropped, or displayed in item frames or shelves with Vibrant Visuals enabled. ( )",
+        "Fixed leashed mobs being incorrectly pulled by Leash Knots ( )"
+      ],
+      "removed": [
+        "Removed the Realms Subscriptions from the Settings->Subscriptions page"
+      ],
+      "experimental_features": [
+        "The \"Bounce\" music disc can now be found in abandoned mineshafts when the \"Villager Trade Rebalancing\" experiment is enabled"
+      ],
+      "platform_changes": [
+        "Minecraft Preview is available on Xbox, PlayStation, Windows, and iOS devices. More information can be found at",
+        "The beta is available on Android (Google Play). To join or leave the beta, see for detailed instructions",
+        "Mobs captured while on fire are no longer still burning when released",
+        "When the player is in a beta on PlayStation or iOS, the \"Get more\" Marketplace button is hidden as well",
+        "Fixed missing Storage Location option in New Storage Tab for Android devices ( )"
+      ],
+      "touch_control_changes": [],
+      "realms_changes": [
+        "Added toast notification when character creator fails to initalize on Realm join",
+        "Moving Realm tags to the left side of the Information Panel",
+        "Fixed the spacing in the Realms Hub Side Panel",
+        "Various adjustments to the Realms Hub Community screen components",
+        "When the client is outdated load the Realm List and allow access to Realms Hub, but the player will be unable to play until they update their game.",
+        "Fixed an issue in Realms hub admin logs where gamertags of players who are no longer members of the Realm were delayed on loading",
+        "Removed the Realms Subscriptions from the Settings->Subscriptions page",
+        "Adding in the Admin Log icon to the Community Tab in Realms Hub"
+      ],
+      "creator_changes": [
+        "Added toast notification when character creator fails to initalize on Realm join",
+        "Fixed a memory leak in the Character Creator that could cause crashes after extended use on memory-constrained platforms"
+      ],
+      "add_on_changes": [],
+      "technical_changes": [
+        "Added a specific error message when adding or editing an external server with an address and port that already exists",
+        "Significantly improved block search speed when using BlockVolume for 'fillBlocks' API."
+      ],
+      "known_issues": [],
+      "bug_ids": [
+        "MCPE-238162"
+      ],
+      "supported_platforms": [
+        "Xbox",
+        "PlayStation",
+        "Windows",
+        "Android",
+        "iOS",
+        "Fire"
+      ],
+      "previous_version": null,
+      "target_stable_version": null,
+      "world_compatibility": null,
+      "realms_compatibility": null,
+      "add_on_compatibility": null,
+      "duplicate": {
+        "is_duplicate": false,
+        "reasons": []
+      },
+      "raw_excerpt": [
+        "By submitting this report, you confirm that the information you have provided is accurate and complete to the best of your knowledge.",
+        "2 June 2026",
+        "These work-in-progress versions can be unstable and may not be representative of final version quality",
+        "Minecraft Preview is available on Xbox, PlayStation, Windows, and iOS devices. More information can be found at",
+        "The beta is available on Android (Google Play). To join or leave the beta, see for detailed instructions",
+        "It's time for another Preview and Beta release! For the full list of goodies, browse the changelog below. And as always, we’re keen to get your feedback on these new features at , and you can report any bugs you find at .",
+        "Fixed text field narration restarting label and description on every keypress",
+        "Text field now narrates its content when editing is stopped via keyboard or gamepad",
+        "Fixed a bug where Sweet Berry Bush damage did not produce closed captions ( )",
+        "Water fog in Sulfur Caves is now more blue than green, to better match Java Edition ( )",
+        "Fixed an issue where a ghost block was being created when simultaneously releasing crouch and placing a block on an interactive block such as a Decorated Pot, Item Frame, or Chest ( ) ( )",
+        "Potent Sulfur can now erupt through flowing liquids"
+      ]
+    },
+    {
+      "id": "8bdf7b8e9885568cad800d41",
+      "product": "minecraft",
+      "edition": "bedrock",
+      "release_channel": "bedrock_preview",
+      "version": "26.30.32",
+      "release_name": null,
+      "source": {
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/46149394356877-Minecraft-Beta-Preview-26-30-32",
+        "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/46149394356877-Minecraft-Beta-Preview-26-30-32",
+        "title": "Minecraft Beta & Preview - 26.30.32",
+        "publisher": "Mojang Studios",
+        "published_at": null,
+        "last_verified_at": "2026-06-18T17:10:56+09:00"
+      },
+      "summary": {
+        "ko": "정식판이 아닌 Bedrock 테스트 채널 변경점입니다. 원문에서 확인된 내용만 기록했습니다.",
+        "ja": "正式版ではないBedrockテストチャンネルの変更点です。原文で確認できた内容のみ記録しました。"
+      },
+      "added": [
+        "It's time for another Preview and Beta release! For the full list of goodies, browse the changelog below. And as always, we’re keen to get your feedback on these new features at , and you can report any bugs you find at ."
+      ],
+      "changed": [],
+      "fixed": [
+        "It's time for another Preview and Beta release! For the full list of goodies, browse the changelog below. And as always, we’re keen to get your feedback on these new features at , and you can report any bugs you find at .",
+        "Fixed a bug where Sulfur Cubes would sink or not be able to move after ejecting its block",
+        "Fixed corrupted visuals on mobs when using Vibrant Visuals with PBR resource packs that include heightmap textures for actors",
+        "Fix a crash that could occur when a player takes too long to join local multiplayer on XBOX"
+      ],
+      "removed": [],
+      "experimental_features": [],
+      "platform_changes": [
+        "Minecraft Preview is available on Xbox, PlayStation, Windows, and iOS devices. More information can be found at",
+        "The beta is available on Android (Google Play). To join or leave the beta, see for detailed instructions",
+        "- the Preview on iOS will be rolling out later than other platforms this week.",
+        "Fix a crash that could occur when a player takes too long to join local multiplayer on XBOX"
+      ],
+      "touch_control_changes": [],
+      "realms_changes": [],
+      "creator_changes": [],
+      "add_on_changes": [],
+      "technical_changes": [],
+      "known_issues": [],
+      "bug_ids": [],
+      "supported_platforms": [
+        "Xbox",
+        "PlayStation",
+        "Windows",
+        "Android",
+        "iOS"
+      ],
+      "previous_version": null,
+      "target_stable_version": null,
+      "world_compatibility": null,
+      "realms_compatibility": null,
+      "add_on_compatibility": null,
+      "duplicate": {
+        "is_duplicate": false,
+        "reasons": []
+      },
+      "raw_excerpt": [
+        "By submitting this report, you confirm that the information you have provided is accurate and complete to the best of your knowledge.",
+        "26 May 2026",
+        "These work-in-progress versions can be unstable and may not be representative of final version quality",
+        "Minecraft Preview is available on Xbox, PlayStation, Windows, and iOS devices. More information can be found at",
+        "The beta is available on Android (Google Play). To join or leave the beta, see for detailed instructions",
+        "It's time for another Preview and Beta release! For the full list of goodies, browse the changelog below. And as always, we’re keen to get your feedback on these new features at , and you can report any bugs you find at .",
+        "- the Preview on iOS will be rolling out later than other platforms this week.",
+        "Sulfur Caves now blend correctly with neighboring pre-generated chunks",
+        "Fixed a bug where Sulfur Cubes would sink or not be able to move after ejecting its block",
+        "Sulfur Cube released from a Bucket no longer retains the movement it had when captured ( )",
+        "Sulfur Cube with TNT can now be primed by Redstone dust pointing at it ( )",
+        "Sulfur Cubes using the \"slow bouncy\" archetype are now correctly kicked back based on the damage dealt"
+      ]
+    },
+    {
+      "id": "0175115ec06390cab6bae6cd",
+      "product": "minecraft",
+      "edition": "bedrock",
+      "release_channel": "bedrock_preview",
+      "version": "26.30.29",
+      "release_name": null,
+      "source": {
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/45975590959117-Minecraft-Beta-Preview-26-30-29-31",
+        "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/45975590959117-Minecraft-Beta-Preview-26-30-29-31",
+        "title": "Minecraft Beta & Preview - 26.30.29/31",
+        "publisher": "Mojang Studios",
+        "published_at": null,
+        "last_verified_at": "2026-06-18T17:10:57+09:00"
+      },
+      "summary": {
+        "ko": "정식판이 아닌 Bedrock 테스트 채널 변경점입니다. 원문에서 확인된 내용만 기록했습니다.",
+        "ja": "正式版ではないBedrockテストチャンネルの変更点です。原文で確認できた内容のみ記録しました。"
+      },
+      "added": [
+        "Please note, we have additional fixes being added for Android and iOS devices rolling out to players, to address some important bugs that could occur during gameplay.",
+        "Added a grass color override specific to the Sulfur Caves",
+        "Added death message for when a player is killed by a Magma Sulfur Cube ( )",
+        "Fixed loot table container filling so that when trying to insert a new item, existing partial stacks will be merged to open up slots for new additions ( )",
+        "Replaced the Locator Bar toggle in the Multiplayer tab of the Create New World and Edit World screens with a Player Waypoints setting, allowing players to choose between \"Off\" (no players shown on the locator bar) and \"Everyone\" (all players shown on the locator bar)",
+        "Added support for new Marketplace Content Cards",
+        "Released the Custom Projectiles experiment. They can now be used beyond the experimental context",
+        "Added a modal dialog to Vibrant Visuals that allows users to map per-biome lighting configurations, letting creators assign specific lighting groups, atmospheric scattering, color grading, water, and cubemap settings to individual biomes",
+        "Added Dimensions and Biome Data Assignment tools",
+        "Added the Custom Mesh tool to Editor, allowing creators to import STL mesh files and place them as blocks",
+        "Added new @minecraft/server-ui 2.1.0 release",
+        "The \"lava_flammable\" field of the \"minecraft:flammable\" component is now usable without the Experimental Upcoming Creator Features"
+      ],
+      "changed": [
+        "The textures of Sulfur and Cinnabar Blocks have been updated to match Java ( )",
+        "Adjusted spawn ratios for the following mobs within the Sulfur Caves .",
+        "Improved server-side performance when lots of Sulfur Cubes are in an area",
+        "Updated skin info panel in dressing room to remove duplicate author label",
+        "Updated editor tools to show a load/busy mouse cursor during longer-running operations (shape placement, flood apply, chunk operations).",
+        "The surface builder type has been updated. The API is the same as before, but the noise ranges provided are now clamped to the range [-1, 1] instead of [0, 1]",
+        "Fixed an issue where every changed the shake types of previously added shake events"
+      ],
+      "fixed": [
+        "Please note, we have additional fixes being added for Android and iOS devices rolling out to players, to address some important bugs that could occur during gameplay.",
+        "Fixed a bug where naturally generated Sulfur Springs would occasionally not produce a geyser ( )",
+        "Fixed bug where the Sulfur Cube would look for blocks and be tempted at a longer distance than intended",
+        "Fixed an issue where upward gravity compensation was incorrectly applied after a slow, straight-up bounce on the Sulfur Cube ( )",
+        "Fixed bug where the Sulfur Cube would inconsistently stay floating after absorbing a block that should make it sink",
+        "Fixed the Sulfur Cube not being able to spawn in 1x1 large spaces ( )",
+        "Fixed a bug that caused custom Nether biomes to generate with a repeating tiling pattern across chunk boundaries",
+        "Fixed error message displayed when importing a custom skin on android without enough device space ( )",
+        "Fixed an issue where accepting a game invite while the game was loading could fail due to skins not yet being loaded",
+        "Fixed placement of Lakes where they would not break above the surface",
+        "Fixed a scenario where the game would send excessive web requests.",
+        "Fixed Vibrant Visuals shadows and reflections not rendering on PlayStation 4"
+      ],
+      "removed": [
+        "Reference to the nonexistent sound asset has been removed ( )",
+        "When leaving the game in split screen the ecomode system could receive a callback after the client had been removed causing a crash"
+      ],
+      "experimental_features": [
+        "Released the Custom Projectiles experiment. They can now be used beyond the experimental context",
+        "The \"lava_flammable\" field of the \"minecraft:flammable\" component is now usable without the Experimental Upcoming Creator Features",
+        "Fixed block traits not respecting experimental requirements for"
+      ],
+      "platform_changes": [
+        "Please note, we have additional fixes being added for Android and iOS devices rolling out to players, to address some important bugs that could occur during gameplay.",
+        "Minecraft Preview is available on Xbox, PlayStation, Windows, and iOS devices. More information can be found at",
+        "The beta is available on Android (Google Play). To join or leave the beta, see for detailed instructions",
+        "Adjusted spawn ratios for the following mobs within the Sulfur Caves .",
+        "Fire Resistance effect now properly protects against Magma Sulfur Cubes ( )",
+        "Fixed error message displayed when importing a custom skin on android without enough device space ( )",
+        "Fixed Vibrant Visuals shadows and reflections not rendering on PlayStation 4",
+        "Fixed a crash that could occur on Windows when resizing the game window during initial loading",
+        "Increased Windows Preview cloud backup storage capacity to 4GB"
+      ],
+      "touch_control_changes": [
+        "Sulfur Cubes with an absorbed block no longer push player-controlled mounts",
+        "The field now controls the minimum range at which push interactions can occur for all values",
+        "Renamed the field to , which now controls the maximum range at which push interactions can occur for all values",
+        "Added a field to control whether the sound is played"
+      ],
+      "realms_changes": [
+        "Fixed an issue where clearing Realm members via \"Clear All Members\" resulted in a crash",
+        "Adding in a hardcore heart and border in the Realms Hub Slots section"
+      ],
+      "creator_changes": [
+        "Added a modal dialog to Vibrant Visuals that allows users to map per-biome lighting configurations, letting creators assign specific lighting groups, atmospheric scattering, color grading, water, and cubemap settings to individual biomes",
+        "Added the Custom Mesh tool to Editor, allowing creators to import STL mesh files and place them as blocks",
+        "The \"lava_flammable\" field of the \"minecraft:flammable\" component is now usable without the Experimental Upcoming Creator Features"
+      ],
+      "add_on_changes": [],
+      "technical_changes": [
+        "Improved server-side performance when lots of Sulfur Cubes are in an area",
+        "Added new @minecraft/server-ui 2.1.0 release",
+        "Released MessageBox, CustomForm, and all supporting APIs out of beta and into @minecraft/server-ui 2.1.0",
+        "The surface builder type has been updated. The API is the same as before, but the noise ranges provided are now clamped to the range [-1, 1] instead of [0, 1]",
+        "Fix missing suggestions for commands typed after '/execute run setblock' ( )",
+        "Entity now accepts a Molang expression for state-driven scaling, and consistently applies to the main hand only in both first- and third-person"
+      ],
+      "known_issues": [],
+      "bug_ids": [],
+      "supported_platforms": [
+        "Xbox",
+        "PlayStation",
+        "Windows",
+        "Android",
+        "iOS",
+        "Fire"
+      ],
+      "previous_version": null,
+      "target_stable_version": null,
+      "world_compatibility": null,
+      "realms_compatibility": null,
+      "add_on_compatibility": null,
+      "duplicate": {
+        "is_duplicate": false,
+        "reasons": []
+      },
+      "raw_excerpt": [
+        "By submitting this report, you confirm that the information you have provided is accurate and complete to the best of your knowledge.",
+        "21 May 2026",
+        "Beta & Preview 26.30.31 - Mobile Only",
+        "Please note, we have additional fixes being added for Android and iOS devices rolling out to players, to address some important bugs that could occur during gameplay.",
+        "19 May 2026",
+        "These work-in-progress versions can be unstable and may not be representative of final version quality",
+        "Minecraft Preview is available on Xbox, PlayStation, Windows, and iOS devices. More information can be found at",
+        "The beta is available on Android (Google Play). To join or leave the beta, see for detailed instructions",
+        "Added a grass color override specific to the Sulfur Caves",
+        "The textures of Sulfur and Cinnabar Blocks have been updated to match Java ( )",
+        "Chiseled Sulfur and Chiseled Cinnabar can no longer be crafted by stonecutting Polished Sulfur and Cinnabar Bricks, respectively ( )",
+        "Sulfur Spikes now grow over time ( )"
+      ]
+    },
+    {
+      "id": "7848e23bbedd0f1a708db2ea",
+      "product": "minecraft",
+      "edition": "bedrock",
+      "release_channel": "bedrock_preview",
+      "version": "26.30.28",
+      "release_name": null,
+      "source": {
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/45785756698381-Minecraft-Beta-Preview-26-30-28",
+        "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/45785756698381-Minecraft-Beta-Preview-26-30-28",
+        "title": "Minecraft Beta & Preview - 26.30.28",
+        "publisher": "Mojang Studios",
+        "published_at": null,
+        "last_verified_at": "2026-06-18T17:10:57+09:00"
+      },
+      "summary": {
+        "ko": "정식판이 아닌 Bedrock 테스트 채널 변경점입니다. 원문에서 확인된 내용만 기록했습니다.",
+        "ja": "正式版ではないBedrockテストチャンネルの変更点です。原文で確認できた内容のみ記録しました。"
+      },
+      "added": [
+        "And as always, we're keen to get your feedback on these new features at , and you can report any bugs you find at .",
+        "Added new music by composer fingerspit (Paula Ruiz) to the game",
+        "Added a new music disc with the song \"Bounce\" that may be found inside Minecarts with Chests in abandoned mineshaft structures within Sulfur Caves",
+        "Added new music tracks Ebb, Home, Memories, Nightly, and Shores to the main Menu music, Creative Mode music, and several biomes",
+        "The new music tracks will play in the following biomes:",
+        "Added dedicated sounds for when the Sulfur Cube is picked up or placed with a Bucket",
+        "Added achievements disabled warning modal to realms edit world",
+        "Added Marketplace Error component to display marketplace errors",
+        "Added ability to access Marketplace for Preview",
+        "Added OREUI Storage Settings: Storage Status and Management",
+        "Made the schema for stricter when parsing, now will fail to load an entity json that has invalid data in versions 1.26.30 and newer",
+        "Made the schema for stricter when parsing, now will fail to load an entity json that has invalid data in versions 1.26.30 and newer"
+      ],
+      "changed": [
+        "The Sulfur Cube hot archetype's attack range has been adjusted to be more aligned with Java",
+        "Updated the model and texture of the Small Sulfur Cube",
+        "Updated the game credits",
+        "Updated the cubemap",
+        "Updated the save modal text when saving settings in Realms Edit World",
+        "Improved the furnace recipe book UI"
+      ],
+      "fixed": [
+        "And as always, we're keen to get your feedback on these new features at , and you can report any bugs you find at .",
+        "Fixed a client-side display issue that caused falling blocks (such as Sand, Gravel, and Anvils) to appear to pass through Cobwebs without slowing down and to lose their collision after landing",
+        "Fixed a crash that could occur when loading behavior packs with multiple custom dimension definitions ( )",
+        "Re-enabled texture streaming in PC and mobile previews after fixing a bug with blank textures",
+        "Fixed shulker boxes appearing as semi-transparent in the inventory when Texture Streaming is enabled ( )",
+        "Fixed a bug in the Realms saves screen where the \"Save to storage\" button on an automatic save displayed the active world's size instead of the selected save's size, and the \"Free up space\" dialog was not shown when the selected automatic save was too large to fit in the Realm's storage",
+        "Fixed an issue where backups containing only Resource Packs displayed empty entries without names in the Saves tab",
+        "Fixed an issue where modals may display blank text on the Realms Hub subscription tab",
+        "Fixing an issue where the wrong icon was used for leaving a realm",
+        "Fixed RealmsHub settings screens not exiting properly after saving changes made on the screens.",
+        "Fixed a crash that could occur when initializing a dimension on the client side if the spawn dimension was set to a non-Overworld dimension",
+        "Fixed a crash that could occur when trying to search for players without signing in ( )"
+      ],
+      "removed": [
+        "Removed warning text that \"you can't earn achievements\" when creating a world with Add-ons enabled."
+      ],
+      "experimental_features": [
+        "Entity version upgrades are no longer gated behind the Upcoming Creator Features experiment"
+      ],
+      "platform_changes": [
+        "Minecraft Preview is available on Xbox, PlayStation, Windows, and iOS devices. More information can be found at",
+        "The beta is available on Android (Google Play). To join or leave the beta, see for detailed instructions",
+        "TNT Sulfur Cubes now ignite when shot with a flaming arrow or blaze fireball",
+        "TNT Sulfur Cubes now ignite when using a tool with the Fire Aspect enchantment"
+      ],
+      "touch_control_changes": [],
+      "realms_changes": [
+        "Fixed a bug in the Realms saves screen where the \"Save to storage\" button on an automatic save displayed the active world's size instead of the selected save's size, and the \"Free up space\" dialog was not shown when the selected automatic save was too large to fit in the Realm's storage",
+        "Fixed an issue where modals may display blank text on the Realms Hub subscription tab",
+        "Fixing an issue where the wrong icon was used for leaving a realm",
+        "Changing the Try Realms button in the How To Play screen to redirect to the Realms PDP instead",
+        "Updated the save modal text when saving settings in Realms Edit World",
+        "Added achievements disabled warning modal to realms edit world",
+        "Fixed RealmsHub settings screens not exiting properly after saving changes made on the screens."
+      ],
+      "creator_changes": [
+        "Entity version upgrades are no longer gated behind the Upcoming Creator Features experiment"
+      ],
+      "add_on_changes": [
+        "Removed warning text that \"you can't earn achievements\" when creating a world with Add-ons enabled."
+      ],
+      "technical_changes": [
+        "Party chat now appears in the world, and you can respond from world chat with the /party command"
+      ],
+      "known_issues": [],
+      "bug_ids": [],
+      "supported_platforms": [
+        "Xbox",
+        "PlayStation",
+        "Windows",
+        "Android",
+        "iOS",
+        "Fire"
+      ],
+      "previous_version": null,
+      "target_stable_version": null,
+      "world_compatibility": null,
+      "realms_compatibility": null,
+      "add_on_compatibility": null,
+      "duplicate": {
+        "is_duplicate": false,
+        "reasons": []
+      },
+      "raw_excerpt": [
+        "By submitting this report, you confirm that the information you have provided is accurate and complete to the best of your knowledge.",
+        "12 May 2026",
+        "These work-in-progress versions can be unstable and may not be representative of final version quality",
+        "Minecraft Preview is available on Xbox, PlayStation, Windows, and iOS devices. More information can be found at",
+        "The beta is available on Android (Google Play). To join or leave the beta, see for detailed instructions",
+        "You might've seen all the features coming for Chaos Cubed – but have you listened to the official soundtrack yet? Composed by fingerspit (Paula Ruiz) and featuring 6 tracks including the music disc Bounce, this is the perfect soundtrack for chaos. Listen today on Spotify, or wherever you stream your music!",
+        "And as always, we're keen to get your feedback on these new features at , and you can report any bugs you find at .",
+        "Added new music by composer fingerspit (Paula Ruiz) to the game",
+        "Added a new music disc with the song \"Bounce\" that may be found inside Minecarts with Chests in abandoned mineshaft structures within Sulfur Caves",
+        "Added new music tracks Ebb, Home, Memories, Nightly, and Shores to the main Menu music, Creative Mode music, and several biomes",
+        "The new music tracks will play in the following biomes:",
+        "Mesa"
+      ]
+    },
+    {
+      "id": "814ce5ae400e6933261f758b",
+      "product": "minecraft",
+      "edition": "bedrock",
+      "release_channel": "bedrock_official_announcement",
+      "version": "",
+      "release_name": null,
+      "source": {
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/4414295731725-Bedrock-Add-On-Templates",
+        "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/4414295731725-Bedrock-Add-On-Templates",
+        "title": "Bedrock Add-On Templates",
+        "publisher": "Mojang Studios",
+        "published_at": null,
+        "last_verified_at": "2026-06-18T17:10:57+09:00"
+      },
+      "summary": {
+        "ko": "Bedrock 관련 공식 발표를 원문 기준으로 구조화했습니다.",
+        "ja": "Bedrock関連の公式発表を原文基準で構造化しました。"
+      },
+      "added": [],
+      "changed": [],
+      "fixed": [],
+      "removed": [],
+      "experimental_features": [],
+      "platform_changes": [],
+      "touch_control_changes": [],
+      "realms_changes": [],
+      "creator_changes": [],
+      "add_on_changes": [
+        "The following templates provide the latest resources, behaviors, and documentation for creating Add-Ons for Minecraft. For more information on how to create Add-Ons for Minecraft, please visit .",
+        "Going forward, all Bedrock add-on templates for full releases and Preview releases can be found on our ."
+      ],
+      "technical_changes": [],
+      "known_issues": [],
+      "bug_ids": [],
+      "supported_platforms": [],
+      "previous_version": null,
+      "target_stable_version": null,
+      "world_compatibility": null,
+      "realms_compatibility": null,
+      "add_on_compatibility": null,
+      "duplicate": {
+        "is_duplicate": false,
+        "reasons": []
+      },
+      "raw_excerpt": [
+        "By submitting this report, you confirm that the information you have provided is accurate and complete to the best of your knowledge.",
+        "The following templates provide the latest resources, behaviors, and documentation for creating Add-Ons for Minecraft. For more information on how to create Add-Ons for Minecraft, please visit .",
+        "Going forward, all Bedrock add-on templates for full releases and Preview releases can be found on our .",
+        "© Mojang AB. TM Microsoft Corporation.",
+        "© Mojang AB. TM Microsoft Corporation."
+      ]
+    },
+    {
+      "id": "a90ded3afea9354191673878",
+      "product": "minecraft",
+      "edition": "bedrock",
+      "release_channel": "bedrock_platform_specific",
+      "version": "",
+      "release_name": null,
+      "source": {
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/360027034071-How-to-Transfer-Worlds-on-Nintendo-Switch",
+        "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/360027034071-How-to-Transfer-Worlds-on-Nintendo-Switch",
+        "title": "How to Transfer Worlds on Nintendo Switch",
+        "publisher": "Mojang Studios",
+        "published_at": null,
+        "last_verified_at": "2026-06-18T17:10:57+09:00"
+      },
+      "summary": {
+        "ko": "Bedrock 관련 공식 발표를 원문 기준으로 구조화했습니다.",
+        "ja": "Bedrock関連の公式発表を原文基準で構造化しました。"
+      },
+      "added": [
+        "Transferring to Minecraft should change the world type to infinite, keeping the portions of the world from the existing version the same, but generating new chunks outside of that area."
+      ],
+      "changed": [],
+      "fixed": [],
+      "removed": [],
+      "experimental_features": [],
+      "platform_changes": [
+        "World size is infinite in Minecraft for Nintendo Switch.",
+        "No, the Super Mario Mash-Up is only playable by Nintendo Switch owners in single player, split screen, local network, and over Nintendo Switch Online.",
+        "For every purchase you make on the previous version, you must first log into , exit, and then launch the Bedrock version for purchases to sync. DLC purchased within will only remain on your Nintendo Switch™ device and will not carried over into other devices."
+      ],
+      "touch_control_changes": [],
+      "realms_changes": [],
+      "creator_changes": [],
+      "add_on_changes": [],
+      "technical_changes": [],
+      "known_issues": [],
+      "bug_ids": [],
+      "supported_platforms": [
+        "Nintendo Switch"
+      ],
+      "previous_version": null,
+      "target_stable_version": null,
+      "world_compatibility": null,
+      "realms_compatibility": null,
+      "add_on_compatibility": null,
+      "duplicate": {
+        "is_duplicate": false,
+        "reasons": []
+      },
+      "raw_excerpt": [
+        "By submitting this report, you confirm that the information you have provided is accurate and complete to the best of your knowledge.",
+        "To transfer existing worlds from to :",
+        "In , select on the bottom of the worlds list in the play menu. This will find any worlds on the device from the and display them below Old Worlds.",
+        "Select any of the worlds displayed to convert it to the Bedrock edition.",
+        "After conversion, the world will show up above along with the rest of your Bedrock worlds.",
+        "World size is infinite in Minecraft for Nintendo Switch.",
+        "Transferring to Minecraft should change the world type to infinite, keeping the portions of the world from the existing version the same, but generating new chunks outside of that area.",
+        "The Super Mario Mash-Up Pack is pre-installed with the game. Other included content can be downloaded from the in-game store.",
+        "No, the Super Mario Mash-Up is only playable by Nintendo Switch owners in single player, split screen, local network, and over Nintendo Switch Online.",
+        "Log into Minecraft and sign into your Microsoft account. All your content will sync automatically with other purchases you’ve made with other Bedrock versions, as long as those purchases were made while logged in to that same Microsoft account.",
+        "Log into on your Switch account. This will sync the latest purchases.",
+        "Log into the Minecraft on your Switch and you’ll be automatically granted the entitlements for that DLC."
+      ]
+    },
+    {
+      "id": "88dd775980123fcbfa976743",
+      "product": "minecraft",
+      "edition": "bedrock",
+      "release_channel": "bedrock_official_planned",
+      "version": "",
+      "release_name": null,
+      "source": {
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/360033693171-Character-Creator-FAQ",
+        "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/360033693171-Character-Creator-FAQ",
+        "title": "Character Creator FAQ",
+        "publisher": "Mojang Studios",
+        "published_at": null,
+        "last_verified_at": "2026-06-18T17:10:57+09:00"
+      },
+      "summary": {
+        "ko": "Bedrock 관련 공식 발표를 원문 기준으로 구조화했습니다.",
+        "ja": "Bedrock関連の公式発表を原文基準で構造化しました。"
+      },
+      "added": [
+        "A: Character Creator is a new, easy-to-use system to help you make a custom character in Minecraft item by item.",
+        "A: YES! With the new Character Creator, if you have a cape you can equip it on a custom skin, a Marketplace skin, a default skin, or the new character you create with the Character Creator.",
+        "Q: Do I have to have make a new character in the Character Creator to use a cape or specific new item?"
+      ],
+      "changed": [],
+      "fixed": [
+        "A: In order for the Character Creator to work and prevent clipping issues, it needs to have a use one of the preset base skins. However, you can use various accessories to add additional characteristics to your character."
+      ],
+      "removed": [],
+      "experimental_features": [],
+      "platform_changes": [
+        "A: No, we do not have plans for importing custom skins in Minecraft Earth. Importing custom skins is still possible in Minecraft on Windows 10 and mobile.",
+        "A: Absolutely! You will still be able to import custom skins and use them just like you did before, on Windows 10 and mobile.",
+        "A: The Character Creator is only available for Minecraft on mobile, Windows 10, Xbox One and Nintendo Switch."
+      ],
+      "touch_control_changes": [],
+      "realms_changes": [],
+      "creator_changes": [
+        "Q: What is the Character Creator?",
+        "A: Character Creator is a new, easy-to-use system to help you make a custom character in Minecraft item by item.",
+        "Q: Why did you make the Character Creator?",
+        "A: We primarily designed the Character Creator as a flexible and fun way for Minecraft Earth players to create customized looks for themselves in the game. We want players to be able to choose the items that they want without forcing everyone to use the same skin tone, hair color, and body size with them. This also enables some highly-requested features like capes! As we continued working on the Character Creator, we thought that a lot of vanilla Minecraft players would enjoy its features so we decided to bring it to the base Minecraft game as well! Not only that, but your characters will sync between both games!",
+        "A: YES! With the new Character Creator, if you have a cape you can equip it on a custom skin, a Marketplace skin, a default skin, or the new character you create with the Character Creator.",
+        "Q: Do I have to have make a new character in the Character Creator to use a cape or specific new item?",
+        "A: NOPE! You can use your cape or other items on a custom skin, a Marketplace skin, a character made with Character Creator, or one of the default skins.",
+        "Q: Is the Character Creator free to use?",
+        "Q: Will the Character Creator have loot boxes?",
+        "A: No, all items in the Character Creator are purely visual. They might make you easier to spot by other players, but that’s it.",
+        "Q: Does the Character Creator replace skins? Can I still use custom skins or skins I have purchased from the Marketplace?",
+        "A: Skins are not going anywhere! If you like your current skin, there is no need to change it. You can use the Marketplace skins you have purchased in both Minecraft Earth and Minecraft Bedrock Engine-based platforms. You can still import custom skins in Minecraft on many Bedrock Engine-based platforms. Marketplace creators will continue to make skins even after they soon start making Character Creator items."
+      ],
+      "add_on_changes": [],
+      "technical_changes": [],
+      "known_issues": [],
+      "bug_ids": [],
+      "supported_platforms": [
+        "Xbox",
+        "Nintendo Switch",
+        "Windows"
+      ],
+      "previous_version": null,
+      "target_stable_version": null,
+      "world_compatibility": null,
+      "realms_compatibility": null,
+      "add_on_compatibility": null,
+      "duplicate": {
+        "is_duplicate": false,
+        "reasons": []
+      },
+      "raw_excerpt": [
+        "By submitting this report, you confirm that the information you have provided is accurate and complete to the best of your knowledge.",
+        "Q: What is the Character Creator?",
+        "A: Character Creator is a new, easy-to-use system to help you make a custom character in Minecraft item by item.",
+        "Q: Why did you make the Character Creator?",
+        "A: We primarily designed the Character Creator as a flexible and fun way for Minecraft Earth players to create customized looks for themselves in the game. We want players to be able to choose the items that they want without forcing everyone to use the same skin tone, hair color, and body size with them. This also enables some highly-requested features like capes! As we continued working on the Character Creator, we thought that a lot of vanilla Minecraft players would enjoy its features so we decided to bring it to the base Minecraft game as well! Not only that, but your characters will sync between both games!",
+        "Q: CAPES?",
+        "A: YES! With the new Character Creator, if you have a cape you can equip it on a custom skin, a Marketplace skin, a default skin, or the new character you create with the Character Creator.",
+        "Q: Do I have to have make a new character in the Character Creator to use a cape or specific new item?",
+        "A: NOPE! You can use your cape or other items on a custom skin, a Marketplace skin, a character made with Character Creator, or one of the default skins.",
+        "Q: So does this mean I can finally wear a cape on my custom skin in Minecraft on Bedrock Engine-based platforms?",
+        "A: YES!",
+        "Q: If I have a cape in Java Edition, can I equip it in Minecraft on Bedrock Engine-based platforms?"
+      ]
+    },
+    {
+      "id": "2d6fa217bb2ba0ec649b0cc0",
+      "product": "minecraft",
+      "edition": "bedrock",
+      "release_channel": "bedrock_stable_release",
+      "version": "",
+      "release_name": null,
+      "source": {
+        "url": "https://feedback.minecraft.net/hc/en-us/articles/360004818752-Minecraft-for-Nintendo-Switch-Bedrock",
+        "canonical_url": "https://feedback.minecraft.net/hc/en-us/articles/360004818752-Minecraft-for-Nintendo-Switch-Bedrock",
+        "title": "Minecraft for Nintendo Switch (Bedrock)",
+        "publisher": "Mojang Studios",
+        "published_at": null,
+        "last_verified_at": "2026-06-18T17:10:57+09:00"
+      },
+      "summary": {
+        "ko": "Mojang Studios 공식 원문에서 확인한 Minecraft Bedrock Edition 정식 업데이트 후보입니다.",
+        "ja": "Mojang Studios公式原文で確認したMinecraft Bedrock Edition正式アップデート候補です。"
+      },
+      "added": [
+        "Select any of the newly found worlds to convert it to Bedrock edition"
+      ],
+      "changed": [],
+      "fixed": [],
+      "removed": [],
+      "experimental_features": [],
+      "platform_changes": [
+        "Select “Transfer Save to Nintendo Switch” button on the bottom and hit ok on the popup that appears"
+      ],
+      "touch_control_changes": [],
+      "realms_changes": [],
+      "creator_changes": [],
+      "add_on_changes": [],
+      "technical_changes": [],
+      "known_issues": [],
+      "bug_ids": [],
+      "supported_platforms": [
+        "Nintendo Switch"
+      ],
+      "previous_version": null,
+      "target_stable_version": null,
+      "world_compatibility": null,
+      "realms_compatibility": null,
+      "add_on_compatibility": null,
+      "duplicate": {
+        "is_duplicate": false,
+        "reasons": []
+      },
+      "raw_excerpt": [
+        "By submitting this report, you confirm that the information you have provided is accurate and complete to the best of your knowledge.",
+        "A button “Sync Old Worlds” on the bottom of the worlds list in the play menu will find any worlds on the device from the 4J Switch version and display them below the button.",
+        "Select any of the newly found worlds to convert it to Bedrock edition",
+        "After conversion the world will show up above the Sync Old Worlds button with the rest of your Bedrock worlds.",
+        "On Wii U:",
+        "Select Play Game",
+        "In your worlds list, hover over the world you want to transfer and hit X for Save Options",
+        "Select “Transfer Save to Nintendo Switch” button on the bottom and hit ok on the popup that appears",
+        "Transfer save progress bar should appear and will sit there while you perform the other half of the transfer on the Switch",
+        "Select Play Game",
+        "Hit Y to “Transfer Save from Wii U”",
+        "Select Yes on the popup that appears"
+      ]
+    }
+  ],
+  "excluded": [
+    {
+      "url": "https://feedback.minecraft.net/hc/en-us/sections/360001185332-Beta-and-Preview-Information-and-Changelogs",
+      "title": "You are reporting this post or comment!",
+      "reason": "not_bedrock_after_fetch",
+      "stage": "article_filter"
+    },
+    {
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/40112424372749-Minecraft-1-21-112-PlayStation-Only",
+      "title": "Minecraft - 1.21.112 (PlayStation Only)",
+      "reason": "not_clearly_bedrock"
+    },
+    {
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/360004126452-Minecraft-Realms-for-Pocket-Edition-Windows-10-Edition",
+      "title": "Minecraft Realms for Pocket Edition & Windows 10 Edition",
+      "reason": "not_clearly_bedrock"
+    },
+    {
+      "url": "https://feedback.minecraft.net/hc/en-us/articles/360004166731-China-iOS-FAQ",
+      "title": "China iOS FAQ",
+      "reason": "not_clearly_bedrock"
+    }
+  ],
+  "failures": [
+    {
+      "source": "minecraft_net_articles",
+      "url": "https://www.minecraft.net/en-us/article",
+      "error": "The read operation timed out",
+      "stage": "source_fetch"
+    }
+  ]
+}
