@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="630" viewBox="0 0 1200 630" role="img">
-  <title>LoL 26.12 패치노트 요약｜버프·너프 챔피언, 솔랭 추천 픽, MSI 메타 영향</title>
+  <title>LoL 26.12 패치노트 핵심 정리｜버프·너프 챔피언과 솔랭 체크 포인트</title>
   <defs>
     <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
       <stop offset="0" stop-color="#07111F"/>
@@ -11,9 +11,9 @@
   <rect x="42" y="42" width="1116" height="546" rx="18" fill="none" stroke="#2F80ED" stroke-width="2"/>
   <text x="78" y="102" font-size="28" font-weight="900" fill="#7DD3FC">Seiga Blog · LoL Patch 26.12</text>
   <text x="900" y="102" font-size="28" font-weight="900" fill="#FDE68A">버프 0 / 너프 0</text>
-  <text x="78" y="172" font-size="48" font-weight="900" fill="#FFFFFF">LoL 26.12 패치노트</text>
-<text x="78" y="241" font-size="48" font-weight="900" fill="#FFFFFF">요약｜버프·너프 챔피언, 솔랭</text>
-<text x="78" y="310" font-size="48" font-weight="900" fill="#FFFFFF">추천 픽, MSI 메타 영향</text>
+  <text x="78" y="172" font-size="48" font-weight="900" fill="#FFFFFF">LoL 26.12 패치노트 핵심</text>
+<text x="78" y="241" font-size="48" font-weight="900" fill="#FFFFFF">정리｜버프·너프 챔피언과 솔랭</text>
+<text x="78" y="310" font-size="48" font-weight="900" fill="#FFFFFF">체크 포인트</text>
 
             <g>
               <rect x="78" y="292" width="304" height="76" rx="8" fill="#111827" stroke="#334155"/>

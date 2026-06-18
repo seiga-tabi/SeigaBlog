@@ -82,6 +82,7 @@ def build_maps(version: str) -> tuple[dict, dict]:
                 "ko": ko_item.get("title", ""),
                 "ja": ja_item.get("title", ""),
             },
+            "tags": en_item.get("tags", []),
             "aliases": aliases_for(en_item, ko_item, ja_item),
             "assets": {
                 "square": f"/assets/images/lol/champions/{key}/square.png",
@@ -107,6 +108,19 @@ def build_maps(version: str) -> tuple[dict, dict]:
         "champions": champions,
     }
     return base, base
+
+
+def preserve_updated_at(path: Path, data: dict, compare_keys: list[str]) -> dict:
+    if not path.exists():
+        return data
+    try:
+        current = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return data
+
+    if all(current.get(key) == data.get(key) for key in compare_keys):
+        data["updated_at"] = current.get("updated_at", data["updated_at"])
+    return data
 
 
 def detect_post_champion_keys(name_map: dict) -> list[str]:
@@ -167,6 +181,8 @@ def main() -> int:
         versions = fetch_json(DDRAGON_VERSIONS_URL)
         version = versions[0]
         champions_data, name_map = build_maps(version)
+        champions_data = preserve_updated_at(CHAMPIONS_PATH, champions_data, ["version", "champions", "source"])
+        name_map = preserve_updated_at(CHAMPION_NAME_MAP_PATH, name_map, ["version", "champions", "source"])
         write_json(CHAMPIONS_PATH, champions_data)
         write_json(CHAMPION_NAME_MAP_PATH, name_map)
         log(f"챔피언명 맵 저장: {repo_path(CHAMPION_NAME_MAP_PATH)}")
@@ -175,7 +191,7 @@ def main() -> int:
         asset_types = [item.strip() for item in args.asset_types.split(",") if item.strip()]
         results = download_assets(name_map, keys, asset_types)
         report_path = DATA_DIR / "sync-report.json"
-        write_json(
+        report = preserve_updated_at(
             report_path,
             {
                 "version": version,
@@ -183,7 +199,9 @@ def main() -> int:
                 "champion_count": len(name_map["champions"]),
                 "asset_results": results,
             },
+            ["version", "champion_count", "asset_results"],
         )
+        write_json(report_path, report)
         downloaded = sum(1 for item in results if item["status"] == "downloaded")
         failed = sum(1 for item in results if item["status"] == "failed")
         log(f"이미지 캐싱 완료: 신규 {downloaded}개, 실패 {failed}개")

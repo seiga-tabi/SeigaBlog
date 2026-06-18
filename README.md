@@ -9,6 +9,8 @@ Figma의 모바일 블로그 리스트/상세 화면 분위기를 참고해 만�
 - `_layouts/`: 공통 페이지 레이아웃
 - `_includes/`: 카드, 상세 패널처럼 반복되는 HTML 조각
 - `data/lol/`: Riot Data Dragon 기준 챔피언명/이미지 메타데이터
+- `data/lol/patches/`: 최신 패치노트 구조화 요약 JSON
+- `prompts/`: 선택형 AI 글 보강/리뷰 프롬프트
 - `assets/css/styles.css`: 화면 스타일
 - `assets/js/main.js`: 검색, 필터, 언어 전환, 북마크, 상세 패널 전환
 - `assets/images/profile.png`: 프로필 이미지
@@ -85,6 +87,15 @@ npm run validate:blog
 ```bash
 npm run blog:lol-patch
 ```
+
+OpenAI API 키가 있으면 문장 품질 보강을 선택적으로 시도할 수 있습니다. 키가 없거나 옵션을 쓰지 않으면 기존 규칙 기반 생성이 그대로 동작합니다.
+
+```bash
+OPENAI_API_KEY=... npm run blog:lol-patch -- --use-ai
+npm run blog:lol-patch -- --no-ai
+```
+
+자동화는 `data/lol/patches/latest-patch-summary.json`을 먼저 만들고, AI가 사용할 수 있는 입력도 이 구조화 JSON으로 제한합니다.
 
 상세 운영 규칙은 [docs/blog-content-management.md](docs/blog-content-management.md)를 확인합니다.
 

@@ -1,6 +1,6 @@
 {
   "version": "16.12.1",
-  "updated_at": "2026-06-17T16:54:19+00:00",
+  "updated_at": "2026-06-18T01:15:53+00:00",
   "source": {
     "versions": "https://ddragon.leagueoflegends.com/api/versions.json",
     "en_US": "https://ddragon.leagueoflegends.com/cdn/16.12.1/data/en_US/champion.json",
@@ -19,6 +19,9 @@
         "ko": "다르킨의 검",
         "ja": "ダーキンの暴剣"
       },
+      "tags": [
+        "Fighter"
+      ],
       "aliases": [
         "Aatrox",
         "エイトロックス",
@@ -46,6 +49,10 @@
         "ko": "구미호",
         "ja": "九尾の狐"
       },
+      "tags": [
+        "Mage",
+        "Assassin"
+      ],
       "aliases": [
         "Ahri",
         "アーリ",
@@ -73,6 +80,9 @@
         "ko": "섬기는 이 없는 암살자",
         "ja": "主なき暗殺者"
       },
+      "tags": [
+        "Assassin"
+      ],
       "aliases": [
         "Akali",
         "アカリ",
@@ -100,6 +110,10 @@
         "ko": "떠도는 감시자",
         "ja": "流浪の番人"
       },
+      "tags": [
+        "Marksman",
+        "Assassin"
+      ],
       "aliases": [
         "Akshan",
         "アクシャン",
@@ -127,6 +141,10 @@
         "ko": "미노타우로스",
         "ja": "ミノタウロスの戦士"
       },
+      "tags": [
+        "Tank",
+        "Support"
+      ],
       "aliases": [
         "Alistar",
         "アリスター",
@@ -154,6 +172,10 @@
         "ko": "전장의 우두머리",
         "ja": "戦乱の母"
       },
+      "tags": [
+        "Fighter",
+        "Assassin"
+      ],
       "aliases": [
         "Ambessa",
         "アンベッサ",
@@ -181,6 +203,10 @@
         "ko": "슬픈 미라",
         "ja": "めそめそミイラ"
       },
+      "tags": [
+        "Tank",
+        "Support"
+      ],
       "aliases": [
         "Amumu",
         "アムム",
@@ -208,6 +234,9 @@
         "ko": "얼음불사조",
         "ja": "氷の不死鳥"
       },
+      "tags": [
+        "Mage"
+      ],
       "aliases": [
         "Anivia",
         "アニビア",
@@ -235,6 +264,10 @@
         "ko": "어둠의 아이",
         "ja": "闇の申し子"
       },
+      "tags": [
+        "Mage",
+        "Support"
+      ],
       "aliases": [
         "Annie",
         "アニー",
@@ -262,6 +295,9 @@
         "ko": "신념의 무기",
         "ja": "信ずる者の武器"
       },
+      "tags": [
+        "Marksman"
+      ],
       "aliases": [
         "Aphelios",
         "アフェリオス",
@@ -289,6 +325,10 @@
         "ko": "서리 궁수",
         "ja": "氷の射手"
       },
+      "tags": [
+        "Marksman",
+        "Support"
+      ],
       "aliases": [
         "Ashe",
         "アッシュ",
@@ -316,6 +356,9 @@
         "ko": "별의 창조자",
         "ja": "星を創りし者"
       },
+      "tags": [
+        "Mage"
+      ],
       "aliases": [
         "Aurelion Sol",
         "AurelionSol",
@@ -344,6 +387,10 @@
         "ko": "세계의 경계에 선 마녀",
         "ja": "世界の狭間の魔女"
       },
+      "tags": [
+        "Mage",
+        "Assassin"
+      ],
       "aliases": [
         "Aurora",
         "オーロラ",
@@ -371,6 +418,10 @@
         "ko": "사막의 황제",
         "ja": "砂塵の皇帝"
       },
+      "tags": [
+        "Mage",
+        "Marksman"
+      ],
       "aliases": [
         "Azir",
         "アジール",
@@ -398,6 +449,10 @@
         "ko": "영겁의 수호자",
         "ja": "流離いの庇護者"
       },
+      "tags": [
+        "Support",
+        "Mage"
+      ],
       "aliases": [
         "Bard",
         "バード",
@@ -425,6 +480,9 @@
         "ko": "공허의 여제",
         "ja": "ヴォイドの女帝"
       },
+      "tags": [
+        "Fighter"
+      ],
       "aliases": [
         "Bel'Veth",
         "BelVeth",
@@ -454,6 +512,10 @@
         "ko": "거대 증기 골렘",
         "ja": "偉大なるスチームゴーレム"
       },
+      "tags": [
+        "Tank",
+        "Support"
+      ],
       "aliases": [
         "Blitzcrank",
         "ブリッツクランク",
@@ -481,6 +543,10 @@
         "ko": "타오르는 복수",
         "ja": "復讐の炎"
       },
+      "tags": [
+        "Mage",
+        "Support"
+      ],
       "aliases": [
         "Brand",
         "ブランド",
@@ -508,6 +574,10 @@
         "ko": "프렐요드의 심장",
         "ja": "フレヨルドの漢気"
       },
+      "tags": [
+        "Tank",
+        "Support"
+      ],
       "aliases": [
         "Braum",
         "ブラウム",
@@ -535,6 +605,10 @@
         "ko": "억눌린 허기",
         "ja": "枷と飢え"
       },
+      "tags": [
+        "Fighter",
+        "Assassin"
+      ],
       "aliases": [
         "Briar",
         "ブライアー",
@@ -562,6 +636,9 @@
         "ko": "필트오버의 보안관",
         "ja": "ピルトーヴァーの保安官"
       },
+      "tags": [
+        "Marksman"
+      ],
       "aliases": [
         "Caitlyn",
         "ケイトリン",
@@ -589,6 +666,10 @@
         "ko": "강철의 그림자",
         "ja": "スチールシャドウ"
       },
+      "tags": [
+        "Fighter",
+        "Assassin"
+      ],
       "aliases": [
         "Camille",
         "カミール",
@@ -616,6 +697,9 @@
         "ko": "독사의 포옹",
         "ja": "毒蛇の抱擁"
       },
+      "tags": [
+        "Mage"
+      ],
       "aliases": [
         "Cassiopeia",
         "カシオペア",
@@ -643,6 +727,10 @@
         "ko": "공허의 공포",
         "ja": "未知なる恐怖"
       },
+      "tags": [
+        "Tank",
+        "Mage"
+      ],
       "aliases": [
         "Cho'Gath",
         "ChoGath",
@@ -672,6 +760,10 @@
         "ko": "대담한 폭격수",
         "ja": "豪気の爆撃手"
       },
+      "tags": [
+        "Marksman",
+        "Mage"
+      ],
       "aliases": [
         "Corki",
         "コーキ",
@@ -699,6 +791,10 @@
         "ko": "녹서스의 실력자",
         "ja": "ノクサスの戦斧"
       },
+      "tags": [
+        "Fighter",
+        "Tank"
+      ],
       "aliases": [
         "Darius",
         "ダリウス",
@@ -726,6 +822,10 @@
         "ko": "차가운 달의 분노",
         "ja": "嘲りの月"
       },
+      "tags": [
+        "Fighter",
+        "Assassin"
+      ],
       "aliases": [
         "Diana",
         "ダイアナ",
@@ -753,6 +853,10 @@
         "ko": "자운의 광인",
         "ja": "ゾウンの狂人"
       },
+      "tags": [
+        "Tank",
+        "Fighter"
+      ],
       "aliases": [
         "Dr. Mundo",
         "Dr.Mundo",
@@ -782,6 +886,9 @@
         "ko": "화려한 처형자",
         "ja": "栄光ある処刑人"
       },
+      "tags": [
+        "Marksman"
+      ],
       "aliases": [
         "Draven",
         "ドレイヴン",
@@ -809,6 +916,10 @@
         "ko": "시간을 달리는 소년",
         "ja": "砕けた時を渡る少年"
       },
+      "tags": [
+        "Assassin",
+        "Mage"
+      ],
       "aliases": [
         "Ekko",
         "エコー",
@@ -836,6 +947,10 @@
         "ko": "거미 여왕",
         "ja": "蜘蛛の女帝"
       },
+      "tags": [
+        "Assassin",
+        "Mage"
+      ],
       "aliases": [
         "Elise",
         "エリス",
@@ -863,6 +978,10 @@
         "ko": "고통스런 포옹",
         "ja": "苦悶の抱擁"
       },
+      "tags": [
+        "Assassin",
+        "Mage"
+      ],
       "aliases": [
         "Evelynn",
         "イブリン",
@@ -890,6 +1009,10 @@
         "ko": "무모한 탐험가",
         "ja": "光の冒険心"
       },
+      "tags": [
+        "Marksman",
+        "Mage"
+      ],
       "aliases": [
         "Ezreal",
         "エズリアル",
@@ -917,6 +1040,10 @@
         "ko": "오래된 공포",
         "ja": "古の恐怖"
       },
+      "tags": [
+        "Mage",
+        "Support"
+      ],
       "aliases": [
         "Fiddlesticks",
         "フィドルスティックス",
@@ -944,6 +1071,10 @@
         "ko": "결투의 대가",
         "ja": "高潔なるデュエリスト"
       },
+      "tags": [
+        "Fighter",
+        "Assassin"
+      ],
       "aliases": [
         "Fiora",
         "フィオラ",
@@ -971,6 +1102,10 @@
         "ko": "대양의 말썽꾸러기",
         "ja": "波間のトリックスター"
       },
+      "tags": [
+        "Assassin",
+        "Fighter"
+      ],
       "aliases": [
         "Fizz",
         "フィズ",
@@ -998,6 +1133,10 @@
         "ko": "위대한 석상",
         "ja": "伝説の巨像"
       },
+      "tags": [
+        "Tank",
+        "Mage"
+      ],
       "aliases": [
         "Galio",
         "ガリオ",
@@ -1025,6 +1164,9 @@
         "ko": "바다의 무법자",
         "ja": "大海原の大災厄"
       },
+      "tags": [
+        "Fighter"
+      ],
       "aliases": [
         "Gangplank",
         "ガングプランク",
@@ -1052,6 +1194,10 @@
         "ko": "데마시아의 힘",
         "ja": "デマーシアの勇士"
       },
+      "tags": [
+        "Fighter",
+        "Tank"
+      ],
       "aliases": [
         "Garen",
         "ガレン",
@@ -1079,6 +1225,10 @@
         "ko": "잃어버린 고리",
         "ja": "ミッシングリンク"
       },
+      "tags": [
+        "Fighter",
+        "Tank"
+      ],
       "aliases": [
         "Gnar",
         "ナー",
@@ -1106,6 +1256,10 @@
         "ko": "술취한 난동꾼",
         "ja": "騒乱の飲んだくれ"
       },
+      "tags": [
+        "Fighter",
+        "Mage"
+      ],
       "aliases": [
         "Gragas",
         "グラガス",
@@ -1133,6 +1287,9 @@
         "ko": "무법자",
         "ja": "無法者"
       },
+      "tags": [
+        "Marksman"
+      ],
       "aliases": [
         "Graves",
         "グレイブス",
@@ -1160,6 +1317,9 @@
         "ko": "신성한 재봉사",
         "ja": "聖なるお針子"
       },
+      "tags": [
+        "Fighter"
+      ],
       "aliases": [
         "Gwen",
         "グウェン",
@@ -1187,6 +1347,10 @@
         "ko": "전쟁의 전조",
         "ja": "戦場の幻影"
       },
+      "tags": [
+        "Fighter",
+        "Tank"
+      ],
       "aliases": [
         "Hecarim",
         "ヘカリム",
@@ -1214,6 +1378,10 @@
         "ko": "위대한 발명가",
         "ja": "誉れ高き発明王"
       },
+      "tags": [
+        "Mage",
+        "Support"
+      ],
       "aliases": [
         "Heimerdinger",
         "ハイマーディンガー",
@@ -1241,6 +1409,10 @@
         "ko": "몽상가",
         "ja": "夢想家"
       },
+      "tags": [
+        "Mage",
+        "Support"
+      ],
       "aliases": [
         "Hwei",
         "フェイ",
@@ -1268,6 +1440,10 @@
         "ko": "크라켄의 여사제",
         "ja": "海の女司祭"
       },
+      "tags": [
+        "Fighter",
+        "Tank"
+      ],
       "aliases": [
         "Illaoi",
         "イラオイ",
@@ -1295,6 +1471,10 @@
         "ko": "칼날 무희",
         "ja": "飛刃の舞い手"
       },
+      "tags": [
+        "Fighter",
+        "Assassin"
+      ],
       "aliases": [
         "Irelia",
         "イレリア",
@@ -1322,6 +1502,10 @@
         "ko": "자연의 아버지",
         "ja": "豊緑の神秘"
       },
+      "tags": [
+        "Support",
+        "Mage"
+      ],
       "aliases": [
         "Ivern",
         "アイバーン",
@@ -1349,6 +1533,10 @@
         "ko": "폭풍의 분노",
         "ja": "嵐の怒り"
       },
+      "tags": [
+        "Support",
+        "Mage"
+      ],
       "aliases": [
         "Janna",
         "ジャンナ",
@@ -1376,6 +1564,10 @@
         "ko": "데마시아의 귀감",
         "ja": "デマーシアの儀範"
       },
+      "tags": [
+        "Fighter",
+        "Tank"
+      ],
       "aliases": [
         "Jarvan IV",
         "JarvanIV",
@@ -1404,6 +1596,9 @@
         "ko": "무기의 달인",
         "ja": "最強の武器使い"
       },
+      "tags": [
+        "Fighter"
+      ],
       "aliases": [
         "Jax",
         "ジャックス",
@@ -1431,6 +1626,10 @@
         "ko": "미래의 수호자",
         "ja": "未来への希望"
       },
+      "tags": [
+        "Fighter",
+        "Marksman"
+      ],
       "aliases": [
         "Jayce",
         "ジェイス",
@@ -1458,6 +1657,10 @@
         "ko": "잔혹극의 거장",
         "ja": "孤高の芸術家"
       },
+      "tags": [
+        "Marksman",
+        "Mage"
+      ],
       "aliases": [
         "Jhin",
         "ジン",
@@ -1485,6 +1688,9 @@
         "ko": "난폭한 말괄량이",
         "ja": "暴走パンクガール"
       },
+      "tags": [
+        "Marksman"
+      ],
       "aliases": [
         "Jinx",
         "ジンクス",
@@ -1512,6 +1718,10 @@
         "ko": "나주마의 긍지",
         "ja": "ナズーマの誇り"
       },
+      "tags": [
+        "Tank",
+        "Fighter"
+      ],
       "aliases": [
         "K'Sante",
         "KSante",
@@ -1540,6 +1750,10 @@
         "ko": "공허의 딸",
         "ja": "虚無を知る娘"
       },
+      "tags": [
+        "Marksman",
+        "Mage"
+      ],
       "aliases": [
         "Kai'Sa",
         "KaiSa",
@@ -1569,6 +1783,9 @@
         "ko": "복수의 화신",
         "ja": "復讐の槍"
       },
+      "tags": [
+        "Marksman"
+      ],
       "aliases": [
         "Kalista",
         "カリスタ",
@@ -1596,6 +1813,10 @@
         "ko": "깨우친 자",
         "ja": "目覚めし者"
       },
+      "tags": [
+        "Mage",
+        "Support"
+      ],
       "aliases": [
         "Karma",
         "カルマ",
@@ -1623,6 +1844,9 @@
         "ko": "죽음을 노래하는 자",
         "ja": "死を歌う者"
       },
+      "tags": [
+        "Mage"
+      ],
       "aliases": [
         "Karthus",
         "カーサス",
@@ -1650,6 +1874,10 @@
         "ko": "공허의 방랑자",
         "ja": "ヴォイドを歩む者"
       },
+      "tags": [
+        "Assassin",
+        "Mage"
+      ],
       "aliases": [
         "Kassadin",
         "カサディン",
@@ -1677,6 +1905,10 @@
         "ko": "사악한 칼날",
         "ja": "凶兆の刃"
       },
+      "tags": [
+        "Assassin",
+        "Mage"
+      ],
       "aliases": [
         "Katarina",
         "カタリナ",
@@ -1704,6 +1936,10 @@
         "ko": "정의로운 자",
         "ja": "天空の正義"
       },
+      "tags": [
+        "Mage",
+        "Marksman"
+      ],
       "aliases": [
         "Kayle",
         "ケイル",
@@ -1731,6 +1967,10 @@
         "ko": "그림자 사신",
         "ja": "無情の影"
       },
+      "tags": [
+        "Fighter",
+        "Assassin"
+      ],
       "aliases": [
         "Kayn",
         "ケイン",
@@ -1758,6 +1998,9 @@
         "ko": "폭풍의 심장",
         "ja": "雷雲の担い手"
       },
+      "tags": [
+        "Mage"
+      ],
       "aliases": [
         "Kennen",
         "ケネン",
@@ -1785,6 +2028,9 @@
         "ko": "공허의 약탈자",
         "ja": "ヴォイドの捕食者"
       },
+      "tags": [
+        "Assassin"
+      ],
       "aliases": [
         "Kha'Zix",
         "KhaZix",
@@ -1814,6 +2060,9 @@
         "ko": "영겁의 사냥꾼",
         "ja": "永遠なる狩人"
       },
+      "tags": [
+        "Marksman"
+      ],
       "aliases": [
         "Kindred",
         "キンドレッド",
@@ -1841,6 +2090,9 @@
         "ko": "망나니 기사",
         "ja": "狂乱の騎兵"
       },
+      "tags": [
+        "Fighter"
+      ],
       "aliases": [
         "Kled",
         "クレッド",
@@ -1868,6 +2120,10 @@
         "ko": "심연의 아귀",
         "ja": "深淵のアギト"
       },
+      "tags": [
+        "Marksman",
+        "Mage"
+      ],
       "aliases": [
         "Kog'Maw",
         "KogMaw",
@@ -1896,6 +2152,10 @@
         "ko": "환술사",
         "ja": "幻惑の奇術師"
       },
+      "tags": [
+        "Assassin",
+        "Mage"
+      ],
       "aliases": [
         "LeBlanc",
         "Leblanc",
@@ -1924,6 +2184,10 @@
         "ko": "눈먼 수도승",
         "ja": "盲目の修行僧"
       },
+      "tags": [
+        "Fighter",
+        "Assassin"
+      ],
       "aliases": [
         "Lee Sin",
         "LeeSin",
@@ -1952,6 +2216,10 @@
         "ko": "여명의 빛",
         "ja": "暁光の戦士"
       },
+      "tags": [
+        "Tank",
+        "Support"
+      ],
       "aliases": [
         "Leona",
         "レオナ",
@@ -1979,6 +2247,10 @@
         "ko": "수줍은 꽃",
         "ja": "はにかみ屋の花"
       },
+      "tags": [
+        "Fighter",
+        "Mage"
+      ],
       "aliases": [
         "Lillia",
         "リリア",
@@ -2006,6 +2278,9 @@
         "ko": "얼음 마녀",
         "ja": "氷の魔女"
       },
+      "tags": [
+        "Mage"
+      ],
       "aliases": [
         "Lissandra",
         "リサンドラ",
@@ -2033,6 +2308,10 @@
         "ko": "정화의 사도",
         "ja": "不浄殲滅者"
       },
+      "tags": [
+        "Marksman",
+        "Assassin"
+      ],
       "aliases": [
         "Lucian",
         "ルシアン",
@@ -2060,6 +2339,10 @@
         "ko": "요정 마법사",
         "ja": "森の妖精使い"
       },
+      "tags": [
+        "Support",
+        "Mage"
+      ],
       "aliases": [
         "Lulu",
         "ルル",
@@ -2087,6 +2370,10 @@
         "ko": "광명의 소녀",
         "ja": "光の才女"
       },
+      "tags": [
+        "Mage",
+        "Support"
+      ],
       "aliases": [
         "Lux",
         "ラックス",
@@ -2114,6 +2401,10 @@
         "ko": "거석의 파편",
         "ja": "モノリスの欠片"
       },
+      "tags": [
+        "Tank",
+        "Mage"
+      ],
       "aliases": [
         "Malphite",
         "マルファイト",
@@ -2141,6 +2432,9 @@
         "ko": "공허의 예언자",
         "ja": "ヴォイドの予言者"
       },
+      "tags": [
+        "Mage"
+      ],
       "aliases": [
         "Malzahar",
         "マルザハール",
@@ -2168,6 +2462,10 @@
         "ko": "뒤틀린 나무 정령",
         "ja": "歪みし樹人"
       },
+      "tags": [
+        "Tank",
+        "Support"
+      ],
       "aliases": [
         "Maokai",
         "マオカイ",
@@ -2195,6 +2493,10 @@
         "ko": "우주 검사",
         "ja": "ウージューの剣客"
       },
+      "tags": [
+        "Fighter",
+        "Assassin"
+      ],
       "aliases": [
         "Master Yi",
         "MasterYi",
@@ -2223,6 +2525,10 @@
         "ko": "영혼의 반향",
         "ja": "魂の反照"
       },
+      "tags": [
+        "Mage",
+        "Support"
+      ],
       "aliases": [
         "Mel",
         "メル",
@@ -2250,6 +2556,10 @@
         "ko": "온화한 불꽃",
         "ja": "やさしき炎"
       },
+      "tags": [
+        "Support",
+        "Mage"
+      ],
       "aliases": [
         "Milio",
         "ミリオ",
@@ -2277,6 +2587,10 @@
         "ko": "현상금 사냥꾼",
         "ja": "美貌の賞金稼ぎ"
       },
+      "tags": [
+        "Marksman",
+        "Mage"
+      ],
       "aliases": [
         "Miss Fortune",
         "MissFortune",
@@ -2305,6 +2619,10 @@
         "ko": "원숭이 왕",
         "ja": "美猴王"
       },
+      "tags": [
+        "Fighter",
+        "Tank"
+      ],
       "aliases": [
         "MonkeyKing",
         "Wukong",
@@ -2333,6 +2651,10 @@
         "ko": "강철의 망령",
         "ja": "鋼の魂奪者"
       },
+      "tags": [
+        "Fighter",
+        "Mage"
+      ],
       "aliases": [
         "Mordekaiser",
         "モルデカイザー",
@@ -2360,6 +2682,10 @@
         "ko": "타락한 자",
         "ja": "堕天の高潔"
       },
+      "tags": [
+        "Support",
+        "Mage"
+      ],
       "aliases": [
         "Morgana",
         "モルガナ",
@@ -2387,6 +2713,10 @@
         "ko": "백 번 무는 사냥개",
         "ja": "百刃の猟犬"
       },
+      "tags": [
+        "Assassin",
+        "Fighter"
+      ],
       "aliases": [
         "Naafiri",
         "ナフィーリ",
@@ -2414,6 +2744,10 @@
         "ko": "파도 소환사",
         "ja": "潮呼びの巫女"
       },
+      "tags": [
+        "Support",
+        "Mage"
+      ],
       "aliases": [
         "Nami",
         "ナミ",
@@ -2441,6 +2775,10 @@
         "ko": "사막의 관리자",
         "ja": "砂漠の司書"
       },
+      "tags": [
+        "Fighter",
+        "Tank"
+      ],
       "aliases": [
         "Nasus",
         "ナサス",
@@ -2468,6 +2806,10 @@
         "ko": "심해의 타이탄",
         "ja": "深海の巨人"
       },
+      "tags": [
+        "Tank",
+        "Support"
+      ],
       "aliases": [
         "Nautilus",
         "ノーチラス",
@@ -2495,6 +2837,10 @@
         "ko": "알쏭달쏭 카멜레온",
         "ja": "不思議のカメレオン"
       },
+      "tags": [
+        "Mage",
+        "Support"
+      ],
       "aliases": [
         "Neeko",
         "ニーコ",
@@ -2522,6 +2868,10 @@
         "ko": "야성의 사냥꾼",
         "ja": "半獣の狩人"
       },
+      "tags": [
+        "Assassin",
+        "Mage"
+      ],
       "aliases": [
         "Nidalee",
         "ニダリー",
@@ -2549,6 +2899,10 @@
         "ko": "해방된 기쁨",
         "ja": "放たれし喜び"
       },
+      "tags": [
+        "Fighter",
+        "Assassin"
+      ],
       "aliases": [
         "Nilah",
         "ニーラ",
@@ -2576,6 +2930,10 @@
         "ko": "영원한 악몽",
         "ja": "終わりなき悪夢"
       },
+      "tags": [
+        "Fighter",
+        "Assassin"
+      ],
       "aliases": [
         "Nocturne",
         "ノクターン",
@@ -2603,6 +2961,10 @@
         "ko": "소년과 설인",
         "ja": "少年とイエティ"
       },
+      "tags": [
+        "Tank",
+        "Mage"
+      ],
       "aliases": [
         "Nunu",
         "Nunu & Willump",
@@ -2632,6 +2994,10 @@
         "ko": "광전사",
         "ja": "狂戦士"
       },
+      "tags": [
+        "Fighter",
+        "Tank"
+      ],
       "aliases": [
         "Olaf",
         "オラフ",
@@ -2659,6 +3025,10 @@
         "ko": "시계태엽 소녀",
         "ja": "時計仕掛けの舞姫"
       },
+      "tags": [
+        "Mage",
+        "Support"
+      ],
       "aliases": [
         "Orianna",
         "オリアナ",
@@ -2686,6 +3056,9 @@
         "ko": "거산의 화염",
         "ja": "山の下の焔"
       },
+      "tags": [
+        "Tank"
+      ],
       "aliases": [
         "Ornn",
         "オーン",
@@ -2713,6 +3086,10 @@
         "ko": "불굴의 창",
         "ja": "砕けぬ槍"
       },
+      "tags": [
+        "Fighter",
+        "Assassin"
+      ],
       "aliases": [
         "Pantheon",
         "パンテオン",
@@ -2740,6 +3117,10 @@
         "ko": "망치의 수호자",
         "ja": "大鎚の守護者"
       },
+      "tags": [
+        "Tank",
+        "Fighter"
+      ],
       "aliases": [
         "Poppy",
         "ポッピー",
@@ -2767,6 +3148,10 @@
         "ko": "핏빛 항구의 학살자",
         "ja": "ブラッドハーバーの殺戮鬼"
       },
+      "tags": [
+        "Support",
+        "Assassin"
+      ],
       "aliases": [
         "Pyke",
         "パイク",
@@ -2794,6 +3179,9 @@
         "ko": "원소의 여왕",
         "ja": "エレメントの女帝"
       },
+      "tags": [
+        "Assassin"
+      ],
       "aliases": [
         "Qiyana",
         "キヤナ",
@@ -2821,6 +3209,10 @@
         "ko": "데마시아의 날개",
         "ja": "デマーシアの両翼"
       },
+      "tags": [
+        "Marksman",
+        "Assassin"
+      ],
       "aliases": [
         "Quinn",
         "クイン",
@@ -2848,6 +3240,9 @@
         "ko": "매혹하는 자",
         "ja": "魅惑の翼"
       },
+      "tags": [
+        "Support"
+      ],
       "aliases": [
         "Rakan",
         "ラカン",
@@ -2875,6 +3270,9 @@
         "ko": "중무장 아르마딜로",
         "ja": "アーマージロ"
       },
+      "tags": [
+        "Tank"
+      ],
       "aliases": [
         "Rammus",
         "ラムス",
@@ -2902,6 +3300,10 @@
         "ko": "공허의 복병",
         "ja": "地底の恐怖"
       },
+      "tags": [
+        "Fighter",
+        "Tank"
+      ],
       "aliases": [
         "Rek'Sai",
         "RekSai",
@@ -2930,6 +3332,10 @@
         "ko": "철의 여인",
         "ja": "鋼鉄の乙女"
       },
+      "tags": [
+        "Tank",
+        "Support"
+      ],
       "aliases": [
         "Rell",
         "レル",
@@ -2957,6 +3363,10 @@
         "ko": "화공 남작",
         "ja": "ケミテック長者"
       },
+      "tags": [
+        "Support",
+        "Mage"
+      ],
       "aliases": [
         "Renata",
         "Renata Glasc",
@@ -2986,6 +3396,10 @@
         "ko": "사막의 도살자",
         "ja": "砂漠の解体屋"
       },
+      "tags": [
+        "Fighter",
+        "Tank"
+      ],
       "aliases": [
         "Renekton",
         "レネクトン",
@@ -3013,6 +3427,10 @@
         "ko": "추적하는 사자",
         "ja": "孤高のハンター"
       },
+      "tags": [
+        "Assassin",
+        "Fighter"
+      ],
       "aliases": [
         "Rengar",
         "レンガー",
@@ -3040,6 +3458,10 @@
         "ko": "추방자",
         "ja": "贖罪の追放者"
       },
+      "tags": [
+        "Fighter",
+        "Assassin"
+      ],
       "aliases": [
         "Riven",
         "リヴェン",
@@ -3067,6 +3489,10 @@
         "ko": "기계 악동",
         "ja": "戦慄の機甲兵"
       },
+      "tags": [
+        "Fighter",
+        "Mage"
+      ],
       "aliases": [
         "Rumble",
         "ランブル",
@@ -3094,6 +3520,9 @@
         "ko": "룬 마법사",
         "ja": "ルーンの魔導師"
       },
+      "tags": [
+        "Mage"
+      ],
       "aliases": [
         "Ryze",
         "ライズ",
@@ -3121,6 +3550,10 @@
         "ko": "사막의 장미",
         "ja": "砂漠の薔薇"
       },
+      "tags": [
+        "Marksman",
+        "Assassin"
+      ],
       "aliases": [
         "Samira",
         "サミーラ",
@@ -3148,6 +3581,9 @@
         "ko": "혹한의 분노",
         "ja": "極北の激憤"
       },
+      "tags": [
+        "Tank"
+      ],
       "aliases": [
         "Sejuani",
         "セジュアニ",
@@ -3175,6 +3611,10 @@
         "ko": "구원자",
         "ja": "救済者"
       },
+      "tags": [
+        "Support",
+        "Marksman"
+      ],
       "aliases": [
         "Senna",
         "セナ",
@@ -3202,6 +3642,10 @@
         "ko": "노래하는 별",
         "ja": "希望のメロディー"
       },
+      "tags": [
+        "Support",
+        "Mage"
+      ],
       "aliases": [
         "Seraphine",
         "セラフィーン",
@@ -3229,6 +3673,10 @@
         "ko": "우두머리",
         "ja": "ザ・ボス"
       },
+      "tags": [
+        "Fighter",
+        "Tank"
+      ],
       "aliases": [
         "Sett",
         "セト",
@@ -3256,6 +3704,9 @@
         "ko": "악마 어릿광대",
         "ja": "悪魔の道化師"
       },
+      "tags": [
+        "Assassin"
+      ],
       "aliases": [
         "Shaco",
         "シャコ",
@@ -3283,6 +3734,9 @@
         "ko": "황혼의 눈",
         "ja": "黄昏の瞳"
       },
+      "tags": [
+        "Tank"
+      ],
       "aliases": [
         "Shen",
         "シェン",
@@ -3310,6 +3764,10 @@
         "ko": "하프 드래곤",
         "ja": "半龍人"
       },
+      "tags": [
+        "Fighter",
+        "Tank"
+      ],
       "aliases": [
         "Shyvana",
         "シヴァーナ",
@@ -3337,6 +3795,10 @@
         "ko": "미친 화학자",
         "ja": "マッドケミスト"
       },
+      "tags": [
+        "Tank",
+        "Mage"
+      ],
       "aliases": [
         "Singed",
         "シンジド",
@@ -3364,6 +3826,10 @@
         "ko": "언데드 학살병기",
         "ja": "不死身の重戦車"
       },
+      "tags": [
+        "Tank",
+        "Fighter"
+      ],
       "aliases": [
         "Sion",
         "サイオン",
@@ -3391,6 +3857,9 @@
         "ko": "전장의 여제",
         "ja": "戦場の女王"
       },
+      "tags": [
+        "Marksman"
+      ],
       "aliases": [
         "Sivir",
         "シヴィア",
@@ -3418,6 +3887,10 @@
         "ko": "태고의 군주",
         "ja": "原始の守護者"
       },
+      "tags": [
+        "Tank",
+        "Fighter"
+      ],
       "aliases": [
         "Skarner",
         "スカーナー",
@@ -3445,6 +3918,10 @@
         "ko": "꼬마 불꽃용",
         "ja": "炎の幼龍"
       },
+      "tags": [
+        "Marksman",
+        "Mage"
+      ],
       "aliases": [
         "Smolder",
         "スモルダー",
@@ -3472,6 +3949,10 @@
         "ko": "현의 명인",
         "ja": "沈黙の弦奏師"
       },
+      "tags": [
+        "Support",
+        "Mage"
+      ],
       "aliases": [
         "Sona",
         "ソナ",
@@ -3499,6 +3980,10 @@
         "ko": "별의 아이",
         "ja": "星の子"
       },
+      "tags": [
+        "Support",
+        "Mage"
+      ],
       "aliases": [
         "Soraka",
         "ソラカ",
@@ -3526,6 +4011,10 @@
         "ko": "녹서스 대장군",
         "ja": "ノクサス帝国元帥"
       },
+      "tags": [
+        "Mage",
+        "Support"
+      ],
       "aliases": [
         "Swain",
         "スウェイン",
@@ -3553,6 +4042,10 @@
         "ko": "해방된 자",
         "ja": "解き放たれし者"
       },
+      "tags": [
+        "Mage",
+        "Assassin"
+      ],
       "aliases": [
         "Sylas",
         "サイラス",
@@ -3580,6 +4073,9 @@
         "ko": "어둠의 여제",
         "ja": "暗黒の女王"
       },
+      "tags": [
+        "Mage"
+      ],
       "aliases": [
         "Syndra",
         "シンドラ",
@@ -3607,6 +4103,10 @@
         "ko": "강의 폭군",
         "ja": "川の王様"
       },
+      "tags": [
+        "Tank",
+        "Support"
+      ],
       "aliases": [
         "Tahm Kench",
         "TahmKench",
@@ -3635,6 +4135,10 @@
         "ko": "바위술사",
         "ja": "ストーンウィーバー"
       },
+      "tags": [
+        "Mage",
+        "Support"
+      ],
       "aliases": [
         "Taliyah",
         "タリヤ",
@@ -3662,6 +4166,9 @@
         "ko": "검의 그림자",
         "ja": "将軍の懐刀"
       },
+      "tags": [
+        "Assassin"
+      ],
       "aliases": [
         "Talon",
         "タロン",
@@ -3689,6 +4196,10 @@
         "ko": "발로란의 방패",
         "ja": "ヴァロランの守護者"
       },
+      "tags": [
+        "Support",
+        "Tank"
+      ],
       "aliases": [
         "Taric",
         "タリック",
@@ -3716,6 +4227,10 @@
         "ko": "날쌘 정찰병",
         "ja": "俊足の斥候"
       },
+      "tags": [
+        "Marksman",
+        "Mage"
+      ],
       "aliases": [
         "Teemo",
         "ティーモ",
@@ -3743,6 +4258,10 @@
         "ko": "지옥의 간수",
         "ja": "縛鎖の看守"
       },
+      "tags": [
+        "Support",
+        "Tank"
+      ],
       "aliases": [
         "Thresh",
         "スレッシュ",
@@ -3770,6 +4289,10 @@
         "ko": "요들 사수",
         "ja": "ヨードルの主砲"
       },
+      "tags": [
+        "Marksman",
+        "Assassin"
+      ],
       "aliases": [
         "Tristana",
         "トリスターナ",
@@ -3797,6 +4320,10 @@
         "ko": "트롤 왕",
         "ja": "トロールキング"
       },
+      "tags": [
+        "Fighter",
+        "Tank"
+      ],
       "aliases": [
         "Trundle",
         "トランドル",
@@ -3824,6 +4351,10 @@
         "ko": "야만전사 왕",
         "ja": "孤高の蛮王"
       },
+      "tags": [
+        "Fighter",
+        "Assassin"
+      ],
       "aliases": [
         "Tryndamere",
         "トリンダメア",
@@ -3851,6 +4382,10 @@
         "ko": "카드의 달인",
         "ja": "不敗のイカサマ師"
       },
+      "tags": [
+        "Mage",
+        "Marksman"
+      ],
       "aliases": [
         "Twisted Fate",
         "TwistedFate",
@@ -3879,6 +4414,10 @@
         "ko": "역병 쥐",
         "ja": "黒死のドブネズミ"
       },
+      "tags": [
+        "Marksman",
+        "Assassin"
+      ],
       "aliases": [
         "Twitch",
         "トゥイッチ",
@@ -3906,6 +4445,10 @@
         "ko": "정령 주술사",
         "ja": "精霊と歩む者"
       },
+      "tags": [
+        "Fighter",
+        "Tank"
+      ],
       "aliases": [
         "Udyr",
         "ウディア",
@@ -3933,6 +4476,10 @@
         "ko": "살상 병기",
         "ja": "ドレッドノート"
       },
+      "tags": [
+        "Fighter",
+        "Tank"
+      ],
       "aliases": [
         "Urgot",
         "アーゴット",
@@ -3960,6 +4507,10 @@
         "ko": "응징의 화살",
         "ja": "報復の一矢"
       },
+      "tags": [
+        "Marksman",
+        "Mage"
+      ],
       "aliases": [
         "Varus",
         "ヴァルス",
@@ -3987,6 +4538,10 @@
         "ko": "어둠 사냥꾼",
         "ja": "ナイトハンター"
       },
+      "tags": [
+        "Marksman",
+        "Assassin"
+      ],
       "aliases": [
         "Vayne",
         "ヴェイン",
@@ -4014,6 +4569,9 @@
         "ko": "악의 작은 지배자",
         "ja": "小さき大魔王"
       },
+      "tags": [
+        "Mage"
+      ],
       "aliases": [
         "Veigar",
         "ベイガー",
@@ -4041,6 +4599,10 @@
         "ko": "공허의 눈",
         "ja": "ヴォイドの瞳"
       },
+      "tags": [
+        "Mage",
+        "Support"
+      ],
       "aliases": [
         "Vel'Koz",
         "VelKoz",
@@ -4070,6 +4632,9 @@
         "ko": "우울주의자",
         "ja": "終わりなき憂鬱"
       },
+      "tags": [
+        "Mage"
+      ],
       "aliases": [
         "Vex",
         "ヴェックス",
@@ -4097,6 +4662,10 @@
         "ko": "필트오버의 집행자",
         "ja": "ピルトーヴァーの用心棒"
       },
+      "tags": [
+        "Fighter",
+        "Assassin"
+      ],
       "aliases": [
         "Vi",
         "ヴァイ",
@@ -4124,6 +4693,10 @@
         "ko": "몰락한 왕",
         "ja": "滅びの王"
       },
+      "tags": [
+        "Fighter",
+        "Assassin"
+      ],
       "aliases": [
         "Viego",
         "ヴィエゴ",
@@ -4151,6 +4724,9 @@
         "ko": "아케인의 전령관",
         "ja": "アーケインの先触れ"
       },
+      "tags": [
+        "Mage"
+      ],
       "aliases": [
         "Viktor",
         "ビクター",
@@ -4178,6 +4754,10 @@
         "ko": "진홍빛 사신",
         "ja": "真紅の死神"
       },
+      "tags": [
+        "Mage",
+        "Fighter"
+      ],
       "aliases": [
         "Vladimir",
         "ブラッドミア",
@@ -4205,6 +4785,10 @@
         "ko": "무자비한 폭풍",
         "ja": "無慈悲の嵐"
       },
+      "tags": [
+        "Fighter",
+        "Tank"
+      ],
       "aliases": [
         "Volibear",
         "ボリベア",
@@ -4232,6 +4816,10 @@
         "ko": "자운의 고삐 풀린 분노",
         "ja": "解き放たれたゾウンの激憤"
       },
+      "tags": [
+        "Fighter",
+        "Tank"
+      ],
       "aliases": [
         "Warwick",
         "ワーウィック",
@@ -4259,6 +4847,9 @@
         "ko": "저항하는 자",
         "ja": "反逆の刃"
       },
+      "tags": [
+        "Marksman"
+      ],
       "aliases": [
         "Xayah",
         "ザヤ",
@@ -4286,6 +4877,10 @@
         "ko": "초월한 마법사",
         "ja": "超越魔神"
       },
+      "tags": [
+        "Mage",
+        "Support"
+      ],
       "aliases": [
         "Xerath",
         "ゼラス",
@@ -4313,6 +4908,10 @@
         "ko": "데마시아의 호위무사",
         "ja": "デマーシアの家令長"
       },
+      "tags": [
+        "Fighter",
+        "Tank"
+      ],
       "aliases": [
         "Xin Zhao",
         "XinZhao",
@@ -4341,6 +4940,10 @@
         "ko": "용서받지 못한 자",
         "ja": "赦されざる者"
       },
+      "tags": [
+        "Fighter",
+        "Assassin"
+      ],
       "aliases": [
         "Yasuo",
         "ヤスオ",
@@ -4368,6 +4971,10 @@
         "ko": "잊히지 못한 자",
         "ja": "忘られざる者"
       },
+      "tags": [
+        "Fighter",
+        "Assassin"
+      ],
       "aliases": [
         "Yone",
         "ヨネ",
@@ -4395,6 +5002,10 @@
         "ko": "영혼의 길잡이",
         "ja": "魂の導き手"
       },
+      "tags": [
+        "Fighter",
+        "Tank"
+      ],
       "aliases": [
         "Yorick",
         "ヨリック",
@@ -4422,6 +5033,9 @@
         "ko": "꺾이지 않는 신념",
         "ja": "揺るがぬ誓い"
       },
+      "tags": [
+        "Marksman"
+      ],
       "aliases": [
         "Yunara",
         "ユナラ",
@@ -4449,6 +5063,10 @@
         "ko": "마법 고양이",
         "ja": "マジカルキャット"
       },
+      "tags": [
+        "Support",
+        "Mage"
+      ],
       "aliases": [
         "Yuumi",
         "ユーミ",
@@ -4476,6 +5094,10 @@
         "ko": "저물지 않는 자",
         "ja": "沈まぬ者"
       },
+      "tags": [
+        "Fighter",
+        "Assassin"
+      ],
       "aliases": [
         "Zaahen",
         "ザーヘン",
@@ -4503,6 +5125,10 @@
         "ko": "비밀 병기",
         "ja": "親愛なる秘密兵器"
       },
+      "tags": [
+        "Tank",
+        "Fighter"
+      ],
       "aliases": [
         "Zac",
         "ザック",
@@ -4530,6 +5156,9 @@
         "ko": "그림자의 주인",
         "ja": "影の頭領"
       },
+      "tags": [
+        "Assassin"
+      ],
       "aliases": [
         "Zed",
         "ゼド",
@@ -4557,6 +5186,9 @@
         "ko": "자운의 불꽃",
         "ja": "ゾウンの火花"
       },
+      "tags": [
+        "Marksman"
+      ],
       "aliases": [
         "Zeri",
         "ゼリ",
@@ -4584,6 +5216,9 @@
         "ko": "마법공학 폭파병",
         "ja": "ヘクス爆薬のエキスパート"
       },
+      "tags": [
+        "Mage"
+      ],
       "aliases": [
         "Ziggs",
         "ジグス",
@@ -4611,6 +5246,10 @@
         "ko": "시간의 수호자",
         "ja": "時の番人"
       },
+      "tags": [
+        "Support",
+        "Mage"
+      ],
       "aliases": [
         "Zilean",
         "ジリアン",
@@ -4638,6 +5277,9 @@
         "ko": "여명의 성위",
         "ja": "超常の遊び"
       },
+      "tags": [
+        "Mage"
+      ],
       "aliases": [
         "Zoe",
         "ゾーイ",
@@ -4665,6 +5307,10 @@
         "ko": "가시 덩굴의 복수",
         "ja": "茨の目覚め"
       },
+      "tags": [
+        "Mage",
+        "Support"
+      ],
       "aliases": [
         "Zyra",
         "ザイラ",

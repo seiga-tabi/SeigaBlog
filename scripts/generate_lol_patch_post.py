@@ -17,7 +17,7 @@ from html.parser import HTMLParser
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-from lol_content_utils import load_champion_map, normalize_name
+from lol_content_utils import load_champion_map, normalize_name, repo_path, write_json, write_report
 
 
 BASE_URL = "https://www.leagueoflegends.com"
@@ -25,11 +25,62 @@ PATCH_LIST_URL = f"{BASE_URL}/ko-kr/news/tags/patch-notes/"
 POSTS_DIR = Path("_posts")
 IMAGE_ROOT = Path("assets/images/lol-patch")
 DEFAULT_IMAGE = "/assets/images/profile.png"
+PATCH_SUMMARY_PATH = Path("data/lol/patches/latest-patch-summary.json")
+PROMPT_DIR = Path("prompts")
+WRITER_PROMPT_PATH = PROMPT_DIR / "lol_patch_writer.md"
+OPENAI_CHAT_COMPLETIONS_URL = "https://api.openai.com/v1/chat/completions"
 TIMEZONE = ZoneInfo("Asia/Tokyo")
 USER_AGENT = (
     "SeigaBlog LoL patch automation "
     "(https://github.com/seiga-tabi/SeigaBlog)"
 )
+FORBIDDEN_AI_EXPRESSIONS = [
+    "무조건",
+    "확정 1티어",
+    "사기",
+    "개사기",
+    "망함",
+    "필밴",
+    "티어 상승 보장",
+    "반드시 하세요",
+    "이거만 하면 됩니다",
+    "이것만 하면 됩니다",
+    "답은 이것뿐입니다",
+]
+FORBIDDEN_AI_DATA_TERMS = [
+    "승률",
+    "픽률",
+    "밴률",
+    "표본",
+    "win rate",
+    "pick rate",
+    "ban rate",
+    "sample size",
+]
+POSITION_BY_TAG = {
+    "Support": "Support",
+    "Marksman": "Bot",
+    "Mage": "Mid",
+    "Assassin": "Mid",
+    "Fighter": "Top",
+    "Tank": "Top",
+}
+DEFAULT_POSITION_BY_KEY = {
+    "Aatrox": "Top",
+    "Gwen": "Top",
+    "Hwei": "Mid",
+    "Jax": "Top",
+    "Sylas": "Mid",
+    "Syndra": "Mid",
+    "Tristana": "Bot",
+    "Yuumi": "Support",
+    "LeeSin": "Jungle",
+    "Nocturne": "Jungle",
+    "Orianna": "Mid",
+    "Ryze": "Mid",
+    "Varus": "Bot",
+    "XinZhao": "Jungle",
+}
 
 
 class LolPatchError(RuntimeError):
@@ -379,6 +430,27 @@ def champion_detail(champion: ChampionChange, classification: str) -> str:
     return ""
 
 
+def official_change_lines(champion: ChampionChange) -> list[str]:
+    changes = [truncate(change, 140) for change in champion.changes if change]
+    if changes:
+        return changes
+    fallback = champion_detail(champion, champion.classification)
+    return [truncate(fallback, 140)] if fallback else ["공식 변경 수치는 패치노트 원문에서 확인해야 합니다."]
+
+
+def official_change_lines_ja(champion: ChampionChange) -> list[str]:
+    lines: list[str] = []
+    for change in official_change_lines(champion):
+        detail = change.split(":", 1)[1].strip() if ":" in change else change
+        detail = re.sub(r"[가-힣]+", "", detail)
+        detail = normalize_space(detail)
+        if "⇒" in detail:
+            lines.append(f"公式変更: {detail}")
+        else:
+            lines.append("公式変更: Riot公式パッチノートを確認してください。")
+    return lines
+
+
 def first_number(value: str) -> float | None:
     match = re.search(r"-?\d+(?:\.\d+)?", value.replace(",", ""))
     if not match:
@@ -550,6 +622,35 @@ def official_champion_entry(name: str, name_map: dict | None) -> dict:
     return fallback
 
 
+def full_champion_entry(name: str, name_map: dict | None) -> dict:
+    entry = official_champion_entry(name, name_map)
+    if not name_map:
+        return entry
+    return name_map.get("champions", {}).get(entry["key"], entry)
+
+
+def infer_position(champion: ChampionChange, name_map: dict | None) -> str:
+    text = " ".join([champion.name, *champion.context, *champion.changes]).lower()
+    keyword_positions = [
+        ("Support", ["서포터", "보조", "support"]),
+        ("Jungle", ["정글", "jungler", "jungle"]),
+        ("Bot", ["원거리 딜러", "하단", "봇", "바텀", "marksman", "bottom", "bot"]),
+        ("Mid", ["중단", "미드", "mid"]),
+        ("Top", ["상단", "탑", "top"]),
+    ]
+    for position, keywords in keyword_positions:
+        if any(keyword in text for keyword in keywords):
+            return position
+
+    entry = full_champion_entry(champion.name, name_map)
+    if entry.get("key") in DEFAULT_POSITION_BY_KEY:
+        return DEFAULT_POSITION_BY_KEY[entry["key"]]
+    for tag in entry.get("tags", []):
+        if tag in POSITION_BY_TAG:
+            return POSITION_BY_TAG[tag]
+    return "Mid"
+
+
 def champion_metadata(champions: list[ChampionChange], name_map: dict | None) -> list[dict]:
     result = []
     for champion in champions:
@@ -574,8 +675,8 @@ def status_label(status: str) -> dict:
 
 def champion_card_data(champion: ChampionChange, status: str, name_map: dict | None) -> dict:
     entry = official_champion_entry(champion.name, name_map)
-    detail = champion_detail(champion, status)
-    detail_text = truncate(detail, 120) if detail else "공식 변경 수치는 패치노트 원문에서 확인해야 합니다."
+    change_lines = official_change_lines(champion)
+    change_lines_ja = official_change_lines_ja(champion)
     context = sentence_summary(" ".join(champion.context), max_sentences=1, limit=150)
 
     if status == "버프":
@@ -597,8 +698,8 @@ def champion_card_data(champion: ChampionChange, status: str, name_map: dict | N
         impact_ja = "ビルドと役割の変化が体感につながるか確認しましょう。"
         tip_ko = "공식 변경 수치를 기준으로 기존 콤보와 빌드 타이밍을 다시 점검하세요."
         tip_ja = "公式変更数値を基準に、既存コンボとビルドタイミングを見直しましょう。"
-        caution_ko = "조정 카드는 승률 표본이 쌓이기 전까지 단정하지 않는 편이 좋습니다."
-        caution_ja = "調整カードは勝率サンプルが集まるまで断定しない方が安全です。"
+        caution_ko = "조정 카드는 실제 플레이 체감이 확인되기 전까지 단정하지 않는 편이 좋습니다."
+        caution_ja = "調整カードは実際のプレイ感が確認できるまで断定しない方が安全です。"
 
     return {
         "key": entry["key"],
@@ -612,8 +713,8 @@ def champion_card_data(champion: ChampionChange, status: str, name_map: dict | N
         "status_label": status_label(status),
         "role": {"ko": "주 포지션 확인", "ja": "主ロール確認"},
         "change_summary": {
-            "ko": [detail_text],
-            "ja": [detail_text],
+            "ko": change_lines,
+            "ja": change_lines_ja,
         },
         "riot_context": {
             "ko": context or "Riot 공식 패치노트의 변경 의도를 기준으로 요약했습니다.",
@@ -710,6 +811,49 @@ def watch_card_data(champion: ChampionChange, name_map: dict | None) -> dict:
     return card
 
 
+def collect_text_values(value: object) -> list[str]:
+    if isinstance(value, str):
+        return [value]
+    if isinstance(value, list):
+        result: list[str] = []
+        for item in value:
+            result.extend(collect_text_values(item))
+        return result
+    if isinstance(value, dict):
+        result = []
+        for item in value.values():
+            result.extend(collect_text_values(item))
+        return result
+    return []
+
+
+def collect_language_text(value: object, lang: str = "ko") -> list[str]:
+    if isinstance(value, dict):
+        if lang in value:
+            return collect_text_values(value[lang])
+        result: list[str] = []
+        for key, item in value.items():
+            if key in {"ja", "en"}:
+                continue
+            result.extend(collect_language_text(item, lang))
+        return result
+    if isinstance(value, list):
+        result = []
+        for item in value:
+            result.extend(collect_language_text(item, lang))
+        return result
+    if isinstance(value, str):
+        return [value]
+    return []
+
+
+def estimate_read_time_label(post_data: dict) -> str:
+    text = " ".join(collect_language_text(post_data, "ko"))
+    visible_chars = len(re.sub(r"\s+", "", text))
+    minutes = max(3, (visible_chars + 499) // 500)
+    return f"{minutes} min"
+
+
 def build_toc() -> dict:
     return {
         "title": {"ko": "목차", "ja": "目次"},
@@ -719,7 +863,7 @@ def build_toc() -> dict:
             {"id": "buff-champions", "title": {"ko": "버프 챔피언 총정리", "ja": "強化チャンピオン総まとめ"}},
             {"id": "nerf-champions", "title": {"ko": "너프 챔피언 총정리", "ja": "弱体化チャンピオン総まとめ"}},
             {"id": "solo-queue-tier-impact", "title": {"ko": "라인별 솔랭 영향", "ja": "ロール別ソロランク影響"}},
-            {"id": "recommended-picks", "title": {"ko": "추천 픽 TOP 5", "ja": "おすすめピックTOP5"}},
+            {"id": "recommended-picks", "title": {"ko": "패치 기준 실험 픽 5선", "ja": "パッチ基準の試用ピック5選"}},
             {"id": "conditional-picks", "title": {"ko": "조건부 추천 픽", "ja": "条件付きおすすめピック"}},
             {"id": "watch-picks", "title": {"ko": "주의해야 할 픽", "ja": "注意したいピック"}},
             {"id": "item-rune-system", "title": {"ko": "시스템/모드 변경", "ja": "システム/モード変更"}},
@@ -855,7 +999,7 @@ def build_sections(version: str, intro: str) -> list[dict]:
         {
             "id": "recommended-picks",
             "kind": "recommended_cards",
-            "title": {"ko": "추천 픽 TOP 5", "ja": "おすすめピックTOP5"},
+            "title": {"ko": "패치 기준 실험 픽 5선", "ja": "パッチ基準の試用ピック5選"},
             "body": {
                 "ko": [
                     "이 추천은 공식 변경 수치와 솔랭 적용 난도를 바탕으로 한 패치 초반 예상입니다. 실시간 승률 데이터가 아님을 전제로 참고하세요.",
@@ -871,10 +1015,10 @@ def build_sections(version: str, intro: str) -> list[dict]:
             "title": {"ko": "조건부 추천 픽", "ja": "条件付きおすすめピック"},
             "body": {
                 "ko": [
-                    "TOP 5에는 넣지 않았지만, 조건이 맞으면 패치 초반 실험 가치가 있는 선택지입니다.",
+                    "메인 실험 픽에는 넣지 않았지만, 조건이 맞으면 패치 초반 확인할 만한 선택지입니다.",
                 ],
                 "ja": [
-                    "TOP5には入れていませんが、条件が合えばパッチ序盤に試す価値がある候補です。",
+                    "メインの試用ピックには入れていませんが、条件が合えばパッチ序盤に確認したい候補です。",
                 ],
             },
         },
@@ -939,8 +1083,8 @@ def build_faq() -> list[dict]:
         {
             "question": {"ko": "패치 직후 바로 랭크를 돌려도 괜찮나요?", "ja": "パッチ直後にすぐランクを回しても大丈夫ですか？"},
             "answer": {
-                "ko": "가능하지만 체감과 실제 승률이 다르게 움직일 수 있어, 주 포지션 카드부터 2~3판씩 점검하는 편이 안전합니다.",
-                "ja": "可能ですが、体感と実際の勝率がずれることがあるため、メインポジションのカードから数試合ずつ確認するのが安全です。",
+                "ko": "가능하지만 패치 초반 체감이 안정되기 전에는 주 포지션 카드부터 2~3판씩 점검하는 편이 안전합니다.",
+                "ja": "可能ですが、パッチ序盤の体感が安定するまでは、メインポジションのカードから数試合ずつ確認するのが安全です。",
             },
         },
         {
@@ -991,6 +1135,294 @@ def unique_champion_changes(champions: list[ChampionChange]) -> list[ChampionCha
         seen.add(key)
         result.append(champion)
     return result
+
+
+def localized_system_title(title: str) -> dict:
+    if any(keyword in title for keyword in ["무작위", "아수라장", "칼바람"]):
+        return {"ko": title, "ja": "ARAM/モード変更"}
+    if "아레나" in title:
+        return {"ko": title, "ja": "アリーナ変更"}
+    if any(keyword in title for keyword in ["아이템", "룬"]):
+        return {"ko": title, "ja": "アイテム/ルーン変更"}
+    if any(keyword in title for keyword in ["소환사", "시스템", "체계"]):
+        return {"ko": title, "ja": "システム変更"}
+    return {"ko": title, "ja": "システム/モード変更"}
+
+
+def build_patch_summary(
+    listing: PatchListing,
+    events: list[TextEvent],
+    checked_at: dt.datetime,
+    name_map: dict | None,
+) -> dict:
+    champions = extract_champions(events)
+    sections = extract_sections(events)
+    buff_changes = [champion for champion in champions if champion.classification == "버프"]
+    adjusted_changes = [champion for champion in champions if champion.classification == "조정"]
+    recommendation_pool = unique_champion_changes(buff_changes + adjusted_changes + champions)
+
+    champion_changes = []
+    for champion in champions:
+        card = champion_card_data(champion, champion.classification, name_map)
+        champion_changes.append(
+            {
+                "key": card["key"],
+                "ko": card["ko"],
+                "ja": card["ja"],
+                "status": champion.classification,
+                "official_changes": card["change_summary"]["ko"],
+                "riot_context": card["riot_context"]["ko"],
+                "solo_queue_impact": card["solo_queue_impact"],
+                "caution": card["caution"],
+            }
+        )
+
+    system_changes = []
+    for section in relevant_sections(sections)[:5]:
+        system_changes.append(
+            {
+                "title": localized_system_title(section.title),
+                "summary": {
+                    "ko": pick_items(section.snippets, 3),
+                    "ja": "公式パッチノートの該当セクションを基準に確認してください。",
+                },
+            }
+        )
+    if not system_changes:
+        system_changes.append(
+            {
+                "title": {"ko": "아이템/룬/시스템 변경", "ja": "アイテム/ルーン/システム変更"},
+                "summary": {
+                    "ko": "공식 패치노트에서 별도 시스템 변경을 확인하지 못했습니다.",
+                    "ja": "公式パッチノートで個別のシステム変更を確認できませんでした。",
+                },
+            }
+        )
+
+    recommended_picks = []
+    for champion in recommendation_pool[:5]:
+        card = recommended_card_data(champion, name_map)
+        level = "high" if champion.classification == "버프" else "situational"
+        recommended_picks.append(
+            {
+                "key": card["key"],
+                "ko": card["ko"],
+                "ja": card["ja"],
+                "position": infer_position(champion, name_map),
+                "recommendation_level": level,
+                "reason": card["reason"],
+                "caution": card["caution"],
+            }
+        )
+
+    return {
+        "patch_version": listing.version,
+        "source_url": listing.url,
+        "source_title": listing.title,
+        "source_published_at": parse_iso_date(listing.published_at),
+        "last_checked": checked_at.isoformat(timespec="seconds"),
+        "region": "KR",
+        "languages": ["ko", "ja"],
+        "champion_changes": champion_changes,
+        "system_changes": system_changes,
+        "recommended_picks": recommended_picks,
+        "quality_notes": [
+            "패치 초반 데이터이므로 단정적인 표현 금지",
+            "공식 패치노트 기반 요약이며 외부 승률 데이터는 포함하지 않음",
+            "recommended_picks.position은 공식 문맥과 Data Dragon 태그를 바탕으로 한 자동화 추정값",
+        ],
+    }
+
+
+def write_patch_summary(summary: dict, dry_run: bool, force: bool = False) -> Path | None:
+    display_path = PATCH_SUMMARY_PATH.as_posix()
+    if dry_run:
+        log(f"구조화 패치 요약 저장 예정: {display_path}")
+        return None
+
+    if PATCH_SUMMARY_PATH.exists() and not force:
+        try:
+            current = json.loads(PATCH_SUMMARY_PATH.read_text(encoding="utf-8"))
+            if current.get("patch_version") == summary.get("patch_version"):
+                log(f"구조화 패치 요약이 이미 최신입니다: {display_path}")
+                return None
+        except json.JSONDecodeError:
+            pass
+
+    write_json(PATCH_SUMMARY_PATH, summary)
+    log(f"구조화 패치 요약 저장: {display_path}")
+    return PATCH_SUMMARY_PATH
+
+
+def requested_ai(args: argparse.Namespace) -> bool:
+    if args.no_ai:
+        return False
+    return args.use_ai or os.getenv("USE_AI", "").lower() in {"1", "true", "yes"}
+
+
+def text_values(value: object) -> list[str]:
+    if isinstance(value, str):
+        return [value]
+    if isinstance(value, list):
+        result: list[str] = []
+        for item in value:
+            result.extend(text_values(item))
+        return result
+    if isinstance(value, dict):
+        result = []
+        for item in value.values():
+            result.extend(text_values(item))
+        return result
+    return []
+
+
+def validate_ai_overlay(overlay: dict, patch_summary: dict, name_map: dict | None) -> list[str]:
+    issues: list[str] = []
+    combined = "\n".join(text_values(overlay))
+    lowered = combined.lower()
+    for expression in FORBIDDEN_AI_EXPRESSIONS:
+        if expression in combined:
+            issues.append(f"금지 표현 포함: {expression}")
+    for term in FORBIDDEN_AI_DATA_TERMS:
+        if term.lower() in lowered:
+            issues.append(f"입력 JSON에 없는 지표 표현 포함: {term}")
+
+    allowed_names = {
+        item.get("ko", "")
+        for item in patch_summary.get("champion_changes", [])
+    } | {
+        item.get("ja", "")
+        for item in patch_summary.get("champion_changes", [])
+    }
+    if name_map:
+        for entry in name_map.get("champions", {}).values():
+            for lang in ["ko", "ja"]:
+                name = entry.get(lang, "")
+                if name and name not in allowed_names and name in combined:
+                    issues.append(f"입력 JSON에 없는 챔피언명 포함: {name}")
+    return issues
+
+
+def load_writer_prompt(patch_summary: dict) -> str:
+    if not WRITER_PROMPT_PATH.exists():
+        raise LolPatchError(f"AI writer prompt가 없습니다: {WRITER_PROMPT_PATH}")
+    summary_json = json.dumps(patch_summary, ensure_ascii=False, indent=2)
+    return WRITER_PROMPT_PATH.read_text(encoding="utf-8").replace("{{PATCH_SUMMARY_JSON}}", summary_json)
+
+
+def generate_ai_overlay(args: argparse.Namespace, patch_summary: dict, name_map: dict | None) -> dict | None:
+    if not requested_ai(args):
+        return None
+
+    api_key = os.getenv("OPENAI_API_KEY")
+    if not api_key:
+        log("OPENAI_API_KEY가 없어 규칙 기반 생성으로 진행합니다.")
+        return None
+
+    prompt = load_writer_prompt(patch_summary)
+    model = args.ai_model or os.getenv("OPENAI_MODEL", "gpt-4o-mini")
+    payload = {
+        "model": model,
+        "messages": [
+            {
+                "role": "system",
+                "content": "SeigaBlog LoL 패치 글 작성 규칙을 따르고 JSON만 출력합니다.",
+            },
+            {"role": "user", "content": prompt},
+        ],
+        "temperature": 0.2,
+        "response_format": {"type": "json_object"},
+    }
+    request = urllib.request.Request(
+        OPENAI_CHAT_COMPLETIONS_URL,
+        data=json.dumps(payload).encode("utf-8"),
+        headers={
+            "Authorization": f"Bearer {api_key}",
+            "Content-Type": "application/json",
+            "User-Agent": USER_AGENT,
+        },
+        method="POST",
+    )
+
+    try:
+        with urllib.request.urlopen(request, timeout=60) as response:
+            response_data = json.loads(response.read().decode("utf-8"))
+        content = response_data["choices"][0]["message"]["content"]
+        overlay = json.loads(content)
+    except (KeyError, json.JSONDecodeError, urllib.error.URLError) as error:
+        write_report(
+            "lol-ai-writer-report.json",
+            {"ok": False, "used_ai": True, "error": str(error)},
+        )
+        log(f"AI 보강 실패로 규칙 기반 생성으로 진행합니다: {error}")
+        return None
+
+    issues = validate_ai_overlay(overlay, patch_summary, name_map)
+    if issues:
+        write_report(
+            "lol-ai-writer-report.json",
+            {"ok": False, "used_ai": True, "issues": issues},
+        )
+        log("AI 보강 결과가 안전 검사를 통과하지 못해 규칙 기반 생성으로 진행합니다.")
+        return None
+
+    write_report(
+        "lol-ai-writer-report.json",
+        {"ok": True, "used_ai": True, "model": model},
+    )
+    log(f"AI 보강 적용: {model}")
+    return overlay
+
+
+def is_localized_scalar(value: object) -> bool:
+    return isinstance(value, dict) and all(isinstance(value.get(lang), str) and value.get(lang) for lang in ["ko", "ja"])
+
+
+def is_localized_list(value: object) -> bool:
+    return (
+        isinstance(value, dict)
+        and all(isinstance(value.get(lang), list) and value.get(lang) for lang in ["ko", "ja"])
+        and all(isinstance(item, str) for lang in ["ko", "ja"] for item in value.get(lang, []))
+    )
+
+
+def merge_ai_overlay(post_data: dict, overlay: dict | None) -> dict:
+    if not overlay:
+        return post_data
+
+    for field in ["title", "excerpt", "lead", "quote"]:
+        if is_localized_scalar(overlay.get(field)):
+            post_data[field] = overlay[field]
+    if is_localized_list(overlay.get("body")):
+        post_data["body"] = overlay["body"]
+
+    section_by_id = {
+        section.get("id"): section
+        for section in post_data.get("sections", [])
+        if isinstance(section, dict)
+    }
+    for section in overlay.get("sections", []):
+        if not isinstance(section, dict):
+            continue
+        target = section_by_id.get(section.get("id"))
+        if not target:
+            continue
+        if is_localized_scalar(section.get("title")):
+            target["title"] = section["title"]
+        if is_localized_list(section.get("body")):
+            target["body"] = section["body"]
+
+    faq = overlay.get("faq")
+    if isinstance(faq, list) and 3 <= len(faq) <= 6:
+        normalized_faq = []
+        for item in faq:
+            if not isinstance(item, dict):
+                continue
+            if is_localized_scalar(item.get("question")) and is_localized_scalar(item.get("answer")):
+                normalized_faq.append({"question": item["question"], "answer": item["answer"]})
+        if len(normalized_faq) >= 3:
+            post_data["faq"] = normalized_faq
+    return post_data
 
 
 def build_post_data(
@@ -1045,12 +1477,12 @@ def build_post_data(
     ko_title = f"리그오브레전드 {version} 패치노트 핵심 정리"
     ja_title = f"リーグ・オブ・レジェンド {version} パッチノート要点まとめ"
     ko_description = (
-        f"LoL {version} 패치의 버프·너프 챔피언, 솔랭 추천 픽, "
-        "시스템 조정과 메타 영향을 공식 수치 카드로 정리했습니다."
+        f"LoL {version} 패치의 버프·너프 카드, 솔랭 체크 포인트, "
+        "패치 기준 실험 픽 5선을 공식 패치노트 기준으로 정리했습니다."
     )
     ja_description = (
-        f"LoL {version} パッチのチャンピオン変更、アイテムやシステム調整、"
-        "ソロランクへの影響をカードと表で整理しました。"
+        f"LoL {version} パッチの強化・弱体化カード、ソロランク確認点、"
+        "パッチ基準の試用ピック5選を公式パッチノート基準で整理しました。"
     )
 
     ko_body = [
@@ -1090,7 +1522,7 @@ def build_post_data(
     ][:2]
     watch_changes = nerf_changes[:6]
 
-    return {
+    post_data = {
         "slug": slug,
         "category": "lol",
         "accent": "blue",
@@ -1145,8 +1577,8 @@ def build_post_data(
                     "ja": f"リーグ・オブ・レジェンド {version} パッチ強化チャンピオングループ画像",
                 },
                 "caption": {
-                    "ko": "상향 카드는 라인전 보강, 교전 가치, 픽률 변화를 중심으로 읽으면 좋습니다.",
-                    "ja": "強化カードはレーン戦補強、戦闘価値、ピック率変化を中心に確認すると分かりやすいです。",
+                    "ko": "상향 카드는 라인전 보강, 교전 가치, 패치 초반 활용 조건을 중심으로 읽으면 좋습니다.",
+                    "ja": "強化カードはレーン戦補強、戦闘価値、パッチ序盤の使いどころを中心に確認すると分かりやすいです。",
                 },
             },
             {
@@ -1173,8 +1605,8 @@ def build_post_data(
                     "ja": f"リーグ・オブ・レジェンド {version} パッチソロランクティア影響画像",
                 },
                 "caption": {
-                    "ko": "솔랭에서는 초반 체급 변화와 숙련도 요구치가 티어 변동의 핵심입니다.",
-                    "ja": "ソロランクでは序盤性能と熟練度要求の変化がティア変動の中心です。",
+                    "ko": "솔랭에서는 초반 체급 변화와 숙련도 요구치를 먼저 확인하세요.",
+                    "ja": "ソロランクでは序盤性能と熟練度要求の変化を先に確認しましょう。",
                 },
             },
             {
@@ -1183,12 +1615,12 @@ def build_post_data(
                 "width": 1200,
                 "height": 720,
                 "alt": {
-                    "ko": f"리그오브레전드 {version} 패치 추천 픽 이미지",
-                    "ja": f"リーグ・オブ・レジェンド {version} パッチおすすめピック画像",
+                    "ko": f"리그오브레전드 {version} 패치 기준 실험 픽 5선 이미지",
+                    "ja": f"リーグ・オブ・レジェンド {version} パッチ基準の試用ピック5選画像",
                 },
                 "caption": {
-                    "ko": "추천 픽은 패치 초반 실험 가치와 조작 난이도를 함께 고려했습니다.",
-                    "ja": "おすすめピックはパッチ序盤の試用価値と操作難度を合わせて整理しました。",
+                    "ko": "실험 픽은 공식 변경 수치와 패치 초반 적용 난도를 함께 고려했습니다.",
+                    "ja": "試用ピックは公式変更数値とパッチ序盤の扱いやすさを合わせて整理しました。",
                 },
             },
             {
@@ -1368,12 +1800,12 @@ def build_post_data(
                     "ja": ["主要アイテム完成タイミング", "ルーン選択と序盤戦闘基準"],
                 },
                 "less_important": {
-                    "ko": "승률 표본 없이 모든 빌드를 단정하는 판단",
-                    "ja": "勝率サンプルなしに全ビルドを断定する判断",
+                    "ko": "공식 수치만 보고 모든 빌드를 단정하는 판단",
+                    "ja": "公式数値だけで全ビルドを断定する判断",
                 },
                 "judgment": {
-                    "ko": "빌드 변화는 실시간 승률 데이터가 쌓이기 전까지 보수적으로 해석하세요.",
-                    "ja": "ビルド変化はリアルタイム勝率データが集まるまでは慎重に解釈しましょう。",
+                    "ko": "빌드 변화는 실제 플레이 체감이 확인되기 전까지 보수적으로 해석하세요.",
+                    "ja": "ビルド変化は実際のプレイ感が確認できるまでは慎重に解釈しましょう。",
                 },
             }
         ],
@@ -1413,8 +1845,8 @@ def build_post_data(
             {
                 "label": {"ko": "메타 해석 고지", "ja": "メタ解釈の注記"},
                 "body": {
-                    "ko": "본문 메타 평가는 공식 수치를 바탕으로 한 솔랭 해석이며, 실시간 승률 데이터가 아님을 밝힙니다.",
-                    "ja": "本文のメタ評価は公式数値をもとにしたソロランク向けの解釈であり、リアルタイム勝率データではありません。",
+                    "ko": "이 글은 공식 패치노트와 Riot Data Dragon 기준 요약입니다. 별도의 승률/픽률/밴률 통계는 포함하지 않았습니다.",
+                    "ja": "この記事は公式パッチノートとRiot Data Dragonを基準にした要約です。勝率・ピック率・BAN率などの外部統計は含んでいません。",
                 },
             },
         ],
@@ -1428,6 +1860,8 @@ def build_post_data(
             "ja": "Riot Games公式パッチノートおよびRiot Data Dragonチャンピオン画像",
         },
     }
+    post_data["read_time"] = estimate_read_time_label(post_data)
+    return post_data
 
 
 def parse_iso_date(value: str) -> str:
@@ -1652,6 +2086,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--dry-run", action="store_true", help="파일을 쓰지 않고 수집 결과만 확인합니다.")
     parser.add_argument("--skip-git", action="store_true", help="git commit/push 단계를 건너뜁니다.")
     parser.add_argument("--no-push", action="store_true", help="commit은 만들고 push만 건너뜁니다.")
+    ai_group = parser.add_mutually_exclusive_group()
+    ai_group.add_argument("--use-ai", action="store_true", help="OPENAI_API_KEY가 있으면 AI 문장 보강을 시도합니다.")
+    ai_group.add_argument("--no-ai", action="store_true", help="AI를 사용하지 않고 규칙 기반 생성만 수행합니다.")
+    parser.add_argument("--ai-model", default="", help="OpenAI Chat Completions 모델명입니다. 기본값은 OPENAI_MODEL 또는 gpt-4o-mini입니다.")
     return parser.parse_args()
 
 
@@ -1662,14 +2100,24 @@ def main() -> int:
 
     try:
         listing = find_latest_patch()
+        masthead, events = parse_article(listing)
+        name_map = load_optional_name_map()
+        patch_summary = build_patch_summary(listing, events, checked_at, name_map)
         duplicate = duplicate_post(listing.version)
         if duplicate:
+            write_patch_summary(
+                patch_summary,
+                args.dry_run,
+                force=os.getenv("LOL_PATCH_FORCE_SUMMARY") == "1",
+            )
             log(f"이미 작성된 패치입니다: {listing.version} ({duplicate})")
             return 0
 
-        masthead, events = parse_article(listing)
         image_path, image_files = download_cover_image(listing, args.dry_run)
         post_data = build_post_data(listing, masthead, events, image_path, checked_at)
+        ai_overlay = generate_ai_overlay(args, patch_summary, name_map)
+        post_data = merge_ai_overlay(post_data, ai_overlay)
+        summary_path = write_patch_summary(patch_summary, args.dry_run, force=True)
         post_path = write_post(post_data, checked_at, args.dry_run)
 
         if args.dry_run:
@@ -1678,6 +2126,8 @@ def main() -> int:
 
         blog_image_files = generate_blog_images(post_data["slug"])
         generated_paths = [post_path, *image_files, *blog_image_files]
+        if summary_path:
+            generated_paths.append(summary_path)
         if skip_git:
             log("git 자동화는 건너뛰었습니다.")
             return 0

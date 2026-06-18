@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import re
 import subprocess
 from collections import Counter
@@ -107,6 +108,31 @@ def nested_localized_exists(block: str, field: str, lang: str) -> bool:
     return False
 
 
+def localized_list_lengths(block: str, field: str) -> tuple[int, int] | None:
+    if not field_exists(block, field):
+        return None
+    return (
+        len(extract_localized_list(block, field, "ko")),
+        len(extract_localized_list(block, field, "ja")),
+    )
+
+
+def validate_localized_pair_counts(file_label: str, frontmatter: str) -> list[dict]:
+    issues: list[dict] = []
+    for field in ["body"]:
+        counts = localized_list_lengths(frontmatter, field)
+        if counts and counts[0] != counts[1]:
+            issues.append({"file": file_label, "type": "i18n", "message": f"{field}.ko/{field}.ja 항목 수가 다릅니다: {counts[0]}/{counts[1]}"})
+
+    for key in ["sections", "quick_summary_items", "checklist_items", "source_notes", "faq"]:
+        for index, item in enumerate(top_list_items(frontmatter, key), start=1):
+            for field in ["body", "points", "change_summary", "immediate_check"]:
+                counts = localized_list_lengths(item, field)
+                if counts and counts[0] != counts[1]:
+                    issues.append({"file": file_label, "type": "i18n", "message": f"{key}[{index}].{field}.ko/{field}.ja 항목 수가 다릅니다: {counts[0]}/{counts[1]}"})
+    return issues
+
+
 def section_ids(frontmatter: str) -> set[str]:
     section = top_section(frontmatter, "sections")
     return set(re.findall(r"^\s*(?:-\s*)?id:\s*['\"]?([^'\"\n]+)['\"]?", section, flags=re.MULTILINE))
@@ -115,6 +141,61 @@ def section_ids(frontmatter: str) -> set[str]:
 def status_count(frontmatter: str, status: str) -> int:
     section = top_section(frontmatter, "lol_champions")
     return len(re.findall(rf"^\s*status:\s*['\"]?{re.escape(status)}['\"]?\s*$", section, flags=re.MULTILINE))
+
+
+def validate_recommended_count_labels(file_label: str, frontmatter: str, recommended_count: int) -> list[dict]:
+    issues: list[dict] = []
+    keywords = ["추천", "실험 픽", "おすすめ", "試用ピック"]
+    numeric_patterns = [
+        re.compile(r"TOP\s*(\d+)", flags=re.IGNORECASE),
+        re.compile(r"(\d+)\s*선"),
+        re.compile(r"(\d+)\s*選"),
+    ]
+    scopes = [
+        top_section(frontmatter, "toc"),
+        top_section(frontmatter, "sections"),
+        top_section(frontmatter, "summary_image"),
+        top_section(frontmatter, "content_images"),
+        top_section(frontmatter, "title"),
+        top_section(frontmatter, "excerpt"),
+        extract_scalar(frontmatter, "description"),
+    ]
+    for line in "\n".join(scopes).splitlines():
+        if not any(keyword in line for keyword in keywords):
+            continue
+        for pattern in numeric_patterns:
+            for match in pattern.finditer(line):
+                expected = int(match.group(1))
+                if expected != recommended_count:
+                    issues.append(
+                        {
+                            "file": file_label,
+                            "type": "champion_card",
+                            "message": f"추천/실험 픽 숫자 표기와 카드 수가 다릅니다: 표기 {expected}, 카드 {recommended_count}",
+                        }
+                    )
+    return issues
+
+
+def validate_stat_claims(file_label: str, frontmatter: str) -> list[dict]:
+    issues: list[dict] = []
+    terms = ["승률", "픽률", "밴률", "표본", "티어 상승", "밴 가치", "勝率", "ピック率", "BAN率", "サンプル", "ティア上昇"]
+    allowed = [
+        "실시간 승률 데이터가 아님",
+        "실시간 승률 데이터가 아니라",
+        "별도의 승률/픽률/밴률 통계는 포함하지 않았습니다",
+        "외부 승률 데이터는 포함하지 않음",
+        "勝率・ピック率・BAN率などの外部統計は含んでいません",
+        "リアルタイム勝率データではありません",
+        "リアルタイム勝率データを反映したティア表ではありません",
+    ]
+    for line_no, line in enumerate(frontmatter.splitlines(), start=1):
+        if not any(term in line for term in terms):
+            continue
+        if any(phrase in line for phrase in allowed):
+            continue
+        issues.append({"file": file_label, "type": "source", "message": f"통계 출처 없이 통계성 표현이 있습니다: {line_no}행"})
+    return issues
 
 
 def has_body_name_list(frontmatter: str) -> bool:
@@ -145,6 +226,8 @@ def validate_image_block(file_label: str, block: str, label: str) -> list[dict]:
             if not nested_localized_exists(block, field, lang):
                 issues.append({"file": file_label, "type": "image", "message": f"{label}에 {field}.{lang} 값이 없습니다."})
     if field_exists(block, "src"):
+        if re.search(r"src:\s*\n(?:\s+\w+:\s*)?['\"]?https?://", block):
+            issues.append({"file": file_label, "type": "image", "message": f"{label}에 외부 이미지 URL이 남아 있습니다."})
         srcs = re.findall(r"['\"](/assets/images/[^'\"]+)['\"]", block)
         for src in srcs:
             if not local_asset_exists(src):
@@ -281,9 +364,12 @@ def validate_built_post_html(file_label: str, frontmatter: str) -> list[dict]:
     html = path.read_text(encoding="utf-8")
     slug = extract_scalar(frontmatter, "slug")
     expected_canonical = f"https://seiga-tabi.github.io/SeigaBlog/posts/{slug}/"
+    read_time = extract_scalar(frontmatter, "read_time")
 
     if f'<link rel="canonical" href="{expected_canonical}"' not in html:
         issues.append({"file": rendered_path, "type": "seo", "message": "상세 글 canonical URL이 없거나 올바르지 않습니다."})
+    if read_time and read_time not in html:
+        issues.append({"file": rendered_path, "type": "read_time", "message": f"상세 글에 frontmatter read_time이 렌더링되지 않았습니다: {read_time}"})
     if 'type="application/ld+json"' not in html or '"@type": "Article"' not in html:
         issues.append({"file": rendered_path, "type": "seo", "message": "Article JSON-LD가 없습니다."})
     if '"@type": "FAQPage"' not in html:
@@ -360,6 +446,108 @@ def validate_built_index_html(post_count: int) -> list[dict]:
     return issues
 
 
+def validate_built_index_post_html(file_label: str, frontmatter: str) -> list[dict]:
+    issues: list[dict] = []
+    path = REPO_ROOT / "_site" / "index.html"
+    if not path.exists():
+        return issues
+    slug = extract_scalar(frontmatter, "slug")
+    read_time = extract_scalar(frontmatter, "read_time")
+    if not slug or not read_time:
+        return issues
+
+    html = path.read_text(encoding="utf-8")
+    scope_match = re.search(
+        rf"<article[\s\S]+?data-post-id=\"{re.escape(slug)}\"[\s\S]+?</article>",
+        html,
+    )
+    if not scope_match:
+        return issues
+    if read_time not in scope_match.group(0):
+        issues.append({"file": "_site/index.html", "type": "read_time", "message": f"홈 카드에 frontmatter read_time이 렌더링되지 않았습니다: {read_time}"})
+    return issues
+
+
+def validate_patch_summary_json() -> list[dict]:
+    issues: list[dict] = []
+    path = REPO_ROOT / "data" / "lol" / "patches" / "latest-patch-summary.json"
+    file_label = repo_path(path) if path.exists() else "data/lol/patches/latest-patch-summary.json"
+    if not path.exists():
+        return [{"file": file_label, "type": "data", "message": "latest-patch-summary.json이 없습니다."}]
+
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as error:
+        return [{"file": file_label, "type": "data", "message": f"JSON 파싱 실패: {error}"}]
+
+    for field in [
+        "patch_version",
+        "source_url",
+        "source_title",
+        "source_published_at",
+        "last_checked",
+        "region",
+        "languages",
+        "champion_changes",
+        "system_changes",
+        "recommended_picks",
+        "quality_notes",
+    ]:
+        if field not in data:
+            issues.append({"file": file_label, "type": "data", "message": f"{field} 값이 없습니다."})
+
+    if data.get("region") != "KR":
+        issues.append({"file": file_label, "type": "data", "message": "region은 KR이어야 합니다."})
+    if data.get("languages") != ["ko", "ja"]:
+        issues.append({"file": file_label, "type": "data", "message": "languages는 ['ko', 'ja']여야 합니다."})
+
+    for index, item in enumerate(data.get("champion_changes", []), start=1):
+        for field in ["key", "ko", "ja", "status", "official_changes", "riot_context", "solo_queue_impact", "caution"]:
+            if field not in item:
+                issues.append({"file": file_label, "type": "data", "message": f"champion_changes[{index}]에 {field} 값이 없습니다."})
+        if item.get("status") not in {"버프", "너프", "조정"}:
+            issues.append({"file": file_label, "type": "data", "message": f"champion_changes[{index}] status가 올바르지 않습니다."})
+        for nested in ["solo_queue_impact", "caution"]:
+            if not isinstance(item.get(nested), dict) or not all(item[nested].get(lang) for lang in ["ko", "ja"]):
+                issues.append({"file": file_label, "type": "data", "message": f"champion_changes[{index}].{nested}에 ko/ja 값이 없습니다."})
+
+    for index, item in enumerate(data.get("recommended_picks", []), start=1):
+        for field in ["key", "ko", "ja", "position", "recommendation_level", "reason", "caution"]:
+            if field not in item:
+                issues.append({"file": file_label, "type": "data", "message": f"recommended_picks[{index}]에 {field} 값이 없습니다."})
+        if item.get("position") not in {"Top", "Jungle", "Mid", "Bot", "Support"}:
+            issues.append({"file": file_label, "type": "data", "message": f"recommended_picks[{index}] position이 올바르지 않습니다."})
+        if item.get("recommendation_level") not in {"high", "medium", "situational"}:
+            issues.append({"file": file_label, "type": "data", "message": f"recommended_picks[{index}] recommendation_level이 올바르지 않습니다."})
+
+    summary_text = path.read_text(encoding="utf-8").lower()
+    forbidden_patterns = [
+        r"(승률|픽률|밴률)\s*\d",
+        r"\d+(?:\.\d+)?%\s*(승률|픽률|밴률)",
+        r"(win rate|pick rate|ban rate)\s*\d",
+        r"sample size\s*\d",
+        r"표본\s*수?\s*\d",
+    ]
+    for pattern in forbidden_patterns:
+        if re.search(pattern, summary_text):
+            issues.append({"file": file_label, "type": "data", "message": f"구조화 JSON에 근거 없는 지표 수치가 있습니다: {pattern}"})
+
+    def scan_ja(value: object, path_name: str) -> None:
+        if isinstance(value, dict):
+            for key, item in value.items():
+                next_path = f"{path_name}.{key}" if path_name else str(key)
+                if key == "ja" and isinstance(item, str) and re.search(r"[가-힣]", item):
+                    issues.append({"file": file_label, "type": "i18n", "message": f"{next_path}에 한글이 섞여 있습니다."})
+                else:
+                    scan_ja(item, next_path)
+        elif isinstance(value, list):
+            for index, item in enumerate(value):
+                scan_ja(item, f"{path_name}[{index}]")
+
+    scan_ja(data, "")
+    return issues
+
+
 def sentence_count(value: str) -> int:
     return len([item for item in re.split(r"[.!?。]+", value) if item.strip()])
 
@@ -375,6 +563,7 @@ def validate_post(path, name_map: dict) -> list[dict]:
         return issues
 
     issues.extend(validate_language_blocks(file_label, frontmatter))
+    issues.extend(validate_localized_pair_counts(file_label, frontmatter))
 
     sample_hits = line_has_pattern(path.name + "\n" + frontmatter, SAMPLE_PATTERNS)
     if sample_hits:
@@ -413,6 +602,11 @@ def validate_post(path, name_map: dict) -> list[dict]:
         for key in ["source_url", "source_title", "source_published_at", "last_checked"]:
             if not extract_scalar(frontmatter, key):
                 issues.append({"file": file_label, "type": "source", "message": f"LoL 패치 글에 {key} 값이 없습니다."})
+        read_time = extract_scalar(frontmatter, "read_time")
+        if not read_time:
+            issues.append({"file": file_label, "type": "read_time", "message": "LoL 패치 글에 read_time 값이 없습니다."})
+        elif not re.fullmatch(r"\d+\s+min", read_time):
+            issues.append({"file": file_label, "type": "read_time", "message": f"read_time 형식이 올바르지 않습니다: {read_time}"})
 
     if "summary_image:" not in frontmatter:
         issues.append({"file": file_label, "type": "image", "message": "대표 패치 인포그래픽 summary_image가 없습니다."})
@@ -498,10 +692,8 @@ def validate_post(path, name_map: dict) -> list[dict]:
     conditional_count = top_list_count(frontmatter, "conditional_recommended_cards")
     if recommended_count < 1:
         issues.append({"file": file_label, "type": "champion_card", "message": "추천 픽 카드가 없습니다."})
-    if lol_patch and recommended_count != 5:
-        issues.append({"file": file_label, "type": "champion_card", "message": f"추천 픽 TOP 5 카드는 정확히 5개여야 합니다: {recommended_count}개"})
-    if lol_patch and "추천 픽 TOP 5" in top_section(frontmatter, "sections") and recommended_count != 5:
-        issues.append({"file": file_label, "type": "champion_card", "message": "제목에 TOP 5가 있지만 main 추천 카드 수가 5개가 아닙니다."})
+    if lol_patch:
+        issues.extend(validate_recommended_count_labels(file_label, frontmatter, recommended_count))
     if lol_patch and conditional_count < 1:
         issues.append({"file": file_label, "type": "champion_card", "message": "조건부 추천 픽 카드가 없습니다."})
     if lol_patch and "실시간 승률 데이터가 아님" not in top_section(frontmatter, "sections"):
@@ -540,6 +732,11 @@ def validate_post(path, name_map: dict) -> list[dict]:
             issues.append({"file": file_label, "type": "source", "message": "Riot Data Dragon 출처 고지가 없습니다."})
         if "실시간 승률 데이터가 아님" not in frontmatter:
             issues.append({"file": file_label, "type": "source", "message": "실시간 승률 데이터가 아니라는 출처 고지가 없습니다."})
+        if "별도의 승률/픽률/밴률 통계는 포함하지 않았습니다" not in frontmatter:
+            issues.append({"file": file_label, "type": "source", "message": "외부 통계 미포함 한국어 고지가 없습니다."})
+        if "勝率・ピック率・BAN率などの外部統計は含んでいません" not in frontmatter:
+            issues.append({"file": file_label, "type": "source", "message": "외부 통계 미포함 일본어 고지가 없습니다."})
+        issues.extend(validate_stat_claims(file_label, frontmatter))
     faq_count = top_list_count(frontmatter, "faq")
     if faq_count < 5:
         issues.append({"file": file_label, "type": "faq", "message": f"FAQ는 최소 5개여야 합니다: {faq_count}개"})
@@ -628,6 +825,8 @@ def main() -> int:
     if not CHAMPION_NAME_MAP_PATH.exists():
         issues.append({"file": repo_path(CHAMPION_NAME_MAP_PATH), "type": "data", "message": "챔피언명 맵이 없습니다."})
 
+    issues.extend(validate_patch_summary_json())
+
     for path in post_paths():
         issues.extend(validate_post(path, name_map))
 
@@ -644,6 +843,7 @@ def main() -> int:
                 frontmatter, _, _ = split_frontmatter(path.read_text(encoding="utf-8"))
                 if is_lol_patch_post(frontmatter):
                     issues.extend(validate_built_post_html(repo_path(path), frontmatter))
+                    issues.extend(validate_built_index_post_html(repo_path(path), frontmatter))
 
     report = {
         "ok": not issues,

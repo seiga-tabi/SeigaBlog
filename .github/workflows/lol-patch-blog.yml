@@ -1,12 +1,22 @@
-name: LoL 패치 블로그 글 생성
+name: LoL 패치 블로그 PR 생성
 
 on:
   schedule:
     - cron: "0 3 * * *"
   workflow_dispatch:
+    inputs:
+      use_ai:
+        description: "OpenAI API로 문장 품질 보강을 시도합니다."
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
 
 permissions:
   contents: write
+  pull-requests: write
 
 concurrency:
   group: lol-patch-blog
@@ -15,6 +25,7 @@ concurrency:
 jobs:
   generate:
     runs-on: ubuntu-latest
+
     steps:
       - name: 저장소 체크아웃
         uses: actions/checkout@v4
@@ -26,20 +37,109 @@ jobs:
         with:
           python-version: "3.x"
 
-      - name: git 작성자 설정
+      - name: Ruby 설정
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2"
+
+      - name: Jekyll 설치
+        run: gem install jekyll
+
+      - name: Git 작성자 설정
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
       - name: 최신 LoL 패치 글 생성
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
+          USE_AI: ${{ github.event_name == 'workflow_dispatch' && inputs.use_ai || 'false' }}
+          LOL_PATCH_SKIP_GIT: "1"
         run: |
-          python3 scripts/sync_lol_ddragon.py
-          LOL_PATCH_SKIP_GIT=1 python3 scripts/generate_lol_patch_post.py
-          python3 scripts/fix_champion_locales.py
-          python3 scripts/generate_blog_images.py
-          python3 scripts/validate_blog_content.py
+          npm run sync:lol
+          if [ "$USE_AI" = "true" ]; then
+            npm run blog:lol-patch -- --use-ai
+          else
+            npm run blog:lol-patch -- --no-ai
+          fi
+          npm run fix:champions
+          npm run generate:blog-images
+          npm run validate:blog
+          npm run build
+
+      - name: 변경사항 확인
+        id: changes
+        run: |
           if [ -n "$(git status --short)" ]; then
-            git add _posts assets/images data/lol reports scripts package.json
-            git commit -m "blog: add latest LoL patch summary"
-            git push
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: 패치 버전 감지
+        id: patch
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          VERSION=$(python3 - <<'PY'
+          import json
+          import pathlib
+
+          path = pathlib.Path("data/lol/patches/latest-patch-summary.json")
+          if path.exists():
+              print(json.loads(path.read_text(encoding="utf-8")).get("patch_version", "latest"))
+          else:
+              print("latest")
+          PY
+          )
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "branch=automation/lol-patch-${VERSION//./-}" >> "$GITHUB_OUTPUT"
+
+      - name: PR 브랜치 push
+        if: steps.changes.outputs.has_changes == 'true'
+        run: |
+          BRANCH="${{ steps.patch.outputs.branch }}"
+          git checkout -B "$BRANCH"
+          git add AGENTS.md README.md docs prompts .github/workflows package.json scripts data/lol _posts assets/images reports
+          git commit -m "blog: add LoL patch ${{ steps.patch.outputs.version }} summary"
+          git push --force-with-lease origin "$BRANCH"
+
+      - name: Pull Request 생성
+        if: steps.changes.outputs.has_changes == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          BRANCH="${{ steps.patch.outputs.branch }}"
+          TITLE="blog: LoL ${{ steps.patch.outputs.version }} 패치 요약 자동 생성"
+          EXISTING_PR=$(gh pr list --head "$BRANCH" --json number --jq '.[0].number')
+
+          if [ -n "$EXISTING_PR" ]; then
+            echo "기존 PR #$EXISTING_PR 를 업데이트했습니다."
+          else
+            gh pr create \
+              --title "$TITLE" \
+              --base main \
+              --head "$BRANCH" \
+              --body "## 자동 생성된 LoL 패치 글
+
+          - 패치 버전: ${{ steps.patch.outputs.version }}
+          - 생성 브랜치: $BRANCH
+          - AI 보강: ${{ github.event_name == 'workflow_dispatch' && inputs.use_ai || 'false' }}
+
+          ## 검증 명령
+
+          - npm run sync:lol
+          - npm run fix:champions
+          - npm run generate:blog-images
+          - npm run validate:blog
+          - npm run build
+
+          ## 리뷰 체크리스트
+
+          - [ ] 공식 패치노트 수치가 맞는지 확인
+          - [ ] 챔피언명 ko/ja가 Riot Data Dragon 공식명인지 확인
+          - [ ] 승률, 픽률, 밴률, 표본 수를 만들지 않았는지 확인
+          - [ ] 과장 표현이 없는지 확인
+          - [ ] 이미지 alt/caption과 출처 표기가 정상인지 확인
+          - [ ] 모바일에서 목차, 요약표, 카드가 읽기 쉬운지 확인"
           fi
