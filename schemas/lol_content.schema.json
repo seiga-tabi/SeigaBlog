@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://seiga-tabi.github.io/SeigaBlog/schemas/lol_content.schema.json",
+  "title": "SeigaBlog LoL follow-up content input",
+  "type": "object",
+  "required": ["content_type"],
+  "properties": {
+    "id": { "type": "string" },
+    "status": { "type": "string" },
+    "content_type": {
+      "type": "string",
+      "enum": [
+        "patch-meta-followup",
+        "position-meta",
+        "champion-focus",
+        "riot-dev-update",
+        "system-guide"
+      ]
+    },
+    "patch_version": { "type": "string" },
+    "current_patch": { "type": "string" },
+    "previous_patch": { "type": "string" },
+    "region": { "type": "string" },
+    "tier_range": { "type": "string" },
+    "queue": { "type": "string" },
+    "sample_period": {},
+    "sample_size": {},
+    "position": {
+      "type": "string",
+      "enum": ["Top", "Jungle", "Mid", "Bot", "Support"]
+    },
+    "champion_key": { "type": "string" },
+    "champion_name_ko": { "type": "string" },
+    "champion_name_ja": { "type": "string" },
+    "source_url": { "type": "string" },
+    "source_title": { "type": "string" },
+    "source_published_at": { "type": "string" },
+    "last_checked": { "type": "string" },
+    "source_notes": { "type": "array" }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "content_type": { "const": "patch-meta-followup" } } },
+      "then": {
+        "required": [
+          "patch_version",
+          "current_patch",
+          "previous_patch",
+          "region",
+          "tier_range",
+          "queue",
+          "sample_period",
+          "sample_size",
+          "champion_metrics",
+          "source_notes",
+          "related_patch_post"
+        ]
+      }
+    },
+    {
+      "if": { "properties": { "content_type": { "const": "position-meta" } } },
+      "then": {
+        "required": [
+          "patch_version",
+          "position",
+          "region",
+          "tier_range",
+          "queue",
+          "sample_period",
+          "sample_size",
+          "rising_picks",
+          "stable_picks",
+          "falling_picks",
+          "ban_candidates",
+          "source_notes"
+        ]
+      }
+    },
+    {
+      "if": { "properties": { "content_type": { "const": "champion-focus" } } },
+      "then": {
+        "required": [
+          "patch_version",
+          "champion_key",
+          "champion_name_ko",
+          "champion_name_ja",
+          "official_changes",
+          "riot_context",
+          "position",
+          "current_metrics",
+          "previous_metrics",
+          "build_data",
+          "rune_data",
+          "matchup_data",
+          "source_notes"
+        ]
+      }
+    },
+    {
+      "if": { "properties": { "content_type": { "const": "riot-dev-update" } } },
+      "then": {
+        "required": [
+          "source_url",
+          "source_title",
+          "source_published_at",
+          "last_checked",
+          "official_announcements",
+          "confirmed_changes",
+          "planned_changes",
+          "undecided_topics",
+          "release_schedule",
+          "related_posts"
+        ]
+      }
+    },
+    {
+      "if": { "properties": { "content_type": { "const": "system-guide" } } },
+      "then": {
+        "required": [
+          "system_name",
+          "applicable_patch",
+          "official_changes",
+          "before_state",
+          "after_state",
+          "affected_positions",
+          "affected_champions",
+          "examples",
+          "source_notes"
+        ]
+      }
+    }
+  ],
+  "additionalProperties": true
+}
+

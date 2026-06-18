@@ -2,6 +2,9 @@
   "scripts": {
     "blog:lol-patch": "python3 scripts/generate_lol_patch_post.py",
     "blog:lol-patch:ai": "python3 scripts/generate_lol_patch_post.py --use-ai",
+    "blog:lol-content": "python3 scripts/generate_lol_content.py --from-queue",
+    "select:lol-content-topic": "python3 scripts/select_lol_content_topic.py",
+    "validate:lol-content-data": "python3 scripts/validate_lol_content_data.py",
     "sync:lol": "python3 scripts/sync_lol_ddragon.py",
     "fix:champions": "python3 scripts/fix_champion_locales.py",
     "generate:blog-images": "python3 scripts/generate_blog_images.py",

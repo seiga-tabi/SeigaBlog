@@ -2,11 +2,6 @@
   {
     "file": "_posts/2026-06-17-lol-patch-26-12-summary.md",
     "images": {
-      "summary": {
-        "ko": "assets/images/blog/generated/lol-patch-26-12-summary-summary-ko.svg",
-        "default": "assets/images/blog/generated/lol-patch-26-12-summary-summary.svg",
-        "ja": "assets/images/blog/generated/lol-patch-26-12-summary-summary-ja.svg"
-      },
       "champions": {
         "ko": "assets/images/blog/generated/lol-patch-26-12-summary-champions-ko.svg",
         "default": "assets/images/blog/generated/lol-patch-26-12-summary-champions.svg",
@@ -27,20 +22,10 @@
         "default": "assets/images/blog/generated/lol-patch-26-12-summary-nerf-group.svg",
         "ja": "assets/images/blog/generated/lol-patch-26-12-summary-nerf-group-ja.svg"
       },
-      "tier-impact": {
-        "ko": "assets/images/blog/generated/lol-patch-26-12-summary-tier-impact-ko.svg",
-        "default": "assets/images/blog/generated/lol-patch-26-12-summary-tier-impact.svg",
-        "ja": "assets/images/blog/generated/lol-patch-26-12-summary-tier-impact-ja.svg"
-      },
       "recommended-picks": {
         "ko": "assets/images/blog/generated/lol-patch-26-12-summary-recommended-picks-ko.svg",
         "default": "assets/images/blog/generated/lol-patch-26-12-summary-recommended-picks.svg",
         "ja": "assets/images/blog/generated/lol-patch-26-12-summary-recommended-picks-ja.svg"
-      },
-      "source-note": {
-        "ko": "assets/images/blog/generated/lol-patch-26-12-summary-source-note-ko.svg",
-        "default": "assets/images/blog/generated/lol-patch-26-12-summary-source-note.svg",
-        "ja": "assets/images/blog/generated/lol-patch-26-12-summary-source-note-ja.svg"
       }
     },
     "champion_count": 16

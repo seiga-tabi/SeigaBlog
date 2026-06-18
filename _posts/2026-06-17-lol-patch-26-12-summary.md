@@ -4,7 +4,7 @@ category: lol
 accent: blue
 read_time: 12 min
 image: "/assets/images/lol-patch/26-12/cover.webp"
-og_image: "/assets/images/blog/generated/lol-patch-26-12-summary-summary-ko.svg"
+og_image: "/assets/images/lol-patch/26-12/cover.webp"
 date: '2026-06-17'
 patch_version: '26.12'
 source_url: https://www.leagueoflegends.com/ko-kr/news/game-updates/league-of-legends-patch-26-12-notes
@@ -82,18 +82,6 @@ lol_champions:
   ko: 신 짜오
   ja: シン・ジャオ
   status: 너프
-summary_image:
-  src:
-    ko: "/assets/images/blog/generated/lol-patch-26-12-summary-summary-ko.svg"
-    ja: "/assets/images/blog/generated/lol-patch-26-12-summary-summary-ja.svg"
-  width: 1200
-  height: 630
-  alt:
-    ko: LoL 26.12 패치노트 요약 대표 인포그래픽
-    ja: LoL 26.12パッチノート要約メインインフォグラフィック
-  caption:
-    ko: 버프 8명, 너프 6명, 패치 초반 체크 포인트를 한 장으로 요약했습니다.
-    ja: 強化8体、弱体化6体、パッチ序盤の確認点を一枚にまとめました。
 content_images:
 - after_section: quick-summary
   src:
@@ -131,18 +119,6 @@ content_images:
   caption:
     ko: 하향 카드는 피해량, 체급, 마나 부담 변화가 어디서 체감되는지 중심으로 정리했습니다.
     ja: 弱体化カードはダメージ、基礎性能、マナ負担の変化がどこで響くかを中心に整理しています。
-- after_section: solo-queue-tier-impact
-  src:
-    ko: "/assets/images/blog/generated/lol-patch-26-12-summary-tier-impact-ko.svg"
-    ja: "/assets/images/blog/generated/lol-patch-26-12-summary-tier-impact-ja.svg"
-  width: 1200
-  height: 720
-  alt:
-    ko: LoL 26.12 라인별 솔랭 티어 영향 이미지
-    ja: LoL 26.12ロール別ソロランクティア影響画像
-  caption:
-    ko: 탑, 정글, 미드, 원딜, 서포터별로 패치 첫날 확인할 영향을 압축했습니다.
-    ja: トップ、ジャングル、ミッド、ADC、サポート別にパッチ初日の確認点を圧縮しました。
 - after_section: recommended-picks
   src:
     ko: "/assets/images/blog/generated/lol-patch-26-12-summary-recommended-picks-ko.svg"
@@ -155,18 +131,6 @@ content_images:
   caption:
     ko: 추천 픽은 공식 상향 폭과 솔랭 적응 난도를 함께 반영했습니다.
     ja: おすすめピックは公式の強化幅とソロランクでの適応難度を合わせて反映しています。
-- after_section: source-note
-  src:
-    ko: "/assets/images/blog/generated/lol-patch-26-12-summary-source-note-ko.svg"
-    ja: "/assets/images/blog/generated/lol-patch-26-12-summary-source-note-ja.svg"
-  width: 1200
-  height: 720
-  alt:
-    ko: LoL 26.12 공식 출처 및 이미지 출처 안내 이미지
-    ja: LoL 26.12公式ソースと画像出典案内画像
-  caption:
-    ko: 수치 출처는 Riot Games 공식 패치노트, 챔피언명과 스플래시 아트는 Riot Data Dragon 기준입니다.
-    ja: 数値の出典はRiot Games公式パッチノート、チャンピオン名とスプラッシュアートはRiot Data Dragon基準です。
 author:
   ko: 세이가
   ja: セイガ

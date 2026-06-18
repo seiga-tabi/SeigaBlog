@@ -58,6 +58,7 @@ jobs:
           LOL_PATCH_SKIP_GIT: "1"
         run: |
           npm run sync:lol
+          npm run validate:lol-content-data
           if [ "$USE_AI" = "true" ]; then
             npm run blog:lol-patch -- --use-ai
           else
@@ -129,6 +130,7 @@ jobs:
           ## 검증 명령
 
           - npm run sync:lol
+          - npm run validate:lol-content-data
           - npm run fix:champions
           - npm run generate:blog-images
           - npm run validate:blog

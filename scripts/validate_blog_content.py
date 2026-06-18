@@ -33,6 +33,15 @@ def log(message: str) -> None:
     print(f"[Blog Validate] {message}")
 
 
+LOL_FOLLOWUP_CONTENT_TYPES = {
+    "patch-meta-followup",
+    "position-meta",
+    "champion-focus",
+    "riot-dev-update",
+    "system-guide",
+}
+
+
 def line_has_pattern(text: str, patterns: list[str]) -> list[str]:
     lowered = text.lower()
     return [pattern for pattern in patterns if pattern.lower() in lowered]
@@ -216,6 +225,30 @@ def is_lol_patch_post(frontmatter: str) -> bool:
     return bool(extract_scalar(frontmatter, "patch_version") or "lol_champions:" in frontmatter)
 
 
+def is_lol_followup_post(frontmatter: str) -> bool:
+    return extract_scalar(frontmatter, "content_type") in LOL_FOLLOWUP_CONTENT_TYPES
+
+
+def is_lol_patch_summary_post(frontmatter: str) -> bool:
+    return is_lol_patch_post(frontmatter) and not is_lol_followup_post(frontmatter)
+
+
+def validate_followup_stat_basis(file_label: str, frontmatter: str, content_type: str) -> list[dict]:
+    issues: list[dict] = []
+    stat_terms = ["승률", "픽률", "밴률", "표본", "勝率", "ピック率", "BAN率", "サンプル"]
+    if not any(term in frontmatter for term in stat_terms):
+        return issues
+
+    data_basis = top_section(frontmatter, "data_basis")
+    overview = top_section(frontmatter, "overview_table")
+    if not data_basis and not overview:
+        issues.append({"file": file_label, "type": "source", "message": "통계성 표현이 있지만 data_basis/overview_table 근거가 없습니다."})
+
+    if content_type in {"patch-meta-followup", "position-meta"} and not re.search(r"(sample_size|표본 수|サンプル数)", data_basis + "\n" + overview):
+        issues.append({"file": file_label, "type": "source", "message": "메타 분석 글에 표본 수 근거가 없습니다."})
+    return issues
+
+
 def validate_image_block(file_label: str, block: str, label: str) -> list[dict]:
     issues: list[dict] = []
     for field in ["src", "width", "height", "alt", "caption"]:
@@ -365,6 +398,7 @@ def validate_built_post_html(file_label: str, frontmatter: str) -> list[dict]:
     slug = extract_scalar(frontmatter, "slug")
     expected_canonical = f"https://seiga-tabi.github.io/SeigaBlog/posts/{slug}/"
     read_time = extract_scalar(frontmatter, "read_time")
+    lol_followup = is_lol_followup_post(frontmatter)
 
     if f'<link rel="canonical" href="{expected_canonical}"' not in html:
         issues.append({"file": rendered_path, "type": "seo", "message": "상세 글 canonical URL이 없거나 올바르지 않습니다."})
@@ -380,14 +414,16 @@ def validate_built_post_html(file_label: str, frontmatter: str) -> list[dict]:
     toc_links = re.findall(r"<a href=\"#([^\"]+)\"[^>]*>", html)
     toc_scope = re.search(r"<nav class=\"(?:post-toc article-toc|article-toc post-toc)\"[\s\S]*?</nav>", html)
     scoped_toc_links = re.findall(r"<a href=\"#([^\"]+)\"[^>]*>", toc_scope.group(0)) if toc_scope else []
-    if len(scoped_toc_links) < 8:
-        issues.append({"file": rendered_path, "type": "toc", "message": f"목차 링크가 8개 미만입니다: {len(scoped_toc_links)}개"})
+    min_toc_links = 6 if lol_followup else 8
+    if len(scoped_toc_links) < min_toc_links:
+        issues.append({"file": rendered_path, "type": "toc", "message": f"목차 링크가 {min_toc_links}개 미만입니다: {len(scoped_toc_links)}개"})
     ids = set(re.findall(r"\sid=\"([^\"]+)\"", html))
     missing_toc_targets = sorted({item for item in scoped_toc_links if item not in ids})
     if missing_toc_targets:
         issues.append({"file": rendered_path, "type": "toc", "message": f"목차 href와 실제 id가 맞지 않습니다: {missing_toc_targets}"})
 
-    if html.count("overview-label") < 6 or html.count("overview-value") < 6:
+    min_overview_items = 2 if lol_followup else 6
+    if html.count("overview-label") < min_overview_items or html.count("overview-value") < min_overview_items:
         issues.append({"file": rendered_path, "type": "overview", "message": "overview label/value 렌더링이 부족합니다."})
     if not re.search(r"<dl class=\"overview-grid\"", html):
         issues.append({"file": rendered_path, "type": "overview", "message": "한눈에 보는 패치가 dl 구조로 렌더링되지 않았습니다."})
@@ -597,29 +633,44 @@ def validate_post(path, name_map: dict) -> list[dict]:
         if not local_asset_exists(src):
             issues.append({"file": file_label, "type": "image", "message": f"이미지 경로가 없습니다: {src}"})
 
-    lol_patch = is_lol_patch_post(frontmatter)
-    if lol_patch:
+    content_type = extract_scalar(frontmatter, "content_type")
+    lol_followup = is_lol_followup_post(frontmatter)
+    lol_patch_summary = is_lol_patch_summary_post(frontmatter)
+    lol_content = lol_patch_summary or lol_followup
+    if lol_patch_summary:
         for key in ["source_url", "source_title", "source_published_at", "last_checked"]:
             if not extract_scalar(frontmatter, key):
                 issues.append({"file": file_label, "type": "source", "message": f"LoL 패치 글에 {key} 값이 없습니다."})
+    if lol_followup:
+        for key in ["content_type", "last_checked", "read_time"]:
+            if not extract_scalar(frontmatter, key):
+                issues.append({"file": file_label, "type": "frontmatter", "message": f"LoL 후속 글에 {key} 값이 없습니다."})
+        if content_type == "riot-dev-update":
+            for key in ["source_url", "source_title", "source_published_at"]:
+                if not extract_scalar(frontmatter, key):
+                    issues.append({"file": file_label, "type": "source", "message": f"Riot 개발자 업데이트 글에 {key} 값이 없습니다."})
+        for key in ["toc", "overview_table", "sections", "source_notes", "faq", "data_basis"]:
+            if not top_section(frontmatter, key):
+                issues.append({"file": file_label, "type": "structure", "message": f"LoL 후속 글에 {key} 섹션이 없습니다."})
+        issues.extend(validate_followup_stat_basis(file_label, frontmatter, content_type))
+    if lol_content:
         read_time = extract_scalar(frontmatter, "read_time")
         if not read_time:
-            issues.append({"file": file_label, "type": "read_time", "message": "LoL 패치 글에 read_time 값이 없습니다."})
+            issues.append({"file": file_label, "type": "read_time", "message": "LoL 글에 read_time 값이 없습니다."})
         elif not re.fullmatch(r"\d+\s+min", read_time):
             issues.append({"file": file_label, "type": "read_time", "message": f"read_time 형식이 올바르지 않습니다: {read_time}"})
 
-    if "summary_image:" not in frontmatter:
-        issues.append({"file": file_label, "type": "image", "message": "대표 패치 인포그래픽 summary_image가 없습니다."})
-    else:
+    if "summary_image:" in frontmatter:
         issues.extend(validate_image_block(file_label, top_section(frontmatter, "summary_image"), "summary_image"))
 
     content_image_count = top_list_count(frontmatter, "content_images")
-    if content_image_count < 5:
+    min_content_images = 4 if lol_patch_summary else 1 if lol_followup else 0
+    if content_image_count < min_content_images:
         issues.append(
             {
                 "file": file_label,
                 "type": "image",
-                "message": f"중간 이미지가 5개 미만입니다: {content_image_count}개",
+                "message": f"중간 이미지가 {min_content_images}개 미만입니다: {content_image_count}개",
             }
         )
     for index, image_block in enumerate(top_list_items(frontmatter, "content_images"), start=1):
@@ -628,51 +679,52 @@ def validate_post(path, name_map: dict) -> list[dict]:
     if "summary_image:" in frontmatter and not re.search(r"summary_image:[\s\S]*?alt:[\s\S]*?ko:[\s\S]*?ja:", frontmatter):
         issues.append({"file": file_label, "type": "alt", "message": "summary_image alt.ko/alt.ja가 없습니다."})
 
-    for key in [
-        "toc",
-        "overview_table",
-        "sections",
-        "buff_champion_cards",
-        "nerf_champion_cards",
-        "recommended_pick_cards",
-        "conditional_recommended_cards",
-        "watch_pick_cards",
-        "faq",
-    ]:
-        if not top_section(frontmatter, key):
-            issues.append({"file": file_label, "type": "structure", "message": f"{key} 섹션이 없습니다."})
+    if lol_patch_summary:
+        for key in [
+            "toc",
+            "overview_table",
+            "sections",
+            "buff_champion_cards",
+            "nerf_champion_cards",
+            "recommended_pick_cards",
+            "conditional_recommended_cards",
+            "watch_pick_cards",
+            "faq",
+        ]:
+            if not top_section(frontmatter, key):
+                issues.append({"file": file_label, "type": "structure", "message": f"{key} 섹션이 없습니다."})
 
-    required_section_ids = {
-        "quick-summary",
-        "buff-champions",
-        "nerf-champions",
-        "solo-queue-tier-impact",
-        "recommended-picks",
-        "conditional-picks",
-        "watch-picks",
-        "item-rune-system",
-        "patch-day-checklist",
-        "faq",
-        "source-note",
-    }
-    missing_section_ids = sorted(required_section_ids - section_ids(frontmatter))
-    if missing_section_ids:
-        issues.append(
-            {
-                "file": file_label,
-                "type": "structure",
-                "message": f"필수 섹션 id가 없습니다: {missing_section_ids}",
-            }
-        )
-    overview_count = top_list_count(frontmatter, "overview_table")
-    if overview_count < 6:
-        issues.append({"file": file_label, "type": "overview", "message": f"overview_table 항목이 6개 미만입니다: {overview_count}개"})
+        required_section_ids = {
+            "quick-summary",
+            "buff-champions",
+            "nerf-champions",
+            "solo-queue-tier-impact",
+            "recommended-picks",
+            "conditional-picks",
+            "watch-picks",
+            "item-rune-system",
+            "patch-day-checklist",
+            "faq",
+            "source-note",
+        }
+        missing_section_ids = sorted(required_section_ids - section_ids(frontmatter))
+        if missing_section_ids:
+            issues.append(
+                {
+                    "file": file_label,
+                    "type": "structure",
+                    "message": f"필수 섹션 id가 없습니다: {missing_section_ids}",
+                }
+            )
+        overview_count = top_list_count(frontmatter, "overview_table")
+        if overview_count < 6:
+            issues.append({"file": file_label, "type": "overview", "message": f"overview_table 항목이 6개 미만입니다: {overview_count}개"})
 
     buff_count = status_count(frontmatter, "버프")
     nerf_count = status_count(frontmatter, "너프")
     buff_card_count = top_list_count(frontmatter, "buff_champion_cards")
     nerf_card_count = top_list_count(frontmatter, "nerf_champion_cards")
-    if buff_count and buff_card_count < buff_count:
+    if lol_patch_summary and buff_count and buff_card_count < buff_count:
         issues.append(
             {
                 "file": file_label,
@@ -680,7 +732,7 @@ def validate_post(path, name_map: dict) -> list[dict]:
                 "message": f"버프 챔피언 카드가 부족합니다: {buff_card_count}/{buff_count}",
             }
         )
-    if nerf_count and nerf_card_count < nerf_count:
+    if lol_patch_summary and nerf_count and nerf_card_count < nerf_count:
         issues.append(
             {
                 "file": file_label,
@@ -690,15 +742,15 @@ def validate_post(path, name_map: dict) -> list[dict]:
         )
     recommended_count = top_list_count(frontmatter, "recommended_pick_cards")
     conditional_count = top_list_count(frontmatter, "conditional_recommended_cards")
-    if recommended_count < 1:
+    if lol_patch_summary and recommended_count < 1:
         issues.append({"file": file_label, "type": "champion_card", "message": "추천 픽 카드가 없습니다."})
-    if lol_patch:
+    if lol_patch_summary:
         issues.extend(validate_recommended_count_labels(file_label, frontmatter, recommended_count))
-    if lol_patch and conditional_count < 1:
+    if lol_patch_summary and conditional_count < 1:
         issues.append({"file": file_label, "type": "champion_card", "message": "조건부 추천 픽 카드가 없습니다."})
-    if lol_patch and "실시간 승률 데이터가 아님" not in top_section(frontmatter, "sections"):
+    if lol_patch_summary and "실시간 승률 데이터가 아님" not in top_section(frontmatter, "sections"):
         issues.append({"file": file_label, "type": "source", "message": "추천 픽 섹션에 실시간 승률 데이터가 아니라는 고지가 없습니다."})
-    if lol_patch:
+    if lol_patch_summary:
         for card_key in ["buff_champion_cards", "nerf_champion_cards"]:
             issues.extend(validate_champion_cards(file_label, frontmatter, card_key, name_map))
         issues.extend(
@@ -738,8 +790,9 @@ def validate_post(path, name_map: dict) -> list[dict]:
             issues.append({"file": file_label, "type": "source", "message": "외부 통계 미포함 일본어 고지가 없습니다."})
         issues.extend(validate_stat_claims(file_label, frontmatter))
     faq_count = top_list_count(frontmatter, "faq")
-    if faq_count < 5:
-        issues.append({"file": file_label, "type": "faq", "message": f"FAQ는 최소 5개여야 합니다: {faq_count}개"})
+    min_faq_count = 5 if lol_patch_summary else 3 if lol_followup else 0
+    if faq_count < min_faq_count:
+        issues.append({"file": file_label, "type": "faq", "message": f"FAQ는 최소 {min_faq_count}개여야 합니다: {faq_count}개"})
     for index, faq_item in enumerate(top_list_items(frontmatter, "faq"), start=1):
         for field in ["question", "answer"]:
             for lang in ["ko", "ja"]:
@@ -749,7 +802,7 @@ def validate_post(path, name_map: dict) -> list[dict]:
         if answer_ko and sentence_count(unquote(answer_ko.group(1).strip())) > 3:
             issues.append({"file": file_label, "type": "faq", "message": f"faq[{index}] 한국어 답변이 3문장을 초과합니다."})
     faq_text = top_section(frontmatter, "faq")
-    if lol_patch:
+    if lol_patch_summary:
         for keyword in ["공식", "랭크", "추천", "너프"]:
             if keyword not in faq_text:
                 issues.append({"file": file_label, "type": "faq", "message": f"FAQ에 '{keyword}' 관련 항목이 없습니다."})
@@ -784,7 +837,7 @@ def validate_post(path, name_map: dict) -> list[dict]:
         if re.search(rf"(?<![A-Za-z0-9]){re.escape(key)}(?![A-Za-z0-9])", ko_text + ja_text):
             issues.append({"file": file_label, "type": "champion_key", "message": f"사용자 노출 문구에 champion key가 있습니다: {key}"})
 
-    if lol_patch:
+    if lol_patch_summary:
         title_ko = extract_localized_scalar(frontmatter, "title", "ko")
         description = extract_scalar(frontmatter, "description")
         if "26.12" in extract_scalar(frontmatter, "patch_version") and ("26.12" not in title_ko or "패치" not in title_ko):
@@ -841,7 +894,7 @@ def main() -> int:
             issues.extend(validate_built_index_html(len(paths)))
             for path in paths:
                 frontmatter, _, _ = split_frontmatter(path.read_text(encoding="utf-8"))
-                if is_lol_patch_post(frontmatter):
+                if is_lol_patch_post(frontmatter) or is_lol_followup_post(frontmatter):
                     issues.extend(validate_built_post_html(repo_path(path), frontmatter))
                     issues.extend(validate_built_index_post_html(repo_path(path), frontmatter))
 

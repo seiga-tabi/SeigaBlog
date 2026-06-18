@@ -10,7 +10,11 @@ Figma의 모바일 블로그 리스트/상세 화면 분위기를 참고해 만�
 - `_includes/`: 카드, 상세 패널처럼 반복되는 HTML 조각
 - `data/lol/`: Riot Data Dragon 기준 챔피언명/이미지 메타데이터
 - `data/lol/patches/`: 최신 패치노트 구조화 요약 JSON
+- `data/lol/content_queue.json`: LoL 후속 콘텐츠 생성 대기열
+- `data/lol/generated/`: LoL 후속 콘텐츠 생성 결과 JSON
 - `prompts/`: 선택형 AI 글 보강/리뷰 프롬프트
+- `prompts/lol/`: LoL 패치 후속 콘텐츠 유형별 작성/리뷰 규칙
+- `schemas/`: LoL 콘텐츠 입력 데이터 스키마
 - `assets/css/styles.css`: 화면 스타일
 - `assets/js/main.js`: 검색, 필터, 언어 전환, 북마크, 상세 패널 전환
 - `assets/images/profile.png`: 프로필 이미지
@@ -31,13 +35,16 @@ category: lol
 accent: green
 read_time: 4 min
 image: /assets/images/lol-patch/26-13/cover.webp
-summary_image:
-  src: /assets/images/blog/generated/lol-patch-26-13-summary-summary.svg
-  width: 1200
-  height: 630
-  alt:
-    ko: 한국어 이미지 설명
-    ja: 日本語の画像説明
+content_images:
+  - after_section: quick-summary
+    src:
+      ko: /assets/images/blog/generated/lol-patch-26-13-summary-core-notes-ko.svg
+      ja: /assets/images/blog/generated/lol-patch-26-13-summary-core-notes-ja.svg
+    width: 1200
+    height: 720
+    alt:
+      ko: 한국어 이미지 설명
+      ja: 日本語の画像説明
 author:
   ko: 작성자
   ja: 著者
@@ -96,6 +103,18 @@ npm run blog:lol-patch -- --no-ai
 ```
 
 자동화는 `data/lol/patches/latest-patch-summary.json`을 먼저 만들고, AI가 사용할 수 있는 입력도 이 구조화 JSON으로 제한합니다.
+
+패치 적용 후 메타 점검, 포지션별 메타 리포트, 챔피언 집중 분석, Riot 개발자 업데이트, 시스템 변경 가이드는 `data/lol/content_queue.json`에 입력 데이터를 넣은 뒤 다음 명령으로 생성합니다.
+
+```bash
+npm run validate:lol-content-data
+npm run select:lol-content-topic
+npm run blog:lol-content
+npm run generate:blog-images
+npm run validate:blog
+```
+
+후속 콘텐츠 자동화는 입력 JSON에 없는 승률, 픽률, 밴률, 표본 수, 빌드, 룬, 상성을 만들지 않습니다. 생성 글은 기존 `_posts/` frontmatter, 다국어 필드, 카드 렌더링 구조를 그대로 사용합니다.
 
 상세 운영 규칙은 [docs/blog-content-management.md](docs/blog-content-management.md)를 확인합니다.
 

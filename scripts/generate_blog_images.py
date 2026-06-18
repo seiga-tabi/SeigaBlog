@@ -460,6 +460,18 @@ def main() -> int:
         frontmatter, _, _ = split_frontmatter(text)
         slug = extract_scalar(frontmatter, "slug") or path.stem
         patch_version = extract_scalar(frontmatter, "patch_version")
+        content_type = extract_scalar(frontmatter, "content_type")
+        display_label = (
+            patch_version
+            or extract_scalar(frontmatter, "applicable_patch")
+            or {
+                "patch-meta-followup": "메타 점검",
+                "position-meta": "포지션 리포트",
+                "champion-focus": "챔피언 분석",
+                "riot-dev-update": "개발자 업데이트",
+                "system-guide": "시스템 가이드",
+            }.get(content_type, "LoL")
+        )
         champions = explicit_champions(frontmatter, name_map) or detect_champions(frontmatter, name_map)
         recommended_champions = explicit_champion_items(frontmatter, name_map, "recommended_pick_cards")
         if not champions:
@@ -468,25 +480,19 @@ def main() -> int:
             recommended_champions = [entry for entry in champions if entry_status(entry) == "버프"][:5] or champions[:5]
 
         generated: dict[str, dict[str, str]] = {kind: {} for kind in [
-            "summary",
             "champions",
             "core-notes",
             "buff-group",
             "nerf-group",
-            "tier-impact",
             "recommended-picks",
-            "source-note",
         ]}
 
-        source_url = extract_scalar(frontmatter, "source_url")
         for lang in LANGS:
             title = extract_localized_scalar(frontmatter, "title", lang) or slug
-            core_title = f"LoL {patch_version} 핵심노트 정리" if lang == "ko" else f"LoL {patch_version} 要点ノートまとめ"
-            buff_title = f"LoL {patch_version} 버프 챔피언 카드" if lang == "ko" else f"LoL {patch_version} 強化チャンピオンカード"
-            nerf_title = f"LoL {patch_version} 너프 챔피언 카드" if lang == "ko" else f"LoL {patch_version} 弱体化チャンピオンカード"
-            tier_title = f"LoL {patch_version} 솔랭 티어 영향" if lang == "ko" else f"LoL {patch_version} ソロランクティア影響"
-            picks_title = f"LoL {patch_version} 추천 픽" if lang == "ko" else f"LoL {patch_version} おすすめピック"
-            source_title = f"LoL {patch_version} 공식 출처 안내" if lang == "ko" else f"LoL {patch_version} 公式ソース案内"
+            core_title = f"LoL {display_label} 핵심노트 정리" if lang == "ko" else f"LoL {display_label} 要点ノートまとめ"
+            buff_title = f"LoL {display_label} 버프 챔피언 카드" if lang == "ko" else f"LoL {display_label} 強化チャンピオンカード"
+            nerf_title = f"LoL {display_label} 너프 챔피언 카드" if lang == "ko" else f"LoL {display_label} 弱体化チャンピオンカード"
+            picks_title = f"LoL {display_label} 추천 픽" if lang == "ko" else f"LoL {display_label} おすすめピック"
 
             core_bullets = (
                 localized_nested_values(frontmatter, "quick_summary_items", "body", lang)
@@ -494,32 +500,13 @@ def main() -> int:
                 or section_body(frontmatter, "key-changes", lang)
                 or build_bullets(frontmatter, lang)
             )
-            tier_bullets = section_body(frontmatter, "solo-queue-tier-impact", lang) or build_bullets(frontmatter, lang)
-            source_bullets = (
-                [
-                    "공식 패치노트를 기준으로 요약했습니다.",
-                    "챔피언명은 Riot Data Dragon 데이터를 사용했습니다.",
-                    "챔피언 이미지는 로컬 저장된 Riot Data Dragon 스플래시 아트를 참조합니다.",
-                    f"공식 출처: {source_url}" if source_url else "공식 출처는 글 하단에서 확인할 수 있습니다.",
-                ]
-                if lang == "ko"
-                else [
-                    "公式パッチノートを基準に要約しました。",
-                    "チャンピオン名はRiot Data Dragonデータを使用しています。",
-                    "チャンピオン画像はローカル保存したRiot Data Dragonスプラッシュアートを参照しています。",
-                    f"公式ソース: {source_url}" if source_url else "公式ソースは記事末尾で確認できます。",
-                ]
-            )
 
             outputs = {
-                "summary": render_summary_svg(title, patch_version, champions, build_bullets(frontmatter, lang), lang),
                 "champions": render_champion_grid_svg(title, champions, text, lang),
                 "core-notes": render_topic_svg(core_title, core_bullets, "core"),
                 "buff-group": render_group_svg(buff_title, champions, "버프", lang),
                 "nerf-group": render_group_svg(nerf_title, champions, "너프", lang),
-                "tier-impact": render_topic_svg(tier_title, tier_bullets, "tier"),
                 "recommended-picks": render_recommended_svg(picks_title, recommended_champions, lang),
-                "source-note": render_topic_svg(source_title, source_bullets, "source"),
             }
 
             for kind, svg in outputs.items():

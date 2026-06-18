@@ -1446,10 +1446,6 @@ def build_post_data(
     today = checked_at.date().isoformat()
 
     slug = f"lol-patch-{version_slug(version)}-summary"
-    summary_src = {
-        "ko": f"/assets/images/blog/generated/{slug}-summary-ko.svg",
-        "ja": f"/assets/images/blog/generated/{slug}-summary-ja.svg",
-    }
     core_notes_src = {
         "ko": f"/assets/images/blog/generated/{slug}-core-notes-ko.svg",
         "ja": f"/assets/images/blog/generated/{slug}-core-notes-ja.svg",
@@ -1462,17 +1458,9 @@ def build_post_data(
         "ko": f"/assets/images/blog/generated/{slug}-nerf-group-ko.svg",
         "ja": f"/assets/images/blog/generated/{slug}-nerf-group-ja.svg",
     }
-    tier_impact_src = {
-        "ko": f"/assets/images/blog/generated/{slug}-tier-impact-ko.svg",
-        "ja": f"/assets/images/blog/generated/{slug}-tier-impact-ja.svg",
-    }
     recommended_src = {
         "ko": f"/assets/images/blog/generated/{slug}-recommended-picks-ko.svg",
         "ja": f"/assets/images/blog/generated/{slug}-recommended-picks-ja.svg",
-    }
-    source_note_src = {
-        "ko": f"/assets/images/blog/generated/{slug}-source-note-ko.svg",
-        "ja": f"/assets/images/blog/generated/{slug}-source-note-ja.svg",
     }
     ko_title = f"리그오브레전드 {version} 패치노트 핵심 정리"
     ja_title = f"リーグ・オブ・レジェンド {version} パッチノート要点まとめ"
@@ -1528,7 +1516,7 @@ def build_post_data(
         "accent": "blue",
         "read_time": "7 min",
         "image": image_path,
-        "og_image": summary_src["ko"],
+        "og_image": image_path,
         "date": today,
         "patch_version": version,
         "source_url": listing.url,
@@ -1539,19 +1527,6 @@ def build_post_data(
         "categories": ["League of Legends", "Patch Notes"],
         "tags": ["롤", "리그오브레전드", "LoL", "패치노트", "솔랭", "메타"],
         "lol_champions": champion_metadata(champions, name_map),
-        "summary_image": {
-            "src": summary_src,
-            "width": 1200,
-            "height": 630,
-            "alt": {
-                "ko": f"리그오브레전드 {version} 패치 핵심 요약 인포그래픽",
-                "ja": f"リーグ・オブ・レジェンド {version} パッチ要点インフォグラフィック",
-            },
-            "caption": {
-                "ko": "패치 방향, 챔피언 조정 수, 솔랭 영향을 한 장으로 정리했습니다.",
-                "ja": "チャンピオン変更とソロランクへの影響を一枚に整理しました。",
-            },
-        },
         "content_images": [
             {
                 "after_section": "quick-summary",
@@ -1596,20 +1571,6 @@ def build_post_data(
                 },
             },
             {
-                "after_section": "solo-queue-tier-impact",
-                "src": tier_impact_src,
-                "width": 1200,
-                "height": 720,
-                "alt": {
-                    "ko": f"리그오브레전드 {version} 패치 솔랭 티어 영향 이미지",
-                    "ja": f"リーグ・オブ・レジェンド {version} パッチソロランクティア影響画像",
-                },
-                "caption": {
-                    "ko": "솔랭에서는 초반 체급 변화와 숙련도 요구치를 먼저 확인하세요.",
-                    "ja": "ソロランクでは序盤性能と熟練度要求の変化を先に確認しましょう。",
-                },
-            },
-            {
                 "after_section": "recommended-picks",
                 "src": recommended_src,
                 "width": 1200,
@@ -1621,20 +1582,6 @@ def build_post_data(
                 "caption": {
                     "ko": "실험 픽은 공식 변경 수치와 패치 초반 적용 난도를 함께 고려했습니다.",
                     "ja": "試用ピックは公式変更数値とパッチ序盤の扱いやすさを合わせて整理しました。",
-                },
-            },
-            {
-                "after_section": "source-note",
-                "src": source_note_src,
-                "width": 1200,
-                "height": 720,
-                "alt": {
-                    "ko": f"리그오브레전드 {version} 패치 공식 출처 및 이미지 출처 안내",
-                    "ja": f"リーグ・オブ・レジェンド {version} パッチ公式ソースと画像出典案内",
-                },
-                "caption": {
-                    "ko": "공식 패치노트와 Riot Data Dragon 기준으로 명칭과 이미지를 맞췄습니다.",
-                    "ja": "公式パッチノートとRiot Data Dragon基準で名称と画像をそろえました。",
                 },
             },
         ],
@@ -1994,14 +1941,11 @@ def write_post(post_data: dict, checked_at: dt.datetime, dry_run: bool) -> Path:
 def generated_blog_image_paths(slug: str) -> list[Path]:
     image_dir = Path("assets/images/blog/generated")
     kinds = [
-        "summary",
         "champions",
         "core-notes",
         "buff-group",
         "nerf-group",
-        "tier-impact",
         "recommended-picks",
-        "source-note",
     ]
     localized = [image_dir / f"{slug}-{kind}-{lang}.svg" for kind in kinds for lang in ["ko", "ja"]]
     default_aliases = [image_dir / f"{slug}-{kind}.svg" for kind in kinds]
