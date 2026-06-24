@@ -1,11 +1,11 @@
 {
-  "version": "16.12.1",
-  "updated_at": "2026-06-18T01:15:53+00:00",
+  "version": "16.13.1",
+  "updated_at": "2026-06-24T00:49:51+00:00",
   "source": {
     "versions": "https://ddragon.leagueoflegends.com/api/versions.json",
-    "en_US": "https://ddragon.leagueoflegends.com/cdn/16.12.1/data/en_US/champion.json",
-    "ko_KR": "https://ddragon.leagueoflegends.com/cdn/16.12.1/data/ko_KR/champion.json",
-    "ja_JP": "https://ddragon.leagueoflegends.com/cdn/16.12.1/data/ja_JP/champion.json"
+    "en_US": "https://ddragon.leagueoflegends.com/cdn/16.13.1/data/en_US/champion.json",
+    "ko_KR": "https://ddragon.leagueoflegends.com/cdn/16.13.1/data/ko_KR/champion.json",
+    "ja_JP": "https://ddragon.leagueoflegends.com/cdn/16.13.1/data/ja_JP/champion.json"
   },
   "champions": {
     "Aatrox": {
@@ -33,7 +33,7 @@
         "splash": "/assets/images/lol/champions/Aatrox/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Aatrox.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Aatrox.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Aatrox_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg"
       }
@@ -64,7 +64,7 @@
         "splash": "/assets/images/lol/champions/Ahri/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Ahri.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Ahri.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Ahri_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ahri_0.jpg"
       }
@@ -94,7 +94,7 @@
         "splash": "/assets/images/lol/champions/Akali/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Akali.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Akali.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Akali_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Akali_0.jpg"
       }
@@ -125,7 +125,7 @@
         "splash": "/assets/images/lol/champions/Akshan/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Akshan.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Akshan.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Akshan_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Akshan_0.jpg"
       }
@@ -156,7 +156,7 @@
         "splash": "/assets/images/lol/champions/Alistar/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Alistar.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Alistar.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Alistar_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Alistar_0.jpg"
       }
@@ -187,7 +187,7 @@
         "splash": "/assets/images/lol/champions/Ambessa/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Ambessa.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Ambessa.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Ambessa_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ambessa_0.jpg"
       }
@@ -218,7 +218,7 @@
         "splash": "/assets/images/lol/champions/Amumu/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Amumu.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Amumu.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Amumu_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Amumu_0.jpg"
       }
@@ -248,7 +248,7 @@
         "splash": "/assets/images/lol/champions/Anivia/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Anivia.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Anivia.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Anivia_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Anivia_0.jpg"
       }
@@ -279,7 +279,7 @@
         "splash": "/assets/images/lol/champions/Annie/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Annie.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Annie.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Annie_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Annie_0.jpg"
       }
@@ -309,7 +309,7 @@
         "splash": "/assets/images/lol/champions/Aphelios/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Aphelios.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Aphelios.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Aphelios_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aphelios_0.jpg"
       }
@@ -340,7 +340,7 @@
         "splash": "/assets/images/lol/champions/Ashe/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Ashe.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Ashe.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Ashe_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ashe_0.jpg"
       }
@@ -371,7 +371,7 @@
         "splash": "/assets/images/lol/champions/AurelionSol/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/AurelionSol.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/AurelionSol.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/AurelionSol_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/AurelionSol_0.jpg"
       }
@@ -402,7 +402,7 @@
         "splash": "/assets/images/lol/champions/Aurora/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Aurora.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Aurora.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Aurora_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aurora_0.jpg"
       }
@@ -433,7 +433,7 @@
         "splash": "/assets/images/lol/champions/Azir/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Azir.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Azir.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Azir_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Azir_0.jpg"
       }
@@ -464,7 +464,7 @@
         "splash": "/assets/images/lol/champions/Bard/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Bard.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Bard.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Bard_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Bard_0.jpg"
       }
@@ -496,7 +496,7 @@
         "splash": "/assets/images/lol/champions/Belveth/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Belveth.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Belveth.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Belveth_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Belveth_0.jpg"
       }
@@ -527,7 +527,7 @@
         "splash": "/assets/images/lol/champions/Blitzcrank/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Blitzcrank.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Blitzcrank.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Blitzcrank_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Blitzcrank_0.jpg"
       }
@@ -558,7 +558,7 @@
         "splash": "/assets/images/lol/champions/Brand/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Brand.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Brand.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Brand_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Brand_0.jpg"
       }
@@ -589,7 +589,7 @@
         "splash": "/assets/images/lol/champions/Braum/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Braum.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Braum.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Braum_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Braum_0.jpg"
       }
@@ -620,7 +620,7 @@
         "splash": "/assets/images/lol/champions/Briar/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Briar.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Briar.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Briar_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Briar_0.jpg"
       }
@@ -650,7 +650,7 @@
         "splash": "/assets/images/lol/champions/Caitlyn/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Caitlyn.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Caitlyn.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Caitlyn_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Caitlyn_0.jpg"
       }
@@ -681,7 +681,7 @@
         "splash": "/assets/images/lol/champions/Camille/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Camille.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Camille.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Camille_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Camille_0.jpg"
       }
@@ -711,7 +711,7 @@
         "splash": "/assets/images/lol/champions/Cassiopeia/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Cassiopeia.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Cassiopeia.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Cassiopeia_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Cassiopeia_0.jpg"
       }
@@ -744,7 +744,7 @@
         "splash": "/assets/images/lol/champions/Chogath/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Chogath.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Chogath.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Chogath_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Chogath_0.jpg"
       }
@@ -775,7 +775,7 @@
         "splash": "/assets/images/lol/champions/Corki/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Corki.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Corki.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Corki_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Corki_0.jpg"
       }
@@ -806,7 +806,7 @@
         "splash": "/assets/images/lol/champions/Darius/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Darius.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Darius.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Darius_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Darius_0.jpg"
       }
@@ -837,7 +837,7 @@
         "splash": "/assets/images/lol/champions/Diana/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Diana.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Diana.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Diana_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Diana_0.jpg"
       }
@@ -870,7 +870,7 @@
         "splash": "/assets/images/lol/champions/DrMundo/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/DrMundo.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/DrMundo.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/DrMundo_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/DrMundo_0.jpg"
       }
@@ -900,7 +900,7 @@
         "splash": "/assets/images/lol/champions/Draven/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Draven.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Draven.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Draven_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Draven_0.jpg"
       }
@@ -931,7 +931,7 @@
         "splash": "/assets/images/lol/champions/Ekko/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Ekko.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Ekko.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Ekko_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ekko_0.jpg"
       }
@@ -962,7 +962,7 @@
         "splash": "/assets/images/lol/champions/Elise/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Elise.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Elise.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Elise_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Elise_0.jpg"
       }
@@ -993,7 +993,7 @@
         "splash": "/assets/images/lol/champions/Evelynn/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Evelynn.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Evelynn.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Evelynn_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Evelynn_0.jpg"
       }
@@ -1024,7 +1024,7 @@
         "splash": "/assets/images/lol/champions/Ezreal/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Ezreal.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Ezreal.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Ezreal_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ezreal_0.jpg"
       }
@@ -1055,7 +1055,7 @@
         "splash": "/assets/images/lol/champions/Fiddlesticks/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Fiddlesticks.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Fiddlesticks.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Fiddlesticks_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Fiddlesticks_0.jpg"
       }
@@ -1086,7 +1086,7 @@
         "splash": "/assets/images/lol/champions/Fiora/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Fiora.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Fiora.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Fiora_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Fiora_0.jpg"
       }
@@ -1117,7 +1117,7 @@
         "splash": "/assets/images/lol/champions/Fizz/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Fizz.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Fizz.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Fizz_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Fizz_0.jpg"
       }
@@ -1148,7 +1148,7 @@
         "splash": "/assets/images/lol/champions/Galio/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Galio.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Galio.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Galio_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Galio_0.jpg"
       }
@@ -1178,7 +1178,7 @@
         "splash": "/assets/images/lol/champions/Gangplank/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Gangplank.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Gangplank.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Gangplank_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Gangplank_0.jpg"
       }
@@ -1209,7 +1209,7 @@
         "splash": "/assets/images/lol/champions/Garen/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Garen.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Garen.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Garen_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Garen_0.jpg"
       }
@@ -1240,7 +1240,7 @@
         "splash": "/assets/images/lol/champions/Gnar/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Gnar.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Gnar.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Gnar_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Gnar_0.jpg"
       }
@@ -1271,7 +1271,7 @@
         "splash": "/assets/images/lol/champions/Gragas/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Gragas.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Gragas.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Gragas_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Gragas_0.jpg"
       }
@@ -1301,7 +1301,7 @@
         "splash": "/assets/images/lol/champions/Graves/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Graves.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Graves.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Graves_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Graves_0.jpg"
       }
@@ -1331,7 +1331,7 @@
         "splash": "/assets/images/lol/champions/Gwen/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Gwen.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Gwen.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Gwen_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Gwen_0.jpg"
       }
@@ -1362,7 +1362,7 @@
         "splash": "/assets/images/lol/champions/Hecarim/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Hecarim.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Hecarim.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Hecarim_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Hecarim_0.jpg"
       }
@@ -1393,7 +1393,7 @@
         "splash": "/assets/images/lol/champions/Heimerdinger/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Heimerdinger.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Heimerdinger.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Heimerdinger_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Heimerdinger_0.jpg"
       }
@@ -1424,7 +1424,7 @@
         "splash": "/assets/images/lol/champions/Hwei/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Hwei.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Hwei.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Hwei_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Hwei_0.jpg"
       }
@@ -1455,7 +1455,7 @@
         "splash": "/assets/images/lol/champions/Illaoi/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Illaoi.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Illaoi.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Illaoi_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Illaoi_0.jpg"
       }
@@ -1486,7 +1486,7 @@
         "splash": "/assets/images/lol/champions/Irelia/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Irelia.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Irelia.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Irelia_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Irelia_0.jpg"
       }
@@ -1517,7 +1517,7 @@
         "splash": "/assets/images/lol/champions/Ivern/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Ivern.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Ivern.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Ivern_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ivern_0.jpg"
       }
@@ -1548,7 +1548,7 @@
         "splash": "/assets/images/lol/champions/Janna/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Janna.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Janna.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Janna_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Janna_0.jpg"
       }
@@ -1580,7 +1580,7 @@
         "splash": "/assets/images/lol/champions/JarvanIV/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/JarvanIV.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/JarvanIV.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/JarvanIV_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/JarvanIV_0.jpg"
       }
@@ -1610,7 +1610,7 @@
         "splash": "/assets/images/lol/champions/Jax/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Jax.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Jax.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Jax_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jax_0.jpg"
       }
@@ -1641,7 +1641,7 @@
         "splash": "/assets/images/lol/champions/Jayce/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Jayce.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Jayce.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Jayce_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jayce_0.jpg"
       }
@@ -1672,7 +1672,7 @@
         "splash": "/assets/images/lol/champions/Jhin/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Jhin.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Jhin.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Jhin_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jhin_0.jpg"
       }
@@ -1702,7 +1702,7 @@
         "splash": "/assets/images/lol/champions/Jinx/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Jinx.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Jinx.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Jinx_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Jinx_0.jpg"
       }
@@ -1734,7 +1734,7 @@
         "splash": "/assets/images/lol/champions/KSante/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/KSante.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/KSante.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/KSante_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/KSante_0.jpg"
       }
@@ -1767,7 +1767,7 @@
         "splash": "/assets/images/lol/champions/Kaisa/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Kaisa.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Kaisa.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Kaisa_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kaisa_0.jpg"
       }
@@ -1797,7 +1797,7 @@
         "splash": "/assets/images/lol/champions/Kalista/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Kalista.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Kalista.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Kalista_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kalista_0.jpg"
       }
@@ -1828,7 +1828,7 @@
         "splash": "/assets/images/lol/champions/Karma/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Karma.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Karma.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Karma_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Karma_0.jpg"
       }
@@ -1858,7 +1858,7 @@
         "splash": "/assets/images/lol/champions/Karthus/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Karthus.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Karthus.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Karthus_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Karthus_0.jpg"
       }
@@ -1889,7 +1889,7 @@
         "splash": "/assets/images/lol/champions/Kassadin/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Kassadin.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Kassadin.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Kassadin_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kassadin_0.jpg"
       }
@@ -1920,7 +1920,7 @@
         "splash": "/assets/images/lol/champions/Katarina/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Katarina.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Katarina.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Katarina_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Katarina_0.jpg"
       }
@@ -1951,7 +1951,7 @@
         "splash": "/assets/images/lol/champions/Kayle/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Kayle.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Kayle.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Kayle_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kayle_0.jpg"
       }
@@ -1982,7 +1982,7 @@
         "splash": "/assets/images/lol/champions/Kayn/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Kayn.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Kayn.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Kayn_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kayn_0.jpg"
       }
@@ -2012,7 +2012,7 @@
         "splash": "/assets/images/lol/champions/Kennen/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Kennen.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Kennen.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Kennen_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kennen_0.jpg"
       }
@@ -2044,7 +2044,7 @@
         "splash": "/assets/images/lol/champions/Khazix/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Khazix.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Khazix.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Khazix_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Khazix_0.jpg"
       }
@@ -2074,7 +2074,7 @@
         "splash": "/assets/images/lol/champions/Kindred/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Kindred.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Kindred.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Kindred_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kindred_0.jpg"
       }
@@ -2104,7 +2104,7 @@
         "splash": "/assets/images/lol/champions/Kled/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Kled.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Kled.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Kled_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Kled_0.jpg"
       }
@@ -2136,7 +2136,7 @@
         "splash": "/assets/images/lol/champions/KogMaw/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/KogMaw.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/KogMaw.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/KogMaw_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/KogMaw_0.jpg"
       }
@@ -2168,7 +2168,7 @@
         "splash": "/assets/images/lol/champions/Leblanc/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Leblanc.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Leblanc.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Leblanc_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Leblanc_0.jpg"
       }
@@ -2200,7 +2200,7 @@
         "splash": "/assets/images/lol/champions/LeeSin/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/LeeSin.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/LeeSin.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/LeeSin_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/LeeSin_0.jpg"
       }
@@ -2231,7 +2231,7 @@
         "splash": "/assets/images/lol/champions/Leona/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Leona.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Leona.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Leona_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Leona_0.jpg"
       }
@@ -2262,7 +2262,7 @@
         "splash": "/assets/images/lol/champions/Lillia/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Lillia.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Lillia.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Lillia_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lillia_0.jpg"
       }
@@ -2292,9 +2292,40 @@
         "splash": "/assets/images/lol/champions/Lissandra/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Lissandra.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Lissandra.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Lissandra_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lissandra_0.jpg"
+      }
+    },
+    "Locke": {
+      "key": "Locke",
+      "numeric_key": "805",
+      "en": "Locke",
+      "ko": "로크",
+      "ja": "ロック",
+      "title": {
+        "en": "the Ashen Exorcist",
+        "ko": "잿빛 퇴마사",
+        "ja": "灰の祓魔師"
+      },
+      "tags": [
+        "Assassin",
+        "Mage"
+      ],
+      "aliases": [
+        "Locke",
+        "ロック",
+        "로크"
+      ],
+      "assets": {
+        "square": "/assets/images/lol/champions/Locke/square.png",
+        "loading": "/assets/images/lol/champions/Locke/loading.jpg",
+        "splash": "/assets/images/lol/champions/Locke/splash.jpg"
+      },
+      "source_assets": {
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Locke.png",
+        "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Locke_0.jpg",
+        "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Locke_0.jpg"
       }
     },
     "Lucian": {
@@ -2323,7 +2354,7 @@
         "splash": "/assets/images/lol/champions/Lucian/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Lucian.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Lucian.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Lucian_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lucian_0.jpg"
       }
@@ -2354,7 +2385,7 @@
         "splash": "/assets/images/lol/champions/Lulu/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Lulu.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Lulu.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Lulu_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lulu_0.jpg"
       }
@@ -2385,7 +2416,7 @@
         "splash": "/assets/images/lol/champions/Lux/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Lux.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Lux.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Lux_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Lux_0.jpg"
       }
@@ -2416,7 +2447,7 @@
         "splash": "/assets/images/lol/champions/Malphite/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Malphite.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Malphite.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Malphite_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Malphite_0.jpg"
       }
@@ -2446,7 +2477,7 @@
         "splash": "/assets/images/lol/champions/Malzahar/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Malzahar.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Malzahar.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Malzahar_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Malzahar_0.jpg"
       }
@@ -2477,7 +2508,7 @@
         "splash": "/assets/images/lol/champions/Maokai/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Maokai.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Maokai.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Maokai_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Maokai_0.jpg"
       }
@@ -2509,7 +2540,7 @@
         "splash": "/assets/images/lol/champions/MasterYi/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/MasterYi.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/MasterYi.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/MasterYi_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/MasterYi_0.jpg"
       }
@@ -2540,7 +2571,7 @@
         "splash": "/assets/images/lol/champions/Mel/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Mel.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Mel.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Mel_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Mel_0.jpg"
       }
@@ -2571,7 +2602,7 @@
         "splash": "/assets/images/lol/champions/Milio/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Milio.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Milio.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Milio_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Milio_0.jpg"
       }
@@ -2603,7 +2634,7 @@
         "splash": "/assets/images/lol/champions/MissFortune/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/MissFortune.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/MissFortune.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/MissFortune_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/MissFortune_0.jpg"
       }
@@ -2635,7 +2666,7 @@
         "splash": "/assets/images/lol/champions/MonkeyKing/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/MonkeyKing.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/MonkeyKing.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/MonkeyKing_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/MonkeyKing_0.jpg"
       }
@@ -2666,7 +2697,7 @@
         "splash": "/assets/images/lol/champions/Mordekaiser/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Mordekaiser.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Mordekaiser.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Mordekaiser_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Mordekaiser_0.jpg"
       }
@@ -2697,7 +2728,7 @@
         "splash": "/assets/images/lol/champions/Morgana/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Morgana.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Morgana.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Morgana_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Morgana_0.jpg"
       }
@@ -2728,7 +2759,7 @@
         "splash": "/assets/images/lol/champions/Naafiri/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Naafiri.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Naafiri.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Naafiri_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Naafiri_0.jpg"
       }
@@ -2759,7 +2790,7 @@
         "splash": "/assets/images/lol/champions/Nami/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Nami.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Nami.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Nami_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nami_0.jpg"
       }
@@ -2790,7 +2821,7 @@
         "splash": "/assets/images/lol/champions/Nasus/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Nasus.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Nasus.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Nasus_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nasus_0.jpg"
       }
@@ -2821,7 +2852,7 @@
         "splash": "/assets/images/lol/champions/Nautilus/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Nautilus.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Nautilus.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Nautilus_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nautilus_0.jpg"
       }
@@ -2852,7 +2883,7 @@
         "splash": "/assets/images/lol/champions/Neeko/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Neeko.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Neeko.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Neeko_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Neeko_0.jpg"
       }
@@ -2883,7 +2914,7 @@
         "splash": "/assets/images/lol/champions/Nidalee/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Nidalee.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Nidalee.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Nidalee_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nidalee_0.jpg"
       }
@@ -2914,7 +2945,7 @@
         "splash": "/assets/images/lol/champions/Nilah/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Nilah.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Nilah.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Nilah_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nilah_0.jpg"
       }
@@ -2945,7 +2976,7 @@
         "splash": "/assets/images/lol/champions/Nocturne/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Nocturne.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Nocturne.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Nocturne_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nocturne_0.jpg"
       }
@@ -2978,7 +3009,7 @@
         "splash": "/assets/images/lol/champions/Nunu/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Nunu.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Nunu.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Nunu_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Nunu_0.jpg"
       }
@@ -3009,7 +3040,7 @@
         "splash": "/assets/images/lol/champions/Olaf/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Olaf.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Olaf.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Olaf_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Olaf_0.jpg"
       }
@@ -3040,7 +3071,7 @@
         "splash": "/assets/images/lol/champions/Orianna/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Orianna.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Orianna.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Orianna_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Orianna_0.jpg"
       }
@@ -3070,7 +3101,7 @@
         "splash": "/assets/images/lol/champions/Ornn/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Ornn.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Ornn.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Ornn_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ornn_0.jpg"
       }
@@ -3101,7 +3132,7 @@
         "splash": "/assets/images/lol/champions/Pantheon/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Pantheon.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Pantheon.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Pantheon_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Pantheon_0.jpg"
       }
@@ -3132,7 +3163,7 @@
         "splash": "/assets/images/lol/champions/Poppy/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Poppy.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Poppy.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Poppy_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Poppy_0.jpg"
       }
@@ -3163,7 +3194,7 @@
         "splash": "/assets/images/lol/champions/Pyke/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Pyke.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Pyke.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Pyke_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Pyke_0.jpg"
       }
@@ -3193,7 +3224,7 @@
         "splash": "/assets/images/lol/champions/Qiyana/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Qiyana.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Qiyana.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Qiyana_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Qiyana_0.jpg"
       }
@@ -3224,7 +3255,7 @@
         "splash": "/assets/images/lol/champions/Quinn/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Quinn.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Quinn.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Quinn_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Quinn_0.jpg"
       }
@@ -3254,7 +3285,7 @@
         "splash": "/assets/images/lol/champions/Rakan/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Rakan.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Rakan.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Rakan_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Rakan_0.jpg"
       }
@@ -3284,7 +3315,7 @@
         "splash": "/assets/images/lol/champions/Rammus/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Rammus.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Rammus.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Rammus_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Rammus_0.jpg"
       }
@@ -3316,7 +3347,7 @@
         "splash": "/assets/images/lol/champions/RekSai/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/RekSai.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/RekSai.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/RekSai_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/RekSai_0.jpg"
       }
@@ -3347,7 +3378,7 @@
         "splash": "/assets/images/lol/champions/Rell/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Rell.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Rell.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Rell_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Rell_0.jpg"
       }
@@ -3380,7 +3411,7 @@
         "splash": "/assets/images/lol/champions/Renata/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Renata.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Renata.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Renata_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Renata_0.jpg"
       }
@@ -3411,7 +3442,7 @@
         "splash": "/assets/images/lol/champions/Renekton/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Renekton.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Renekton.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Renekton_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Renekton_0.jpg"
       }
@@ -3442,7 +3473,7 @@
         "splash": "/assets/images/lol/champions/Rengar/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Rengar.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Rengar.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Rengar_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Rengar_0.jpg"
       }
@@ -3473,7 +3504,7 @@
         "splash": "/assets/images/lol/champions/Riven/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Riven.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Riven.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Riven_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Riven_0.jpg"
       }
@@ -3504,7 +3535,7 @@
         "splash": "/assets/images/lol/champions/Rumble/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Rumble.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Rumble.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Rumble_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Rumble_0.jpg"
       }
@@ -3534,7 +3565,7 @@
         "splash": "/assets/images/lol/champions/Ryze/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Ryze.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Ryze.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Ryze_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ryze_0.jpg"
       }
@@ -3565,7 +3596,7 @@
         "splash": "/assets/images/lol/champions/Samira/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Samira.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Samira.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Samira_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Samira_0.jpg"
       }
@@ -3595,7 +3626,7 @@
         "splash": "/assets/images/lol/champions/Sejuani/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Sejuani.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Sejuani.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Sejuani_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sejuani_0.jpg"
       }
@@ -3626,7 +3657,7 @@
         "splash": "/assets/images/lol/champions/Senna/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Senna.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Senna.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Senna_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Senna_0.jpg"
       }
@@ -3657,7 +3688,7 @@
         "splash": "/assets/images/lol/champions/Seraphine/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Seraphine.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Seraphine.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Seraphine_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Seraphine_0.jpg"
       }
@@ -3688,7 +3719,7 @@
         "splash": "/assets/images/lol/champions/Sett/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Sett.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Sett.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Sett_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sett_0.jpg"
       }
@@ -3718,7 +3749,7 @@
         "splash": "/assets/images/lol/champions/Shaco/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Shaco.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Shaco.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Shaco_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Shaco_0.jpg"
       }
@@ -3748,7 +3779,7 @@
         "splash": "/assets/images/lol/champions/Shen/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Shen.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Shen.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Shen_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Shen_0.jpg"
       }
@@ -3779,7 +3810,7 @@
         "splash": "/assets/images/lol/champions/Shyvana/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Shyvana.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Shyvana.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Shyvana_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Shyvana_0.jpg"
       }
@@ -3810,7 +3841,7 @@
         "splash": "/assets/images/lol/champions/Singed/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Singed.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Singed.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Singed_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Singed_0.jpg"
       }
@@ -3841,7 +3872,7 @@
         "splash": "/assets/images/lol/champions/Sion/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Sion.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Sion.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Sion_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sion_0.jpg"
       }
@@ -3871,7 +3902,7 @@
         "splash": "/assets/images/lol/champions/Sivir/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Sivir.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Sivir.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Sivir_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sivir_0.jpg"
       }
@@ -3902,7 +3933,7 @@
         "splash": "/assets/images/lol/champions/Skarner/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Skarner.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Skarner.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Skarner_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Skarner_0.jpg"
       }
@@ -3933,7 +3964,7 @@
         "splash": "/assets/images/lol/champions/Smolder/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Smolder.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Smolder.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Smolder_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Smolder_0.jpg"
       }
@@ -3964,7 +3995,7 @@
         "splash": "/assets/images/lol/champions/Sona/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Sona.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Sona.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Sona_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sona_0.jpg"
       }
@@ -3995,7 +4026,7 @@
         "splash": "/assets/images/lol/champions/Soraka/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Soraka.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Soraka.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Soraka_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Soraka_0.jpg"
       }
@@ -4026,7 +4057,7 @@
         "splash": "/assets/images/lol/champions/Swain/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Swain.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Swain.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Swain_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Swain_0.jpg"
       }
@@ -4057,7 +4088,7 @@
         "splash": "/assets/images/lol/champions/Sylas/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Sylas.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Sylas.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Sylas_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Sylas_0.jpg"
       }
@@ -4087,7 +4118,7 @@
         "splash": "/assets/images/lol/champions/Syndra/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Syndra.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Syndra.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Syndra_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Syndra_0.jpg"
       }
@@ -4119,7 +4150,7 @@
         "splash": "/assets/images/lol/champions/TahmKench/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/TahmKench.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/TahmKench.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/TahmKench_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/TahmKench_0.jpg"
       }
@@ -4150,7 +4181,7 @@
         "splash": "/assets/images/lol/champions/Taliyah/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Taliyah.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Taliyah.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Taliyah_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Taliyah_0.jpg"
       }
@@ -4180,7 +4211,7 @@
         "splash": "/assets/images/lol/champions/Talon/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Talon.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Talon.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Talon_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Talon_0.jpg"
       }
@@ -4211,7 +4242,7 @@
         "splash": "/assets/images/lol/champions/Taric/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Taric.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Taric.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Taric_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Taric_0.jpg"
       }
@@ -4242,7 +4273,7 @@
         "splash": "/assets/images/lol/champions/Teemo/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Teemo.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Teemo.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Teemo_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Teemo_0.jpg"
       }
@@ -4273,7 +4304,7 @@
         "splash": "/assets/images/lol/champions/Thresh/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Thresh.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Thresh.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Thresh_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Thresh_0.jpg"
       }
@@ -4304,7 +4335,7 @@
         "splash": "/assets/images/lol/champions/Tristana/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Tristana.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Tristana.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Tristana_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Tristana_0.jpg"
       }
@@ -4335,7 +4366,7 @@
         "splash": "/assets/images/lol/champions/Trundle/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Trundle.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Trundle.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Trundle_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Trundle_0.jpg"
       }
@@ -4366,7 +4397,7 @@
         "splash": "/assets/images/lol/champions/Tryndamere/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Tryndamere.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Tryndamere.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Tryndamere_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Tryndamere_0.jpg"
       }
@@ -4398,7 +4429,7 @@
         "splash": "/assets/images/lol/champions/TwistedFate/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/TwistedFate.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/TwistedFate.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/TwistedFate_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/TwistedFate_0.jpg"
       }
@@ -4429,7 +4460,7 @@
         "splash": "/assets/images/lol/champions/Twitch/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Twitch.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Twitch.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Twitch_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Twitch_0.jpg"
       }
@@ -4460,7 +4491,7 @@
         "splash": "/assets/images/lol/champions/Udyr/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Udyr.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Udyr.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Udyr_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Udyr_0.jpg"
       }
@@ -4491,7 +4522,7 @@
         "splash": "/assets/images/lol/champions/Urgot/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Urgot.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Urgot.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Urgot_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Urgot_0.jpg"
       }
@@ -4522,7 +4553,7 @@
         "splash": "/assets/images/lol/champions/Varus/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Varus.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Varus.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Varus_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Varus_0.jpg"
       }
@@ -4553,7 +4584,7 @@
         "splash": "/assets/images/lol/champions/Vayne/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Vayne.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Vayne.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Vayne_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Vayne_0.jpg"
       }
@@ -4583,7 +4614,7 @@
         "splash": "/assets/images/lol/champions/Veigar/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Veigar.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Veigar.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Veigar_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Veigar_0.jpg"
       }
@@ -4616,7 +4647,7 @@
         "splash": "/assets/images/lol/champions/Velkoz/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Velkoz.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Velkoz.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Velkoz_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Velkoz_0.jpg"
       }
@@ -4646,7 +4677,7 @@
         "splash": "/assets/images/lol/champions/Vex/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Vex.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Vex.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Vex_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Vex_0.jpg"
       }
@@ -4677,7 +4708,7 @@
         "splash": "/assets/images/lol/champions/Vi/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Vi.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Vi.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Vi_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Vi_0.jpg"
       }
@@ -4708,7 +4739,7 @@
         "splash": "/assets/images/lol/champions/Viego/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Viego.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Viego.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Viego_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Viego_0.jpg"
       }
@@ -4738,7 +4769,7 @@
         "splash": "/assets/images/lol/champions/Viktor/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Viktor.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Viktor.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Viktor_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Viktor_0.jpg"
       }
@@ -4769,7 +4800,7 @@
         "splash": "/assets/images/lol/champions/Vladimir/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Vladimir.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Vladimir.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Vladimir_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Vladimir_0.jpg"
       }
@@ -4800,7 +4831,7 @@
         "splash": "/assets/images/lol/champions/Volibear/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Volibear.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Volibear.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Volibear_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Volibear_0.jpg"
       }
@@ -4831,7 +4862,7 @@
         "splash": "/assets/images/lol/champions/Warwick/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Warwick.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Warwick.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Warwick_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Warwick_0.jpg"
       }
@@ -4861,7 +4892,7 @@
         "splash": "/assets/images/lol/champions/Xayah/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Xayah.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Xayah.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Xayah_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Xayah_0.jpg"
       }
@@ -4892,7 +4923,7 @@
         "splash": "/assets/images/lol/champions/Xerath/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Xerath.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Xerath.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Xerath_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Xerath_0.jpg"
       }
@@ -4924,7 +4955,7 @@
         "splash": "/assets/images/lol/champions/XinZhao/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/XinZhao.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/XinZhao.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/XinZhao_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/XinZhao_0.jpg"
       }
@@ -4955,7 +4986,7 @@
         "splash": "/assets/images/lol/champions/Yasuo/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Yasuo.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Yasuo.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Yasuo_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yasuo_0.jpg"
       }
@@ -4986,7 +5017,7 @@
         "splash": "/assets/images/lol/champions/Yone/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Yone.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Yone.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Yone_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yone_0.jpg"
       }
@@ -5017,7 +5048,7 @@
         "splash": "/assets/images/lol/champions/Yorick/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Yorick.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Yorick.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Yorick_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yorick_0.jpg"
       }
@@ -5047,7 +5078,7 @@
         "splash": "/assets/images/lol/champions/Yunara/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Yunara.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Yunara.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Yunara_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yunara_0.jpg"
       }
@@ -5078,7 +5109,7 @@
         "splash": "/assets/images/lol/champions/Yuumi/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Yuumi.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Yuumi.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Yuumi_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Yuumi_0.jpg"
       }
@@ -5109,7 +5140,7 @@
         "splash": "/assets/images/lol/champions/Zaahen/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Zaahen.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Zaahen.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Zaahen_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zaahen_0.jpg"
       }
@@ -5140,7 +5171,7 @@
         "splash": "/assets/images/lol/champions/Zac/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Zac.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Zac.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Zac_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zac_0.jpg"
       }
@@ -5170,7 +5201,7 @@
         "splash": "/assets/images/lol/champions/Zed/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Zed.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Zed.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Zed_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zed_0.jpg"
       }
@@ -5200,7 +5231,7 @@
         "splash": "/assets/images/lol/champions/Zeri/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Zeri.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Zeri.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Zeri_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zeri_0.jpg"
       }
@@ -5230,7 +5261,7 @@
         "splash": "/assets/images/lol/champions/Ziggs/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Ziggs.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Ziggs.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Ziggs_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Ziggs_0.jpg"
       }
@@ -5261,7 +5292,7 @@
         "splash": "/assets/images/lol/champions/Zilean/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Zilean.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Zilean.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Zilean_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zilean_0.jpg"
       }
@@ -5291,7 +5322,7 @@
         "splash": "/assets/images/lol/champions/Zoe/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Zoe.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Zoe.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Zoe_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zoe_0.jpg"
       }
@@ -5322,7 +5353,7 @@
         "splash": "/assets/images/lol/champions/Zyra/splash.jpg"
       },
       "source_assets": {
-        "square": "https://ddragon.leagueoflegends.com/cdn/16.12.1/img/champion/Zyra.png",
+        "square": "https://ddragon.leagueoflegends.com/cdn/16.13.1/img/champion/Zyra.png",
         "loading": "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Zyra_0.jpg",
         "splash": "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Zyra_0.jpg"
       }

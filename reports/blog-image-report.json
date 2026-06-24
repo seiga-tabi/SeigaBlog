@@ -18,6 +18,27 @@
         "ja": "assets/images/blog/generated/lol-patch-26-12-summary-recommended-picks-ja.svg"
       }
     },
-    "champion_count": 16
+    "champion_count": 17
+  },
+  {
+    "file": "_posts/2026-06-24-lol-patch-26-13-summary.md",
+    "images": {
+      "buff-group": {
+        "ko": "assets/images/blog/generated/lol-patch-26-13-summary-buff-group-ko.svg",
+        "default": "assets/images/blog/generated/lol-patch-26-13-summary-buff-group.svg",
+        "ja": "assets/images/blog/generated/lol-patch-26-13-summary-buff-group-ja.svg"
+      },
+      "nerf-group": {
+        "ko": "assets/images/blog/generated/lol-patch-26-13-summary-nerf-group-ko.svg",
+        "default": "assets/images/blog/generated/lol-patch-26-13-summary-nerf-group.svg",
+        "ja": "assets/images/blog/generated/lol-patch-26-13-summary-nerf-group-ja.svg"
+      },
+      "recommended-picks": {
+        "ko": "assets/images/blog/generated/lol-patch-26-13-summary-recommended-picks-ko.svg",
+        "default": "assets/images/blog/generated/lol-patch-26-13-summary-recommended-picks.svg",
+        "ja": "assets/images/blog/generated/lol-patch-26-13-summary-recommended-picks-ja.svg"
+      }
+    },
+    "champion_count": 17
   }
 ]

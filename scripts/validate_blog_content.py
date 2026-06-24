@@ -172,6 +172,11 @@ def status_count(frontmatter: str, status: str) -> int:
     return len(re.findall(rf"^\s*status:\s*['\"]?{re.escape(status)}['\"]?\s*$", section, flags=re.MULTILINE))
 
 
+def overview_row_count(frontmatter: str) -> int:
+    section = top_section(frontmatter, "overview_table")
+    return len(re.findall(r"^\s*(?:-\s*)?label:\s*$", section, flags=re.MULTILINE))
+
+
 def validate_recommended_count_labels(file_label: str, frontmatter: str, recommended_count: int) -> list[dict]:
     issues: list[dict] = []
     keywords = ["추천", "실험 픽", "おすすめ", "試用ピック"]
@@ -808,7 +813,7 @@ def validate_post(path, name_map: dict) -> list[dict]:
                     "message": f"필수 섹션 id가 없습니다: {missing_section_ids}",
                 }
             )
-        overview_count = top_list_count(frontmatter, "overview_table")
+        overview_count = overview_row_count(frontmatter)
         if overview_count < 6:
             issues.append({"file": file_label, "type": "overview", "message": f"overview_table 항목이 6개 미만입니다: {overview_count}개"})
 

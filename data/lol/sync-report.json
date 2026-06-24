@@ -1,7 +1,7 @@
 {
-  "version": "16.12.1",
-  "updated_at": "2026-06-18T01:15:54+00:00",
-  "champion_count": 172,
+  "version": "16.13.1",
+  "updated_at": "2026-06-24T00:52:49+00:00",
+  "champion_count": 173,
   "asset_results": [
     {
       "champion": "Aatrox",
@@ -21,6 +21,111 @@
       "champion": "Aatrox",
       "asset_type": "splash",
       "path": "assets/images/lol/champions/Aatrox/splash.jpg",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Aphelios",
+      "asset_type": "square",
+      "path": "assets/images/lol/champions/Aphelios/square.png",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Aphelios",
+      "asset_type": "loading",
+      "path": "assets/images/lol/champions/Aphelios/loading.jpg",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Aphelios",
+      "asset_type": "splash",
+      "path": "assets/images/lol/champions/Aphelios/splash.jpg",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Bard",
+      "asset_type": "square",
+      "path": "assets/images/lol/champions/Bard/square.png",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Bard",
+      "asset_type": "loading",
+      "path": "assets/images/lol/champions/Bard/loading.jpg",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Bard",
+      "asset_type": "splash",
+      "path": "assets/images/lol/champions/Bard/splash.jpg",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Brand",
+      "asset_type": "square",
+      "path": "assets/images/lol/champions/Brand/square.png",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Brand",
+      "asset_type": "loading",
+      "path": "assets/images/lol/champions/Brand/loading.jpg",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Brand",
+      "asset_type": "splash",
+      "path": "assets/images/lol/champions/Brand/splash.jpg",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Cassiopeia",
+      "asset_type": "square",
+      "path": "assets/images/lol/champions/Cassiopeia/square.png",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Cassiopeia",
+      "asset_type": "loading",
+      "path": "assets/images/lol/champions/Cassiopeia/loading.jpg",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Cassiopeia",
+      "asset_type": "splash",
+      "path": "assets/images/lol/champions/Cassiopeia/splash.jpg",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Draven",
+      "asset_type": "square",
+      "path": "assets/images/lol/champions/Draven/square.png",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Draven",
+      "asset_type": "loading",
+      "path": "assets/images/lol/champions/Draven/loading.jpg",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Draven",
+      "asset_type": "splash",
+      "path": "assets/images/lol/champions/Draven/splash.jpg",
       "status": "skipped",
       "error": ""
     },
@@ -109,6 +214,48 @@
       "error": ""
     },
     {
+      "champion": "KSante",
+      "asset_type": "square",
+      "path": "assets/images/lol/champions/KSante/square.png",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "KSante",
+      "asset_type": "loading",
+      "path": "assets/images/lol/champions/KSante/loading.jpg",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "KSante",
+      "asset_type": "splash",
+      "path": "assets/images/lol/champions/KSante/splash.jpg",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Kaisa",
+      "asset_type": "square",
+      "path": "assets/images/lol/champions/Kaisa/square.png",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Kaisa",
+      "asset_type": "loading",
+      "path": "assets/images/lol/champions/Kaisa/loading.jpg",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Kaisa",
+      "asset_type": "splash",
+      "path": "assets/images/lol/champions/Kaisa/splash.jpg",
+      "status": "skipped",
+      "error": ""
+    },
+    {
       "champion": "Kayle",
       "asset_type": "square",
       "path": "assets/images/lol/champions/Kayle/square.png",
@@ -126,6 +273,27 @@
       "champion": "Kayle",
       "asset_type": "splash",
       "path": "assets/images/lol/champions/Kayle/splash.jpg",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Leblanc",
+      "asset_type": "square",
+      "path": "assets/images/lol/champions/Leblanc/square.png",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Leblanc",
+      "asset_type": "loading",
+      "path": "assets/images/lol/champions/Leblanc/loading.jpg",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Leblanc",
+      "asset_type": "splash",
+      "path": "assets/images/lol/champions/Leblanc/splash.jpg",
       "status": "skipped",
       "error": ""
     },
@@ -151,6 +319,27 @@
       "error": ""
     },
     {
+      "champion": "Locke",
+      "asset_type": "square",
+      "path": "assets/images/lol/champions/Locke/square.png",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Locke",
+      "asset_type": "loading",
+      "path": "assets/images/lol/champions/Locke/loading.jpg",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Locke",
+      "asset_type": "splash",
+      "path": "assets/images/lol/champions/Locke/splash.jpg",
+      "status": "skipped",
+      "error": ""
+    },
+    {
       "champion": "Nocturne",
       "asset_type": "square",
       "path": "assets/images/lol/champions/Nocturne/square.png",
@@ -168,6 +357,27 @@
       "champion": "Nocturne",
       "asset_type": "splash",
       "path": "assets/images/lol/champions/Nocturne/splash.jpg",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Olaf",
+      "asset_type": "square",
+      "path": "assets/images/lol/champions/Olaf/square.png",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Olaf",
+      "asset_type": "loading",
+      "path": "assets/images/lol/champions/Olaf/loading.jpg",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Olaf",
+      "asset_type": "splash",
+      "path": "assets/images/lol/champions/Olaf/splash.jpg",
       "status": "skipped",
       "error": ""
     },
@@ -193,6 +403,90 @@
       "error": ""
     },
     {
+      "champion": "Poppy",
+      "asset_type": "square",
+      "path": "assets/images/lol/champions/Poppy/square.png",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Poppy",
+      "asset_type": "loading",
+      "path": "assets/images/lol/champions/Poppy/loading.jpg",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Poppy",
+      "asset_type": "splash",
+      "path": "assets/images/lol/champions/Poppy/splash.jpg",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Qiyana",
+      "asset_type": "square",
+      "path": "assets/images/lol/champions/Qiyana/square.png",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Qiyana",
+      "asset_type": "loading",
+      "path": "assets/images/lol/champions/Qiyana/loading.jpg",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Qiyana",
+      "asset_type": "splash",
+      "path": "assets/images/lol/champions/Qiyana/splash.jpg",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "RekSai",
+      "asset_type": "square",
+      "path": "assets/images/lol/champions/RekSai/square.png",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "RekSai",
+      "asset_type": "loading",
+      "path": "assets/images/lol/champions/RekSai/loading.jpg",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "RekSai",
+      "asset_type": "splash",
+      "path": "assets/images/lol/champions/RekSai/splash.jpg",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Rumble",
+      "asset_type": "square",
+      "path": "assets/images/lol/champions/Rumble/square.png",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Rumble",
+      "asset_type": "loading",
+      "path": "assets/images/lol/champions/Rumble/loading.jpg",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Rumble",
+      "asset_type": "splash",
+      "path": "assets/images/lol/champions/Rumble/splash.jpg",
+      "status": "skipped",
+      "error": ""
+    },
+    {
       "champion": "Ryze",
       "asset_type": "square",
       "path": "assets/images/lol/champions/Ryze/square.png",
@@ -210,6 +504,48 @@
       "champion": "Ryze",
       "asset_type": "splash",
       "path": "assets/images/lol/champions/Ryze/splash.jpg",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Senna",
+      "asset_type": "square",
+      "path": "assets/images/lol/champions/Senna/square.png",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Senna",
+      "asset_type": "loading",
+      "path": "assets/images/lol/champions/Senna/loading.jpg",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Senna",
+      "asset_type": "splash",
+      "path": "assets/images/lol/champions/Senna/splash.jpg",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Sion",
+      "asset_type": "square",
+      "path": "assets/images/lol/champions/Sion/square.png",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Sion",
+      "asset_type": "loading",
+      "path": "assets/images/lol/champions/Sion/loading.jpg",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Sion",
+      "asset_type": "splash",
+      "path": "assets/images/lol/champions/Sion/splash.jpg",
       "status": "skipped",
       "error": ""
     },
@@ -298,6 +634,27 @@
       "error": ""
     },
     {
+      "champion": "Vex",
+      "asset_type": "square",
+      "path": "assets/images/lol/champions/Vex/square.png",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Vex",
+      "asset_type": "loading",
+      "path": "assets/images/lol/champions/Vex/loading.jpg",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Vex",
+      "asset_type": "splash",
+      "path": "assets/images/lol/champions/Vex/splash.jpg",
+      "status": "skipped",
+      "error": ""
+    },
+    {
       "champion": "XinZhao",
       "asset_type": "square",
       "path": "assets/images/lol/champions/XinZhao/square.png",
@@ -336,6 +693,27 @@
       "champion": "Yuumi",
       "asset_type": "splash",
       "path": "assets/images/lol/champions/Yuumi/splash.jpg",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Zaahen",
+      "asset_type": "square",
+      "path": "assets/images/lol/champions/Zaahen/square.png",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Zaahen",
+      "asset_type": "loading",
+      "path": "assets/images/lol/champions/Zaahen/loading.jpg",
+      "status": "skipped",
+      "error": ""
+    },
+    {
+      "champion": "Zaahen",
+      "asset_type": "splash",
+      "path": "assets/images/lol/champions/Zaahen/splash.jpg",
       "status": "skipped",
       "error": ""
     }
