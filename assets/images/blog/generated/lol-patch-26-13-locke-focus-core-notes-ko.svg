@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="720" viewBox="0 0 1200 720" role="img">
+  <title>LoL 26.13 핵심노트 정리</title>
+  <rect width="1200" height="720" fill="#FFF7ED"/>
+  <rect x="40" y="40" width="1120" height="640" rx="18" fill="#F8FAFC" stroke="#CBD5E1"/>
+  <text x="74" y="116" font-size="42" font-weight="900" fill="#0F172A">LoL 26.13 핵심노트 정리</text>
+
+            <g>
+              <rect x="74" y="178" width="1052" height="64" rx="10" fill="#FFFFFF" stroke="#D7E0EA"/>
+              <circle cx="112" cy="210" r="16" fill="#C2410C"/>
+              <text x="112" y="217" text-anchor="middle" font-size="18" font-weight="900" fill="#FFFFFF">1</text>
+              <text x="148" y="216" font-size="22" font-weight="800" fill="#1F2937">Data Dragon 태그는 암살자/마법사이며, Riot 소개 문맥은 미드</text>
+<text x="148" y="247" font-size="22" font-weight="800" fill="#1F2937">라인 중심입니다.</text>
+            </g>
+            <g>
+              <rect x="74" y="270" width="1052" height="64" rx="10" fill="#FFFFFF" stroke="#D7E0EA"/>
+              <circle cx="112" cy="302" r="16" fill="#C2410C"/>
+              <text x="112" y="309" text-anchor="middle" font-size="18" font-weight="900" fill="#FFFFFF">2</text>
+              <text x="148" y="308" font-size="22" font-weight="800" fill="#1F2937">Q 표식, W 자기 피해 후 회복, E 순간이동/추격, R 표식과 처형형</text>
+<text x="148" y="339" font-size="22" font-weight="800" fill="#1F2937">봉인 구조를 가집니다.</text>
+            </g>
+            <g>
+              <rect x="74" y="362" width="1052" height="64" rx="10" fill="#FFFFFF" stroke="#D7E0EA"/>
+              <circle cx="112" cy="394" r="16" fill="#C2410C"/>
+              <text x="112" y="401" text-anchor="middle" font-size="18" font-weight="900" fill="#FFFFFF">3</text>
+              <text x="148" y="400" font-size="22" font-weight="800" fill="#1F2937">공식 스킬 구조만으로 빌드나 티어를 단정하지 않습니다.</text>
+            </g>
+</svg>

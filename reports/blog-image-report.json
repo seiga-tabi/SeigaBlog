@@ -21,6 +21,17 @@
     "champion_count": 17
   },
   {
+    "file": "_posts/2026-06-24-lol-patch-26-13-locke-focus.md",
+    "images": {
+      "core-notes": {
+        "ko": "assets/images/blog/generated/lol-patch-26-13-locke-focus-core-notes-ko.svg",
+        "default": "assets/images/blog/generated/lol-patch-26-13-locke-focus-core-notes.svg",
+        "ja": "assets/images/blog/generated/lol-patch-26-13-locke-focus-core-notes-ja.svg"
+      }
+    },
+    "champion_count": 1
+  },
+  {
     "file": "_posts/2026-06-24-lol-patch-26-13-summary.md",
     "images": {
       "buff-group": {

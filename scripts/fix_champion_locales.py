@@ -19,6 +19,10 @@ def log(message: str) -> None:
 
 def should_replace_line(line: str) -> bool:
     stripped = line.lstrip()
+    protected_fragments = (
+        "/assets/",
+        "ddragon.leagueoflegends.com",
+    )
     protected_prefixes = (
         "source_url:",
         "image:",
@@ -29,7 +33,7 @@ def should_replace_line(line: str) -> bool:
         "key:",
         "- key:",
     )
-    return not stripped.startswith(protected_prefixes)
+    return not stripped.startswith(protected_prefixes) and not any(fragment in stripped for fragment in protected_fragments)
 
 
 def fix_post(text: str, name_map: dict) -> tuple[str, list[dict]]:
